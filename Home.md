@@ -1,5 +1,7 @@
 Welcome to the Eucalyptus wiki!
 
+For the official Eucalyptus web site, visit [eucalyptus.com](http://www.eucalyptus.com).
+
 If you'd like to contribute, please check out the [Contributor Guidelines](wiki/Contributing) first. We also have some more information on [our Git setup](wiki/Documentation-Contributions) especially focused on sending documentation patches.
 
 You can always ask questions on any of our [[Eucalyptus mailing lists]]. 
