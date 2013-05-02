@@ -20,6 +20,10 @@ Eucalyptus is actually an acronym, which stands for "Elastic Utility Computing A
 
 [code on Github](http://github.com/eucalyptus) | [bugs on Jira](https://eucalyptus.atlassian.net) | [questions on StackOverflow](http://stackoverflow.com/search?tab=active&q=eucalyptus) | [discussions on Quora](http://www.quora.com/Eucalyptus-Systems) | [videos on Vimeo](https://vimeo.com/eucalyptus/videos) | [presentations on Slideshare](http://www.slideshare.net/eucalyptus/presentations) | [tweets on Twitter](http://twitter.com/eucalyptus) | [friends on Facebook](http://www.facebook.com/pages/Eucalyptus-Systems-Inc/164828240204708) | [contacts on LinkedIn](http://www.linkedin.com/company/eucalyptus-systems-inc.?trk=hb_tab_compy_id_420170) | [+1s on Google Plus](https://plus.google.com/110470516344014754435?prsrc=3)
 
+### AWS Compatibility
+
+* [[AWS Compatibility]] - tracking compatibility of all AWS ecosystem tools with Eucalyptus.
+
 ### Pages for Cloud Users
 
 * [Bundling Images](wiki/Bundling-Images) - How to use euca-bundle-vol to "rebundle" modified VM instances back into the Eucalyptus image catalog as a new EMI.
@@ -37,10 +41,6 @@ Eucalyptus is actually an acronym, which stands for "Elastic Utility Computing A
 * [Eutester and Nagios](wiki/Integrating-Eutester-and-Nagios) - How to setup and configure Eutester and Nagios to carry out a simple test of cloud availablity,
 * [Keepalived VIP on Cluster Controllers](https://github.com/eucalyptus/eucalyptus/wiki/Keepalived-VIP-for-Node-Controller-Gateways) - How to install and configure keepalived to be used as a shared IP for Node Controller gateways when using MANAGED mode and a private network
 * [Eucalyptus Storage](https://github.com/eucalyptus/eucalyptus/wiki/Storage) - High-level overview of storage in Eucalyptus including Walrus and the Storage Controller and how they work. Also includes some best practices and recommendations.
-
-### AWS Compatibility
-
-* [[AWS Compatibility]] - tracking compatibility of all AWS ecosystem tools with Eucalyptus.
 
 ### Developer Resources
 
