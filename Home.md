@@ -34,6 +34,7 @@ Eucalyptus is actually an acronym, which stands for "Elastic Utility Computing A
 * [Stackato Image](https://github.com/eucalyptus/eucalyptus/wiki/Stackato-Image) - Information regarding status of getting [Stackato](http://docs.stackato.com/index.html) image to work on Eucalyptus.
 * [Fog](https://github.com/eucalyptus/eucalyptus/wiki/Fog) - Information regarding status of [Fog](http://fog.io/) working with Eucalyptus
 * [Ansible](https://github.com/eucalyptus/eucalyptus/wiki/Ansible) - Using [Ansible](http://ansible.cc) to orchestrate EC2 and Eucalyptus instances; deployment and configuration management.
+
 ### Pages for Cloud Administrators
 
 * [Network Troubleshooting FAQ](wiki/Network-Troubleshooting-FAQ) - How to solve common VM networking problems.
