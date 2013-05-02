@@ -7,7 +7,7 @@ You can reach me at [marten@eucalyptus.com](mailto:marten@eucalyptus.com) <br>
 
 You are also welcome to **follow me** and my writings at:
 
-   www.eucalyptus.com/blog/marten
+[my blog] (www.eucalyptus.com/blog/marten)
 
    https://twitter.com/martenmickos
 
