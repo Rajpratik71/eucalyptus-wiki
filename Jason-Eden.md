@@ -1,4 +1,4 @@
-Greetings. My name is Jason Eden and I manage Technical Services at Eucalyptus Systems, Inc. My current focus is technical customer lifecycle from pre-sales solution engineering through training, consulting, and certification.
+Greetings. My name is Jason Eden and I manage Technical Services at Eucalyptus Systems, Inc. My current focus is technical customer lifecycle from pre-sales solution engineering through training, certification and consulting - basically, up to the point of successful cloud deployment and hand-off to our Support organization.
 
 My LinkedIn profile is available here:
 
