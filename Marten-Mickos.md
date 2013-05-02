@@ -12,6 +12,9 @@ You are also welcome to **follow me** and my writings at:
 
    http://www.linkedin.com/pub/marten-mickos/0/1b/7b5/
 
+   http://www.slideshare.net/search/slideshow?searchfrom=header&q=mickos
+
+   http://opensource.com/users/martenmickos
 
 And you will find **Eucalyptus** stuff here:
 
