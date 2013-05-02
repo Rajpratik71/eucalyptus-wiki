@@ -1,8 +1,9 @@
 This is my Github page. Enjoy!
 
-I am Marten Mickos, CEO of Eucalyptus Systems. Formerly CEO of MySQL AB.
+I am Marten Mickos, CEO of [Eucalyptus Systems] (http://eucalyptus.com). Formerly CEO of MySQL AB.
 
-You can reach me at marten at eucalyptus dot com.
+You can reach me at [marten@eucalyptus.com](mailto:marten@eucalyptus.com) <br>
+
 
 You are also welcome to **follow me** and my writings at:
 
