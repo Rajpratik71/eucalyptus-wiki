@@ -17,6 +17,11 @@ You are also welcome to **follow me** and my writings at:
 
 * [my writings on Opensource.com] (http://opensource.com/users/martenmickos)
 
+Some past talks and presentations:
+
+* [Stanford talk "Believe in something bigger than yourself"] (http://ecorner.stanford.edu/authorMaterialInfo.html?mid=2809)
+
+
 And you will find **Eucalyptus** stuff here:
 
    https://github.com/eucalyptus/
