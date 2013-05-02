@@ -6,18 +6,18 @@ You can reach me at marten at eucalyptus dot com.
 
 You are also welcome to **follow me** and my writings at:
 
-www.eucalyptus.com/blog/marten
+   www.eucalyptus.com/blog/marten
 
-https://twitter.com/martenmickos
+   https://twitter.com/martenmickos
 
-http://www.linkedin.com/pub/marten-mickos/0/1b/7b5/
+   http://www.linkedin.com/pub/marten-mickos/0/1b/7b5/
 
 
 And you will find **Eucalyptus** stuff here:
 
-https://github.com/eucalyptus/
+   https://github.com/eucalyptus/
 
-https://github.com/eucalyptus/eucalyptus/wiki
+   https://github.com/eucalyptus/eucalyptus/wiki
 
 *****
 [[category.people]]
