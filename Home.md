@@ -1,12 +1,24 @@
-Welcome to the Eucalyptus wiki!
+**Eucalyptus is open source software for building AWS-compatible private clouds.**
+
+This Eucalyptus wiki is a collection of technical documents for cloud users, cloud administrators, code contributors and partners.
 
 For the official Eucalyptus web site, visit [eucalyptus.com](http://www.eucalyptus.com).
 
 If you'd like to contribute, please check out the [Contributor Guidelines](wiki/Contributing) first. We also have some more information on [our Git setup](wiki/Documentation-Contributions) especially focused on sending documentation patches.
 
-You can always ask questions on any of our [[Eucalyptus mailing lists]]. 
+You can always ask questions on any of our [[Eucalyptus mailing lists]], or send a question to [feedback@eucalyptus.com](mailto:feedback@eucalyptus.com). 
 
 You can find us on Freenode IRC in #eucalyptus or #eucalyptus-docs, or at any of our [community events](wiki/Community-Events)
+
+### About Eucalyptus
+
+Eucalyptus is a set of web services, modeled after and compatible with Amazon Web Services (AWS).  Written mostly in Java, Eucalyptus integrates components from over 100 open source projects, tested and packaged into a single easy-to-install and easy-to-use product. Eucalyptus runs on virtualized infrastructure (Linux+KVM or VMware).
+
+Eucalyptus is actually an acronym, which stands for "Elastic Utility Computing Architecture, Linking Your Programs To Useful Systems.
+
+### Follow Us
+
+[code on Github](http://github.com/eucalyptus) | [bugs on Jira](https://eucalyptus.atlassian.net) | [questions on StackOverflow](http://stackoverflow.com/search?tab=active&q=eucalyptus)
 
 ### Pages for Cloud Users
 
