@@ -8,5 +8,7 @@ Some fun facts about me:
 
 * I am a rabid hockey fan, and one day hope to play in the annual Carolina Hurricanes charity game.  To do that, I need more money and the ability to skate for more than 30 seconds at a time, so I continue to work on both of these things.
 
+* (oh, and you can reach me at greg at eucalyptus dot com.)
+
 *****
 [[category.people]]
