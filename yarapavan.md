@@ -4,3 +4,6 @@
 * IRC Handle: pavanyara| pyara
 * Twitter: @yarapavan
 * LinkedIn: http://www.linkedin.com/in/yarapavan
+
+*****
+[[category.people]]
