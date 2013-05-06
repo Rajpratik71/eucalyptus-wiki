@@ -1,4 +1,5 @@
 * [[AWS-Toolkit-for-Eclipse]]
+* [[HowTo-use-s3cmd-with-Eucalyptus]]
 * [[index-of-categories]]
 
 *****
