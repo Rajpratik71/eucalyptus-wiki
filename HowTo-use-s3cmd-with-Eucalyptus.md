@@ -74,3 +74,6 @@ s3cmd -c s3cfg rb s3://newbucket
 ## Problems?
 
 Report at [eucalyptus user group](https://groups.google.com/a/eucalyptus.com/forum/#!forum/euca-users)
+
+*****
+[[category.HOWTO]]
