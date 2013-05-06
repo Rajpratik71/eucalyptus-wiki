@@ -1,4 +1,5 @@
 * [[CloudWatch-FAQ]]
+* [[ELB-FAQ]]
 * [[index-of-categories]]
 
 *****
