@@ -8,6 +8,8 @@ If you'd like to contribute, please check out the [Contributor Guidelines](wiki/
 
 You can always ask questions on any of our [[Eucalyptus mailing lists]], or send a question to [feedback@eucalyptus.com](mailto:feedback@eucalyptus.com). 
 
+To install Eucalyptus, try our [Faststart](http://www.eucalyptus.com/download/faststart) ISO, which should have you up and running your own cloud within an hour, on as little as a single system.
+
 You can find us on Freenode IRC in #eucalyptus or #eucalyptus-docs, or at any of our [community events](wiki/Community-Events)
 
 ### About Eucalyptus
