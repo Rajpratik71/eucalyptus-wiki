@@ -55,19 +55,30 @@ Technology links : Below is a collection of links of various technologies found 
   
   * BOTO : http://code.google.com/p/boto/
   
-  * LINUX SCSI Target Framework: http://stgt.sourceforge.net/ - Used by the Storage Controller to provide linux LVM volumes to remote NCs for EBS volume functionality.
+  * LINUX SCSI Target Framework : http://stgt.sourceforge.net/ - Used by the Storage Controller to provide linux LVM volumes to remote NCs for EBS volume functionality.
 
+  * AXIS2C : http://axis.apache.org/axis2/c/core/ - The web services server used for the CC/NC components.
 
 ## High-level Eucalyptus Architecture
 See the architecture docs repository: [Eucalyptus Architecture Docs](http://github.com/eucalyptus/architecture-docs)
 
-## Cloud Controller Architecture
+## Cloud Controller
+* General design principles and considerations
+* Eucalyptus Web Stack
+* Eucalyptus Service Endpoints
+* Eucalyptus API request entry points
+* Persistence/Database (eucalyptus_cloud, eucalyptus_config, ...)
 
+## Cluster Controller
+* [CC WSDL](https://github.com/eucalyptus/eucalyptus/blob/master/wsdl/eucalyptus_cc.wsdl)
+* [Debugging C components](Debugging-Eucalyptus-C-language-components)
 
-## Cluster Controller Architecuture
+## Storage Controller
+* Storage Controller Service Endpoints
+* Storage Controller API request entry points
+* Persistence/Database for Storage Controller (eucalyptus_config, eucalyptus_storage database)
+* [SC WSDL](https://github.com/eucalyptus/eucalyptus/blob/master/wsdl/eucalyptus_sc.wsdl) - This is use *only* for communication between the SC and the NC for volume Export/Unexport in preparation or teardown of EBS volumes.
 
-
-## Storage Controller Architecture
-
-
-## Node Controller Architecture
+## Node Controller
+* [CC WSDL](https://github.com/eucalyptus/eucalyptus/blob/master/wsdl/eucalyptus_nc.wsdl)
+* [Debugging C components](Debugging-Eucalyptus-C-language-components)
