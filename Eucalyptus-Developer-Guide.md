@@ -1,8 +1,16 @@
 This page provides an introduction and launch point for getting involved in the Eucalyptus code base and writing code for or with Eucalyptus.
 
 Eucalyptus is a private-IaaS platform. Specifically, Eucalyptus provides the Amazon Web Services abstractions and services in your own private infrastructure. It is *highly* recommended to become very familiar with the Amazon EC2 an S3 services prior to exploring Eucalyptus and the Eucalyptus code. Here are some good references to begin with:
+
 * [Amazon EC2 Documentation](http://aws.amazon.com/documentation/ec2/)
 * [Amazon S3 Documentation](http://aws.amazon.com/documentation/s3/)
+
+The following references provide the necessary background knowledge for related Eucalyptus functionality: 
+
+* [Amazon Identity and Access Management (IAM/STS) Documentation](http://aws.amazon.com/documentation/iam/)
+* [Amazon Auto Scaling Documentation](http://aws.amazon.com/documentation/autoscaling/)
+* [Amazon CloudWatch Documentation](http://aws.amazon.com/documentation/cloudwatch/)
+* [Amazon Elastic Load Balancing Documentation](http://aws.amazon.com/documentation/elasticloadbalancing/)
 
 ## Getting started: Building and Installing Eucalyptus from Source
 See the INSTALL file in the Eucalyptus source tree here on Github for installation instructions: [Source Install](https://github.com/eucalyptus/eucalyptus/blob/master/INSTALL)
