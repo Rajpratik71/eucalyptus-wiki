@@ -69,6 +69,13 @@ See the architecture docs repository: [Eucalyptus Architecture Docs](http://gith
 * Eucalyptus API request entry points
 * Persistence/Database (eucalyptus_cloud, eucalyptus_config, ...)
 
+## Walrus
+* General design principles and considerations
+* Eucalyptus Web Stack
+* Eucalyptus Service Endpoints
+* Eucalyptus API request entry points
+* Persistence/Database (eucalyptus_walrus, eucalyptus_config, ...)
+
 ## Cluster Controller
 * [CC WSDL](https://github.com/eucalyptus/eucalyptus/blob/master/wsdl/eucalyptus_cc.wsdl)
 * [Debugging C components](Debugging-Eucalyptus-C-language-components)
