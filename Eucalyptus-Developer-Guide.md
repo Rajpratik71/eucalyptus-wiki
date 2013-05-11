@@ -122,5 +122,5 @@ See the architecture docs repository: [Eucalyptus Architecture Docs](http://gith
 * [SC WSDL](https://github.com/eucalyptus/eucalyptus/blob/master/wsdl/eucalyptus_sc.wsdl) - This is use *only* for communication between the SC and the NC for volume Export/Unexport in preparation or teardown of EBS volumes.
 
 ## Node Controller
-* [CC WSDL](https://github.com/eucalyptus/eucalyptus/blob/master/wsdl/eucalyptus_nc.wsdl)
+* [NC WSDL](https://github.com/eucalyptus/eucalyptus/blob/master/wsdl/eucalyptus_nc.wsdl)
 * [Debugging C components](Debugging-Eucalyptus-C-language-components)
