@@ -51,7 +51,7 @@ Eucalyptus is actually an acronym, which stands for "Elastic Utility Computing A
 * [Debugging Eucalyptus Java-language components](wiki/Debugging-Eucalyptus-Java-language-components) - Advice on working with Eucalyptus from an IDE.
 * [Debugging Eucalyptus C-language components](wiki/Debugging-Eucalyptus-C-language-components) - Tools and advice to debug the components of Eucalyptus written in C: Node Controller and Cluster Controller.
 * [UI Guide](wiki/UI-Guide) - Information on the layout of the web UI and how to modify it.
-* [Developer Guide (incomplete)](/wiki/Eucalyptus-Developer-Guide) - A work-in-progress guide to getting started on the Eucalyptus code and architecture.
+* [Developer Guide (incomplete)](wiki/Eucalyptus-Developer-Guide) - A work-in-progress guide to getting started on the Eucalyptus code and architecture.
 
 ### Finding Pages
 
