@@ -124,3 +124,9 @@ See the architecture docs repository: [Eucalyptus Architecture Docs](http://gith
 ## Node Controller
 * [NC WSDL](https://github.com/eucalyptus/eucalyptus/blob/master/wsdl/eucalyptus_nc.wsdl)
 * [Debugging C components](Debugging-Eucalyptus-C-language-components)
+
+
+*****
+
+[[category.developer]]
+[[category.design]]
