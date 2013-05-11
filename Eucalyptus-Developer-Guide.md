@@ -59,10 +59,45 @@ Technology links : Below is a collection of links of various technologies found 
 
   * AXIS2C : http://axis.apache.org/axis2/c/core/ - The web services server used for the CC/NC components.
 
-## High-level Eucalyptus Architecture
+## Eucalyptus Architecture and Design by Resource
+### VMs
+Very basic operation flow:
+
+1. Run Request -> CLC
+2. CLC -> Setup Networks -> CC
+3. CLC -> Check permissions -> CLC
+4. CLC -> RunInstance -> CC
+5. CC -> Implement network rules/tags -> CC
+6. CC -> Schedule Instance for Execution on NC -> CC
+7. CC -> RunInstance -> NC
+8. NC -> Construct Instance Artifacts (partitions, etc) -> NC
+9. NC -> Fetch image -> Walrus
+10. Walrus -> Decrypts image, Caches, Returns -> NC
+11. NC -> Construct instance config file -> NC
+12. NC -> start VM -> libvirt
+
+### Images
+1. User uploads bundle -> Walrus
+2. Register image -> CLC
+3. CLC -> Set permissions, etc. -> CLC
+4. CLC -> Assign EMI/EKI/ERI -> CLC
+5. CLC -> return EMI -> User
+
+### Networking
+
+### EBS/Block Storage
+
+### Ephemeral Storage
+Blobstore and CopyOnWrite with LVM for ERI/EKI, etc
+
+### Users/Accounts
+
+### Authorization (IAM)
+
+## Design by Component
 See the architecture docs repository: [Eucalyptus Architecture Docs](http://github.com/eucalyptus/architecture-docs)
 
-## Cloud Controller
+### Cloud Controller
 * General design principles and considerations
 * Eucalyptus Web Stack
 * Eucalyptus Service Endpoints
