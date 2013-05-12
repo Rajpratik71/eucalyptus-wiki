@@ -1,7 +1,6 @@
 * [[Cloud-Libs-Branch-Management]]
 * [[Developer-Resources]]
 * [[Emc-vnx-support-3]]
-* [[Eucalyptus-Developer-Guide]]
 * [[Hadoopalyptus]]
 * [[Images-Project]]
 * [[Import-an-HVM-AMI]]

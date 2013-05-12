@@ -2,6 +2,7 @@
 * [[Designdocs-reporting]]
 * [[Designdocs-troubleshooting]]
 * [[Designdocs-ui]]
+* [[Eucalyptus-Developer-Guide]]
 * [[index-of-categories]]
 
 *****

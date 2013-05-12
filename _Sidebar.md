@@ -11,6 +11,7 @@ Index of Categories
 * [[category.contributions]]
 * [[category.debugging]]
 * [[category.design]]
+* [[category.developer]]
 * [[category.docs]]
 * [[category.docs-team]]
 * [[category.ebs]]
