@@ -2,6 +2,7 @@
 * [[Ansible]]
 * [[Boto]]
 * [[Fog]]
+* [[HowTo-use-s3cmd-with-Eucalyptus]]
 * [[Typica]]
 * [[ami2emi]]
 * [[index-of-categories]]
