@@ -77,3 +77,4 @@ Report at [eucalyptus user group](https://groups.google.com/a/eucalyptus.com/for
 
 *****
 [[category.HOWTO]]
+[[category.tools]]
