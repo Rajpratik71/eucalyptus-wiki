@@ -17,6 +17,8 @@ This page attempts to document the versions and release numbers of packages publ
 <tr><td>eucalyptus-3.2.0-0.409</td><td>[[3.2.0|http://github.com/eucalyptus/eucalyptus/tree/4c0b4f648af0ff8b59d66efa4d7f0a5ff31dcb76]]</td><td/></tr>
 <tr><td>eucalyptus-3.2.1-0.523</td><td>[[3.2.1|http://github.com/eucalyptus/eucalyptus/tree/822b24b6c3755332eebbdfef067de0cbdc0cae65]]</td><td/></tr>
 
+<tr><td>eucalyptus-3.2.2-0.709</td><td>
+[[3.2.2|https://github.com/eucalyptus/eucalyptus/tree/116317c3ac743c35d60fa957dc1652610cea8301]]</td><td/>
 </table>
 
 *****
