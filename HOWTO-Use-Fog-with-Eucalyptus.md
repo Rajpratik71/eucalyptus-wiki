@@ -9,7 +9,7 @@ Fog is easily installed from a single command on any system that has Ruby and Ge
 
 ## Configuration and Usage Examples
 
-The AWS provider libraries should work with Eucalyptus without modifications.
+The AWS provider libraries for Fog should work with Eucalyptus without modifications.
 
 A simple example that lists all images:
 
@@ -53,12 +53,13 @@ end
 
 ## Known Issues
 
-Storage *only* works with DNS on.
+* It should be noted that storage calls will work *only* with Eucalyptus installations that have DNS properly configured; by convention, S3 requires bucket names to contain fully-qualified domain names, and Eucalyptus enforces this convention.
 
-## Helpful Resources
+* Another issue is: FIXME. :)
 
-* A vagrant file configuration for installing a functional Fog client
-* A cloud-init library for installing a functional Fog client
+## Questions
+
+Any questions can be sent to FIXME. :)
 
 ## TODOs
 
