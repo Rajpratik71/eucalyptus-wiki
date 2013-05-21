@@ -5,9 +5,7 @@ Fog is a Ruby library for controlling clouds. It is the underlying library used 
 ## Installation
 
 Fog is easily installed from a single command on any system that has Ruby and Gems installed: 
-`
-gem install fog 
-`
+`gem install fog `
 
 ## Configuration and Usage Examples
 
@@ -15,7 +13,7 @@ The AWS provider libraries should work with Eucalyptus without modifications.
 
 A simple example that lists all images:
 
-`
+```
 #!/usr/bin/ruby
 
 require 'rubygems'
@@ -51,7 +49,7 @@ my_images = my_images_raw.body["imagesSet"]
 for key in 0...my_images.length
   print my_images[key]["imageId"], "\t" , my_images[key]["architecture"] , "\t\t" , my_images[key]["imageLocation"],  "\n";
 end
-` 
+``` 
 
 ## Known Issues
 
