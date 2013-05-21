@@ -54,7 +54,9 @@ end
 
 ## Questions/Issues
 
-If you have any questions about using Fog with Eucalyptus, please first check the [knowledgebase at engage.eucalyptus.com](https://engage.eucalyptus.com/customer/portal/articles/search?q=Fog).  If you do not find an answer, you should [ask a question at engage.eucalyptus.com](https://engage.eucalyptus.com/customer/portal/questions/new?q=Fog).
+If you have any questions about using Fog with Eucalyptus, please first check the [knowledgebase](https://engage.eucalyptus.com/customer/portal/articles/search?q=Fog).  
+
+If you do not find an answer in the knowledgebase, please [ask a question](https://engage.eucalyptus.com/customer/portal/questions/new?q=Fog).
 
 ## TODOs
 
