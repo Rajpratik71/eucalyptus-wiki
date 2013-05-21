@@ -11,7 +11,7 @@ Fog is easily installed from a single command on any system that has Ruby and Ge
 
 The AWS provider libraries for Fog should work with Eucalyptus without modifications.
 
-A simple example that lists all images:
+A simple script that lists all images on your Eucalyptus cloud:
 
 ```
 #!/usr/bin/ruby
@@ -19,10 +19,7 @@ A simple example that lists all images:
 require 'rubygems'
 require 'fog'
 
-# This script is a slightly modified version of the AWS compute sample script provided at:
-#   http://fog.io/compute/
-
-# Insert your AWS credentials into a local credentials.rb file. 
+# Insert your Eucalyptus credentials into a local credentials.rb file. 
 # That file should look like this:
 #
 # @aws_access_key_id = "XXXXXXXXXXXXXXXXXXXXX"
@@ -31,7 +28,7 @@ require 'fog'
 
 require './credentials.rb'
 
-# Connect to your Eucalyptus Cloud. Note that the only difference is in "endpoint".
+# Connect to your Eucalyptus Cloud.
 connection = Fog::Compute.new(
     :provider => "AWS",
     :aws_access_key_id => @aws_access_key_id,
@@ -39,13 +36,11 @@ connection = Fog::Compute.new(
     :endpoint => @ec2_endpoint
 )
 
-###################################################################
-# Get a list of our images
-###################################################################
+# List images
 my_images_raw = connection.describe_images()
 my_images = my_images_raw.body["imagesSet"]
 
-#  List image ID, architecture and location
+# Print formatted list of images
 for key in 0...my_images.length
   print my_images[key]["imageId"], "\t" , my_images[key]["architecture"] , "\t\t" , my_images[key]["imageLocation"],  "\n";
 end
