@@ -52,9 +52,9 @@ end
 
 * Another issue is: FIXME. :)
 
-## Questions
+## Questions/Issues
 
-Any questions can be sent to FIXME. :)
+If you have any questions about using Fog with Eucalyptus, please first check the [knowledgebase at engage.eucalyptus.com](https://engage.eucalyptus.com/customer/portal/articles/search?q=Fog).  If you do not find an answer, you should [ask a question at engage.eucalyptus.com](https://engage.eucalyptus.com/customer/portal/questions/new?q=Fog).
 
 ## TODOs
 
