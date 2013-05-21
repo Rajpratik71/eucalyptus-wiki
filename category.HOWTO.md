@@ -1,4 +1,5 @@
 * [[AWS-Toolkit-for-Eclipse]]
+* [[HOWTO-Use-Fog-with-Eucalyptus]]
 * [[HowTo-use-s3cmd-with-Eucalyptus]]
 * [[index-of-categories]]
 
