@@ -36,17 +36,13 @@ Eucalyptus is a set of web services, modeled after and compatible with Amazon We
 
 **Nightlies.** You can install nightly builds of the latest Eucalyptus development builds by following [these instructions](http://www.eucalyptus.com/docs/latest/ig/installing_euca_nightlies.html).
 
-**People.** We've got great people working at Eucalyptus. Meet (some of them)[wiki/category.people].
+**People.** We've got great people working at Eucalyptus. Meet [some of them](wiki/category.people).
 
 **Questions.** You can ask [questions on StackOverflow](http://stackoverflow.com/search?tab=active&q=eucalyptus) or [Quora](http://www.quora.com/Eucalyptus-Systems). 
 
 **Slides.** You can see [presentations on Slideshare](http://www.slideshare.net/eucalyptus/presentations).
 
 **Videos.** You can see how Eucalyptus works on [videos at Vimeo](https://vimeo.com/eucalyptus/videos).
-
-### Follow Us
-
-[code on Github](http://github.com/eucalyptus) | [bugs on Jira](https://eucalyptus.atlassian.net) | [questions on StackOverflow](http://stackoverflow.com/search?tab=active&q=eucalyptus) | [discussions on Quora](http://www.quora.com/Eucalyptus-Systems) | [videos on Vimeo](https://vimeo.com/eucalyptus/videos) | [presentations on Slideshare](http://www.slideshare.net/eucalyptus/presentations) | [tweets on Twitter](http://twitter.com/eucalyptus) | [friends on Facebook](http://www.facebook.com/pages/Eucalyptus-Systems-Inc/164828240204708) | [contacts on LinkedIn](http://www.linkedin.com/company/eucalyptus-systems-inc.?trk=hb_tab_compy_id_420170) | [+1s on Google Plus](https://plus.google.com/110470516344014754435?prsrc=3)
 
 ### Pages for Cloud Users
 
@@ -74,13 +70,3 @@ Eucalyptus is a set of web services, modeled after and compatible with Amazon We
 * [Debugging Eucalyptus C-language components](wiki/Debugging-Eucalyptus-C-language-components) - Tools and advice to debug the components of Eucalyptus written in C: Node Controller and Cluster Controller.
 * [UI Guide](wiki/UI-Guide) - Information on the layout of the web UI and how to modify it.
 * [Developer Guide (incomplete)](wiki/Eucalyptus-Developer-Guide) - A work-in-progress guide to getting started on the Eucalyptus code and architecture.
-
-### Finding Pages
-
-* [page listing](wiki/_pages)
-* [[index of categories]]
-
-We've got some great people working on Eucalyptus: meet some of them.  
-* [[category.people]]
-
-Look forward to seeing you soon!
