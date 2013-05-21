@@ -4,27 +4,47 @@ This Eucalyptus wiki is a collection of technical documents for cloud users, clo
 
 For the official Eucalyptus web site, visit [eucalyptus.com](http://www.eucalyptus.com).
 
-If you'd like to contribute, please check out the [Contributor Guidelines](wiki/Contributing) first. We also have some more information on [our Git setup](wiki/Documentation-Contributions) especially focused on sending documentation patches.
-
-You can always ask questions on any of our [[Eucalyptus mailing lists]], or send a question to [feedback@eucalyptus.com](mailto:feedback@eucalyptus.com). 
-
-To install Eucalyptus, try our [Faststart](http://www.eucalyptus.com/download/faststart) ISO, which should have you up and running your own cloud within an hour, on as little as a single system.
-
-You can find us on Freenode IRC in #eucalyptus or #eucalyptus-docs, or at any of our [community events](wiki/Community-Events)
-
 ### About Eucalyptus
 
 Eucalyptus is a set of web services, modeled after and compatible with Amazon Web Services (AWS).  Written mostly in Java, Eucalyptus integrates components from over 100 open source projects, tested and packaged into a single easy-to-install and easy-to-use product. Eucalyptus runs on virtualized infrastructure (Linux+KVM or VMware).
 
-Eucalyptus is actually an acronym, which stands for "Elastic Utility Computing Architecture, Linking Your Programs To Useful Systems.
+### Quick Guide
+
+**Acronym.** Eucalyptus is actually an acronym, which stands for "Elastic Utility Computing Architecture, Linking Your Programs To Useful Systems.
+
+**Architecture.** You can see the design documents for Eucalyptus in our [architecture repository](http://github.com/eucalyptus/architecture/wiki).
+
+**AWS Comptibility.** Eucalyptus aims for 100% AWS compatibility with all services we offer. See our progress towards this goal on our [[AWS Compatibility]] page.
+
+**Blogs.** Read our blogs at [Planet Eucalyptus](http://planet.eucalyptus.com/).
+
+**Bugs.** You can file [bugs on our Jira instance](https://eucalyptus.atlassian.net).
+
+**Code.** See the code for the latest stable branch, [Eucalyptus 3.2.2](https://github.com/eucalyptus/eucalyptus/tree/maint/3.2/master), or the code for the [upcoming release](https://github.com/eucalyptus/eucalyptus/tree/master).  You can also see [all of our projects on Github](http://github.com/eucalyptus).
+
+**Contribute.** If you'd like to contribute, please check out the [Contributor Guidelines](wiki/Contributing) first. We also have some more information on [our Git setup](wiki/Documentation-Contributions) especially focused on sending documentation patches.
+
+**Documentation.** Reference all of our [documentation](http://www.eucalyptus.com/docs). 
+
+**Feedback.** You can always ask questions on any of our [[Eucalyptus mailing lists]], or send a question to [feedback@eucalyptus.com](mailto:feedback@eucalyptus.com). 
+
+**Friends.** Be our [friends on Facebook](http://www.facebook.com/pages/Eucalyptus-Systems-Inc/164828240204708) or [contacts on LinkedIn](http://www.linkedin.com/company/eucalyptus-systems-inc.?trk=hb_tab_compy_id_420170).
+
+**Install.** To install Eucalyptus, try our [Faststart](http://www.eucalyptus.com/download/faststart) ISO, which should have you up and running your own cloud within an hour, on as little as a single system.
+
+**IRC.** You can find us on Freenode IRC on #eucalyptus.
+
+**Nightlies.** You can install nightly builds of the latest Eucalyptus development builds by following [these instructions](http://www.eucalyptus.com/docs/latest/ig/installing_euca_nightlies.html).
+
+**Questions.** You can ask [questions on StackOverflow](http://stackoverflow.com/search?tab=active&q=eucalyptus) or [Quora](http://www.quora.com/Eucalyptus-Systems). 
+
+**Slides.** You can see [presentations on Slideshare](http://www.slideshare.net/eucalyptus/presentations).
+
+**Videos.** You can see how Eucalyptus works on [videos at Vimeo](https://vimeo.com/eucalyptus/videos).
 
 ### Follow Us
 
 [code on Github](http://github.com/eucalyptus) | [bugs on Jira](https://eucalyptus.atlassian.net) | [questions on StackOverflow](http://stackoverflow.com/search?tab=active&q=eucalyptus) | [discussions on Quora](http://www.quora.com/Eucalyptus-Systems) | [videos on Vimeo](https://vimeo.com/eucalyptus/videos) | [presentations on Slideshare](http://www.slideshare.net/eucalyptus/presentations) | [tweets on Twitter](http://twitter.com/eucalyptus) | [friends on Facebook](http://www.facebook.com/pages/Eucalyptus-Systems-Inc/164828240204708) | [contacts on LinkedIn](http://www.linkedin.com/company/eucalyptus-systems-inc.?trk=hb_tab_compy_id_420170) | [+1s on Google Plus](https://plus.google.com/110470516344014754435?prsrc=3)
-
-### AWS Compatibility
-
-* [[AWS Compatibility]] - tracking compatibility of all AWS ecosystem tools with Eucalyptus.
 
 ### Pages for Cloud Users
 
