@@ -60,3 +60,6 @@ Any questions can be sent to FIXME. :)
 
 * Provide the simplest functional example for storage: listing buckets
 * Provide the simplest functional example for launching an image
+
+***
+[[category.HOWTO]]
