@@ -36,6 +36,8 @@ Eucalyptus is a set of web services, modeled after and compatible with Amazon We
 
 **Nightlies.** You can install nightly builds of the latest Eucalyptus development builds by following [these instructions](http://www.eucalyptus.com/docs/latest/ig/installing_euca_nightlies.html).
 
+**People.** We've got great people working at Eucalyptus. Meet [[category.people]](some of them).
+
 **Questions.** You can ask [questions on StackOverflow](http://stackoverflow.com/search?tab=active&q=eucalyptus) or [Quora](http://www.quora.com/Eucalyptus-Systems). 
 
 **Slides.** You can see [presentations on Slideshare](http://www.slideshare.net/eucalyptus/presentations).
