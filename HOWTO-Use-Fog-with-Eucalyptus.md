@@ -50,7 +50,7 @@ end
 
 * It should be noted that storage calls will work *only* with Eucalyptus installations that have DNS properly configured; by convention, S3 requires bucket names to contain fully-qualified domain names, and Eucalyptus enforces this convention.
 
-* Another issue is: FIXME. :)
+* Fog 1.11.0 contained changes that don't currently work well with Walrus. For users interacting with Walrus, Fog 1.10.0 is currently recommended.  Details of this issue can be found at: https://eucalyptus.atlassian.net/browse/EUCA-6208
 
 ## Questions/Issues
 
