@@ -1,6 +1,6 @@
 ## Overview
 
-Fog is a Ruby library for controlling clouds. It is the underlying library used by popular cloud provisioning modules for both Puppet and Chef.  Fog provides API hooks for many different cloud providers; Eucalyptus uses the API hooks provided for AWS.
+Fog is a Ruby library for controlling clouds. It is the underlying library used by popular cloud provisioning modules for both Puppet and Chef.  Fog provides API hooks for many different cloud providers; Eucalyptus uses the API hooks provided for AWS.  Learn more about Fog at http://fog.io.
 
 ## Installation
 
