@@ -16,7 +16,7 @@ Eucalyptus is a set of web services, modeled after and compatible with Amazon We
 
 **AWS Comptibility.** Eucalyptus aims for 100% AWS compatibility with all services we offer. See our progress towards this goal on our [[AWS Compatibility]] page.
 
-**Blogs.** Read our blogs at [Planet Eucalyptus](http://planet.eucalyptus.com/).
+**Blogs.** Read our blogs at [Eucalyptus.com](http://www.eucalyptus.com/blog). Most blog postings are technical; some are business-oriented.
 
 **Bugs.** You can file [bugs on our Jira instance](https://eucalyptus.atlassian.net).
 
