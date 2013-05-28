@@ -1,6 +1,6 @@
 * [[EBS-Instances-Considerations-and-Large-Instance-Store-Images]]
 * [[EBS-Troubleshooting]]
-* [[EBS:-Changes-to-boot-from-EBS-in-3]]
+* [[EBS:-Boot-from-EBS-changes-in-3]]
 * [[EBS:-Import-a-Disk-Image]]
 * [[EBS:-Resize-a-Volume]]
 * [[index-of-categories]]
