@@ -50,18 +50,13 @@ end
 
 * It should be noted that storage calls will work *only* with Eucalyptus installations that have DNS properly configured; by convention, S3 requires bucket names to contain fully-qualified domain names, and Eucalyptus enforces this convention.
 
-* Fog 1.11.0 contained changes that don't currently work well with Walrus. For users interacting with Walrus, Fog 1.10.0 is currently recommended.  Details of this issue can be found at: https://eucalyptus.atlassian.net/browse/EUCA-6208
+* Fog 1.11.0 contains changes that don't currently work well with Walrus buckets. For users currently requiring Fog functionality with Walrus, version 1.10.0 is currently recommended.  Details of this issue can be found at: https://eucalyptus.atlassian.net/browse/EUCA-6208
 
 ## Questions/Issues
 
 If you have any questions about using Fog with Eucalyptus, please first check the [knowledgebase](https://engage.eucalyptus.com/customer/portal/articles/search?q=Fog).  
 
 If you do not find an answer in the knowledgebase, please [ask a question](https://engage.eucalyptus.com/customer/portal/questions/new?q=Fog).
-
-## TODOs
-
-* Provide the simplest functional example for storage: listing buckets
-* Provide the simplest functional example for launching an image
 
 ***
 [[category.HOWTO]]
