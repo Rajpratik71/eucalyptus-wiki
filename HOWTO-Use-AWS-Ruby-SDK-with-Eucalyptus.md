@@ -4,7 +4,7 @@ The AWS Ruby SDK is Amazon's official Ruby library for AWS services. The Ruby SD
 
 ## Installation
 
-The following command will install a patched version of the AWS Ruby SDK, which supports both AWS and Eucalyptus style of endpoint addressing: 'gem install aws-sdk-euca'
+The following command will install a patched version of the AWS Ruby SDK, which supports both AWS and Eucalyptus style of endpoint addressing: `gem install aws-sdk-euca`
 
 ## Configuration and Usage
 
