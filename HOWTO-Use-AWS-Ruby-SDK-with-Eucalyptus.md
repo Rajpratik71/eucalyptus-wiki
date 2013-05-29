@@ -36,7 +36,7 @@ require 'aws-sdk'
 conn = AWS::EC2.new({
 	:access_key_id => 'XXXXXXXXXXXXXXXXXXXXX',
 	:secret_access_key => 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
-	:ec2_endpoint => 'eucalyptus.your-eucalyptus-server.com'
+	:ec2_endpoint => 'your-eucalyptus-server.com'
         :ec2_service_path => '/services/Eucalyptus/',
         :ec2_port => 8773,
         :ssl_verify_peer => false,
