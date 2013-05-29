@@ -97,3 +97,6 @@ this:
 You can also click the **Assign** button and assign the endpoint to
 all requests.
 
+*****
+
+[[category.developer]]
