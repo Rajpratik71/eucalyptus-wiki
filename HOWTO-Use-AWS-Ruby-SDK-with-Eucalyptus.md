@@ -4,18 +4,47 @@ The AWS Ruby SDK is Amazon's official Ruby library for AWS services. The Ruby SD
 
 ## Installation
 
-The following installation instructions should work for any Linux distribution.
-
-1. Install the AWS Ruby SDK itself.  Eucalyptus supports version 1.8.5, which can be installed as follows: 'gem install aws-sdk -v 1.8.5' 
-1. Verify that the right version of the gem is installed by running 'gem list --local'.  
-1. Retrieve the patch from Eucalyptus. 'wget https://raw.github.com/eucalyptus/Eucalyptus-Scripts/master/AWS-Ruby-SDK-Patches/euca-aws-ruby-sdk.1.8.5.patch -O /tmp/euca-aws-ruby-sdk.1.8.5.patch'
-1. Apply the patch. Modify the path in the following command to the location of the ruby gems on your own system.  'cd /usr/lib/ruby/gems/1.8/gems/aws-sdk-1.8.5 && patch -p1 < /tmp/euca-aws-ruby-sdk.1.8.5.patch'
-
-The resulting patched Ruby gem should work for both Eucalyptus and AWS. 
+The following command will install a patched version of the AWS Ruby SDK, which supports both AWS and Eucalyptus style of endpoint addressing: 'gem install aws-sdk-euca'
 
 ## Configuration and Usage
 
-FIXME
+A very simple S3-style script that lists all Walrus buckets:
+
+'''
+require 'aws-sdk'
+ 
+storage_walrus = AWS::S3.new({
+	:access_key_id => 'XXXXXXXXXXXXXXXXXXXXX',
+	:secret_access_key => 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+	:s3_endpoint => 'http://your-eucalyptus-server.com',
+	:s3_port => 8773,
+	:s3_service_path => '/services/Walrus',
+	:use_ssl => false,
+	:s3_force_path_style => false,
+	:ssl_verify_peer => false,
+	:http_wire_trace => true
+})
+ 
+storage_walrus.buckets.map(&:name)
+'''
+
+And a very simple EC2-style script that shows available images:
+'''
+require 'aws-sdk'
+ 
+conn = AWS::EC2.new({
+	:access_key_id => 'XXXXXXXXXXXXXXXXXXXXX',
+	:secret_access_key => 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+	:ec2_endpoint => 'http://eucalyptus.your-eucalyptus-server.com'
+        :ec2_service_path => '/services/Eucalyptus/',
+        :ec2_port => 8773,
+        :ssl_verify_peer => false,
+        :use_ssl => false,
+        :http_wire_trace => true
+})
+
+conn.images.map(&:name)
+'''
 
 ## Known Issues
 
