@@ -1,4 +1,5 @@
 * [[AWS-Toolkit-for-Eclipse]]
+* [[HOWTO-Use-AWS-Java-SDK-with-Eucalyptus]]
 * [[HOWTO-Use-AWS-Ruby-SDK-with-Eucalyptus]]
 * [[HOWTO-Use-Fog-with-Eucalyptus]]
 * [[HowTo-use-s3cmd-with-Eucalyptus]]

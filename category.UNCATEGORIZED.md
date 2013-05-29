@@ -1,7 +1,6 @@
 * [[Cloud-Libs-Branch-Management]]
 * [[Developer-Resources]]
 * [[Emc-vnx-support-3]]
-* [[HOWTO-Use-AWS-Java-SDK-with-Eucalyptus]]
 * [[Hadoopalyptus]]
 * [[Home]]
 * [[Images-Project]]
