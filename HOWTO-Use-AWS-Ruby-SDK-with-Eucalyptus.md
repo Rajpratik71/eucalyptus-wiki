@@ -49,11 +49,11 @@ conn.images.map(&:name)
 
 ## Known Issues
 
-FIXME
+The S3 functions in the AWS Ruby SDK will only work with Eucalyptus versions newer than 3.3.
 
 ## Questions/Issues
 
-If you have any questions about using Fog with Eucalyptus, please first check the [knowledgebase](https://engage.eucalyptus.com/customer/portal/articles/search?q=Ruby).  
+If you have any questions about using the AWS Ruby SDK with Eucalyptus, please first check the [knowledgebase](https://engage.eucalyptus.com/customer/portal/articles/search?q=Ruby).  
 
 If you do not find an answer in the knowledgebase, please [ask a question](https://engage.eucalyptus.com/customer/portal/questions/new?q=Ruby).
 
