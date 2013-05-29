@@ -49,7 +49,7 @@ conn.images.map(&:name)
 
 ## Known Issues
 
-The S3 functions in the AWS Ruby SDK will only work with Eucalyptus versions newer than 3.3.
+The S3 functions in the AWS Ruby SDK will only work with Eucalyptus versions 3.3 and newer.
 
 ## Questions/Issues
 
