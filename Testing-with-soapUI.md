@@ -94,6 +94,8 @@ this:
 
 ![Endpoint Configuration](https://raw.github.com/mspaulding06/wiki-images/master/soapui/soapui_config_endpoint.png)
 
+For the **Outgoing WSS** column, select the **eucalyptus** configuration previously created.
+
 You can also click the **Assign** button and assign the endpoint to
 all requests.
 
