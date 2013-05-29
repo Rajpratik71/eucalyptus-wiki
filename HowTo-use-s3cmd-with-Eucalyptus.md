@@ -1,6 +1,6 @@
 ## Introduction
 
-This simple set of instructions would help you to, use s3cmd against Eucalyptus Walrus just like you could use it against AWS S3.
+The s3cmd tool is a simple command line tool that allows you to access AWS S3 and Eucalyptus Walrus. 
 
 ## Installation
 
