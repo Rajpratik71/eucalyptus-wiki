@@ -100,3 +100,4 @@ all requests.
 *****
 
 [[category.developer]]
+[[category.tools]]
