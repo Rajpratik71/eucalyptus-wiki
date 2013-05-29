@@ -16,7 +16,7 @@ require 'aws-sdk'
 storage_walrus = AWS::S3.new({
 	:access_key_id => 'XXXXXXXXXXXXXXXXXXXXX',
 	:secret_access_key => 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
-	:s3_endpoint => 'http://your-eucalyptus-server.com',
+	:s3_endpoint => 'your-eucalyptus-server.com',
 	:s3_port => 8773,
 	:s3_service_path => '/services/Walrus',
 	:use_ssl => false,
@@ -36,7 +36,7 @@ require 'aws-sdk'
 conn = AWS::EC2.new({
 	:access_key_id => 'XXXXXXXXXXXXXXXXXXXXX',
 	:secret_access_key => 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
-	:ec2_endpoint => 'http://eucalyptus.your-eucalyptus-server.com'
+	:ec2_endpoint => 'eucalyptus.your-eucalyptus-server.com'
         :ec2_service_path => '/services/Eucalyptus/',
         :ec2_port => 8773,
         :ssl_verify_peer => false,
