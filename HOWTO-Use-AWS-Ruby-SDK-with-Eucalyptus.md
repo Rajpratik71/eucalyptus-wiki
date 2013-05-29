@@ -10,7 +10,7 @@ The following command will install a patched version of the AWS Ruby SDK, which 
 
 A very simple S3-style script that lists all Walrus buckets:
 
-'''
+```
 require 'aws-sdk'
  
 storage_walrus = AWS::S3.new({
@@ -26,11 +26,11 @@ storage_walrus = AWS::S3.new({
 })
  
 storage_walrus.buckets.map(&:name)
-'''
+```
 
 And a very simple EC2-style script that shows available images:
 
-'''
+```
 require 'aws-sdk'
  
 conn = AWS::EC2.new({
@@ -45,7 +45,7 @@ conn = AWS::EC2.new({
 })
 
 conn.images.map(&:name)
-'''
+```
 
 ## Known Issues
 
