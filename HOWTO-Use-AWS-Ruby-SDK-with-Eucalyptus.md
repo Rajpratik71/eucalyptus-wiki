@@ -29,6 +29,7 @@ storage_walrus.buckets.map(&:name)
 '''
 
 And a very simple EC2-style script that shows available images:
+
 '''
 require 'aws-sdk'
  
