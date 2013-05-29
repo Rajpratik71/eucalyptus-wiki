@@ -1,4 +1,5 @@
 * [[Eucalyptus-Developer-Guide]]
+* [[Testing-with-soapUI]]
 * [[index-of-categories]]
 
 *****

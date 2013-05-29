@@ -3,6 +3,7 @@
 * [[Boto]]
 * [[Fog]]
 * [[HowTo-use-s3cmd-with-Eucalyptus]]
+* [[Testing-with-soapUI]]
 * [[Typica]]
 * [[ami2emi]]
 * [[index-of-categories]]

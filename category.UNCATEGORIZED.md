@@ -1,7 +1,7 @@
 * [[Cloud-Libs-Branch-Management]]
 * [[Developer-Resources]]
 * [[Emc-vnx-support-3]]
-* [[HOWTO-Use-AWS-Ruby-SDK-with-Eucalyptus]]
+* [[HOWTO-Use-AWS-Java-SDK-with-Eucalyptus]]
 * [[Hadoopalyptus]]
 * [[Home]]
 * [[Images-Project]]
