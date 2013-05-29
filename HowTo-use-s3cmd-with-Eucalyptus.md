@@ -1,6 +1,6 @@
 ## Introduction
 
-The s3cmd tool is a simple command line tool that allows you to access AWS S3 and Eucalyptus Walrus. 
+The s3cmd tool is a simple command line tool for accessing buckets in S3 (AWS) and Walrus (Eucalyptus).
 
 ## Installation
 
