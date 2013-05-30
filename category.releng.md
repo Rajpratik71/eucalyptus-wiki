@@ -1,3 +1,4 @@
+* [[Eucalyptus-version-checklist]]
 * [[List-of-packages]]
 * [[Promoting-a-Release-Build]]
 * [[Release-Checklist]]
