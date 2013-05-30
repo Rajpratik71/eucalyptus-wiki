@@ -68,5 +68,6 @@ Eucalyptus is a set of web services, modeled after and compatible with Amazon We
 * [Design Docs](wiki/DesignDocs) - Internal Eucalyptus design documentation.
 * [Debugging Eucalyptus Java-language components](wiki/Debugging-Eucalyptus-Java-language-components) - Advice on working with Eucalyptus from an IDE.
 * [Debugging Eucalyptus C-language components](wiki/Debugging-Eucalyptus-C-language-components) - Tools and advice to debug the components of Eucalyptus written in C: Node Controller and Cluster Controller.
+* [Image deployment and construction](wiki/Image-deployment-and-construction) - Details of how disk images are deployed in the system
 * [UI Guide](wiki/UI-Guide) - Information on the layout of the web UI and how to modify it.
 * [Developer Guide (incomplete)](wiki/Eucalyptus-Developer-Guide) - A work-in-progress guide to getting started on the Eucalyptus code and architecture.
