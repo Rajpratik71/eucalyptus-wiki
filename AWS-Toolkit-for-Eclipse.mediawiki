@@ -71,7 +71,7 @@ The information below describes the last known testing.
 
 VERSIONS IN PLAY
 * Eclipse: Juno Service Release 2
-* AWS Java SDK: 1.4.0
+* AWS Java SDK: 1.4.5
 * Eucalyptus: 3.3 Milestone 6
 
 
