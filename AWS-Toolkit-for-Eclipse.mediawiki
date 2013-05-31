@@ -24,9 +24,11 @@ Open the regions.xml file and add the following entry:
         <flag-icon>flags/usa.png</flag-icon>
         <min-toolkit-version>1.1.0.0</min-toolkit-version>
     <services>
-      <service name="S3">https://[your.euca.server]:8773/services/Walrus</service>
-      <service name="IAM">https://[your.euca.server]:8773/services/Euare</service>
-      <service name="EC2">https://[your.euca.server]:8773/services/Eucalyptus</service>
+      <service name="S3">http://[your.euca.server]:8773/services/Walrus/</service>
+      <service name="IAM">http://[your.euca.server]:8773/services/Euare/</service>
+      <service name="EC2">http://[your.euca.server]:8773/services/Eucalyptus/</service>
+      <service name="AutoScaling">http://[your.euca.server]:8773/services/AutoScaling/</service>
+      <service name="CloudWatch">http://[your.euca.server]:8773/services/CloudWatch/</service>
     </services>
   </region>
 ```
@@ -39,9 +41,11 @@ Note that you have to replace '[your.euca.server]' with the URL to your Eucalypt
         <flag-icon>flags/usa.png</flag-icon>
         <min-toolkit-version>1.1.0.0</min-toolkit-version>
     <services>
-      <service name="S3">https://communitycloud.eucalyptus.com:8773/services/Walrus</service>
-      <service name="IAM">https://communitycloud.eucalyptus.com:8773/services/Euare</service>
-      <service name="EC2">https://communitycloud.eucalyptus.com:8773/services/Eucalyptus</service>
+      <service name="S3">http://communitycloud.eucalyptus.com:8773/services/Walrus/</service>
+      <service name="IAM">http://communitycloud.eucalyptus.com:8773/services/Euare/</service>
+      <service name="EC2">http://communitycloud.eucalyptus.com:8773/services/Eucalyptus/</service>
+      <service name="AutoScaling">http://communitycloud.eucalyptus.com:8773/services/AutoScaling/</service>
+      <service name="CloudWatch">http://communitycloud.eucalyptus.com:8773/services/CloudWatch/</service>
     </services>
   </region>
 ```
@@ -63,28 +67,29 @@ The AWS Toolkit for Eclipse is usually tested each time there is a major or mino
 
 The information below describes the last known testing. 
 
-'''Latest Test: April 22, 2013'''
+'''Latest Test: May 30, 2013'''
 
 VERSIONS IN PLAY
-* Eclipse: Juno Service Release 1
+* Eclipse: Juno Service Release 2
 * AWS Java SDK: 1.4.0
-* Eucalyptus: 3.3 Milestone 5
+* Eucalyptus: 3.3 Milestone 6
 
 
 What currently works:
-* View instances, their status and public IP
+* View instances, their status and public IP, copy public DNS name
 * View, create, delete Volumes
 * View, create and delete Snapshots
 * View, create, modify and delete Security Groups
+* View image list [NOTE: Default filter is set to show only Amazon images. Recommend you change filter to "All"]
+* View list of S3 Buckets
 
 Remaining issues:
 
-* Regarding Images: Image list is always blank. [https://eucalyptus.atlassian.net/browse/EUCA-5827 EUCA-5827]
-* Cannot connect to Walrus, thus now S3 capabilities. This is a known issue and expected to be resolved by the time Eucalyptus 3.3 is released. [https://eucalyptus.atlassian.net/browse/EUCA-5275 EUCA-5275]
+* Cannot browse bucket contents
 
 These issues have not yet been filed because it's not yet known what level the problem is at (Eucalyptus, AWS Java API, or AWS Toolkit for Eclipse). Please update this page if you figure this out before me.
 
-* Regarding Instances: Cannot start, stop, terminate, copy public DNS name, attach/detach volumes.
+* Regarding Instances: Cannot start, stop, terminate, attach/detach volumes.
 * Regarding Instance Metadata: These columns are unexpectedly blank: State, Type, Availability Zone, Key Pair, Launch Time, Security Groups, Tags.
 * Simply viewing the instance list gets you an NPE. I mean the list appears, but something broke here because  the pop-up menu that should appear when selecting an instance doesn't even show. And selecting an instance from the list causes an "Unhandled event loop exception" in the ec2 UI code.
 
