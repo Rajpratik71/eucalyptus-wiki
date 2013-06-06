@@ -36,8 +36,8 @@ Software releases of major and minor versions (non-maintenance versions) also in
 
 # Post-GA
 
-* Create a branch from _master_ with the name _maint/\<version\>/testing_, where _version_ is the major and minor version number from the release (i.e., if the release was 3.3.0, then the new branch would be _maint/3.3/testing_).
-* Create a branch from _maint/<version>/testing_ called _maint/\<version\>/master_ (i.e., if the testing branch is called _maint/3.3/testing_, then the master branch is called _maint/3.3/master_).
+* Create a branch from _master_ with the name `maint/<version>/testing`, where _version_ is the major and minor version number from the release (i.e., if the release was 3.3.0, then the new branch would be `maint/3.3/testing`).
+* Create a branch from `maint/<version>/testing` called `maint/<version>/master` (i.e., if the testing branch is called `maint/3.3/testing`, then the master branch is called `maint/3.3/master`).
 * Repeat the first two steps for the Eucalyptus and Enterprise RPM spec file repositories.
 * Create build jobs on the internal Jenkins server that will build on each commit for both maintenance branches.
 
