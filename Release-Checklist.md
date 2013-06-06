@@ -1,6 +1,8 @@
-The release process generally occurs in two steps:  the final compose, and general availability.
+The release process generally occurs in two steps:  the _final compose_ (software is packaged, signed and provided to the support team), which is also known as _software availability_; and _general availability_ (software is made available for download to the public).
 
-# Final Compose (SA)
+Software releases of major and minor versions (non-maintenance versions) also incorporate a third step known as _post general availability_ in which steps are taken to prepare for the maintenance of the release.
+
+# Software Availability (SA)
 
 * Ensure version information in all source code is coherent using the [[Eucalyptus Version Checklist]]
 * Build final packages in Jenkins
@@ -31,6 +33,11 @@ The release process generally occurs in two steps:  the final compose, and gener
   * Pushing tags automatically causes sources to upload to GitHub; if the source release must be delayed then this step must be delayed as well.
 * Add n-v-r and commit data to [[List of Packages]] wiki page
 * For a new series (e.g. x.y.0) work with IT to update where the mirrorlist points to by default
+
+# Post-GA
+
+* Create a branch from _master_ with the name _maint/\<version\>/testing_, where _version_ is the major and minor version number from the release (i.e., if the release was 3.3.0, then the new branch would be _maint/3.3/testing_).
+* Create a branch from _maint/<version>/testing_ called _maint/\<version\>/master_ (i.e., if the testing branch is called _maint/3.3/testing_, then the master branch is called _maint/3.3/master_).
 
 *****
 
