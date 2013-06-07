@@ -18,3 +18,4 @@
 
 ## Gotchas
 * This section should show any caveats or known bugs that will trip up users in the field.
+[[Category:Training 3.3]]
