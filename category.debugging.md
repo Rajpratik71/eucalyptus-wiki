@@ -1,5 +1,6 @@
 * [[Debugging-Eucalyptus-C-language-components]]
 * [[Debugging-eucalyptus-Java-language-components]]
+* [[Image-deployment-and-construction]]
 * [[index-of-categories]]
 
 *****
