@@ -34,15 +34,15 @@ POC setup:
 * Once the instances are "InService" requests to the load balancer will round robin around the registered healthy instances.
 
 ## Administrative Tasks
-* How will the administrators configure the feature?
-** The first thing an admin must do is add an ELB servo VM and set "loadbalancing.loadbalancer_emi" property (done automatically when installing the servo vm via [recommended technique](https://github.com/eucalyptus/eucalyptus/wiki/ELB-Internals-Training)). Until this property is set the Load Balacning service will be in not ready state.
-** ELB supports IAM and quotas.  Administrators will need to give "allow" permissions for ELB for users who will use ELB. 
-* How will admins monitor/create/delete resources from other accounts?
-** A default describe lbs as cloud admin will not show all ELB's, use "eulb-describe-lbs verbose".
-** The installed ELB emi will be private to the cloud admin and **does not** need to be changed to public for other users to use ELB
-** ELB is implemented using autoscaling. As such, when a load balancer is created an associated launch config and auto scaling group are created to manage the launching of the ELB emi and ensuring the load balancer will be recreated in case the lb servo vm is terminated or otherwise becomes unhealthy.
-** There are a number of euca properties specific to ELB such as the LB servo emi name, type and number of vms to launch etc.  The only one required to be configured is the emi to use. This is done automatically when using the recommend ELB servo vm installation method.
-** When Load balancing across multiple zones there will be an ELB servo vm launched in each zone.
+### How will the administrators configure the feature?
+* The first thing an admin must do is add an ELB servo VM and set "loadbalancing.loadbalancer_emi" property (done automatically when installing the servo vm via [recommended technique](https://github.com/eucalyptus/eucalyptus/wiki/ELB-Internals-Training)). Until this property is set the Load Balacning service will be in not ready state.
+* ELB supports IAM and quotas.  Administrators will need to give "allow" permissions for ELB for users who will use ELB. 
+### How will admins monitor/create/delete resources from other accounts?
+* A default describe lbs as cloud admin will not show all ELB's, use "eulb-describe-lbs verbose".
+* The installed ELB emi will be private to the cloud admin and **does not** need to be changed to public for other users to use ELB
+* ELB is implemented using autoscaling. As such, when a load balancer is created an associated launch config and auto scaling group are created to manage the launching of the ELB emi and ensuring the load balancer will be recreated in case the lb servo vm is terminated or otherwise becomes unhealthy.
+* There are a number of euca properties specific to ELB such as the LB servo emi name, type and number of vms to launch etc.  The only one required to be configured is the emi to use. This is done automatically when using the recommend ELB servo vm installation method.
+* When Load balancing across multiple zones there will be an ELB servo vm launched in each zone.
 
 ## Debugging through log messages
 * Show in one of the use cases from above the log messages that are expected to be seen across the various components and how one can understand where an issue is stemming from.
