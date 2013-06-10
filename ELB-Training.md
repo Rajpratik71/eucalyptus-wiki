@@ -3,13 +3,14 @@ Elastic Load Balancing automatically distributes incoming application traffic ac
 
 #### Component level responsibilities
 ##### Involvement of each Eucalyptus component is wrt to the feature. 
-* ELB is built using our implementation of autoscaling.  As such, each ELB is actually backed by a launch config and autoscaling group. 
+* ELB is built using our implementation of autoscaling.  As such, each ELB is actually backed by a launch config and autoscaling group.
+
 ##### Flow of a user request
 * Typically a user will: 
 1. create a load balancer (this includes the health check and a default listener)
 1. register 1 or more instances to the load balancer
 1. the load balancer will be the front facing host taking care of spreading load to all registered healthy instances
- 
+
 ##### Actions/processes are happening in the background at all times
 * At all times autoscaling service will be checking up with the ELB vm as defined by it's autoscaling group to ensure it is healthy and the correct number of servo VM instances are running. If at any time the servo vm becomes unhealty as determined by it's autoscling group a new servo vm will be launched to replace it.
 * ELB will also be monitoring the health of instances registered to it. If at any time an instance is unhealthy requests will no longer be routed to that instance.
