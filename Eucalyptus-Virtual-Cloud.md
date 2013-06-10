@@ -8,6 +8,7 @@ The purpose of this document is to provide the necessary information to set up a
 
 + [KVM](http://www.linux-kvm.org/page/Main_Page) supports nested virtualization on Fedora, but not CentOS/RHEL
   - <http://kashyapc.wordpress.com/2013/02/12/nested-virtualization-with-kvm-and-intel-on-fedora-18/>
+  - <http://www.rdoxenham.com/?p=275>
 + VMWare Player supports nested virtualization, but there might be legal issues here
   - <http://communities.vmware.com/docs/DOC-8970>
   - <https://github.com/mitchellh/vagrant/issues/1774>
