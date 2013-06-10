@@ -38,4 +38,5 @@ Index of Categories
 * [[category.reporting]]
 * [[category.stats]]
 * [[category.tools]]
+* [[category.Training]]
 * [[category.ui]]
