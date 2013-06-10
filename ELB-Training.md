@@ -1,5 +1,6 @@
 ## Feature Overview
 Elastic Load Balancing automatically distributes incoming application traffic across multiple instances. It enables you to achieve even greater fault tolerance in your applications, seamlessly providing the amount of load balancing capacity needed in response to incoming application traffic. Elastic Load Balancing detects unhealthy instances within a pool and automatically reroutes traffic to healthy instances until the unhealthy instances have been restored.
+An ELB must have a health check type and at least 1 listener.  The health check type defines the protocol and port along with tolerance levels for monitoring the health of instances registered to the load balancer.  listeners define what traffic is received by the load balancer and where that traffic is routed to registered instances.  For instance the health check type may just be TCP port 22 and ensures that registered instances can be reached at that port within given tolerances.  A listener listening for HTTP port 80 to HTTP 80 will accept HTTP traffic on port 80 and forward it as HTTP to port 80 to registered instances.  
 
 #### Component level responsibilities
 ##### Involvement of each Eucalyptus component is wrt to the feature. 
