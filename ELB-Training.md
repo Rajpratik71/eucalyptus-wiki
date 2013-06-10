@@ -74,51 +74,51 @@ POC setup:
 
 ## CLI Examples
 * eulb-apply-security-groups-to-lb
-[root@eucahost-51-29 ~]# eulb-apply-security-groups-to-lb -g my-group LoadStar
+> [root@eucahost-51-29 ~]# eulb-apply-security-groups-to-lb -g my-group LoadStar
 SECURITY_GROUPS
 
 * eulb-configure-healthcheck
-[root@eucahost-51-20 ~]# eulb-configure-healthcheck --healthy-threshold=30 --interval=60 -t HTTP:80/index.html --timeout=120 --unhealthy-threshold 360 TripleBeam
+> [root@eucahost-51-20 ~]# eulb-configure-healthcheck --healthy-threshold=30 --interval=60 -t HTTP:80/index.html --timeout=120 --unhealthy-threshold 360 TripleBeam
 HEALTH_CHECK     HTTP:80/index.html     60     120     30     360
 
 * eulb-create-lb
-[root@eucahost-51-29 ~]# eulb-create-lb -z PARTI00 -l "lb-port=80, protocol=HTTP, instance-port=80, instance-protocol=HTTP" LoadStar
+> [root@eucahost-51-29 ~]# eulb-create-lb -z PARTI00 -l "lb-port=80, protocol=HTTP, instance-port=80, instance-protocol=HTTP" LoadStar
 DNS_NAME     LoadStar-972528928292.lb.localhost
 
 * eulb-create-lb-listeners
-[root@eucahost-51-20 ~]# eulb-create-lb-listeners -l "lb-port=22, protocol=TCP, instance-port=22, instance-protocol=TCP" LoadStar
+> [root@eucahost-51-20 ~]# eulb-create-lb-listeners -l "lb-port=22, protocol=TCP, instance-port=22, instance-protocol=TCP" LoadStar
 
 * eulb-delete-lb
-[root@c-30 ~]# eulb-delete-lb LoadStar
+> [root@c-30 ~]# eulb-delete-lb LoadStar
 
 * eulb-delete-lb-listeners
-[root@eucahost-51-20 ~]# eulb-delete-lb-listeners -l 22 TripleBeam
+> [root@eucahost-51-20 ~]# eulb-delete-lb-listeners -l 22 TripleBeam
 
 * eulb-deregister-instances-from-lb
-[root@eucahost-51-20 ~]# eulb-deregister-instances-from-lb --instances i-50683D12 TripleBeam
+> [root@eucahost-51-20 ~]# eulb-deregister-instances-from-lb --instances i-50683D12 TripleBeam
 
 * eulb-describe-instance-health
-[root@c-07 ~]# eulb-describe-instance-health LoadStar
-INSTANCE     i-59A041B8     InService
-INSTANCE     i-DEB03DDF     InService
-INSTANCE     i-40CC3EC1     InService
-INSTANCE     i-71DD408F     InService
-INSTANCE     i-B0733FFF     InService
+> [root@c-07 ~]# eulb-describe-instance-health LoadStar
+> INSTANCE     i-59A041B8     InService
+> INSTANCE     i-DEB03DDF     InService
+> INSTANCE     i-40CC3EC1     InService
+> INSTANCE     i-71DD408F     InService
+> INSTANCE     i-B0733FFF     InService
 
 *eulb-describe-lbs
-[root@eucahost-51-29 ~]# eulb-describe-lbs
-LOAD_BALANCER     LoadStar     LoadStar-972528928292.lb.localhost     2013-05-15T23:31:32.806Z
-[root@eucahost-51-29 ~]# eulb-describe-lbs --show-long
-LOAD_BALANCER     LoadStar     LoadStar-972528928292.lb.localhost               {interval=30,target=TCP:80,timeout=5,healthy-threshold=3,unhealthy-threshold=2}     PARTI00               i-1DF9440E     {protocol=HTTP,lb-port=80,instance-protocol=HTTP,instance-port=80}                         {owner-alias=972528928292,group-name=euca-internal-972528928292-LoadStar}          2013-05-15T23:31:32.806Z
+> [root@eucahost-51-29 ~]# eulb-describe-lbs
+> LOAD_BALANCER     LoadStar     LoadStar-972528928292.lb.localhost     2013-05-15T23:31:32.806Z
+> [root@eucahost-51-29 ~]# eulb-describe-lbs --show-long
+> LOAD_BALANCER     LoadStar     LoadStar-972528928292.lb.localhost               {interval=30,target=TCP:80,timeout=5,healthy-threshold=3,unhealthy-threshold=2}     PARTI00               i-1DF9440E     {protocol=HTTP,lb-port=80,instance-protocol=HTTP,instance-port=80}                         {owner-alias=972528928292,group-name=euca-internal-972528928292-LoadStar}          2013-05-15T23:31:32.806Z
 * eulb-disable-zones-for-lb
-[root@c-07 ~]# eulb-disable-zones-for-lb -z PARTI00 LoadStar-1-AZ
-AVAILABILITY_ZONES     PARTI01
+> [root@c-07 ~]# eulb-disable-zones-for-lb -z PARTI00 LoadStar-1-AZ
+> AVAILABILITY_ZONES     PARTI01
 * eulb-enable-zones-for-lb
-[root@c-07 ~]# eulb-enable-zones-for-lb -z PARTI00 LoadStar-1-AZ
-AVAILABILITY_ZONES     PARTI01, PARTI00
+> [root@c-07 ~]# eulb-enable-zones-for-lb -z PARTI00 LoadStar-1-AZ
+> AVAILABILITY_ZONES     PARTI01, PARTI00
 * eulb-register-instances-with-lb
-[root@eucahost-51-29 ~]# eulb-register-instances-with-lb --instances i-1DF9440E LoadStar
-INSTANCE     i-1DF9440E
+> [root@eucahost-51-29 ~]# eulb-register-instances-with-lb --instances i-1DF9440E LoadStar
+> INSTANCE     i-1DF9440E
 
 *****
 [[category.Training]]
