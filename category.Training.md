@@ -1,5 +1,6 @@
 * [[Autoscaling-Training]]
 * [[ELB-Training]]
+* [[User-Console-Training]]
 * [[index-of-categories]]
 
 *****
