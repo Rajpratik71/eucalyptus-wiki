@@ -7,7 +7,7 @@ Elastic Load Balancing automatically distributes incoming application traffic ac
 
 ##### Typical flow of a user request
 1. create a load balancer (this includes the health check and a default listener)
-> eulb-create-lb -z PARTI00 -l "lb-port=22, protocol=TCP, instance-port=22, instance-protocol=TCP" My-LB
+> eulb-create-lb -z PARTI00 -l "lb-port=80, protocol=HTTP, instance-port=80, instance-protocol=HTTP" My-LB
 
 2. register 1 or more instances to the load balancer
 > eulb-register-instances-with-lb --instances i-1DF9440E My-LB
