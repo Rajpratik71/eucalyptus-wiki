@@ -8,9 +8,11 @@ Elastic Load Balancing automatically distributes incoming application traffic ac
 ##### Typical flow of a user request
 1. create a load balancer (this includes the health check and a default listener)
 > eulb-create-lb -z PARTI00 -l "lb-port=22, protocol=TCP, instance-port=22, instance-protocol=TCP" My-LB
-1. register 1 or more instances to the load balancer
+
+2. register 1 or more instances to the load balancer
 > eulb-register-instances-with-lb --instances i-1DF9440E My-LB
-1. the load balancer will be the front facing host taking care of spreading load to all registered healthy instances
+
+3. the load balancer will be the front facing host taking care of spreading load to all registered healthy instances
 
 ##### Actions/processes are happening in the background at all times
 * At all times autoscaling service will be checking up with the ELB vm as defined by it's autoscaling group to ensure it is healthy and the correct number of servo VM instances are running. If at any time the servo vm becomes unhealty as determined by it's autoscling group a new servo vm will be launched to replace it.
@@ -110,12 +112,15 @@ DNS_NAME     LoadStar-972528928292.lb.localhost
 > LOAD_BALANCER     LoadStar     LoadStar-972528928292.lb.localhost     2013-05-15T23:31:32.806Z
 > [root@eucahost-51-29 ~]# eulb-describe-lbs --show-long
 > LOAD_BALANCER     LoadStar     LoadStar-972528928292.lb.localhost               {interval=30,target=TCP:80,timeout=5,healthy-threshold=3,unhealthy-threshold=2}     PARTI00               i-1DF9440E     {protocol=HTTP,lb-port=80,instance-protocol=HTTP,instance-port=80}                         {owner-alias=972528928292,group-name=euca-internal-972528928292-LoadStar}          2013-05-15T23:31:32.806Z
+
 * eulb-disable-zones-for-lb
 > [root@c-07 ~]# eulb-disable-zones-for-lb -z PARTI00 LoadStar-1-AZ
 > AVAILABILITY_ZONES     PARTI01
+
 * eulb-enable-zones-for-lb
 > [root@c-07 ~]# eulb-enable-zones-for-lb -z PARTI00 LoadStar-1-AZ
 > AVAILABILITY_ZONES     PARTI01, PARTI00
+
 * eulb-register-instances-with-lb
 > [root@eucahost-51-29 ~]# eulb-register-instances-with-lb --instances i-1DF9440E LoadStar
 > INSTANCE     i-1DF9440E
