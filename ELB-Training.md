@@ -7,7 +7,9 @@ Elastic Load Balancing automatically distributes incoming application traffic ac
 
 ##### Typical flow of a user request
 1. create a load balancer (this includes the health check and a default listener)
+> eulb-create-lb -z PARTI00 -l "lb-port=22, protocol=TCP, instance-port=22, instance-protocol=TCP" My-LB
 1. register 1 or more instances to the load balancer
+> eulb-register-instances-with-lb --instances i-1DF9440E My-LB
 1. the load balancer will be the front facing host taking care of spreading load to all registered healthy instances
 
 ##### Actions/processes are happening in the background at all times
@@ -69,6 +71,54 @@ POC setup:
 * All load balancers launch config and autoscaling group belong to cloud admin and **NOT** the user. Thus, as the user you cannot see the launch config, autoscaling group or VM servo instance associated with your load balancer.
 * You can define how many servo VMs to launch per ELB.  This setting takes effect for all subsequently created ELBs
 * As a cloud admin you can scale out an already running load balancer as you have access to the autoscaling group. Just change desired capacity to the number of servo VMs you desire. 
+
+## CLI Examples
+* eulb-apply-security-groups-to-lb
+[root@eucahost-51-29 ~]# eulb-apply-security-groups-to-lb -g my-group LoadStar
+SECURITY_GROUPS
+
+* eulb-configure-healthcheck
+[root@eucahost-51-20 ~]# eulb-configure-healthcheck --healthy-threshold=30 --interval=60 -t HTTP:80/index.html --timeout=120 --unhealthy-threshold 360 TripleBeam
+HEALTH_CHECK     HTTP:80/index.html     60     120     30     360
+
+* eulb-create-lb
+[root@eucahost-51-29 ~]# eulb-create-lb -z PARTI00 -l "lb-port=80, protocol=HTTP, instance-port=80, instance-protocol=HTTP" LoadStar
+DNS_NAME     LoadStar-972528928292.lb.localhost
+
+* eulb-create-lb-listeners
+[root@eucahost-51-20 ~]# eulb-create-lb-listeners -l "lb-port=22, protocol=TCP, instance-port=22, instance-protocol=TCP" LoadStar
+
+* eulb-delete-lb
+[root@c-30 ~]# eulb-delete-lb LoadStar
+
+* eulb-delete-lb-listeners
+[root@eucahost-51-20 ~]# eulb-delete-lb-listeners -l 22 TripleBeam
+
+* eulb-deregister-instances-from-lb
+[root@eucahost-51-20 ~]# eulb-deregister-instances-from-lb --instances i-50683D12 TripleBeam
+
+* eulb-describe-instance-health
+[root@c-07 ~]# eulb-describe-instance-health LoadStar
+INSTANCE     i-59A041B8     InService
+INSTANCE     i-DEB03DDF     InService
+INSTANCE     i-40CC3EC1     InService
+INSTANCE     i-71DD408F     InService
+INSTANCE     i-B0733FFF     InService
+
+*eulb-describe-lbs
+[root@eucahost-51-29 ~]# eulb-describe-lbs
+LOAD_BALANCER     LoadStar     LoadStar-972528928292.lb.localhost     2013-05-15T23:31:32.806Z
+[root@eucahost-51-29 ~]# eulb-describe-lbs --show-long
+LOAD_BALANCER     LoadStar     LoadStar-972528928292.lb.localhost               {interval=30,target=TCP:80,timeout=5,healthy-threshold=3,unhealthy-threshold=2}     PARTI00               i-1DF9440E     {protocol=HTTP,lb-port=80,instance-protocol=HTTP,instance-port=80}                         {owner-alias=972528928292,group-name=euca-internal-972528928292-LoadStar}          2013-05-15T23:31:32.806Z
+* eulb-disable-zones-for-lb
+[root@c-07 ~]# eulb-disable-zones-for-lb -z PARTI00 LoadStar-1-AZ
+AVAILABILITY_ZONES     PARTI01
+* eulb-enable-zones-for-lb
+[root@c-07 ~]# eulb-enable-zones-for-lb -z PARTI00 LoadStar-1-AZ
+AVAILABILITY_ZONES     PARTI01, PARTI00
+* eulb-register-instances-with-lb
+[root@eucahost-51-29 ~]# eulb-register-instances-with-lb --instances i-1DF9440E LoadStar
+INSTANCE     i-1DF9440E
 
 *****
 [[category.Training]]
