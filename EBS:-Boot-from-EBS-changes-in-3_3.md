@@ -121,6 +121,8 @@ Login to the VM instance and query the metadata for block device mappings
 [EUCA-4081](https://eucalyptus.atlassian.net/browse/EUCA-4081) metadata service incorrect for BFEBS instance  
 [EUCA-4932](https://eucalyptus.atlassian.net/browse/EUCA-4932) Failed to launch instance after deleting snapshot associated with an image as non-root ebs mapping  
 [EUCA-3271](https://eucalyptus.atlassian.net/browse/EUCA-3271) EBS Backed instance always have an ephemeral disk
+[EUCA-3461](https://eucalyptus.atlassian.net/browse/EUCA-3461) BFEBS instance has a redundant device /dev/vdb
+[EUCA-5869](https://eucalyptus.atlassian.net/browse/EUCA-5869) Image attributes shows hard coded block device mappings
 [TOOLS-180](https://eucalyptus.atlassian.net/browse/TOOLS-180) euca-register/euca-run-instance: query parameter to suppress block device mapping is not populated  
 [TOOLS-181](https://eucalyptus.atlassian.net/browse/TOOLS-181) euca-describe-images does not list all the device mappings  
 [TOOLS-182](https://eucalyptus.atlassian.net/browse/TOOLS-182) euca-register request with both --snapshot and -b options tends to muck up the list of device mappings  
