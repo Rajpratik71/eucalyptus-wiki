@@ -5,8 +5,7 @@ Elastic Load Balancing automatically distributes incoming application traffic ac
 ##### Involvement of each Eucalyptus component is wrt to the feature. 
 * ELB is built using our implementation of autoscaling.  As such, each ELB is actually backed by a launch config and autoscaling group.
 
-##### Flow of a user request
-Typically a user will: 
+##### Typical flow of a user request
 1. create a load balancer (this includes the health check and a default listener)
 1. register 1 or more instances to the load balancer
 1. the load balancer will be the front facing host taking care of spreading load to all registered healthy instances
