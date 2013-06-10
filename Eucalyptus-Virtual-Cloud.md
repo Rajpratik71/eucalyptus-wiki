@@ -29,6 +29,17 @@ The purpose of this document is to provide the necessary information to set up a
 
 These are our top two, but getting this working on other platforms would be an awesome bonus.
 
+## Check for nested virtualization in KVM
+
+If you'd like to check your system to see if it supports nested virtualization in KVM, you can check the parameters exposed by the kernel module. If you're using an Intel chip, then the module is `kvm-intel`; or if you're using an AMD chip then the module is `kvm-amd`.
+
+Here's an example check:
+
+    ~% modinfo kvm-intel | grep nested
+    parm:           nested:bool
+
+In this example (run on Fedora 18) we can see that the `nested` parameter is available and so our platform supports nested virtualization with KVM.
+
 # Goals
 
 1. Absolutely _NO_ configuration necessary to have a working demo cloud for the user to explore.
