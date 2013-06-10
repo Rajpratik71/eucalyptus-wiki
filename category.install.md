@@ -1,3 +1,4 @@
+* [[Eucalyptus-Virtual-Cloud]]
 * [[Fedora-18-Single-System-Install]]
 * [[index-of-categories]]
 
