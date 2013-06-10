@@ -33,6 +33,9 @@ These are our top two, but getting this working on other platforms would be an a
 1. Absolutely _NO_ configuration necessary to have a working demo cloud for the user to explore.
 2. Simple bridge setup on the host. While, yes, we'd like there to be no configuration, a bridge is still required to provide network connectivity to the EVC. We should at least have a script that configures this for the user.
 
+# Resources
+
+* How to install CIAB into a VM - <http://agrimmsreality.blogspot.com/2013/04/cloud-in-box-in-vm-in-nutshell.html>
 
 *****
 
