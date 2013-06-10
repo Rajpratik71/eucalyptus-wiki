@@ -1,6 +1,7 @@
 * [[AWS-SDK-for-PHP]]
 * [[Ansible]]
 * [[Boto]]
+* [[Eucalyptus-Virtual-Cloud]]
 * [[Fog]]
 * [[HowTo-use-s3cmd-with-Eucalyptus]]
 * [[Testing-with-soapUI]]
