@@ -25,7 +25,6 @@ Index of Categories
 * [[category.ha]]
 * [[category.hackfests]]
 * [[category.images]]
-* [[category.images]]
 * [[category.infrastructure]]
 * [[category.install]]
 * [[category.legacy]]
@@ -38,5 +37,4 @@ Index of Categories
 * [[category.reporting]]
 * [[category.stats]]
 * [[category.tools]]
-* [[category.Training]]
 * [[category.ui]]
