@@ -1,8 +1,10 @@
 ## Feature Overview
-*Tagging
+
+* Tagging
+
 User can add up to 10 tags to the following resources: images, instances, volumes, snapshots, security groups. Resources can be filtered using search bar by the key and value of their tag. The tags can be added/deleted/edited by selecting the resource and then clicking "Manage tags" in the "More actions" menu. Tags can be viewed in the "Tags" expando by clicking on the resource and selecting "Tags".
 
-*Dynamic search bar
+* Dynamic search bar
 
 #### Component level responsibilities
 * Talk about what the involvement of each Eucalyptus component is wrt to the feature. 
