@@ -76,7 +76,12 @@ POC setup:
 * You can define how many servo VMs to launch per ELB.  This setting takes effect for all subsequently created ELBs
 * As a cloud admin you can scale out an already running load balancer as you have access to the autoscaling group. Just change desired capacity to the number of servo VMs you desire. 
 
-## CLI Examples
+### Useful links
+* [ELB Design Doc](https://github.com/eucalyptus/architecture/wiki/elb-3.3-elb-design)
+* [Early ELB FAQ](https://github.com/eucalyptus/eucalyptus/wiki/ELB-FAQ)
+* [ELB Servo VM Wiki](https://github.com/eucalyptus/eucalyptus/wiki/ELB-Internals-Training)
+
+### CLI Examples
 * eulb-apply-security-groups-to-lb
 > [root@eucahost-51-29 ~]# eulb-apply-security-groups-to-lb -g my-group LoadStar
 SECURITY_GROUPS
