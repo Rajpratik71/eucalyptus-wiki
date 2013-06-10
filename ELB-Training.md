@@ -82,6 +82,7 @@ POC setup:
 * [ELB Servo VM Wiki](https://github.com/eucalyptus/eucalyptus/wiki/ELB-Internals-Training)
 * [AutoScaling Design Doc](https://github.com/eucalyptus/architecture/wiki/autoscaling-3.3-design#wiki-IAM-2)
 * [AutoScaling Traing](https://github.com/eucalyptus/eucalyptus/wiki/Autoscaling-Training)
+* [AWS ELB Overview](https://aws.amazon.com/elasticloadbalancing/)
 
 ### CLI Examples
 * eulb-apply-security-groups-to-lb
