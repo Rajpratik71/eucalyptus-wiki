@@ -13,7 +13,8 @@ Elastic Load Balancing automatically distributes incoming application traffic ac
 ##### Actions/processes are happening in the background at all times
 * At all times autoscaling service will be checking up with the ELB vm as defined by it's autoscaling group to ensure it is healthy and the correct number of servo VM instances are running. If at any time the servo vm becomes unhealty as determined by it's autoscling group a new servo vm will be launched to replace it.
 * ELB will also be monitoring the health of instances registered to it. If at any time an instance is unhealthy requests will no longer be routed to that instance.
-* By default monitoring is enabled for ELB. There will be ELB metrics submission to cloud watch through the life of the ELB. (This does not mean that instances registered to the ELB have monitoring enabled. They will have to have monitoring turned on if you want EC2 metrics from the instances) 
+* By default monitoring is enabled for ELB. There will be ELB metrics submission to cloud watch through the life of the ELB. (This does not mean that instances registered to the ELB have monitoring enabled. They will have to have monitoring turned on if you want EC2 metrics from the instances)
+* When an ELB is created it also gets its own security group. This security group will automatically get allow rules any time a listener is added to an ELB. Similarly if a listener is removed the rule for that protocol and port is removed as well.
 
 #### User level operation and tooling
 ##### How do end users interact with the feature?
@@ -53,10 +54,21 @@ POC setup:
 * When Load balancing across multiple zones there will be an ELB servo vm launched in each zone.
 
 ## Debugging through log messages
-* Show in one of the use cases from above the log messages that are expected to be seen across the various components and how one can understand where an issue is stemming from.
+* If the servo VM is not launching check that there are cloud resources available
+* You can check scaling activities to see if it was/is an issue with scaling "euscale-describe-scaling-activities" If scaling was unsuccessful it should keep retrying.
+* If the servo VM is running but instances are not reaching InService or go to out of service check that the security group associated with the instance allows comms on the health check protocol and port
+* If requests are not reaching registered instances you can log onto the servo VM and check that Haproxy is running and servo script is running
+** load-balancer-servo and haproxy process are running?
+** /var/log/load-balancer-servo/servo.log
+** /var/lib/load-balancer-servo/servo-haproxy.conf 
 
 ## Gotchas
-* This section should show any caveats or known bugs that will trip up users in the field.
+* ELB servo VM property must be set
+* Users attempting to use ELB must have proper allow policy for ELB
+* Instances registered to an ELB must have an ingress rule defined for the the health check protocol and port that the ELB is using.  Same goes for the listener. If an instances security group does not allow TCP on port 80 then requests to an ELB with an HTTP80->80 listener will fail because it cannot reach the instance.
+* All load balancers launch config and autoscaling group belong to cloud admin and **NOT** the user. Thus, as the user you cannot see the launch config, autoscaling group or VM servo instance associated with your load balancer.
+* You can define how many servo VMs to launch per ELB.  This setting takes effect for all subsequently created ELBs
+* As a cloud admin you can scale out an already running load balancer as you have access to the autoscaling group. Just change desired capacity to the number of servo VMs you desire. 
 
 *****
 [[category.Training]]
