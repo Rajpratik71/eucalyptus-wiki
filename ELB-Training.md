@@ -108,8 +108,6 @@ DNS_NAME     LoadStar-972528928292.lb.localhost
 > INSTANCE     i-B0733FFF     InService
 
 *eulb-describe-lbs
-> [root@eucahost-51-29 ~]# eulb-describe-lbs
-> LOAD_BALANCER     LoadStar     LoadStar-972528928292.lb.localhost     2013-05-15T23:31:32.806Z
 > [root@eucahost-51-29 ~]# eulb-describe-lbs --show-long
 > LOAD_BALANCER     LoadStar     LoadStar-972528928292.lb.localhost               {interval=30,target=TCP:80,timeout=5,healthy-threshold=3,unhealthy-threshold=2}     PARTI00               i-1DF9440E     {protocol=HTTP,lb-port=80,instance-protocol=HTTP,instance-port=80}                         {owner-alias=972528928292,group-name=euca-internal-972528928292-LoadStar}          2013-05-15T23:31:32.806Z
 
