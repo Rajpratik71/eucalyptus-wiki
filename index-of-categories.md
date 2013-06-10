@@ -25,7 +25,7 @@ Index of Categories
 * [[category.ha]]
 * [[category.hackfests]]
 * [[category.images]]
-* [[category.images]] [[category.ebs]]
+* [[category.images]]
 * [[category.infrastructure]]
 * [[category.install]]
 * [[category.legacy]]
