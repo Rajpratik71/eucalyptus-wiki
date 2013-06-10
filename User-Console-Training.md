@@ -17,7 +17,12 @@
 * Show in one of the use cases from above the log messages that are expected to be seen across the various components and how one can understand where an issue is stemming from.
 
 ## Gotchas
-* This section should show any caveats or known bugs that will trip up users in the field.
+
+* Search bar works correctly when filtering by one subject. Filtering by multiple subjects, for instance Status and Tag, is scheduled for 3.3.1.
+
+* In multi cluster mode, on dashboard, filtering by availability zone does not work, the fix is scheduled for 3.3.1.
+
+
 
 *****
 [[category.Training]]
