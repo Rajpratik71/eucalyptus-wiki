@@ -35,4 +35,6 @@ These are our top two, but getting this working on other platforms would be an a
 
 
 *****
+
+[[category.install]]
 [[category.tools]]
