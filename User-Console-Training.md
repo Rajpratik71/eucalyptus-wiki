@@ -4,12 +4,16 @@
 
 User can add up to 10 tags to the following resources: images, instances, volumes, snapshots, security groups. Resources can be filtered using search bar by the key and value of their tag. The tags can be added/deleted/edited by selecting the resource and then clicking "Manage tags" in the "More actions" menu. Tags can be viewed in the "Tags" expando by clicking on the resource and then clicking the Tags tab.
 
-* Dynamic search bar 
+* Search bar 
 
-On all landing pages there is search bar that allows finding resources based on one or more filters. 
-All possible filter options on the search bar a viewed on click.
+The search bar allows filtering resource lists using on one or more filters. 
+All possible filter options on the search bar are viewed on click.
 Selecting a filter will expose a menu with a list of valid filter values
 that you can select by pressing the enter key or clicking.
+
+For example: 
+
+You can filter the list of instances by selecting the filtering criteria from the filtering drop-down list boxes.
 
 * Changing password
 
