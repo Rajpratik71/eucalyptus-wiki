@@ -22,7 +22,7 @@ At all times an autoscaling group is monitoring the health of its instances and 
 
 #### User level operation and tooling
 ##### How do end users interact with the feature?
-Users can interact with AutoScaling in a number of ways.  Euca2ools 3, EucaLobo, boto and AWS Java SDK to name a few.  The new Euca2ools 3 delivers a whole suite of commandline tooling for autoscaling.  Teh new autoscaling commands begin with the prefic "euscale-" pronounced "you scale"
+Users can interact with AutoScaling in a number of ways.  Euca2ools 3, EucaLobo, boto and AWS Java SDK to name a few.  The new Euca2ools 3 delivers a whole suite of commandline tooling for autoscaling.  The new autoscaling commands begin with the prefic "euscale-" pronounced "you scale"
 
 #### A few typical use cases for the feature end-to-end
 1. Create a launch configuration:
@@ -40,11 +40,27 @@ ACTIVITY	94633c90-0784-431f-8178-7030f47af331	2013-06-11T00:10:27.193Z	My-ASG	Su
 
 ## Administrative Tasks
 * How will the administrators configure the feature?
-* How will admins monitor/create/delete resources from other accounts?
+An admin will have to create a policy for users to allow access to autoscaling
+example:
+> {
+   "Statement":[{
+      "Effect":"Allow",
+      "Action":"autoscaling:*LaunchConfiguration*",
+      "Resource":"*"
+      }
+   ]
+}
 
-## Debugging through log messages
-* Checking euscale-scaling-activities will give you an idea if scaling had a problem for whatever reason
-*
+* How will admins monitor/create/delete resources from other accounts?
+The cloud admin cal view all launch configs and autoscaling groups defined in a cloud across all accounts using:
+> euscale-describe-launch-configs verbose 
+
+### Debugging through log messages
+* Checking "euscale-describe-scaling-activities" can give you an idea if scaling that has been triggered including the reason in the case of a scaling failure
+
+## Useful Links
+* [Auto Scaling Design Doc](https://github.com/eucalyptus/architecture/wiki/autoscaling-3.3-design#wiki-IAM-2)
+* [AWS AutoScaling OVerview](https://aws.amazon.com/autoscaling/)
 
 ## Gotchas
 * This is autoscaling. Instances belonging to an autoscaling group that are terminated will be replaced.
