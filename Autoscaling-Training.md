@@ -7,6 +7,7 @@ Auto scaling is a new service in Eucalyptus. It is tightly integrated with Cloud
 * Are there any new components being added
 The new component service is called AutoScaling. At this time the service is colocated with the CLC
 * What is the flow of a user request
+
 At its core auto scaling relies on 2 fundamental objects: a launch configuration and an autoscaling group. the very basis for autoscaling is the launch configuration and is required for autoscaling. 
 
 A launch configuration is the blue print for what an autoscaling group will launch when it needs to scale.  At a minimum a launch config defines the emi, the vm type and name of the launch config. Once a launch configuration is created it can be used as the base for an autoscaling group.
