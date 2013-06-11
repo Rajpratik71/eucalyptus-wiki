@@ -60,7 +60,7 @@ The cloud admin cal view all launch configs and autoscaling groups defined in a 
 
 ## Useful Links
 * [Auto Scaling Design Doc](https://github.com/eucalyptus/architecture/wiki/autoscaling-3.3-design#wiki-IAM-2)
-* [AWS AutoScaling OVerview](https://aws.amazon.com/autoscaling/)
+* [AWS AutoScaling Overview](https://aws.amazon.com/autoscaling/)
 
 ## Gotchas
 * This is autoscaling. Instances belonging to an autoscaling group that are terminated will be replaced.
