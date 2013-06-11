@@ -56,7 +56,7 @@ euwatch-describe-alarm-history      euwatch-disable-alarm-actions       euwatch-
 euwatch-describe-alarms             euwatch-enable-alarm-actions        euwatch-put-data
 [root@clcfrontend ~]# euwatch-
 ```
-It may be valuable to graph CloudWatch metrics in order to determine their validity and accuracy. For this task, EucaLobo is the preferred mechanism. A [blog post](testingclouds.wordpress.com) has been written on how to install, configure, and use EucaLobo. 
+It may be valuable to graph CloudWatch metrics in order to determine their validity and accuracy. For this task, EucaLobo is the preferred mechanism. A [blog post](http://testingclouds.wordpress.com) has been written on how to install, configure, and use EucaLobo. 
 
 ## Administrative Tasks
 * How will the administrators configure the feature?
