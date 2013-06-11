@@ -25,7 +25,6 @@
 * [[Test-Markdown]]
 * [[Testing-patched-build-with-RPM]]
 * [[Textile-Test]]
-* [[Training-Template]]
 * [[Troubleshooting-Tools]]
 * [[Ui-Guide]]
 * [[Validator-Scripts]]

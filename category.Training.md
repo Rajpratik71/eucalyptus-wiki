@@ -1,7 +1,9 @@
 * [[Autoscaling-Training]]
+* [[CloudWatch-Troubleshooting]]
 * [[ELB-Internals-Training]]
 * [[ELB-Training]]
 * [[Maintenance-Mode-Training]]
+* [[Training-Template]]
 * [[User-Console-Training]]
 * [[index-of-categories]]
 
