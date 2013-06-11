@@ -47,6 +47,7 @@ etc.
 
 * The Eucalyptus Console configuration settings are stored in the console.ini file.
 For Centos and RHEL installations from packages, this file is located in
+
 > /etc/eucalyptus-console/console.ini
 
 You should always start (or restart) the console when you make changes to the console configuration.
@@ -59,7 +60,9 @@ You can restart the console using the following command:
 
 ## Debugging through log messages
 
-* When installed from packages, User Console log is written in /var/log/messages
+* When installed from packages, User Console log is written in 
+
+>/var/log/messages
 
 ## Gotchas
 
