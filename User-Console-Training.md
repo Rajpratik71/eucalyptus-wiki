@@ -98,6 +98,8 @@ You can restart the console using the following command:
 
 >/var/log/messages
 
+## Useful links
+
 ## Gotchas
 
 * Search bar works correctly when filtering by one subject. Filtering by multiple subjects, for instance Status and Tag, is scheduled for 3.3.1.
