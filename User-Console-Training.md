@@ -32,10 +32,6 @@ of the
 Each instance type has a property for
 number of CPUs, memory (in megabytes), and disk size (in gigabytes). The default configuration file that is installed
 with the console is pre-populated with common instance types:
-
-
-This configuration setting should be modifed to match if the default instance types are changed in
-the CLC configuration.
     
     [instance_type]
     m1.small.cpu: 1
@@ -43,6 +39,9 @@ the CLC configuration.
     m1.small.disk: 5
     c1.medium.cpu: 2
     ...
+This configuration setting should be modifed to match if the default instance types are changed in
+the CLC configuration.
+
 
 
 * Expandos
