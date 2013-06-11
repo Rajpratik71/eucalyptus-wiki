@@ -21,14 +21,30 @@ The following metrics are collected automatically:
 * AutoScaling
 
 Monitoring EC2 instances can be enabled at runtime of an instance or post facto. Unlike AWS, Eucalyptus CloudWatch is disabled by default rather than giving metrics at less granularity by default and enabling "detailed monitoring" when enabled.
-`euca-run-instance emi-32512341 --monitor
+```
+At runtime:
+euca-run-instance emi-E6053B4B --monitor
+Post Facto:
+euca-monitor-instances i-E84B431F
+euca-unmonitor-instances i-E84B431F
+```
 
-euca-monitor-instances i-1321c132`
+Alarms can be created that monitor the CloudWatch data for particular conditions. When an alarm state is triggered it can be used to kick an autoscaling policy that defines a scaling activity for a particular ASG.
 
 #### Component level responsibilities
 * Talk about what the involvement of each Eucalyptus component is wrt to the feature. 
-* Are there any new components being added? 
+The CloudWatch service is currently colocated with the ENABLED CLC. 
+
 * What is the flow of a user request? 
+Custom metrics put into the system are directly entered into the eucalyptus_cloudwatch database in the custom_metric_data_* tables. No other components are involved at that point.
+
+System metrics that are added traverse many components:
+1. EC2/EBS - Collected at the NCs using the `/usr/share/eucalyptus/getstats.pl` script then aggregated at the CC and the polled by the CloudWatch service and added to the eucalyptus_cloudwatch database in the system_metric_data_* tables.
+2. AutoScaling - Put into the CloudWatch service by the AutoScaling service when autoscaling groups are created.
+3. ELB - Pushed from the Servo VM into the CloudWatch service using boto. Only pushed when values are non-zero.
+
+GetStatistics calls are received on the CloudWatch service which then scans the db, aggregates the data and then returns the requested statistics to the user based on the given time bounds and period.
+
 * What actions/processes are happening in the background at all times? 
 
 #### User level operation and tooling
@@ -43,6 +59,7 @@ euca-monitor-instances i-1321c132`
 * Show in one of the use cases from above the log messages that are expected to be seen across the various components and how one can understand where an issue is stemming from.
 
 ## Gotchas
-* This section should show any caveats or known bugs that will trip up users in the field.
+* ELB metrics do not get entered unless requests are going through the load balancer as per AWS semantics.
+* EC2 Disk metrics are only valid for ephemeral disks. For BFEBS instances root filesystem usage is tracked as and EBS metric.
 
 [[category.Training]]
