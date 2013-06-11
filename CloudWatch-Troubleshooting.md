@@ -39,6 +39,7 @@ The CloudWatch service is currently colocated with the ENABLED CLC.
 Custom metrics put into the system are directly entered into the eucalyptus_cloudwatch database in the custom_metric_data_* tables. No other components are involved at that point.
 
 System metrics that are added traverse many components:
+
 1. EC2/EBS - Collected at the NCs using the `/usr/share/eucalyptus/getstats.pl` script then aggregated at the CC and the polled by the CloudWatch service and added to the eucalyptus_cloudwatch database in the system_metric_data_* tables.
 2. AutoScaling - Put into the CloudWatch service by the AutoScaling service when autoscaling groups are created.
 3. ELB - Pushed from the Servo VM into the CloudWatch service using boto. Only pushed when values are non-zero.
