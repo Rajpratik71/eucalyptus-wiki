@@ -15,6 +15,13 @@ that you can select by pressing the enter key or clicking
 
 User can change his password from the User Console by clicking at "user@account" on the top right and then  selecting the "Change Password" option. 
 
+* Expandos
+
+The area beneath resources such as instances, images, volumes, snapshots, security groups expands to a tabbed interface.
+
+You can expand a security group in the list to see details about the security group, including tags and rules associated
+with the security group.
+
 ## Gotchas
 
 * Search bar works correctly when filtering by one subject. Filtering by multiple subjects, for instance Status and Tag, is scheduled for 3.3.1.
