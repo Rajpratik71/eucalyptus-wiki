@@ -43,10 +43,14 @@ ACTIVITY	94633c90-0784-431f-8178-7030f47af331	2013-06-11T00:10:27.193Z	My-ASG	Su
 * How will admins monitor/create/delete resources from other accounts?
 
 ## Debugging through log messages
-* Show in one of the use cases from above the log messages that are expected to be seen across the various components and how one can understand where an issue is stemming from.
+* Checking euscale-scaling-activities will give you an idea if scaling had a problem for whatever reason
+*
 
 ## Gotchas
-* This section should show any caveats or known bugs that will trip up users in the field.
+* This is autoscaling. Instances belonging to an autoscaling group that are terminated will be replaced.
+* You cannot delete an autoscaling group that has running instances.  In order to delete an autoscaling group the recommended method is to set minimum, maximum and desired capacity of the ASG all to ZERO wait for all instances to terminate then delete the ASG.
+* Alternatively you can force delete. In Euca2ools add the optrion "-force-delete", again this is not recommended procedure but most tooling has the force option available.
+* You cannot change a launch config. The best you can do is to create a new launch config with your desired parameters then update your autoscaling group specifying your new launch config. Subsequent instances launched in the group will be of the new launch config type.
 
 *****
 [[category.Training]]
