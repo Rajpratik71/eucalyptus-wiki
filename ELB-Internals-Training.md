@@ -30,7 +30,49 @@ Installing the package will place a `.tgz` file containing the EMI into `/usr/sh
 
 When you do this you should see output similar to the following:
 
-    Output here...
+    /usr/bin/euca-install-load-balancer
+    /usr/share/doc/eucalyptus-load-balancer-image-1.0.0
+    /usr/share/doc/eucalyptus-load-balancer-image-1.0.0/IMAGE-LICENSE
+    /usr/share/doc/eucalyptus-load-balancer-image-1.0.0/eucalyptus-load-balancer-image.ks
+    /usr/share/eucalyptus-load-balancer-image
+    /usr/share/eucalyptus-load-balancer-image/eucalyptus-load-balancer-image-1.0.0-92.tgz
+
+### Registering an ELB with your cloud
+
+Now we'll use the `/usr/bin/euca-install-load-balancer` tool to install the ELB image. You can use the `-t` option to supply a tarball file directly, or the more common way to do this is to use `--install-default` which will look in the default location (`/usr/share/eucalyptus-load-balancer-image`) for a tarball to install.
+
+    $ euca-install-load-balancer --install-default
+
+When you choose this option you should see output similar to the following:
+
+    Installing default Load Balancer tarball.
+    Found tarball /usr/share/eucalyptus-load-balancer-image/eucalyptus-load-balancer-image-1.0.0-92.tgz
+
+The installation procedure will continue to bundle the image contained in the tarball, then upload it and register it with the cloud. Installation will also enable the ELB image so that when Load Balancer functionality is used the cloud will instantiate ELB instances using the EMI that has been registered.
+
+If the installation of the Load Balancer is successful, you should see output similar to the following:
+
+    Registered machine image emi-5608337E
+    -- Done --
+    PROPERTY	loadbalancing.loadbalancer_emi	emi-5608337E was NULL
+
+    Load Balancer Support is Enabled
+
+### Verifying the Load Balancer Installation
+
+You can also use the `euca-install-load-balancer` tool to verify installation of the ELB image by using the `--list` option. While only one ELB image will ever be enabled at a time, you could have multiple ELB images installed. You might want to do this in situations where you need to upgrade the ELB image but don't want to interrupt instances currently running behind your existing ELB (say, version 1.0.1 came out, but you have critical workloads running on 1.0.0 of the ELB).
+
+Here's some example output from the list command:
+
+    Currently Installed Load Balancer Bundles:
+    
+    Version 1 (enabled)
+    emi-5608337E (loadbalancer_v1/eucalyptus-load-balancer-image-1.0.0-92.img.manifest.xml)
+    	Installed on 2013-06-11 at 11:09:37 PDT
+    eki-64E63DA7 (loadbalancer_v1/vmlinuz-2.6.32-358.6.2.el6.x86_64.manifest.xml)
+    	Installed on 2013-06-11 at 11:09:37 PDT
+    eri-7CF23615 (loadbalancer_v1/initramfs-2.6.32-358.6.2.el6.x86_64.img.manifest.xml)
+    	Installed on 2013-06-11 at 11:09:37 PDT
 
 ### Setting Load Balancer Properties
 
