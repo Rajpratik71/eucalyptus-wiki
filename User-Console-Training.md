@@ -25,10 +25,6 @@ For example:
 You can filter the list of instances by selecting the filtering criteria from the filtering drop-down list boxes.Selecting a filter will expose a menu with a list of valid filter values
 that you can select by pressing the enter key or clicking.
 
-* Changing password
-
-User can change his password from the User Console by clicking at "user@account" on the top right and then  selecting the "Change Password" option. 
-
 * VM types
 
 All the VM types are now supported in the launch instance wizard. You can customize the available instance types that are listed in the console for your cloud. To do this:
@@ -56,8 +52,6 @@ with the console is pre-populated with common instance types:
 This configuration setting should be modifed to match if the default instance types are changed in
 the CLC configuration.
 
-
-
 * Expandos
 
 After clicking on a resource such as instance, image, volume, snapshot, security group, the area beneath the resource expands to a tabbed interface.
@@ -78,6 +72,10 @@ You can expand a volume entry in the list to see details about the volume, inclu
 You can expand a security group in the list to see details about the security group, including tags and rules associated
 with the security group.
 etc.
+
+* Changing password
+
+User can change his password from the User Console by clicking at "user@account" on the top right and then  selecting the "Change Password" option. 
 
 #### User level operation and tooling
 
