@@ -17,11 +17,24 @@ User can change his password from the User Console by clicking at "user@account"
 
 * Expandos
 
-The area beneath resources such as instances, images, volumes, snapshots, security groups expands to a tabbed interface.
+After clicking on a resource such as instance, image, volume, snapshot, security group, the area beneath the resource expands to a tabbed interface.
+
+For example: 
+
+You can expand an instance entry in the list to see details about the instance, including associated volumes and tags.
+
+1. Click the name of the instance in the list of instances.
+The area beneath the instance name will expand to a tabbed interface.
+2. Click the General tab to see a panel of detailed information about the instance, include the volume associated with
+the instance.
+3. Click the Volumes tab to see a list of volumes attached to the instance.
+4. Click the Tags tab to see a list of tags associated with the instance.
+
+You can expand a volume entry in the list to see details about the volume, including associated tags and instances.
 
 You can expand a security group in the list to see details about the security group, including tags and rules associated
 with the security group.
-
+etc.
 ## Gotchas
 
 * Search bar works correctly when filtering by one subject. Filtering by multiple subjects, for instance Status and Tag, is scheduled for 3.3.1.
