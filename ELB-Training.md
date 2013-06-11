@@ -51,7 +51,8 @@ POC setup:
 ## Administrative Tasks
 ### How will the administrators configure the feature?
 * The first thing an admin must do is add an ELB servo VM and set "loadbalancing.loadbalancer_emi" property (done automatically when installing the servo vm via [recommended technique](https://github.com/eucalyptus/eucalyptus/wiki/ELB-Internals-Training)). Until this property is set the Load Balancing service will be in not ready state.
-* ELB supports IAM and quotas.  Administrators will need to give "allow" permissions for ELB for users who will use ELB. 
+* ELB supports IAM and quotas.  Administrators will need to give "allow" permissions for ELB for users who will use ELB.
+
 example:
 > {
    "Statement":[{
