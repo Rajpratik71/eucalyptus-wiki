@@ -44,11 +44,19 @@ Alarms can be created that monitor the CloudWatch data for particular conditions
 
 * GetStatistics calls are received on the CloudWatch service which then scans the db, aggregates the data and then returns the requested statistics to the user based on the given time bounds and period.
 
-* **What actions/processes are happening in the background at all times? **
+* The only background processes related to CloudWatch are the alarm evaluators which look at the historical data for a metric and decide whether or not to throw an alarm. The alarms are evaluated every minute. 
 
 #### User level operation and tooling
 * How do end users interact with the feature?
-* Show a few typical use cases for the feature end-to-end
+Euca2ools provides a suite of tools for interacting with the CloudWatch service that are under the euwatch-* prefix.
+```
+[root@clcfrontend ~]# euwatch-
+euwatch-delete-alarms               euwatch-describe-alarms-for-metric  euwatch-get-stats                   euwatch-put-metric-alarm
+euwatch-describe-alarm-history      euwatch-disable-alarm-actions       euwatch-list-metrics                euwatch-set-alarm-state
+euwatch-describe-alarms             euwatch-enable-alarm-actions        euwatch-put-data
+[root@clcfrontend ~]# euwatch-
+```
+It may be valuable to graph CloudWatch metrics in order to determine their validity and accuracy. For this task, EucaLobo is the preferred mechanism. A [[Blog Post|]] has been written on how to install, configure, and use EucaLobo. 
 
 ## Administrative Tasks
 * How will the administrators configure the feature?
