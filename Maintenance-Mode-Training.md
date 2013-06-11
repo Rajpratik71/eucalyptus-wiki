@@ -328,3 +328,9 @@ Maintenance mode works just out of the box.
 ## Gotchas
 1. While migrating many EBS instances, after migration, sometimes some of the instances become inaccessible for a few moment, but eventually it becomes available.
 2. In multi-cluster configuration, migrations using --source broken for all clusters but first registered - [EUCA-6400](https://eucalyptus.atlassian.net/browse/EUCA-6400)
+
+
+
+
+*****
+[[category.Training]]
