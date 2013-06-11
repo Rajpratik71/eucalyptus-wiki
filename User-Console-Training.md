@@ -36,14 +36,18 @@ with the console is pre-populated with common instance types:
 
 This configuration setting should be modifed to match if the default instance types are changed in
 the CLC configuration.
-``[instance_type  m1.small.cpu:   m1.small.mem: 51  m1.small.disk: ``  c1.medium.cpu: 2
+`[instance_type]
+m1.small.cpu: 1
+m1.small.mem: 512
+m1.small.disk: 5
+c1.medium.cpu: 2
 c1.medium.mem: 512
 c1.medium.disk: 10
 m1.large.cpu: 2
 m1.large.mem: 1024
 m1.large.disk: 15
 m1.xlarge.cpu: 2
-m1.xlarge.mem: 2048 ``
+m1.xlarge.mem: 2048`
 
 * Expandos
 
