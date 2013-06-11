@@ -59,7 +59,15 @@ euwatch-describe-alarms             euwatch-enable-alarm-actions        euwatch-
 It may be valuable to graph CloudWatch metrics in order to determine their validity and accuracy. For this task, EucaLobo is the preferred mechanism. A [blog post](http://testingclouds.wordpress.com) has been written on how to install, configure, and use EucaLobo. 
 
 ## Administrative Tasks
-* How will the administrators configure the feature?
+* There are two main knobs to turn wrt to CloudWatch:
+```
+PROPERTY        cloud.monitor.default_poll_interval_mins        5
+DESCRIPTION     cloud.monitor.default_poll_interval_mins        How often the reporting system requests information from the cluster controller
+PROPERTY        cloud.monitor.history_size      5
+DESCRIPTION     cloud.monitor.history_size      The initial history size of metrics to be send from the cc to the clc
+```
+* By setting the `cloud.monitor.default_poll_interval_mins` property you are setting how often the user will see updates to cloudwatch data. The `cloud.monitor.history_size` property states how many intervals will be reported within the window defined by `cloud.monitor.default_poll_interval_mins`. So for example the defaults of 5/5 will ensure that every 5 minutes CloudWatch data is updated in the db and at that point 5 datapoints will be entered. The datapoints are polled at an even interval across the `cloud.monitor.default_poll_interval_mins`. That means that setting the values to 5/10 will mean that a datapoint will be collected from backend every 30 seconds. Setting the value to 1/2 also provides the same periodicity but ensures that users are able to see their data more rapidly. 
+
 * How will admins monitor/create/delete resources from other accounts?
 
 ## Debugging through log messages
