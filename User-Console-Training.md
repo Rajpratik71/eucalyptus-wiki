@@ -39,12 +39,10 @@ the CLC configuration.
     
     [instance_type]
     m1.small.cpu: 1
-
->m1.small.mem: 512
-
->m1.small.disk: 5
-
->c1.medium.cpu: 2...
+    m1.small.mem: 512
+    m1.small.disk: 5
+    c1.medium.cpu: 2
+    ...
 
 
 * Expandos
