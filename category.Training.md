@@ -1,6 +1,7 @@
 * [[Autoscaling-Training]]
 * [[ELB-Internals-Training]]
 * [[ELB-Training]]
+* [[Maintenance-Mode-Training]]
 * [[User-Console-Training]]
 * [[index-of-categories]]
 
