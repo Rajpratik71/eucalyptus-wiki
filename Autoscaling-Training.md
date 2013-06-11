@@ -45,7 +45,7 @@ example:
 > {
    "Statement":[{
       "Effect":"Allow",
-      "Action":"autoscaling:*LaunchConfiguration*",
+      "Action":"autoscaling:*",
       "Resource":"*"
       }
    ]
