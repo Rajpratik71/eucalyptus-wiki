@@ -22,6 +22,7 @@ The following metrics are collected automatically:
 
 Monitoring EC2 instances can be enabled at runtime of an instance or post facto. Unlike AWS, Eucalyptus CloudWatch is disabled by default rather than giving metrics at less granularity by default and enabling "detailed monitoring" when enabled.
 `euca-run-instance emi-32512341 --monitor
+
 euca-monitor-instances i-1321c132`
 
 #### Component level responsibilities
