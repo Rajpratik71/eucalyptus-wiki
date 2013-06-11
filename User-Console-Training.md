@@ -43,6 +43,20 @@ You can expand a security group in the list to see details about the security gr
 with the security group.
 etc.
 
+#### User level operation and tooling
+
+* The Eucalyptus Console configuration settings are stored in the console.ini file.
+For Centos and RHEL installations from packages, this file is located in
+/etc/eucalyptus-console/console.ini.
+
+You should always start (or restart) the console when you make changes to the console configuration.
+You can start the console using the following command:
+service eucalyptus-console start
+You can restart the console using the following command:
+service eucalyptus-console restart
+
+* Show a few typical use cases for the feature end-to-end
+
 ## Debugging through log messages
 
 * When installed from packages, User Console log is written in /var/log/messages
