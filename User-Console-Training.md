@@ -11,22 +11,9 @@ All possible filter options on the search bar a viewed on click.
 Selecting a filter will expose a menu with a list of valid filter values
 that you can select by pressing the enter key or clicking
 
-#### Component level responsibilities
-* Talk about what the involvement of each Eucalyptus component is wrt to the feature. 
-* Are there any new components being added? 
-* What is the flow of a user request? 
-* What actions/processes are happening in the background at all times? 
+* Changing password
 
-#### User level operation and tooling
-* How do end users interact with the feature?
-* Show a few typical use cases for the feature end-to-end
-
-## Administrative Tasks
-* How will the administrators configure the feature?
-* How will admins monitor/create/delete resources from other accounts?
-
-## Debugging through log messages
-* Show in one of the use cases from above the log messages that are expected to be seen across the various components and how one can understand where an issue is stemming from.
+User can change his password from the User Console by clicking at "user@account" on the top right and then  selecting the "Change Password" option. 
 
 ## Gotchas
 
