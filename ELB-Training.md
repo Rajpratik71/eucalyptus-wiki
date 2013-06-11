@@ -52,6 +52,16 @@ POC setup:
 ### How will the administrators configure the feature?
 * The first thing an admin must do is add an ELB servo VM and set "loadbalancing.loadbalancer_emi" property (done automatically when installing the servo vm via [recommended technique](https://github.com/eucalyptus/eucalyptus/wiki/ELB-Internals-Training)). Until this property is set the Load Balancing service will be in not ready state.
 * ELB supports IAM and quotas.  Administrators will need to give "allow" permissions for ELB for users who will use ELB. 
+example:
+> {
+   "Statement":[{
+      "Effect":"Allow",
+      "Action":["elasticloadbalancing:CreateLoadBalancer",
+      "elasticloadbalancing:DeleteLoadBalancer"],
+      "Resource":"*"
+      }  
+   ]
+}
 ### How will admins monitor/create/delete resources from other accounts?
 * A default describe lbs as cloud admin will not show all ELB's, use "eulb-describe-lbs verbose".
 * The installed ELB emi will be private to the cloud admin and **does not** need to be changed to public for other users to use ELB
