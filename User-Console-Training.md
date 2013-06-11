@@ -25,14 +25,15 @@ User can change his password from the User Console by clicking at "user@account"
 * VM types
 All the VM types are supported in the launch instance wizard. You can customize the available instance types that are listed in the console for your cloud. To do this:
 Modify the 
-    [instance_type] section 
+>[instance_type] section 
 of the 
-    console.ini configuration file. 
+>console.ini configuration file. 
 
 Each instance type has a property for
 number of CPUs, memory (in megabytes), and disk size (in gigabytes). The default configuration file that is installed
 with the console is pre-populated with common instance types:
-    
+ 
+>   
     [instance_type]
     m1.small.cpu: 1
     m1.small.mem: 512
@@ -70,12 +71,12 @@ etc.
 * The Eucalyptus Console configuration settings are stored in the console.ini file.
 For Centos and RHEL installations from packages, this file is located in
 
-    /etc/eucalyptus-console/console.ini
+>/etc/eucalyptus-console/console.ini
 
 You should always start (or restart) the console when you make changes to the console configuration.
 
 You can start the console using the following command:
-    service eucalyptus-console start
+>service eucalyptus-console start
 
 You can restart the console using the following command:
 >service eucalyptus-console restart
@@ -84,7 +85,7 @@ You can restart the console using the following command:
 
 * When installed from packages, User Console log is written in 
 
-    /var/log/messages
+>/var/log/messages
 
 ## Gotchas
 
