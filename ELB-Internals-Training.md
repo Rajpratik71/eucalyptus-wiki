@@ -76,11 +76,42 @@ Here's some example output from the list command:
 
 ### Setting Load Balancer Properties
 
+#### Properties Exposed by the Load Balancer
+
+The following is a list of properties that are exposed by the Load Balancer service. You can get this list by running `euca-describe-properties loadbalancing`.
+
+    PROPERTY	loadbalancing.loadbalancer_dns_subdomain	lb
+    PROPERTY	loadbalancing.loadbalancer_emi	emi-5608337E
+    PROPERTY	loadbalancing.loadbalancer_instance_type	m1.small
+    PROPERTY	loadbalancing.loadbalancer_num_vm	1
+    PROPERTY	loadbalancing.loadbalancer_vm_keyname	{}
+
+Most of these properties are self-explanatory, so we'll cover the ones that you really need to know.
+
+**loadbalancing.loadbalancer_emi**: This property defines the EMI that will be instantiated when a Load Balancer is created. While this value can be set to _any_ EMI value, if that EMI does not contain the necessary software components and configuration, it will not work.
+
+**loadbalancing.loadbalancer_instance_type**: This is the instance type that will be used when instantiating an ELB instance. For the official production version of the ELB image, the value _m1.small_ is what should be set and it is also the default setting.
+
+**loadbalancing.loadbalancer_vm_keyname**: This is the keypair to use for access to running ELB instances. Usually, this should not be set since the ELB is supposed to be a black box. In the case where troubleshooting of the Servo process is necessary, this value should be set to gain access to ELB instances. For new cloud installations it's probably best to have this value set, since it can be hard to reproduce problems after the fact.
+
 ## Debugging through log messages
 * Show in one of the use cases from above the log messages that are expected to be seen across the various components and how one can understand where an issue is stemming from.
 
 ## Gotchas
-* This section should show any caveats or known bugs that will trip up users in the field.
+This section should show any caveats or known bugs that will trip up users in the field.
+
+### Sourcing eucarc
+
+If you've already gotten credentials for your user prior to the ELB image being installed/enabled on your cloud, then you will be unable to use ELB functionality. You'll know this is a problem if you see the following message:
+
+    [root@eucahost-51-69 ~]# . eucarc
+    WARN: Load Balancing service URL is not configured.
+
+If that's the case, you'll need to get your credentials again:
+
+    $ euca-get-credentials -a eucalyptus -u admin admin.zip
+
+If Load Balancer support is in fact enabled then you should not see the warning message when sourcing your new credentials.
 
 *****
 [[category.Training]]
