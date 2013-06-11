@@ -22,6 +22,15 @@ that you can select by pressing the enter key or clicking.
 
 User can change his password from the User Console by clicking at "user@account" on the top right and then  selecting the "Change Password" option. 
 
+* VM types
+All the VM types in the launch instance wizard now
+You can customize the available instance types that are listed in the console for your cloud. To do this:
+Modify the 
+> [instance_type] section 
+of the console.ini configuration file. Each instance type has a property for
+number of CPUs, memory (in megabytes), and disk size (in gigabytes). The default configuration file that is installed
+with the console is pre-populated with common instance types:
+
 * Expandos
 
 After clicking on a resource such as instance, image, volume, snapshot, security group, the area beneath the resource expands to a tabbed interface.
