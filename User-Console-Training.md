@@ -1,4 +1,4 @@
-## Feature Overview
+``## Feature Overview
 
 * Tagging
 
@@ -36,9 +36,9 @@ with the console is pre-populated with common instance types:
 
 This configuration setting should be modifed to match if the default instance types are changed in
 the CLC configuration.
->[instance_type]
-
->m1.small.cpu: 1
+    
+    [instance_type]
+    m1.small.cpu: 1
 
 >m1.small.mem: 512
 
