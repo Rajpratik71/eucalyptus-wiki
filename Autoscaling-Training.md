@@ -27,10 +27,13 @@ Users can interact with AutoScaling in a number of ways.  Euca2ools 3, EucaLobo,
 #### A few typical use cases for the feature end-to-end
 1. Create a launch configuration:
 > euscale-create-launch-config -i emi-24E73962 -t t1.micro --group securtiy-group-1 --key don-key My-LC
+
 2. Create an autoscaling group (no instances will be launched in this example **yet**):
 > euscale-create-auto-scaling-group -l My-LC --min-size 0 --max-size 5 -z PARTI00 My-ASG
+
 3. Set desired capacity of the ASG (this will launch instances)
 > euscale-set-desired-capacity -c 2 My-ASG
+
 4. You can see the scaling activity
 >  [root@h-17 ~]# euscale-describe-scaling-activities
 ACTIVITY	94633c90-0784-431f-8178-7030f47af331	2013-06-11T00:10:27.193Z	My-ASG	Successful
