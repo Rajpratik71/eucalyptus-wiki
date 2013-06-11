@@ -8,12 +8,15 @@ User can add up to 10 tags to the following resources: images, instances, volume
 
 The search bar allows filtering resource lists using on one or more filters. 
 All possible filter options on the search bar are viewed on click.
-Selecting a filter will expose a menu with a list of valid filter values
+For some lists, you can select one or more filters by pressing the enter key or clicking on the search bar and selecting
+an available filter from the drop down list. Selecting some filters will expose a menu with a list of valid filter values
 that you can select by pressing the enter key or clicking.
+
 
 For example: 
 
-You can filter the list of instances by selecting the filtering criteria from the filtering drop-down list boxes.
+You can filter the list of instances by selecting the filtering criteria from the filtering drop-down list boxes.Selecting a filter will expose a menu with a list of valid filter values
+that you can select by pressing the enter key or clicking.
 
 * Changing password
 
