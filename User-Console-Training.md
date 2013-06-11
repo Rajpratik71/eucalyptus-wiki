@@ -42,6 +42,11 @@ You can expand a volume entry in the list to see details about the volume, inclu
 You can expand a security group in the list to see details about the security group, including tags and rules associated
 with the security group.
 etc.
+
+## Debugging through log messages
+
+* When installed from packages, User Console log is written in /var/log/messages
+
 ## Gotchas
 
 * Search bar works correctly when filtering by one subject. Filtering by multiple subjects, for instance Status and Tag, is scheduled for 3.3.1.
