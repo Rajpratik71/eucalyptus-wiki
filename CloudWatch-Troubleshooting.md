@@ -1,19 +1,28 @@
 ## Feature Overview
-The CloudWatch service provides users a metrics database that can be used in order to track cloud resources (automatically collected by the system) or arbitrary time series data (added manually by the user). CloudWatch data returned from the server is limited to a minimum resolution of 60 seconds. Datapoints can be entered at arbitrary frequencies but when returned to the user all datapoints within the period will be aggregated. When entering a datapoint the user must provide:
+The CloudWatch service provides users a metrics database that can be used in order to track cloud resources (automatically collected by the system) or arbitrary time series data (added manually by the user). CloudWatch data returned from the server is limited to a minimum resolution of 60 seconds. Datapoints can be entered at arbitrary frequencies but when returned to the user all datapoints within the period will be aggregated. When entering a datapoint with the PutMetricData call the user must provide:
 * Namespace
 * Dimensions (can be empty)
 * Start Time
 * End Time
 * Value
 
-For each combination of Namespace+Dimensions a set of datapoints can be returned from the service with the following statistics pre-computed for the period:
+For each combination of Namespace+Dimensions a set of datapoints can be returned from the service with the following statistics pre-computed for the period using a GetMetricStatistics call:
 * Average
 * Maximum
 * Minimum
 * Sum
 * SampleCount
 
+The CloudWatch service is basically a way to enter data at arbitrary intervals and extract statistics about the data for a given time range with a user defined granularity.
 
+The following metrics are collected automatically:
+* EBS
+* ELB
+* AutoScaling
+
+Monitoring EC2 instances can be enabled at runtime of an instance or post facto. Unlike AWS, Eucalyptus CloudWatch is disabled by default rather than giving metrics at less granularity by default and enabling "detailed monitoring" when enabled.
+`euca-run-instance emi-32512341 --monitor
+euca-monitor-instances i-1321c132`
 
 #### Component level responsibilities
 * Talk about what the involvement of each Eucalyptus component is wrt to the feature. 
