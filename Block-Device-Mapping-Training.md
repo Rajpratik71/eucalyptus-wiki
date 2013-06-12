@@ -52,12 +52,11 @@ image_id = boto.ec2.register_image(name='MyNewImage', block_device_map=block_dev
 ##### Example #2 - Creating a block device mapping for an ephemeral disk
 
 * Euca2ools:
-
 ```
 -b '/dev/sdb=Ephemeral0'
 ```
-* Boto:
 
+* Boto:
 ```
 block_device_map = BlockDeviceMapping()
 block_dev_type = BlockDeviceType()
@@ -72,7 +71,8 @@ Note: For EBS block devices created from an existing snapshot, the size will def
 * Euca2ools:
 ```
 -b '/dev/sdb=snap-XXXXYYY:2:False'
-````
+```
+
 * Boto:
 ```
 block_device_map = BlockDeviceMapping()
@@ -82,6 +82,7 @@ block_dev_type.delete_on_termination=False
 block_dev_type.size=2
 block_device_map['/dev/sdb'] = block_dev_type
 ```
+
 ##### Example #4 - Creating a block device mapping for an empty EBS block dev.
 
 Note: For this example the block device mapping will request an empty volume of size 5GB. The block device mapping will also request the backing volume 'is' deleted upon instance termination. 
@@ -90,6 +91,7 @@ Note: For this example the block device mapping will request an empty volume of 
 ```
 -b '/dev/sdb:5:True'
 ```
+
 * Boto:
 ```
 block_device_map = BlockDeviceMapping()
