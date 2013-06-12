@@ -43,7 +43,7 @@ euca-register --root-device-name /dev/sda -b "/dev/sda=snap-ABC1234::true
 from boto.ec2.blockdevicemapping import BlockDeviceMapping, BlockDeviceType
 block_device_map = BlockDeviceMapping()
 block_dev_type = BlockDeviceType()
-block_dev_type.delete_on_termination = True
+block_dev_type.delete_on_termination = true
 block_dev_type.snapshot_id = snapshot_id
 block_device_map['/dev/sda'] = block_dev_type
 image_id = boto.ec2.register_image(name='MyNewImage', block_device_map=block_device_map,         root_device_name='/dev/sda')
