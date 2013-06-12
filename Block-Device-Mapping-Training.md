@@ -27,6 +27,7 @@ Boto import:
 from boto.ec2.blockdevicemapping import BlockDeviceMapping, BlockDeviceType
 
 * Example #1 - Registering an EMI/Image using a bootable EBS root device (BFEBS) from snapshot snap-ABC1234:
+`
 Euca2ools Example:
 euca-register --root-device-name /dev/sda -b "/dev/sda=snap-ABC1234::True
 
@@ -39,6 +40,7 @@ block_device_map['/dev/sda'] = block_dev_type
 image_id = self.ec2.register_image(name='MyNewImage,
 block_device_map=block_device_map, root_device_name='/dev/sda')
 image_id = self.ec2.register_image(name=MyNewImage, block_device_map=block_device_map, root_device_name='/dev/sda')
+`
 
 
 
