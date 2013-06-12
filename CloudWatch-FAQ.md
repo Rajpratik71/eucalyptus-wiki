@@ -69,5 +69,44 @@ delete from system_metric_data_e;
 delete from system_metric_data_f;
 ```
 
+In order to purge data before a given data run the following script with a postgres formatted timestamp as an argument:
+```
+#!/bin/bash
+psql -h ${EUCALYPTUS}/var/lib/eucalyptus/db/data -p 8777 eucalyptus_cloudwatch -c "delete from custom_metric_data_0 where timestamp < '$1'"
+psql -h ${EUCALYPTUS}/var/lib/eucalyptus/db/data -p 8777 eucalyptus_cloudwatch -c "delete from custom_metric_data_1 where timestamp < '$1'"
+psql -h ${EUCALYPTUS}/var/lib/eucalyptus/db/data -p 8777 eucalyptus_cloudwatch -c "delete from custom_metric_data_2 where timestamp < '$1'"
+psql -h ${EUCALYPTUS}/var/lib/eucalyptus/db/data -p 8777 eucalyptus_cloudwatch -c "delete from custom_metric_data_3 where timestamp < '$1'"
+psql -h ${EUCALYPTUS}/var/lib/eucalyptus/db/data -p 8777 eucalyptus_cloudwatch -c "delete from custom_metric_data_4 where timestamp < '$1'"
+psql -h ${EUCALYPTUS}/var/lib/eucalyptus/db/data -p 8777 eucalyptus_cloudwatch -c "delete from custom_metric_data_5 where timestamp < '$1'"
+psql -h ${EUCALYPTUS}/var/lib/eucalyptus/db/data -p 8777 eucalyptus_cloudwatch -c "delete from custom_metric_data_6 where timestamp < '$1'"
+psql -h ${EUCALYPTUS}/var/lib/eucalyptus/db/data -p 8777 eucalyptus_cloudwatch -c "delete from custom_metric_data_7 where timestamp < '$1'"
+psql -h ${EUCALYPTUS}/var/lib/eucalyptus/db/data -p 8777 eucalyptus_cloudwatch -c "delete from custom_metric_data_8 where timestamp < '$1'"
+psql -h ${EUCALYPTUS}/var/lib/eucalyptus/db/data -p 8777 eucalyptus_cloudwatch -c "delete from custom_metric_data_9 where timestamp < '$1'"
+psql -h ${EUCALYPTUS}/var/lib/eucalyptus/db/data -p 8777 eucalyptus_cloudwatch -c "delete from custom_metric_data_a where timestamp < '$1'"
+psql -h ${EUCALYPTUS}/var/lib/eucalyptus/db/data -p 8777 eucalyptus_cloudwatch -c "delete from custom_metric_data_b where timestamp < '$1'"
+psql -h ${EUCALYPTUS}/var/lib/eucalyptus/db/data -p 8777 eucalyptus_cloudwatch -c "delete from custom_metric_data_c where timestamp < '$1'"
+psql -h ${EUCALYPTUS}/var/lib/eucalyptus/db/data -p 8777 eucalyptus_cloudwatch -c "delete from custom_metric_data_d where timestamp < '$1'"
+psql -h ${EUCALYPTUS}/var/lib/eucalyptus/db/data -p 8777 eucalyptus_cloudwatch -c "delete from custom_metric_data_e where timestamp < '$1'"
+psql -h ${EUCALYPTUS}/var/lib/eucalyptus/db/data -p 8777 eucalyptus_cloudwatch -c "delete from custom_metric_data_f where timestamp < '$1'"
+psql -h ${EUCALYPTUS}/var/lib/eucalyptus/db/data -p 8777 eucalyptus_cloudwatch -c "delete from system_metric_data_0 where timestamp < '$1'"
+psql -h ${EUCALYPTUS}/var/lib/eucalyptus/db/data -p 8777 eucalyptus_cloudwatch -c "delete from system_metric_data_1 where timestamp < '$1'"
+psql -h ${EUCALYPTUS}/var/lib/eucalyptus/db/data -p 8777 eucalyptus_cloudwatch -c "delete from system_metric_data_2 where timestamp < '$1'"
+psql -h ${EUCALYPTUS}/var/lib/eucalyptus/db/data -p 8777 eucalyptus_cloudwatch -c "delete from system_metric_data_3 where timestamp < '$1'"
+psql -h ${EUCALYPTUS}/var/lib/eucalyptus/db/data -p 8777 eucalyptus_cloudwatch -c "delete from system_metric_data_4 where timestamp < '$1'"
+psql -h ${EUCALYPTUS}/var/lib/eucalyptus/db/data -p 8777 eucalyptus_cloudwatch -c "delete from system_metric_data_5 where timestamp < '$1'"
+psql -h ${EUCALYPTUS}/var/lib/eucalyptus/db/data -p 8777 eucalyptus_cloudwatch -c "delete from system_metric_data_6 where timestamp < '$1'"
+psql -h ${EUCALYPTUS}/var/lib/eucalyptus/db/data -p 8777 eucalyptus_cloudwatch -c "delete from system_metric_data_7 where timestamp < '$1'"
+psql -h ${EUCALYPTUS}/var/lib/eucalyptus/db/data -p 8777 eucalyptus_cloudwatch -c "delete from system_metric_data_8 where timestamp < '$1'"
+psql -h ${EUCALYPTUS}/var/lib/eucalyptus/db/data -p 8777 eucalyptus_cloudwatch -c "delete from system_metric_data_9 where timestamp < '$1'"
+psql -h ${EUCALYPTUS}/var/lib/eucalyptus/db/data -p 8777 eucalyptus_cloudwatch -c "delete from system_metric_data_a where timestamp < '$1'"
+psql -h ${EUCALYPTUS}/var/lib/eucalyptus/db/data -p 8777 eucalyptus_cloudwatch -c "delete from system_metric_data_b where timestamp < '$1'"
+psql -h ${EUCALYPTUS}/var/lib/eucalyptus/db/data -p 8777 eucalyptus_cloudwatch -c "delete from system_metric_data_c where timestamp < '$1'"
+psql -h ${EUCALYPTUS}/var/lib/eucalyptus/db/data -p 8777 eucalyptus_cloudwatch -c "delete from system_metric_data_d where timestamp < '$1'"
+psql -h ${EUCALYPTUS}/var/lib/eucalyptus/db/data -p 8777 eucalyptus_cloudwatch -c "delete from system_metric_data_e where timestamp < '$1'"
+psql -h ${EUCALYPTUS}/var/lib/eucalyptus/db/data -p 8777 eucalyptus_cloudwatch -c "delete from system_metric_data_f where timestamp < '$1'"
+psql -h ${EUCALYPTUS}/var/lib/eucalyptus/db/data -p 8777 eucalyptus_cloudwatch -c "delete from absolute_metric_history where timestamp < '$1'"
+psql -h ${EUCALYPTUS}/var/lib/eucalyptus/db/data -p 8777 eucalyptus_cloudwatch -c "delete from list_metrics where last_update_timestamp < '$1'"
+psql -h ${EUCALYPTUS}/var/lib/eucalyptus/db/data -p 8777 eucalyptus_cloudwatch -c "delete from alarm_history where timestamp < '$1'"
+```
 *****
 [[category.faqs]]
