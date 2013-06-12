@@ -75,7 +75,21 @@ block_dev_type.delete_on_termination=False
 block_dev_type.size=2
 block_device_map['/dev/sdb'] = block_dev_type
 
+##### Example #4 - Creating a block device mapping for an empty EBS block dev.
 
+Note: For this example the block device mapping will request an empty volume of size 5GB. The block device mapping will also request the backing volume 'is' deleted upon instance termination. 
+
+* Euca2ools:
+
+-b '/dev/sdb:5:True'
+
+* Boto:
+
+block_device_map = BlockDeviceMapping()
+block_dev_type = BlockDeviceType()
+block_dev_type.delete_on_termination=True
+block_dev_type.size=5
+block_device_map['/dev/sdb'] = block_dev_type
 
 
 
