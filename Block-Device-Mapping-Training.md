@@ -19,6 +19,7 @@ A block device mapping can determine the following:
 
 #### Examples:
 For this section, euca2ools examples will be shown as '-b' arguments to be provided during the 'euca-run-instances' and 'euca-register' requests. The boto examples will be shown as the BlockDeviceMapping() object to be passed as the kwarg 'block_device_map' to ec2.register_image() and image run() methods. 
+``
 Euca2ools syntax:
 -b device_name:size:delete_on_terminate
 -b "/dev/sda=snap-ABC1234:<volume size, this may be different than the snap size>:<delete on terminate: True:False>"
@@ -27,7 +28,7 @@ Boto import:
 from boto.ec2.blockdevicemapping import BlockDeviceMapping, BlockDeviceType
 
 * Example #1 - Registering an EMI/Image using a bootable EBS root device (BFEBS) from snapshot snap-ABC1234:
-`
+
 Euca2ools Example:
 euca-register --root-device-name /dev/sda -b "/dev/sda=snap-ABC1234::True
 
@@ -40,7 +41,7 @@ block_device_map['/dev/sda'] = block_dev_type
 image_id = self.ec2.register_image(name='MyNewImage,
 block_device_map=block_device_map, root_device_name='/dev/sda')
 image_id = self.ec2.register_image(name=MyNewImage, block_device_map=block_device_map, root_device_name='/dev/sda')
-`
+``
 
 
 
