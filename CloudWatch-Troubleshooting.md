@@ -71,7 +71,7 @@ DESCRIPTION     cloud.monitor.history_size      The initial history size of metr
 ```
 * By setting the `cloud.monitor.default_poll_interval_mins` property you are setting how often the user will see updates to cloudwatch data. The `cloud.monitor.history_size` property states how many intervals will be reported within the window defined by `cloud.monitor.default_poll_interval_mins`. So for example the defaults of 5/5 will ensure that every 5 minutes CloudWatch data is updated in the db and at that point 5 datapoints will be entered. The datapoints are polled at an even interval across the `cloud.monitor.default_poll_interval_mins`. That means that setting the values to 5/10 will mean that a datapoint will be collected from backend every 30 seconds. Setting the value to 1/2 also provides the same periodicity but ensures that users are able to see their data more rapidly.
 
-* CloudWatch data is purged when it is 2 weeks old. If the admin would like to purge data manually and the procedure is listed [[here|CloudWatch-FAQ]]
+* CloudWatch data is purged when it is 2 weeks old. If the admin would like to purge data manually the procedure is listed [[here|CloudWatch-FAQ]]
 
 ## Debugging through log messages
 * When at TRACE level each datapoint entered into the system is logged. This can cause slowness if CloudWatch is being heavily used.
