@@ -38,7 +38,7 @@ Alarms can be created that monitor the CloudWatch data for particular conditions
 4. ALARM = (previous n windows have ALARM)
 5. INSUFFICIENT_DATA = anything else
 
-#### Component level responsibilities
+### Component level responsibilities
 * The CloudWatch service is currently colocated with the ENABLED CLC. 
 
 * Custom metrics put into the system are directly entered into the eucalyptus_cloudwatch database in the  custom_metric_data_* tables. No other components are involved at that point.
@@ -53,7 +53,7 @@ Alarms can be created that monitor the CloudWatch data for particular conditions
 
 * The only background processes related to CloudWatch are the alarm evaluators which look at the historical data for a metric and decide whether or not to throw an alarm. The alarms are evaluated every minute. 
 
-#### User level operation and tooling
+### User level operation and tooling
 * How do end users interact with the feature?
 Euca2ools provides a suite of tools for interacting with the CloudWatch service that are under the euwatch-* prefix.
 ```
@@ -79,7 +79,16 @@ DESCRIPTION     cloud.monitor.history_size      The initial history size of metr
 * When at TRACE level each datapoint entered into the system is logged. This can cause slowness if CloudWatch is being heavily used.
 
 ## Gotchas
-* ELB metrics do not get entered unless requests are going through the load balancer as per AWS semantics.
+### ELB 
+* Metrics do not get entered unless requests are going through the load balancer as per AWS semantics.
+
+### EC2/EBS
 * EC2 Disk metrics are only valid for ephemeral disks. For BFEBS instances root filesystem usage is tracked as and EBS metric.
+
+### ELB
+* Metrics for requests show statistics in slightly strange ways:
+1. Sum and SampleCount are the total requests in the period
+2. Average/Min/Max are always 1 or 0
+
 
 [[category.Training]]
