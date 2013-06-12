@@ -8,7 +8,8 @@ A 'Block Device Mapping' (BDM) is used to specify the block devices to be attach
 
 
 #### User level operation and tooling
-* How do end users interact with the feature?
+* End users will interact with this feature when creating new EBS backed EMIs, and running instances from existing EBS backed EMIs. The user can customize Block Device Mappings in each operation. 
+
 * Show a few typical use cases for the feature end-to-end
 
 ## Administrative Tasks
