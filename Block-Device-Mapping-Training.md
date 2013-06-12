@@ -106,7 +106,8 @@ block_device_map['/dev/sdb'] = block_dev_type
 * Will make use of the clouds SC for EBS, and Walrus for snapshot capabilities. 
 * Users will need proper permissions to EBS and snapshot resources via IAM
 
-### Properties which may affect this feature (see 'euca-describe-properties | grep stor' ):
+### Properties which may affect this feature 
+**(see 'euca-describe-properties | grep stor' ):**
 * storage.maxtotalvolumesizeingb (which may limit the sum of all EBS volumes created)
 * storage.maxvolumesizeingb (which may limit the size of a given EBS volume)
 * walrus.storagemaxtotalsnapshotsizeingb (which may limit the sum of all snapshots created)
@@ -135,6 +136,8 @@ BLOCKDEVICE	/dev/sdb	vol-XYZ12345	2013-04-18T00:09:44.291Z	true
 
 
 ## Gotchas
-* This section should show any caveats or known bugs that will trip up users in the field.
+* As of Eucalyptus 3.3.0 ephemeral disks will not be displayed in describe volume and describe image requests
+* As of Eucalyptus 3.3.0 only a single ephemeral device can be requested for an instance/image. This device size will determined by the vm/instance type requested at run time. 
+* As of Eucalyptus 3.3.0 multiple block device mappings are only supported on EBS backed instances. 
 
 [[category.Training]]
