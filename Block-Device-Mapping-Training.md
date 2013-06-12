@@ -27,15 +27,15 @@ For this section, euca2ools examples will be shown as '-b' arguments to be provi
 Euca2ools syntax:
 
 ```
--b device_name:size:delete_on_terminate
--b "/dev/sda=snap-ABC1234:<volume size, this may be different than the snap size>:<delete on terminate: True:False>"
+-b device_name=snapshot-id:size:delete_on_terminate
+-b "/dev/sda=snap-ABC1234:<volume size, this may be different than the snap size>:<delete on terminate: true:false>"
 ```
 ##### Example #1 - Registering an EMI/Image using a bootable EBS root device (BFEBS) from snapshot snap-ABC1234:
 
 * Euca2ools Example:
 
 ```
-euca-register --root-device-name /dev/sda -b "/dev/sda=snap-ABC1234::True
+euca-register --root-device-name /dev/sda -b "/dev/sda=snap-ABC1234::true
 ```
 
 * Boto Example:
@@ -53,14 +53,14 @@ image_id = boto.ec2.register_image(name='MyNewImage', block_device_map=block_dev
 
 * Euca2ools:
 ```
--b '/dev/sdb=Ephemeral0'
+-b '/dev/sdb=ephemeral0'
 ```
 
 * Boto:
 ```
 block_device_map = BlockDeviceMapping()
 block_dev_type = BlockDeviceType()
-block_dev_type.ephemeral_name='Ephemeral0'
+block_dev_type.ephemeral_name='ephemeral0'
 block_device_map['/dev/sdb'] = block_dev_type
 ```
 
@@ -70,7 +70,7 @@ Note: For EBS block devices created from an existing snapshot, the size will def
 
 * Euca2ools:
 ```
--b '/dev/sdb=snap-XXXXYYY:2:False'
+-b '/dev/sdb=snap-XXXXYYY:2:false'
 ```
 
 * Boto:
@@ -78,7 +78,7 @@ Note: For EBS block devices created from an existing snapshot, the size will def
 block_device_map = BlockDeviceMapping()
 block_dev_type = BlockDeviceType()
 block_dev_type.snapshot_id='snap-XXXXYYY'
-block_dev_type.delete_on_termination=False
+block_dev_type.delete_on_termination=false
 block_dev_type.size=2
 block_device_map['/dev/sdb'] = block_dev_type
 ```
@@ -89,14 +89,14 @@ Note: For this example the block device mapping will request an empty volume of 
 
 * Euca2ools:
 ```
--b '/dev/sdb:5:True'
+-b '/dev/sdb=:5:true'
 ```
 
 * Boto:
 ```
 block_device_map = BlockDeviceMapping()
 block_dev_type = BlockDeviceType()
-block_dev_type.delete_on_termination=True
+block_dev_type.delete_on_termination=true
 block_dev_type.size=5
 block_device_map['/dev/sdb'] = block_dev_type
 ```
