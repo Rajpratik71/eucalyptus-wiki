@@ -12,7 +12,7 @@ A block device mapping can determine the following:
 * name of the block devices (ie: /dev/sda)
 * size of the device (in GB) 
 * type of device (ephemeral or ebs).
-* source of the device (ie snapshot to create the device from, or empty ebs volume)
+* source of the device (ie snapshot to create the device from, empty ebs volume, or ephemeral disk)
 * delete on terminate - whether or not to delete the EBS volume backing the device. 
 * no device, exclude a device from a block device mapping being overridden. 
 
