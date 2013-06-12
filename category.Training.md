@@ -1,4 +1,5 @@
 * [[Autoscaling-Training]]
+* [[Block-Device-Mapping-Training]]
 * [[CloudWatch-Troubleshooting]]
 * [[ELB-Internals-Training]]
 * [[ELB-Training]]
