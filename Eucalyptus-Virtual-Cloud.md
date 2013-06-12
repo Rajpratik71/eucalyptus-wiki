@@ -29,6 +29,20 @@ The purpose of this document is to provide the necessary information to set up a
 
 These are our top two, but getting this working on other platforms would be an awesome bonus.
 
+## Enabling Nested Virtualization in Parallels
+
+It is possible to enable nested virtualization in Parallels, but it does not seem to work. In order to enable nested virtualization change into the directory of your virtual machine.
+
+    $ cd ~/Documents/Parallels/CentOS\ Linux.pvm
+
+Once inside, edit the file called `config.pvs` and edit the tag called _VirtualizedHV_ so that the value is `1` instead of `0`.
+
+While this does enable nested virtualization and allows CIAB to install into the virtual machine, I cannot run any instances. The computer will completely seize up and must be rebooted. My last glimmer of hope, that the logs might contain something of use, was completely dashed; the logs ended with the following:
+
+    NVMX:   The guest start using virtualization!
+
+And that was all. So, it appears that nested virtualization does not work in Parallels.
+
 ## Check for nested virtualization in KVM
 
 If you'd like to check your system to see if it supports nested virtualization in KVM, you can check the parameters exposed by the kernel module. If you're using an Intel chip, then the module is `kvm-intel`; or if you're using an AMD chip then the module is `kvm-amd`.
