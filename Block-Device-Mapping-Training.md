@@ -25,13 +25,13 @@ Euca2ools syntax:
 -b device_name:size:delete_on_terminate
 -b "/dev/sda=snap-ABC1234:<volume size, this may be different than the snap size>:<delete on terminate: True:False>"
 
-* Example #1 - Registering an EMI/Image using a bootable EBS root device (BFEBS) from snapshot snap-ABC1234:
+##### Example #1 - Registering an EMI/Image using a bootable EBS root device (BFEBS) from snapshot snap-ABC1234:
 
-Euca2ools Example:
+* Euca2ools Example:
 
 euca-register --root-device-name /dev/sda -b "/dev/sda=snap-ABC1234::True
 
-Boto Example:
+* Boto Example:
 
 ...
 from boto.ec2.blockdevicemapping import BlockDeviceMapping, BlockDeviceType
