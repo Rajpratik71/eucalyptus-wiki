@@ -26,26 +26,25 @@ For this section, euca2ools examples will be shown as '-b' arguments to be provi
 
 Euca2ools syntax:
 
--b device_name:size:delete_on_terminate
--b "/dev/sda=snap-ABC1234:<volume size, this may be different than the snap size>:<delete on terminate: True:False>"
+    -b device_name:size:delete_on_terminate
+    -b "/dev/sda=snap-ABC1234:<volume size, this may be different than the snap size>:<delete on terminate: True:False>"
 
 ##### Example #1 - Registering an EMI/Image using a bootable EBS root device (BFEBS) from snapshot snap-ABC1234:
 
 * Euca2ools Example:
 
-euca-register --root-device-name /dev/sda -b "/dev/sda=snap-ABC1234::True
+    euca-register --root-device-name /dev/sda -b "/dev/sda=snap-ABC1234::True
 
 * Boto Example:
-
-...
-from boto.ec2.blockdevicemapping import BlockDeviceMapping, BlockDeviceType
-...
-block_device_map = BlockDeviceMapping()
-block_dev_type = BlockDeviceType()
-block_dev_type.delete_on_termination = True
-block_dev_type.snapshot_id = snapshot_id
-block_device_map['/dev/sda'] = block_dev_type
-image_id = boto.ec2.register_image(name='MyNewImage', block_device_map=block_device_map, root_device_name='/dev/sda')
+   
+    from boto.ec2.blockdevicemapping import BlockDeviceMapping, BlockDeviceType
+    ...
+    block_device_map = BlockDeviceMapping()
+    block_dev_type = BlockDeviceType()
+    block_dev_type.delete_on_termination = True
+    block_dev_type.snapshot_id = snapshot_id
+    block_device_map['/dev/sda'] = block_dev_type
+    image_id = boto.ec2.register_image(name='MyNewImage', block_device_map=block_device_map,         root_device_name='/dev/sda')
 
 
 ##### Example #2 - Creating a block device mapping for an ephemeral disk
