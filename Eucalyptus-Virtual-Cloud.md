@@ -43,7 +43,7 @@ While this does enable nested virtualization and allows CIAB to install into the
 
 And that was all. So, it appears that nested virtualization does not work in Parallels.
 
-## Check for nested virtualization in KVM
+## Check for Nested Virtualization in KVM
 
 If you'd like to check your system to see if it supports nested virtualization in KVM, you can check the parameters exposed by the kernel module. If you're using an Intel chip, then the module is `kvm-intel`; or if you're using an AMD chip then the module is `kvm-amd`.
 
