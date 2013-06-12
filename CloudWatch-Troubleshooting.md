@@ -29,7 +29,14 @@ euca-monitor-instances i-E84B431F
 euca-unmonitor-instances i-E84B431F
 ```
 
-Alarms can be created that monitor the CloudWatch data for particular conditions. When an alarm state is triggered it can be used to kick an autoscaling policy that defines a scaling activity for a particular ASG.
+Alarms can be created that monitor the CloudWatch data for particular conditions. When an alarm state is triggered it can be used to kick an autoscaling policy that defines a scaling activity for a particular ASG.  The alarm states are evaluated with the following algorithm:
+
+1. If you ask to evaluate for n evaluation periods, we will calculate n + 2
+(or possibly up to n + 5, depending on how small the windows are)
+2. If a window has no data, it will look in the previous evaluation period (and further back) and copy that data for the sake of evaluation
+3. OK = one of the evaluation period has ok data (previous n)
+4. ALARM = (previous n windows have ALARM)
+5. INSUFFICIENT_DATA = anything else
 
 #### Component level responsibilities
 * The CloudWatch service is currently colocated with the ENABLED CLC. 
@@ -38,9 +45,9 @@ Alarms can be created that monitor the CloudWatch data for particular conditions
 
 * System metrics that are added traverse many components:
 
-    1. EC2/EBS - Collected at the NCs using the `/usr/share/eucalyptus/getstats.pl` script then aggregated at the CC and the polled by the CloudWatch service and added to the eucalyptus_cloudwatch database in the system_metric_data_* tables.
-    2. AutoScaling - Put into the CloudWatch service by the AutoScaling service when autoscaling groups are created.
-    3. ELB - Pushed from the Servo VM into the CloudWatch service using boto. Only pushed when values are non-zero.
+1. EC2/EBS - Collected at the NCs using the `/usr/share/eucalyptus/getstats.pl` script then aggregated at the CC and the polled by the CloudWatch service and added to the eucalyptus_cloudwatch database in the system_metric_data_* tables.
+2. AutoScaling - Put into the CloudWatch service by the AutoScaling service when autoscaling groups are created.
+3. ELB - Pushed from the Servo VM into the CloudWatch service using boto. Only pushed when values are non-zero.
 
 * GetStatistics calls are received on the CloudWatch service which then scans the db, aggregates the data and then returns the requested statistics to the user based on the given time bounds and period.
 
