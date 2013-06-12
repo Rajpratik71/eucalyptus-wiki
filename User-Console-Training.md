@@ -100,6 +100,8 @@ You can restart the console using the following command:
 
 ## Useful links
 
+Demo for new features of User Console can be found here http://vimeo.com/68189848 .
+
 ## Gotchas
 
 * Search bar works correctly when filtering by one subject. Filtering by multiple subjects, for instance Status and Tag, is scheduled for 3.3.1.
