@@ -16,6 +16,10 @@ A block device mapping can determine the following:
 * delete on terminate - whether or not to delete the EBS volume backing the device. 
 * no device, exclude a device from a block device mapping being overridden. 
 
+#### Component level responsibilities
+
+#### User level operation and tooling
+* End users will interact with this feature when creating new EBS backed EMIs, and running instances from existing EBS backed EMIs. The user can customize Block Device Mappings in each operation. 
 
 #### Examples:
 For this section, euca2ools examples will be shown as '-b' arguments to be provided during the 'euca-run-instances' and 'euca-register' requests. The boto examples will be shown as the BlockDeviceMapping() object to be passed as the kwarg 'block_device_map' to ec2.register_image() and image run() methods. 
@@ -92,22 +96,38 @@ block_dev_type.size=5
 block_device_map['/dev/sdb'] = block_dev_type
 
 
-
- 
-#### Component level responsibilities
-
-
-#### User level operation and tooling
-* End users will interact with this feature when creating new EBS backed EMIs, and running instances from existing EBS backed EMIs. The user can customize Block Device Mappings in each operation. 
-
-* Show a few typical use cases for the feature end-to-end
-
 ## Administrative Tasks
-* How will the administrators configure the feature?
-* How will admins monitor/create/delete resources from other accounts?
+### Configuration to be aware of:
+* Will make use of the clouds SC for EBS, and Walrus for snapshot capabilities. 
+* Users will need proper permissions to EBS and snapshot resources via IAM
 
-## Debugging through log messages
-* Show in one of the use cases from above the log messages that are expected to be seen across the various components and how one can understand where an issue is stemming from.
+### Properties which may affect this feature (see 'euca-describe-properties | grep stor' ):
+* storage.maxtotalvolumesizeingb (which may limit the sum of all EBS volumes created)
+* storage.maxvolumesizeingb (which may limit the size of a given EBS volume)
+* walrus.storagemaxtotalsnapshotsizeingb (which may limit the sum of all snapshots created)
+
+## Debugging 
+#### register/run command is failing and returning an error? 
+* Most errors at the CLI level are easy to debug and are either due to incorrect syntax, permissions to execute (IAM rules), lack of resources (see storage/walrus properties listed above and or 'euca-describe-availability-zones --verbose to see what limit is hit).  
+
+#### EBS volumes are not present on guest? 
+* First confirm the block device mapping for the guest shows the device you're looking for, for example device '/dev/sdb' below is backed by volume 'vol-XYZ12345':
+
+euca-describe-instances i-19E9429E
+RESERVATION	r-3B81431E	963852387532	default
+INSTANCE	i-19E9429E	emi-B2D13F7B	0.0.0.0	0.0.0.0	pending	vic	0	 t1.micro	2013-04-18T00:09:43.881Z	PARTI01	eki-A60E38D2 monitoring-disabled	0.0.0.0	0.0.0.0	 ebs
+BLOCKDEVICE	/dev/sda	vol-ABCD1234	2013-04-18T00:09:44.291Z	true
+BLOCKDEVICE	/dev/sdb	vol-XYZ12345	2013-04-18T00:09:44.291Z	true
+
+*euca-describe-volume backing the device to confirm proper in-use, attached state 
+*Use euca-describe-nodes to see which node is hosting the instance. 
+*Start from the NC and work backwards 'grep'ing through eucalyptus logs to see how far the attachment request made it through the system. Starting with the NC, then SC, then CLC - 'cat /var/log/eucalyptus/nc.log | grep vol-XYZ12345' or search entire dir 'grep -l vol-XYZ12345 /var/log/eucalyptus/*' . 
+*If the volume id is present on the NC check the logs for errors, if there are no errors in the logs, check '/var/log/messages and dmesg on the guest, confirm the guest has the proper PCI, virtio drivers, etc..
+*if volume id is not on NC, search SC logs to see if volume id is present: 'grep -l vol-XYZ12345 /var/log/eucalyptus/*'. If using HA, make sure you are searching on the SC which was enabled at the time of request. If so look for errors in logs related to creating or exporting the volume. 
+*if volume id is not on NC or SC, search SC logs to see if volume id is present: 'grep -l vol-XYZ12345 /var/log/eucalyptus/*'. If using HA, make sure you are searching on the CLC which was enabled at the time of request. If so look for errors in logs related to creating this volume. 
+*if volume id is not on NC, SC, or CLC the request may not have made it to the cloud. Check for cli syntax, proper credentials, and URLs (make sure you're talking to the correct system). 
+
+
 
 ## Gotchas
 * This section should show any caveats or known bugs that will trip up users in the field.
