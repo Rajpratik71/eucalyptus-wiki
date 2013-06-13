@@ -67,25 +67,28 @@ On the NC, assuming vol-X attached as /dev/vdf:
 The SC now logs 'Processing <operation> request for <volume|snap>' for all Volume and Snapshot operations at INFO level logging. This is the first thing the SC does once it receives the full request. So, you should be able to see all such log messages for each volume in cloud-output.log on the SC host.
 
 For attachment you should see in cloud-output.log on the SC:
-_Processing GetVolumeToken request for vol-X_
-_Processing ExportVolume request for vol-X_
+
+    Processing GetVolumeToken request for vol-X
+    ...
+    ...
+    Processing ExportVolume request for vol-X`
 
 On Detach:
-_Processing UnexportVolume request for vol-X_
+    Processing UnexportVolume request for vol-X
 
 On Delete:
-_Processing DeleteVolume request for vol-X_
+    Processing DeleteVolume request for vol-X`
 
 On EBS-instance run, for the root:
-_Processing CreateVolume request for vol-X_
-_Processing GetVolumeToken request for vol-X_
-_Processing ExportVolume request for vol-X_
+    Processing CreateVolume request for vol-X
+    Processing GetVolumeToken request for vol-X
+    Processing ExportVolume request for vol-X
 
 On EBS-instance stop:
-_Processing UnexportVolume request for vol-X_
+    Processing UnexportVolume request for vol-X
 
 Termination may add to the 'stop' set:
-_Processing DeleteStorageVolume request for vol-X._
+    Processing DeleteStorageVolume request for vol-X
 
 If any of those are missing then you can see how far the process got and what are the likely sources of failure.
 * Missing GetVolumeToken? Check the CLC and CLC->SC communications.
