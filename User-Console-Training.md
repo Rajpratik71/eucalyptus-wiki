@@ -92,12 +92,20 @@ You can start the console using the following command:
 You can restart the console using the following command:
 >service eucalyptus-console restart
 
-## Debugging through log messages
+## Debugging 
 
-* When installed from packages, User Console log is written in 
+* When installed from packages, User Console log is written in: 
 
 >/var/log/messages
 
+* Restarting console:
+
+1. Restart the console process, or 
+>service eucalyptus-console restart
+
+2. clear cache in the browser
+
+3. refresh browser
 ## Useful links
 
 Demo for new features of User Console can be found here http://vimeo.com/68189848 .
