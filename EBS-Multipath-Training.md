@@ -28,14 +28,13 @@ DESCRIPTION	PARTI00.storage.ncpaths	iSCSI Paths for NC.
 ```
 
 ###### **property storage.scpaths**:
-This property provides one or more paths for the SC to use for ISCSI traffic (used during snapshot creation). This property can be the address of a single SAN SP, or a list of addresses for each SP which can service the multipathed ISCSI device. The list can be in the format:
+This property provides one or more paths for the SC to use for ISCSI traffic (used during snapshot creation). This property can be the address of a single SAN SP, or a list of addresses for each SP which can service the multipathed ISCSI device. The list can be in the formats:
 
 ```
-storage.scpaths='<sp1_addr>,<sp2_addr>,<sp3_addr>'
-```  
+storage.scpaths='<sp1_addr>,<sp2_addr>,<sp3_addr>' 
 
-or a specific 'iface' who's mapping is defined on each SC can be used in the property such as: 
-```
+# or a specific 'iface' who's mapping is defined on each SC can be used in the property such as: 
+
 storage.scpaths='iface0:<sp1_addr>,iface1:<sp2_addr>,iface2:<sp3_addr>'
 ```
 
