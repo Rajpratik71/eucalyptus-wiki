@@ -1,0 +1,5 @@
+A lot has changed around how Eucalyptus interacts with NetApp SANs in the 3.3 release. Some of the high level changes are explained below
+
+## Revamped NetApp Integration
+
+Guts of the NetApp Provider in Eucalyptus have been changed to use the more recent NetApp ONTAP and NMSDK APIs. The legacy provider using an older version of NetApp API has been deprecated. We are planning on keeping the legacy provider around for the 3.3 release but we DO NOT recommend configuring it in 3.3 clouds and neither do we support it (as it has not been tested or worked on during 3.3). If you still want to use the legacy provider do so at your own risk by configuring the block storage manager to 'netapp_legacy' on a fresh install. Block storage manager cannot be changed after its set. If you want to force the change, you'll have to deregister the SC (loose all your previous data) and register the SC with a different provider. Not sure why anyone thats not testing would try this.
