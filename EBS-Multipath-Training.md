@@ -9,23 +9,27 @@ Eucalyptus has the ability to utilize multipathing for it's iscsi connections. S
 There are several properties that can be set at the partition level (aka zone, cluster). (To see storage related properties and definitions: euca-describe-properties --verbose | grep stor)
 Example of the relevant partition level properties (assuming a partition named 'PARTI00':
 
-* **property storage.ncpaths**:
+###### **property storage.ncpaths**:
 This property provides one or more paths for the NC to use for ISCSI traffic. This property can be the address of a single SAN SP, or a list of addresses for each SP which can service the multipathed ISCSI device. The list can be in the format; 
 ```
 storage.ncpaths='<sp1_addr>,<sp2_addr>,<sp3_addr>'
-```  
+
+```
+
 or a specific 'iface' who's mapping is defined on each NC can be used in the property such as: 
+
 ```
 storage.ncpaths=iface0:<sp1_addr>,iface1:<sp2_addr>,iface2:<sp3_addr>
 ```
 
+euca-describe-properties --verbose output:
 ```
 PROPERTY	PARTI00.storage.ncpaths	10.107.1.200,10.107.1.201,10.108.1.200,10.108.1.201
 DESCRIPTION	PARTI00.storage.ncpaths	iSCSI Paths for NC. 
 ```
 
 
-* **property storage.scpaths:
+###### **property storage.scpaths**:
 This property provides one or more paths for the SC to use for ISCSI traffic (used during snapshot creation). This property can be the address of a single SAN SP, or a list of addresses for each SP which can service the multipathed ISCSI device. The list can be in the format; 
 ```
 storage.scpaths='<sp1_addr>,<sp2_addr>,<sp3_addr>'
@@ -40,7 +44,7 @@ PROPERTY	PARTI00.storage.scpaths	10.107.1.200,10.107.1.201,10.108.1.200,10.108.1
 DESCRIPTION	PARTI00.storage.scpaths	iSCSI Paths for SC
 ```
 
-* property storage.sanhost:
+###### **property storage.sanhost**:
 PROPERTY	PARTI00.storage.sanhost	10.109.1.26,10.109.1.27
 DESCRIPTION	PARTI00.storage.sanhost	Hostname for SAN device.
 ```
