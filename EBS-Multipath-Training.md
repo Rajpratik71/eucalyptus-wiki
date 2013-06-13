@@ -1,5 +1,5 @@
 ## Feature Overview
-Eucalyptus has the ability to utilize multipathing for it's iscsi connections. Sets of redundant physical resources define multiple logical paths between the Eucalyptus components and the storage device(s). The multiple redundant paths help insure higher availability for I/O and administration of the storage device(s) in use by Eucalyptus. 
+Eucalyptus has the ability to utilize multipathing for it's iscsi connections. Sets of redundant physical resources define multiple logical paths between the Eucalyptus components and the storage device(s). The multiple redundant paths provide additional fault tolerance and higher availability for I/O and administration of the storage device(s) in use by Eucalyptus. 
 
 #### Component level responsibilities
 *The multipathing functions primarily reside upon the NC and SC. Eucalyptus leverage Linux's device mapper  multipath functions for the iscsi device(s) used with EBS volumes on the NCs and Snapshot creation on the SCs. *The SC also utilizes multiple interfaces/paths for it's SAN administration. 
