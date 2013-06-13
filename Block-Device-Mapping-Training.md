@@ -34,7 +34,7 @@ Euca2ools syntax:
 * Euca2ools Example:
 
 ```
-euca-register --root-device-name /dev/sda -b "/dev/sda=snap-ABC1234::true
+euca-register --root-device-name /dev/sda -b "/dev/sda=snap-ABC1234::true"
 ```
 
 * Boto Example:
