@@ -1,5 +1,7 @@
 _for Eucalyptus 3.1, see notes for 3.2 features in progress_
 
+**There have been some changes to how volume attachment works in Eucalyptus 3.3.0 see:** [Volume Attach/Detach Changes in Eucalyptus 3.3.0](AttachDetachEuca3.3.0)
+
 This page describes how the Storage Controller works and its various backend storage providers for providing EBS support in Eucalyptus. For installation/configuration and admin/install documentation, see the [Eucalyptus documentation](http://www.eucalyptus.com/docs).
 
 The Storage Controller (SC) is the component of Eucalyptus that manages EBS volumes. Eucalyptus uses the iSCSI protocol to connect EBS volumes to instances (NCs actually), and uses standard linux commands for configuring and exporting the volumes to instances. Volumes are represented as files on the filesystem of the machine hosting the SC. The SC manages creating, deleting, snapshotting, and exporting volumes in response to both user commands (example: `euca-create-volume` and `euca-create-snapshot`) and system operations (example: `euca-run-instances` of a boot-from-ebs instance).
