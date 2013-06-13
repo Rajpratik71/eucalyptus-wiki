@@ -105,8 +105,8 @@ From the log you can determine if there are any problems connecting to CLC, conn
 
 #### Use case
 
-During stress testing (create volume churn) would cause the User Console to become unresponsive, showing no data. The cause: overloaded CLC would provide slow response causing connection timeouts the console.    
-Currently only data polling intervall can be configured in console.ini. Timeout is set to 30 seconds, to increase timeout, in /usr/share/eucalyptus-console/static/js/support.js look for:
+During stress testing create volume churn would cause the User Console to become unresponsive, showing no data. The cause: overloaded CLC would provide slow response causing connection timeouts in the User Console.    
+Currently only the data polling intervall can be configured in console.ini. Timeout is set to 30 seconds, to increase timeout, in /usr/share/eucalyptus-console/static/js/support.js look for:
 
     $.ajaxSetup({
        type: "POST",
@@ -114,7 +114,7 @@ Currently only data polling intervall can be configured in console.ini. Timeout 
      });
 
 
-That 30000 is 30 seconds in milliseconds. For example: to make timeout 1 minute, change the 3 to a 6.
+Timeout is set in milliseconds. For example: to make timeout 1 minute, change the 3 to a 6.
 
 * Restarting console:
 
