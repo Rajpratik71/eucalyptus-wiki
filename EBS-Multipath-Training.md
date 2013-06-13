@@ -84,9 +84,9 @@ The configuration examples are provided as a reference,
 overwriting the existing configuration completely may not have a desirable outcome for services outside Eucalyptus. 
 'diff'ing the existing file and the example and deciding what config makes sense to use is probably a better approach for a live system.
 # Where $multipath_conf would likely be one of the following example configurations provided by eucalyptus:
-# /usr/share/doc/eucalyptus-3.4.0/multipath.conf.example.equallogic
-# /usr/share/doc/eucalyptus-3.4.0/multipath.conf.example.netapp
-# /usr/share/doc/eucalyptus-3.4.0/multipath.conf.example.vnx                
+# multipath_conf='/usr/share/doc/eucalyptus-3.4.0/multipath.conf.example.equallogic'
+# multipath_conf='/usr/share/doc/eucalyptus-3.4.0/multipath.conf.example.netapp'
+# multipath_conf='/usr/share/doc/eucalyptus-3.4.0/multipath.conf.example.vnx'                
 cp $multipath_conf /etc/multipath.conf
 
 Automated QA uses something like the following for source and package builds. 
