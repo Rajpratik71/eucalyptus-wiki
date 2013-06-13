@@ -120,3 +120,7 @@ If any of those are missing then you can see how far the process got and what ar
 
 * Possible cause: NC failing to get successful return on ExportVolume request to SC during attachment. If the volume goes to 'attaching' and then back to 'available' then the NC may be the cause. Check the NC logs and look for ExportVolume failed or any scClientCall lines that indicate opFail=1. The two causes for a failure here are that the SC cannot communicate with the SC (possible it doesn't know which SC to use), or that the SC itself failed during ExportVolume and returned an error the NC to indicate that. In either case, the NC should have log messages indicating that it could not attach and you should see no indication of it ever receiving a local block device for the volume.
 * Solution: Check communications between the NC and SC. The NC must be able to connect to port 8773 on the SC and send SOAP requests via TCP. Check in the NC log that it is using the proper SC URL. This URL should be the IP of the SC as registered, and a path of /services/Storage. Firewall and routing rules may be the cause.
+
+***
+
+[[category.components]]
