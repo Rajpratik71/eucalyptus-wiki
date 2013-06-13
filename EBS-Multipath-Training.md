@@ -95,10 +95,11 @@ service multipathd start
 cp -f /root/euca_builder/eee/clc/modules/storage-common/udev/12-dm-permissions.rules /etc/udev/rules.d/
 ```
 
-##### ** eucalyptus.conf 'optional' configuration per SC/NC. **
+##### eucalyptus.conf 'optional' configuration per SC/NC. 
 If the 'storage.ncpaths' and/or 'storage.scpaths' properties specify an 'ifaceX value, that iface value is then defined in 'eucalyptus.conf' on each NC and/or SC. Specifying a specific interface is optional so both the 'ifaceX:' syntax in the paths properties as well as the configuration in eucalyptus.conf is only needed as possible way to choose a specific interface for a specific path. Forcing a specific interface can also be done through normal networking configuration.  
 
-** EXAMPLE: **
+****EXAMPLE: 
+
 Partition level properties set and viewed via euca-modify-property and euca-describe-properties:
 ```
 storage.scpaths=iface0:192.168.1.100,iface1:192.168.1.101
@@ -111,13 +112,52 @@ STORAGE_INTERFACES="iface0=br0,iface1=eth1"
 ```
 
 ## Administrative Tasks
-* How will the administrators configure the feature?
-* How will admins monitor/create/delete resources from other accounts?
+See partition properties from above for multipath specific configuration. The feature should be transparent to other eucalyptus properties and usage. 
 
-## Debugging through log messages
-* Show in one of the use cases from above the log messages that are expected to be seen across the various components and how one can understand where an issue is stemming from.
+## Debugging 
+
+#### Debug#1 - Failing to create volume: 
+* Follow CLI level errors if any. These may provide information as to incorrect syntax, exceeding property set limits for resources, etc..
+* If a volume id was provided at the CLI level, grep the logs on the SC for the volume id. 
+``` grep -l <volume id> /var/log/eucalyptus/* ```
+
+Look for errors in the creation process. If the volume id is not present on the SC, or no logs are reported during the time of creation regarding the creation, grep the CLC logs for the volume id and look for errors on the CLC. 
+* If errors are not found and the error is repeatable, it may help to increase log levels on the SC/CLC to log level --debug, etc. 
+
+#### Debug#2 - Failing to attach a volume 
+* First confirm the block device mapping for the guest shows the device you're looking for, for example device '/dev/sdb' below is backed by volume 'vol-XYZ12345':
+```
+euca-describe-instances i-19E9429E
+RESERVATION	r-3B81431E	963852387532	default
+INSTANCE	i-19E9429E	emi-B2D13F7B	0.0.0.0	0.0.0.0	pending	vic	0	 t1.micro	2013-04-18T00:09:43.881Z	PARTI01	eki-A60E38D2 monitoring-disabled	0.0.0.0	0.0.0.0	 ebs
+BLOCKDEVICE	/dev/sda	vol-ABCD1234	2013-04-18T00:09:44.291Z	true
+BLOCKDEVICE	/dev/sdb	vol-XYZ12345	2013-04-18T00:09:44.291Z	true
+```
+* euca-describe-volume backing the device to confirm proper in-use, attached state 
+* Use euca-describe-nodes to see which node is hosting the instance. 
+* Start from the NC and work backwards 'grep'ing through eucalyptus logs to see how far the attachment request made it through the system. Starting with the NC, then SC, then CLC - 'cat /var/log/eucalyptus/nc.log | grep vol-XYZ12345' or search entire dir 'grep -l vol-XYZ12345 /var/log/eucalyptus/*' . 
+* If the volume id is present on the NC check the logs for errors, if there are no errors in the logs, check '/var/log/messages and dmesg on the guest, confirm the guest has the proper PCI, virtio drivers, etc..
+* If volume id is not on NC, search SC logs to see if volume id is present: 'grep -l vol-XYZ12345 /var/log/eucalyptus/*'. If using HA, make sure you are searching on the SC which was enabled at the time of request. If so look for errors in logs related to creating or exporting the volume. 
+* If volume id is not on NC or SC, search SC logs to see if volume id is present: 'grep -l vol-XYZ12345 /var/log/eucalyptus/*'. If using HA, make sure you are searching on the CLC which was enabled at the time of request. If so look for errors in logs related to creating this volume. 
+* If volume id is not on NC, SC, or CLC the request may not have made it to the cloud. Check for cli syntax, proper credentials, and URLs (make sure you're talking to the correct system). 
+* Increasing log levels to --debug or greater may provide more insight into where operations are failing in the system. 
+
+#### Debug#3 - Failing to run and/or start an EBS backed instance (bfebs)
+* Debugging this case will be a combination of the creation and attachment debugging steps noted above. 
+* In order to follow the above debugging steps, retrieve the volume-id(s) by displaying the block device mapping in the describe-instances request:
+```
+euca-describe-instances i-19E9429E
+RESERVATION	r-3B81431E	963852387532	default
+INSTANCE	i-19E9429E	emi-B2D13F7B	0.0.0.0	0.0.0.0	pending	vic	0	 t1.micro	2013-04-18T00:09:43.881Z	PARTI01	eki-A60E38D2 monitoring-disabled	0.0.0.0	0.0.0.0	 ebs
+BLOCKDEVICE	/dev/sda	vol-ABCD1234	2013-04-18T00:09:44.291Z	true
+BLOCKDEVICE	/dev/sdb	vol-XYZ12345	2013-04-18T00:09:44.291Z	true
+
+```
+
+
+
 
 ## Gotchas
-* This section should show any caveats or known bugs that will trip up users in the field.
+*As of 3.3.0- This is not supported on Overlay and DAS storage backends.
 
 [[category.Training]]
