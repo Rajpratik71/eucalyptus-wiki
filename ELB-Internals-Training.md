@@ -94,8 +94,21 @@ Most of these properties are self-explanatory, so we'll cover the ones that you 
 
 **loadbalancing.loadbalancer_vm_keyname**: This is the keypair to use for access to running ELB instances. Usually, this should not be set since the ELB is supposed to be a black box. In the case where troubleshooting of the Servo process is necessary, this value should be set to gain access to ELB instances. For new cloud installations it's probably best to have this value set, since it can be hard to reproduce problems after the fact.
 
-## Debugging through log messages
-* Show in one of the use cases from above the log messages that are expected to be seen across the various components and how one can understand where an issue is stemming from.
+## Debugging the ELB instances
+
+### Important Files
+
+**/etc/load-balancer-servo/boto.cfg**: Contains settings for boto. We use this to adjust the metadata timeout, which can be necessary under heavy load.
+
+**/etc/load-balancer-servo/haproxy_template.conf**: This is a basic template that is copied to `/var/lib/load-balancer-servo/euca_haproxy.conf` when instances are connected to the ELB instance.
+
+**/var/run/load-balancer-servo/servo.pid**: Typical pid file, which should exist if the Servo process is functioning.
+
+**/var/log/load-balancer-servo/servo.log**: Log for all Servo process activity. This amount of logging can be adjusted using the `-l` option when running the Servo daemon.
+
+### Adjusting Log Levels
+
+When you need more logging for an ELB instance, you'll need to SSH into the instance. Once in, edit the variable `LOGLEVEL` in the init script (`/etc/init.d/load-balancer-servo`), then restart the service. The ELB instance should pull metadata again and continue functioning.
 
 ## Gotchas
 This section should show any caveats or known bugs that will trip up users in the field.
