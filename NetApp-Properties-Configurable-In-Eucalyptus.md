@@ -9,4 +9,5 @@
 <TR><TD>&lt;region>.storage.enableautosize<TD>String: “true”, “false”<TD>“true”<TD><TD rowspan="3">vol autosize &lt;vol-name>
 <TR><TD>&lt;region>.storage.volautosizemaxmultiplier<TD>Integer >= 1<TD>3<TD>
 <TR><TD>&lt;region>.storage.volautosizeincrementinmb<TD>Integer >= 1<TD>256<TD>
+<TR><TD>&lt;region>.storage.snappercent<TD>Integer >= 0<TD><TD>snap reserve &lt;vol-name>
 </TABLE>
