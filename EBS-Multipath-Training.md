@@ -45,11 +45,12 @@ DESCRIPTION	PARTI00.storage.scpaths	iSCSI Paths for SC
 ```
 
 ###### **property storage.sanhost**:
+The sanhost property defines the interface(s) for SAN management/administrative tasks. A redundant list of host entries can be given if the SAN supports multiple management interfaces. This allows Eucalyptus to failover if one interface becomes un-reachable. 
+```
 PROPERTY	PARTI00.storage.sanhost	10.109.1.26,10.109.1.27
 DESCRIPTION	PARTI00.storage.sanhost	Hostname for SAN device.
 ```
 
-iface0:192.168.25.182,iface1:10.109.25.186"
 
 
 #### User level operation and tooling
