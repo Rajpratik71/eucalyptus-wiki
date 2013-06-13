@@ -94,7 +94,8 @@ service multipathd start
 ### COPY udev rules                                             
 cp -f /root/euca_builder/eee/clc/modules/storage-common/udev/12-dm-permissions.rules /etc/udev/rules.d/
 ```
-** eucalyptus.conf 'optional' configuration per SC/NC. **
+
+##### ** eucalyptus.conf 'optional' configuration per SC/NC. **
 If the 'storage.ncpaths' and/or 'storage.scpaths' properties specify an 'ifaceX value, that iface value is then defined in 'eucalyptus.conf' on each NC and/or SC. Specifying a specific interface is optional so both the 'ifaceX:' syntax in the paths properties as well as the configuration in eucalyptus.conf is only needed as possible way to choose a specific interface for a specific path. Forcing a specific interface can also be done through normal networking configuration.  
 ```
 EXAMPLE:
