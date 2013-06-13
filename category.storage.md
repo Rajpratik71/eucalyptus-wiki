@@ -1,5 +1,8 @@
+* [[Boot-from-EBS-changes-in-Eucalyptus-3_3_0]]
+* [[NetApp-Integration-Changes-In-Eucalyptus-3_3_0]]
+* [[Storage-Controller]]
 * [[Storage]]
-* [[Volume-Attach-Detach-in-Eucalyptus-3]]
+* [[Volume-Attach-Detach-in-Eucalyptus-3_3_0]]
 * [[index-of-categories]]
 
 *****
