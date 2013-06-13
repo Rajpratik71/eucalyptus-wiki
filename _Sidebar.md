@@ -36,5 +36,6 @@ Index of Categories
 * [[category.releng]]
 * [[category.reporting]]
 * [[category.stats]]
+* [[category.storage]]
 * [[category.tools]]
 * [[category.ui]]

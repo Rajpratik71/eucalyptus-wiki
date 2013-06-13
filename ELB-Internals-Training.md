@@ -104,6 +104,8 @@ Most of these properties are self-explanatory, so we'll cover the ones that you 
 
 **/var/run/load-balancer-servo/servo.pid**: Typical pid file, which should exist if the Servo process is functioning.
 
+**/var/run/load-balancer-servo/haproxy.pid**: This pid file only exists if you have connected instances to your ELB instance. HAProxy will not be running otherwise. It's started by Servo when listeners are added.
+
 **/var/log/load-balancer-servo/servo.log**: Log for all Servo process activity. This amount of logging can be adjusted using the `-l` option when running the Servo daemon.
 
 ### Adjusting Log Levels
