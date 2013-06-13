@@ -12,6 +12,10 @@
 <TR><TD>&lt;region>.storage.snappercent<TD>Integer >= 0<TD>0<TD><TD>snap reserve &lt;vol-name>
 <TR><TH colspan="5"> 7-mode specific
 <TR><TD>&lt;region>.storage.convertucode<TD>String: “on”, “off”<TD>“on”<TD><TD rowspan="2">vol options &lt;vol-name>
+<TR><TD>&lt;region>.storage.createucode<TD>String: “on”, “off”<TD>“on”<TD>
+<TR><TD>&lt;region>.storage.snapschedweeks<TD>Integer >= 0<TD>0<TD><TD rowspan="3">snap sched &lt;vol-name>
+<TR><TD>&lt;region>.storage.snapscheddays<TD>Integer >= 0<TD>0<TD>
+<TR><TD>&lt;region>.storage.snapschedhours<TD>Integer >= 0<TD>0<TD>
 <TR><TD>&lt;region>.storage.aggregate<TD>String: CSV list of aggregates<TD><TD><TD>
 <TR><TD>&lt;region>.storage.uselargestaggregate<TD>String: “true”, “false”<TD>“true”<TD><TD>
 
