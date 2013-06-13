@@ -108,13 +108,12 @@ From the log you can determine if there are any problems connecting to CLC, conn
 During stress testing (create volume churn) would cause the User Console to become unresponsive, showing no data. The cause: overloaded CLC would provide slow response causing connection timeouts the console.    
 Currently only data polling intervall can be configured in console.ini. To increase waiting time for CLC response in /usr/share/eucalyptus-console/static/js/support.js look for:
 
-'''
- $.ajaxSetup({
-   type: "POST",
-   timeout: 30000
- });
+    $.ajaxSetup({
+       type: "POST",
+       timeout: 30000
+     });
 
-''' 
+
 That 30000 is 30 seconds in milliseconds. For example: to make timeout 1 minute, change the 3 to a 6.
 
 * Restarting console:
