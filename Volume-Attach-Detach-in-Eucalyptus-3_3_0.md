@@ -66,6 +66,7 @@ On the NC, assuming vol-X attached as /dev/vdf:
 The NC now receives topology maps from the CC on DescribeResources and DescribeInstances requests, which run periodically. This is how the NC keeps a record of SCs and the status of each in the Partition/Cluster. The NC only receives topology info about services in its Cluster and the global services (i.e. Walrus).
 
 At TRACE level logging on the NC you can see the values it is receiving:
+
     2013-06-13 09:29:45 TRACE 000011882 updateServiceStateInfo   | Updating NC's topology/service state info: pMeta: userId=eucalyptus correlationId=(null)
     2013-06-13 09:29:45 TRACE 000011882 updateServiceStateInfo   | Updating VBR localhost config sc url to: http://10.111.1.11:8773/services/Storage
     2013-06-13 09:29:45 TRACE 000011882 vbr_update_hostconfig_sc | Updated sc url in VBR hostconfig to http://10.111.1.11:8773/services/Storage
