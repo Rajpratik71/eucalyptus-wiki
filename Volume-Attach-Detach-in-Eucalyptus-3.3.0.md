@@ -68,27 +68,27 @@ The SC now logs 'Processing <operation> request for <volume|snap>' for all Volum
 
 For attachment you should see in cloud-output.log on the SC:
 
-    Processing GetVolumeToken request for vol-X
+    Processing GetVolumeToken request for volume vol-X
     ...
     ...
-    Processing ExportVolume request for vol-X`
+    Processing ExportVolume request for volume vol-X`
 
 On Detach:
-    Processing UnexportVolume request for vol-X
+    Processing UnexportVolume request for volume vol-X
 
 On Delete:
-    Processing DeleteVolume request for vol-X`
+    Processing DeleteStorageVolume request for volume vol-X
 
 On EBS-instance run, for the root:
-    Processing CreateVolume request for vol-X
-    Processing GetVolumeToken request for vol-X
-    Processing ExportVolume request for vol-X
+    Processing CreateVolume request for volume vol-X
+    Processing GetVolumeToken request for volume vol-X
+    Processing ExportVolume request for volume vol-X
 
 On EBS-instance stop:
-    Processing UnexportVolume request for vol-X
+    Processing UnexportVolume request for volume vol-X
 
 Termination may add to the 'stop' set:
-    Processing DeleteStorageVolume request for vol-X
+    Processing DeleteStorageVolume request for volume vol-X
 
 If any of those are missing then you can see how far the process got and what are the likely sources of failure.
 * Missing GetVolumeToken? Check the CLC and CLC->SC communications.
