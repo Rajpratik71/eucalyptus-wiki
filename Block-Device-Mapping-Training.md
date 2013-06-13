@@ -136,8 +136,8 @@ BLOCKDEVICE	/dev/sdb	vol-XYZ12345	2013-04-18T00:09:44.291Z	true
 
 
 ## Gotchas
-* As of Eucalyptus 3.3.0 ephemeral disks will not be displayed in describe volume and describe image requests
-* As of Eucalyptus 3.3.0 only a single ephemeral device can be requested for an instance/image. This device size will determined by the vm/instance type requested at run time. 
+* As of Eucalyptus 3.3.0 ephemeral disks will not be displayed in describe instance and/or image requests
+* As of Eucalyptus 3.3.0 only a single ephemeral device can be requested for an instance and/or image. This device size will determined by the vm/instance type requested at run time. 
 * As of Eucalyptus 3.3.0 multiple block device mappings are only supported on EBS backed instances. 
 * As of Eucalyptus 3.3.0 multiple block device mappings are not supported for vmware
 
