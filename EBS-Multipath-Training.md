@@ -97,9 +97,10 @@ cp -f /root/euca_builder/eee/clc/modules/storage-common/udev/12-dm-permissions.r
 
 ##### ** eucalyptus.conf 'optional' configuration per SC/NC. **
 If the 'storage.ncpaths' and/or 'storage.scpaths' properties specify an 'ifaceX value, that iface value is then defined in 'eucalyptus.conf' on each NC and/or SC. Specifying a specific interface is optional so both the 'ifaceX:' syntax in the paths properties as well as the configuration in eucalyptus.conf is only needed as possible way to choose a specific interface for a specific path. Forcing a specific interface can also be done through normal networking configuration.  
-```
-EXAMPLE:
+
+** EXAMPLE: **
 Partition level properties set and viewed via euca-modify-property and euca-describe-properties:
+```
 storage.scpaths=iface0:192.168.1.100,iface1:192.168.1.101
 storage.ncpaths=iface0:192.168.1.100,iface1:192.168.1.101
 ```
