@@ -128,5 +128,9 @@ If that's the case, you'll need to get your credentials again:
 
 If Load Balancer support is in fact enabled then you should not see the warning message when sourcing your new credentials.
 
+### Running euca-install-load-balancer
+
+When using the installation tool, make sure that you have the `EUCALYPTUS` environment variable set to your Eucalyptus installation's prefix. This is necessary if you have a source install that is in a location other than `/`. The tool will not function on a source install unless this is set.
+
 *****
 [[category.Training]]
