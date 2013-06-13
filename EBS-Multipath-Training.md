@@ -13,13 +13,12 @@ Example of the relevant partition level properties (assuming a partition named '
 This property provides one or more paths for the NC to use for ISCSI traffic. This property can be the address of a single SAN SP, or a list of addresses for each SP which can service the multipathed ISCSI device. The list can be in the format; 
 ```
 storage.ncpaths='<sp1_addr>,<sp2_addr>,<sp3_addr>'
-
 ```
 
 or a specific 'iface' who's mapping is defined on each NC can be used in the property such as: 
 
 ```
-storage.ncpaths=iface0:<sp1_addr>,iface1:<sp2_addr>,iface2:<sp3_addr>
+storage.ncpaths='iface0:<sp1_addr>,iface1:<sp2_addr>,iface2:<sp3_addr>'
 ```
 
 euca-describe-properties --verbose output:
@@ -28,17 +27,19 @@ PROPERTY	PARTI00.storage.ncpaths	10.107.1.200,10.107.1.201,10.108.1.200,10.108.1
 DESCRIPTION	PARTI00.storage.ncpaths	iSCSI Paths for NC. 
 ```
 
-
 ###### **property storage.scpaths**:
-This property provides one or more paths for the SC to use for ISCSI traffic (used during snapshot creation). This property can be the address of a single SAN SP, or a list of addresses for each SP which can service the multipathed ISCSI device. The list can be in the format; 
+This property provides one or more paths for the SC to use for ISCSI traffic (used during snapshot creation). This property can be the address of a single SAN SP, or a list of addresses for each SP which can service the multipathed ISCSI device. The list can be in the format:
+
 ```
 storage.scpaths='<sp1_addr>,<sp2_addr>,<sp3_addr>'
 ```  
+
 or a specific 'iface' who's mapping is defined on each SC can be used in the property such as: 
 ```
-storage.scpaths=iface0:<sp1_addr>,iface1:<sp2_addr>,iface2:<sp3_addr>
+storage.scpaths='iface0:<sp1_addr>,iface1:<sp2_addr>,iface2:<sp3_addr>'
 ```
 
+Example:
 ```
 PROPERTY	PARTI00.storage.scpaths	10.107.1.200,10.107.1.201,10.108.1.200,10.108.1.201
 DESCRIPTION	PARTI00.storage.scpaths	iSCSI Paths for SC
@@ -119,7 +120,9 @@ See partition properties from above for multipath specific configuration. The fe
 #### Debug#1 - Failing to create volume: 
 * Follow CLI level errors if any. These may provide information as to incorrect syntax, exceeding property set limits for resources, etc..
 * If a volume id was provided at the CLI level, grep the logs on the SC for the volume id. 
-``` grep -l <volume id> /var/log/eucalyptus/* ```
+``` 
+grep -l <volume id> /var/log/eucalyptus/* 
+```
 
 Look for errors in the creation process. If the volume id is not present on the SC, or no logs are reported during the time of creation regarding the creation, grep the CLC logs for the volume id and look for errors on the CLC. 
 * If errors are not found and the error is repeatable, it may help to increase log levels on the SC/CLC to log level --debug, etc. 
@@ -133,6 +136,7 @@ INSTANCE	i-19E9429E	emi-B2D13F7B	0.0.0.0	0.0.0.0	pending	vic	0	 t1.micro	2013-04
 BLOCKDEVICE	/dev/sda	vol-ABCD1234	2013-04-18T00:09:44.291Z	true
 BLOCKDEVICE	/dev/sdb	vol-XYZ12345	2013-04-18T00:09:44.291Z	true
 ```
+
 * euca-describe-volume backing the device to confirm proper in-use, attached state 
 * Use euca-describe-nodes to see which node is hosting the instance. 
 * Start from the NC and work backwards 'grep'ing through eucalyptus logs to see how far the attachment request made it through the system. Starting with the NC, then SC, then CLC - 'cat /var/log/eucalyptus/nc.log | grep vol-XYZ12345' or search entire dir 'grep -l vol-XYZ12345 /var/log/eucalyptus/*' . 
