@@ -99,12 +99,12 @@ block_dev_type.delete_on_termination=True
 block_dev_type.size=5
 block_device_map['/dev/sdb'] = block_dev_type
 ```
-#### Example #5 Combining multiple block mapping types in request
+
+##### Example #5 Combining multiple block mapping types in request
 
 * Euca2ools
 ```
 euca-register --root-device-name '/dev/sda' -b '/dev/sda=snap-F1DC3D01::True' -b '/dev/sdb=ephemeral0'  -b '/dev/sdc=snap-A41141AA:3:True' -b '/dev/sdd=:1:True' --name 'test2'
-
 ```
 
 ## Administrative Tasks
