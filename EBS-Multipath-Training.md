@@ -57,7 +57,10 @@ Below is a set of commands run on the remote component(s) to give an example of 
 
 ```
 ### copy iscsid.conf
-Note: Copy with caution. The configuration examples are provided as a reference, overwriting the existing configuration completely may not have a desirable outcome for services outside Eucalyptus. 'diff'ing the existing file and the example and deciding what config makes sense to use is probably a better # approach for a live system.
+Note: Copy with caution. 
+The configuration examples are provided as a reference, 
+overwriting the existing configuration completely may not have a desirable outcome for services outside Eucalyptus. 
+'diff'ing the existing file and the example and deciding what config makes sense to use is probably a better approach for a live system.
 
 find /  -name iscsid.conf.example | grep euca | xargs -I '{}' cp '{}' /etc/iscsi/iscsid.conf
 		
@@ -74,7 +77,10 @@ yum -y install device-mapper-multipath
 mpathconf --enable
 
 ### COPY multipath.conf to /etc/multipath.conf  
-Note: Copy with caution. The configuration examples are provided as a reference, overwriting the existing configuration completely may not have a desirable outcome for services outside Eucalyptus. 'diff'ing the existing file and the example and deciding what config makes sense to use is probably a better # approach for a live system.
+Note: Copy with caution. 
+The configuration examples are provided as a reference, 
+overwriting the existing configuration completely may not have a desirable outcome for services outside Eucalyptus. 
+'diff'ing the existing file and the example and deciding what config makes sense to use is probably a better approach for a live system.
 # Where $multipath_conf would likely be one of the following example configurations provided by eucalyptus:
 # /usr/share/doc/eucalyptus-3.4.0/multipath.conf.example.equallogic
 # /usr/share/doc/eucalyptus-3.4.0/multipath.conf.example.netapp
@@ -89,7 +95,7 @@ service multipathd start
 cp -f /root/euca_builder/eee/clc/modules/storage-common/udev/12-dm-permissions.rules /etc/udev/rules.d/
 ```
 ** eucalyptus.conf 'optional' configuration per SC/NC. **
-In QA we may use the following 'storage.ncpaths' and/or 'storage.scpaths' properties. These specify an 'ifaceX value which is then defined in 'eucalyptus.conf' on each NC and/or SC. Specifying a specific interface is optional, and both the 'ifaceX:' syntax in the paths properties as well as the configuration in eucalyptus.conf is only needed as possible way to choose a specific interface for a specific path. 
+If the 'storage.ncpaths' and/or 'storage.scpaths' properties specify an 'ifaceX value, that iface value is then defined in 'eucalyptus.conf' on each NC and/or SC. Specifying a specific interface is optional so both the 'ifaceX:' syntax in the paths properties as well as the configuration in eucalyptus.conf is only needed as possible way to choose a specific interface for a specific path. Forcing a specific interface can also be done through normal networking configuration.  
 ```
 EXAMPLE:
 Partition level properties set and viewed via euca-modify-property and euca-describe-properties:
