@@ -56,7 +56,9 @@ DESCRIPTION	PARTI00.storage.sanhost	Hostname for SAN device.
 Below is a set of commands run on the remote component(s) to give an example of how we might setup a new SC or NC to utilize device mapper multipathing. 
 
 ```
- ### copy iscsid.conf
+### copy iscsid.conf
+Note: Copy with caution. The configuration examples are provided as a reference, overwriting the existing configuration completely may not have a desirable outcome for services outside Eucalyptus. 'diff'ing the existing file and the example and deciding what config makes sense to use is probably a better # approach for a live system.
+
 find /  -name iscsid.conf.example | grep euca | xargs -I '{}' cp '{}' /etc/iscsi/iscsid.conf
 		
 ### logout of iscsi sessions to allow iscsi restart
@@ -71,8 +73,14 @@ yum -y install device-mapper-multipath
 ### ENABLE MULTIPATH
 mpathconf --enable
 
-### COPY multipath.conf to /etc/multipath.conf                  
-find / -name ".$multipath_conf." | grep eucalyptus | xargs -I '{}' cp '{}' /etc/multipath.conf
+### COPY multipath.conf to /etc/multipath.conf  
+Note: Copy with caution. The configuration examples are provided as a reference, overwriting the existing configuration completely may not have a desirable outcome for services outside Eucalyptus. 'diff'ing the existing file and the example and deciding what config makes sense to use is probably a better # approach for a live system.
+# Where $multipath_conf would likely be one of the following example configurations provided by eucalyptus:
+# /usr/share/doc/eucalyptus-3.4.0/multipath.conf.example.equallogic
+# /usr/share/doc/eucalyptus-3.4.0/multipath.conf.example.netapp
+# /usr/share/doc/eucalyptus-3.4.0/multipath.conf.example.vnx                
+
+find / -name $multipath_conf | grep eucalyptus | xargs -I '{}' cp '{}' /etc/multipath.conf
 
 ### START multipathd SERVICE
 service multipathd start
