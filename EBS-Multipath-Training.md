@@ -61,8 +61,10 @@ Note: Copy with caution.
 The configuration examples are provided as a reference, 
 overwriting the existing configuration completely may not have a desirable outcome for services outside Eucalyptus. 
 'diff'ing the existing file and the example and deciding what config makes sense to use is probably a better approach for a live system.
+cp /usr/share/doc/eucalyptus-3.3.0/iscsid.conf.example /etc/iscsi/iscsid.conf
 
-find /  -name iscsid.conf.example | grep euca | xargs -I '{}' cp '{}' /etc/iscsi/iscsid.conf
+Automated QA uses something like the following for source and package builds.
+#find /  -name iscsid.conf.example | grep euca | xargs -I '{}' cp '{}' /etc/iscsi/iscsid.conf
 		
 ### logout of iscsi sessions to allow iscsi restart
 iscsiadm -m session -u
@@ -85,13 +87,16 @@ overwriting the existing configuration completely may not have a desirable outco
 # /usr/share/doc/eucalyptus-3.4.0/multipath.conf.example.equallogic
 # /usr/share/doc/eucalyptus-3.4.0/multipath.conf.example.netapp
 # /usr/share/doc/eucalyptus-3.4.0/multipath.conf.example.vnx                
+cp $multipath_conf /etc/multipath.conf
 
-find / -name $multipath_conf | grep eucalyptus | xargs -I '{}' cp '{}' /etc/multipath.conf
+Automated QA uses something like the following for source and package builds. 
+# find / -name $multipath_conf | grep eucalyptus | xargs -I '{}' cp '{}' /etc/multipath.conf
 
 ### START multipathd SERVICE
 service multipathd start
 
-### COPY udev rules                                             
+### COPY udev rules
+Note: This should not need to be done for package installs, for src builds the rules can be copied from the source itself...                                             
 cp -f /root/euca_builder/eee/clc/modules/storage-common/udev/12-dm-permissions.rules /etc/udev/rules.d/
 ```
 
