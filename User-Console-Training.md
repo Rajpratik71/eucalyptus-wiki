@@ -114,7 +114,7 @@ Currently only the data polling intervall can be configured in console.ini. Time
      });
 
 
-Timeout is set in milliseconds. For example: to make timeout 1 minute, change the 3 to a 6.
+Timeout is set in milliseconds. 
 
 * Restarting console:
 
