@@ -2,7 +2,7 @@
           summary="This table lists the NetApp properties exposed by Eucalyptus, a brief description, default value in Eucalyptus and NetApp CLI to verify the values">
 <TR><TH>Release<TH>Eucalyptus property<TH>Allowed values<TH>Default value<TH>Description<TH>NetApp CLI
 <TR><TH rowspan="15">3.2.1<TH colspan="5"> Applicable to both 7-mode and Cluster mode
-<TR><TD>&lt;region>.storage.fractionalreserve<TD <p style="color:olive;font-size:24px;"></p><TD>Integer: 0-100<TD>0<TD><TD rowspan="4">vol options &lt;vol-name>
+<TR><TD>&lt;region>.storage.fractionalreserve<TD>Integer: 0-100<TD>0<TD><TD rowspan="4">vol options &lt;vol-name>
 <TR><TD>&lt;region>.storage.guarantee<TD>String: “none”, “file”, “volume”<TD>“volume”<TD>
 <TR><TD>&lt;region>.storage.noatimeupdate<TD>String: “on”, “off”<TD>“on”<TD>
 <TR><TD>&lt;region>.storage.tryfirst<TD>String: “volume_grow”, “snap_delete”<TD>“volume_grow”<TD>
