@@ -79,6 +79,16 @@ On Detach:
     Processing UnexportVolume request for volume vol-X
     ...
 
+Note: on detach you will see in the nc.log a message by 'get_iscsi_target' indicating that it was not able to find the target. If this comes after the scClientCall then this is an expected outcome. This particular invocation of that script is just a final check to ensure that the volume has indeed been removed from the NC host.
+Example detach from a TGT-backed SC:
+
+    013-06-13 10:27:56 DEBUG 000011882 scClientCall             |  done scOps=UnexportVolume clientrc=0 opFail=0
+    2013-06-13 10:27:56 DEBUG 000011882 get_iscsi_target         | invoking `/opt/eucalyptus/usr/lib/eucalyptus/euca_rootwrap /opt/eucalyptus/usr/share/eucalyptus/get_iscsitarget.pl /opt/eucalyptus,,,,GrFh2mGLCXc2eI8k+jXGWTHNyv0MzE9GrYe1KesHUBZIyysichtp6CF/UleA5mAWjVYHrTnVdWk5qTGFILZw1sXIcUD1/FDwVICDbyDVTeIQJ9+fVy0b0V+6bSJJP+hW/vjq3VbGUxiO/Cb1PTt+0E7q09Jcu++7fTvTi1blDjyOdddO7fWA1ZFEBqtKu/T3NFl29B8lnp7mLlVCbxJxCqif6uGu/Jdrqz6UkE81A9X9W1QTWH4NGmlndmMPVQSWvpe5U6zzT1vDBU4n742/Vx4pGax4s7j10+BOP7DujaSXo7nzv2+0LTT+pqpcpRM/3yLZxrweBBrM8ynDNTu7AA==,,10.111.1.11,iqn.2009-06.com.eucalyptus.PARTI00:store16`
+    2013-06-13 10:27:56 DEBUG 000011882 get_iscsi_target         | get storage script returned: 1, stdout: '',   stderr: 'which: no multipath in (/bin:/usr/bin:/sbin:/usr/sbin/)
+    Failed to run '/sbin/iscsiadm -m session -R': iscsiadm: No session found.'
+
+In this example we see that after the scClientCall to UnexportVolume, the get_iscsi_target properly returns 1 since it cannot find a device for the lun. This is the correct output. If you are using a SAN-backed SC, then you may or may not see the final 'Failed to run...' part because that is specific to the lun->target mapping of TGT. Equallogic will exhibit this behavior as well, but EMC and Netapp typically will not.
+
 On Delete:
 
     ...
