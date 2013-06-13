@@ -125,4 +125,5 @@ code is the ultimate truth here
 
 *****
 
-[[category.components]]
+[[category.components]]  
+[[category.storage]]
