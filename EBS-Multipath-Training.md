@@ -51,33 +51,47 @@ PROPERTY	PARTI00.storage.sanhost	10.109.1.26,10.109.1.27
 DESCRIPTION	PARTI00.storage.sanhost	Hostname for SAN device.
 ```
 
-#### Component Level Configuration and setup (Nodes and Storage Controllers)
+#### Component Level Configuration and setup 
+** (Node and Storage Controllers) **
+Below is a set of commands run on the remote component(s) to give an example of how we might setup a new SC or NC to utilize device mapper multipathing. 
 
 ```
-                ### copy iscsid.conf
-		find /  -name iscsid.conf.example | grep euca | xargs -I '{}' cp '{}' /etc/iscsi/iscsid.conf
+ ### copy iscsid.conf
+find /  -name iscsid.conf.example | grep euca | xargs -I '{}' cp '{}' /etc/iscsi/iscsid.conf
 		
-                ### logout of iscsi sessions to allow iscsi restart
-		iscsiadm -m session -u
-                
-		### start and/or restart iscsid
-                iscsid; service iscsid restart
- 
-                ### YUM INSTALL "device-mapper-multipath" package
-                yum -y install device-mapper-multipath
-       
-                ### ENABLE MULTIPATH
-                mpathconf --enable
-            
-                ### COPY multipath.conf to /etc/multipath.conf                  
-                find / -name ".$multipath_conf." | grep eucalyptus | xargs -I '{}' cp '{}' /etc/multipath.conf
+### logout of iscsi sessions to allow iscsi restart
+iscsiadm -m session -u
 
-                ### START multipathd SERVICE
-                service multipathd start
+### start and/or restart iscsid
+iscsid; service iscsid restart
 
-                ### COPY udev rules                                             
-                cp -f /root/euca_builder/eee/clc/modules/storage-common/udev/12-dm-permissions.rules /etc/udev/rules.d/
+### YUM INSTALL "device-mapper-multipath" package
+yum -y install device-mapper-multipath
 
+### ENABLE MULTIPATH
+mpathconf --enable
+
+### COPY multipath.conf to /etc/multipath.conf                  
+find / -name ".$multipath_conf." | grep eucalyptus | xargs -I '{}' cp '{}' /etc/multipath.conf
+
+### START multipathd SERVICE
+service multipathd start
+
+### COPY udev rules                                             
+cp -f /root/euca_builder/eee/clc/modules/storage-common/udev/12-dm-permissions.rules /etc/udev/rules.d/
+```
+** eucalyptus.conf 'optional' configuration per SC/NC. 
+In QA we may use the following 'storage.ncpaths' and/or 'storage.scpaths' properties. These specify an 'ifaceX value which is then defined in 'eucalyptus.conf' on each NC and/or SC. Specifying a specific interface is optional, and both the 'ifaceX:' syntax in the paths properties as well as the configuration in eucalyptus.conf is only needed as possible way to choose a specific interface for a specific path. 
+```
+EXAMPLE:
+Partition level properties set and viewed via euca-modify-property and euca-describe-properties:
+storage.scpaths=iface0:192.168.1.100,iface1:192.168.1.101
+storage.ncpaths=iface0:192.168.1.100,iface1:192.168.1.101
+```
+
+'If' using the iface syntax in the paths properties, the following line would be added to each NC SC using those path properties. Eucalyptus does not need to be restarted for this configuration addition/change. 
+```
+STORAGE_INTERFACES="iface0=br0,iface1=eth1"
 ```
 
 ## Administrative Tasks
