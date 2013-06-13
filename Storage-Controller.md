@@ -1,6 +1,6 @@
 _for Eucalyptus 3.1, see notes for 3.2 features in progress_
 
-**There have been some changes to how volume attachment works in Eucalyptus 3.3.0 see:** [Volume Attach/Detach Changes in Eucalyptus 3.3.0](Volume Attach/Detach in Eucalyptus 3.3.0)
+**There have been some changes to how volume attachment works in Eucalyptus 3.3.0 see:** [Volume Attach/Detach Changes in Eucalyptus 3.3.0](Volume-Attach/Detach-in-Eucalyptus 3.3.0)
 
 This page describes how the Storage Controller works and its various backend storage providers for providing EBS support in Eucalyptus. For installation/configuration and admin/install documentation, see the [Eucalyptus documentation](http://www.eucalyptus.com/docs).
 
