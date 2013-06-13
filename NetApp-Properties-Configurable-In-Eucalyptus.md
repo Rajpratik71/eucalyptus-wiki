@@ -16,7 +16,12 @@
 <TR><TD>&lt;region>.storage.snapschedweeks<TD>Integer >= 0<TD>0<TD><TD rowspan="3">snap sched &lt;vol-name>
 <TR><TD>&lt;region>.storage.snapscheddays<TD>Integer >= 0<TD>0<TD>
 <TR><TD>&lt;region>.storage.snapschedhours<TD>Integer >= 0<TD>0<TD>
+<TR><TH rowspan="8">3.3<TH colspan="5"> Applicable to both 7-mode and Cluster mode
 <TR><TD>&lt;region>.storage.aggregate<TD>String: CSV list of aggregates<TD><TD><TD>
 <TR><TD>&lt;region>.storage.uselargestaggregate<TD>String: “true”, “false”<TD>“true”<TD><TD>
-
+<TR><TH colspan="5"> 7-mode specific
+<TR><TD>&lt;region>.storage.nosnap<TD>String: “true”, “false”<TD>“true”<TD><TD>vol options &lt;vol-name>
+<TR><TH colspan="5"> Cluster mode specific
+<TR><TD>&lt;region>.storage.snapshotpolicy<TD>String<TD>“none”<TD><TD rowspan="2">volume show -volume &lt;vol-name
+<TR><TD>&lt;region>.storage.autosnapshots<TD>String: “true”, “false"<TD>“false”<TD>
 </TABLE>
