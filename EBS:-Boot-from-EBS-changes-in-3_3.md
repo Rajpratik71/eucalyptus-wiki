@@ -1,4 +1,4 @@
-Eucalyptus 3.3 introduces improvements in EBS backed image registration and instances. Some of the high level changes are explained here.
+Eucalyptus 3.3 introduces improvements in EBS backed image registration and instances. Some of the high level changes are explained here. For general information about the usage and syntax of EBS device mappings refer to [[Block Device Mapping Training]] 
 
 > These changes have been implemented for KVM only. 
 
@@ -131,4 +131,5 @@ Login to the VM instance and query the metadata for block device mappings
 
 
 ***
-[[category.ebs]]
+[[category.ebs]]  
+[[category.storage]]
