@@ -107,6 +107,9 @@ block_device_map['/dev/sdb'] = block_dev_type
 euca-register --root-device-name '/dev/sda' -b '/dev/sda=snap-F1DC3D01::True' -b '/dev/sdb=ephemeral0'  -b '/dev/sdc=snap-A41141AA:3:True' -b '/dev/sdd=:1:True' --name 'test2'
 ```
 
+##### Example #6 Excluding a device at run time which is defined in the EMI
+euca-run-instance emi-blahblah -blaharg 
+
 ## Administrative Tasks
 ### Configuration to be aware of:
 * Will make use of the clouds SC for EBS, and Walrus for snapshot capabilities. 
