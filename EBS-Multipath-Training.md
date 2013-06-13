@@ -120,6 +120,258 @@ STORAGE_INTERFACES="iface0=br0,iface1=eth1"
 See partition properties from above for multipath specific configuration. The feature should be transparent to other eucalyptus properties and usage. 
 
 ## Debugging 
+#### Debugging General
+For general multipath debugging there is lots of good info online for device mapper multipathing. Multipath support requires proper configuration on each component utilizing the feature. If multiple paths are specified for a given partition, than all components of that type will need to have device mapper multipathing setup correctly. The more components in a system to setup the more likely an administrator may misconfigure or overlook an item in the setup process. Below is some common things which have been misconfigured and/or overlooked in the setup process:
+
+1. Is device-mapper-multipath installed on this system? yum info device-mapper-multipath ?
+2. Diff /etc/multipath.conf to the example multipath script (for your specific storage backend) provided by Eucalyptus. Is there missing or conflicting config in the diff?
+3. Diff /etc/iscsi/iscsid.conf to the example iscsi conf script provided by Eucalyptus. Is there missing or conflicting config in the diff that could be at fault?
+4. Did you restart or reload multipathd after changing /etc/multipath.conf? 
+5. multipath -ll will provide some amount of information for devices currently multipath'd. In the example below 'mpathaa' is the result of a single volume attached to an NC. The ncpaths property has 2 paths, both are in a good status. 
+```
+[root@eucahost-51-75 ~]# multipath -ll
+mpathaa (36006016098b03000eaae95b256d4e211) dm-17 DGC,VRAID
+size=1.0G features='1 queue_if_no_path' hwhandler='1 alua' wp=rw
+|-+- policy='round-robin 0' prio=50 status=active
+| `- 7:0:0:1 sdf 8:80 active ready  running
+`-+- policy='round-robin 0' prio=10 status=enabled
+  `- 6:0:0:1 sdd 8:48 active ready  running
+``` 
+
+6.Check iscsiadm -m session -P3 for additional info about the scsi devices in the mpath group you are debugging. From the above example, our volume is using sdf, and sdd for it's 2 paths:
+```
+[root@eucahost-51-75 ~]# iscsiadm -m session -P3
+iSCSI Transport Class version 2.0-870
+version 2.0-872.41.el6
+Target: iqn.1992-04.com.emc:cx.apm00121200804.a6
+	Current Portal: 192.168.25.182:3260,1
+	Persistent Portal: 192.168.25.182:3260,1
+		**********
+		Interface:
+		**********
+		Iface Name: iface0
+		Iface Transport: tcp
+		Iface Initiatorname: iqn.1994-05.com.redhat:c788a5412453
+		Iface IPaddress: 192.168.51.75
+		Iface HWaddress: <empty>
+		Iface Netdev: br0
+		SID: 1
+		iSCSI Connection State: LOGGED IN
+		iSCSI Session State: LOGGED_IN
+		Internal iscsid Session State: NO CHANGE
+		*********
+		Timeouts:
+		*********
+		Recovery Timeout: 15
+		Target Reset Timeout: 30
+		LUN Reset Timeout: 10
+		Abort Timeout: 15
+		*****
+		CHAP:
+		*****
+		username: c7a7-10240
+		password: ********
+		username_in: <empty>
+		password_in: ********
+		************************
+		Negotiated iSCSI params:
+		************************
+		HeaderDigest: None
+		DataDigest: None
+		MaxRecvDataSegmentLength: 262144
+		MaxXmitDataSegmentLength: 65536
+		FirstBurstLength: 0
+		MaxBurstLength: 262144
+		ImmediateData: No
+		InitialR2T: Yes
+		MaxOutstandingR2T: 1
+		************************
+		Attached SCSI devices:
+		************************
+		Host Number: 6	State: running
+		scsi6 Channel 00 Id 0 Lun: 0
+			Attached scsi disk sdc		State: running
+		scsi6 Channel 00 Id 0 Lun: 1
+			Attached scsi disk sdd		State: running
+Target: iqn.1992-04.com.emc:cx.apm00121200804.b6
+	Current Portal: 10.109.25.186:3260,2
+	Persistent Portal: 10.109.25.186:3260,2
+		**********
+		Interface:
+		**********
+		Iface Name: iface1
+		Iface Transport: tcp
+		Iface Initiatorname: iqn.1994-05.com.redhat:c788a5412453
+		Iface IPaddress: 10.109.51.75
+		Iface HWaddress: <empty>
+		Iface Netdev: eth1
+		SID: 2
+		iSCSI Connection State: LOGGED IN
+		iSCSI Session State: LOGGED_IN
+		Internal iscsid Session State: NO CHANGE
+		*********
+		Timeouts:
+		*********
+		Recovery Timeout: 15
+		Target Reset Timeout: 30
+		LUN Reset Timeout: 10
+		Abort Timeout: 15
+		*****
+		CHAP:
+		*****
+		username: c7a7-10240
+		password: ********
+		username_in: <empty>
+		password_in: ********
+		************************
+		Negotiated iSCSI params:
+		************************
+		HeaderDigest: None
+		DataDigest: None
+		MaxRecvDataSegmentLength: 262144
+		MaxXmitDataSegmentLength: 65536
+		FirstBurstLength: 0
+		MaxBurstLength: 262144
+		ImmediateData: No
+		InitialR2T: Yes
+		MaxOutstandingR2T: 1
+		************************
+		Attached SCSI devices:
+		************************
+		Host Number: 7	State: running
+		scsi7 Channel 00 Id 0 Lun: 0
+			Attached scsi disk sde		State: running
+		scsi7 Channel 00 Id 0 Lun: 1
+			Attached scsi disk sdf		State: running
+```
+
+7. Check /var/log/eucalyptus/nc.log, /var/log/messages and /var/log/dmesg and/or dmesg for insight into what happened during the attachment process:
+Example output from nc.log during volume attach. Take note of the timestamps (11:27:08) for comparing to other logs in the system:
+```
+2013-06-13 11:27:08 DEBUG 000012427 doAttachVolume           | [i-126041BC][vol-DABC42FE] volume attaching (localDev=/dev/vde)
+2013-06-13 11:27:17 DEBUG 000012427 scClientCall             |  done scOps=ExportVolume clientrc=0 opFail=0
+2013-06-13 11:27:18 DEBUG 000012427 connect_iscsi_target     | connect script returned: 0, stdout: '/dev/disk/by-id/dm-uuid-mpath-36006016098b03000eaae95b256d4e211', stderr: 'Before connecting:
+$VAR1 = {
+          'sid' => '1',
+          'tpgt' => '1',
+          'netdev' => 'br0',
+          'lun-0' => 'sdc',
+          'hostnumber' => '6',
+          'target' => 'iqn.1992-04.com.emc:cx.apm00121200804.a6',
+          'pportal' => '192.168.25.182',
+          'iface' => 'iface0',
+          'portal' => '192.168.25.182'
+        };
+$VAR1 = {
+          'sid' => '2',
+          'tpgt' => '2',
+          'netdev' => 'eth1',
+          'lun-0' => 'sde',
+          'hostnumber' => '7',
+          'target' => 'iqn.1992-04.com.emc:cx.apm00121200804.b6',
+          'pportal' => '10.109.25.186',
+          'iface' => 'iface1',
+          'portal' => '10.109.25.186'
+        };
+After connecting:
+$VAR1 = {
+          'sid' => '1',
+          'tpgt' => '1',
+          'netdev' => 'br0',
+          'lun-0' => 'sdc',
+          'lun-1' => 'sdd',
+          'hostnumber' => '6',
+          'target' => 'iqn.1992-04.com.emc:cx.apm00121200804.a6',
+          'pportal' => '192.168.25.182',
+          'iface' => 'iface0',
+          'portal' => '192.168.25.182'
+        };
+$VAR1 = {
+          'sid' => '2',
+          'tpgt' => '2',
+          'netdev' => 'eth1',
+          'lun-0' => 'sde',
+          'lun-1' => 'sdf',
+          'hostnumber' => '7',
+          'target' => 'iqn.1992-04.com.emc:cx.apm00121200804.b6',
+          'pportal' => '10.109.25.186',
+          'iface' => 'iface1',
+          'portal' => '10.109.25.186'
+        };
+'
+2013-06-13 11:27:18 DEBUG 000012427 doAttachVolume           | [i-126041BC][vol-DABC42FE] attached iSCSI target of host device '/dev/disk/by-id/dm-uuid-mpath-36006016098b03000eaae95b256d4e211'
+2013-06-13 11:27:18 DEBUG 000012427 write_xml_file           | [i-126041BC] wrote volume XML to /disk1/storage/eucalyptus/instances/work/KYGU95MZPSCNQDMRCXVP8/i-126041BC/vol-DABC42FE.xml
+2013-06-13 11:27:18  INFO 000012427 doAttachVolume           | [i-126041BC][vol-DABC42FE] volume attached as host device '/dev/disk/by-id/dm-uuid-mpath-36006016098b03000eaae95b256d4e211' to guest device 'vde'
+```
+
+Example output from /var/log/messages during the attach operation. Note timestamp taken from nc.log (11:27:08):
+```
+Jun 13 11:27:17 CENTOS-x86-64 kernel: sd 6:0:0:0: [sdc] READ CAPACITY failed
+Jun 13 11:27:17 CENTOS-x86-64 kernel: sd 6:0:0:0: [sdc] Result: hostbyte=DID_OK driverbyte=DRIVER_SENSE
+Jun 13 11:27:17 CENTOS-x86-64 kernel: sd 6:0:0:0: [sdc] Sense Key : Illegal Request [current]
+Jun 13 11:27:17 CENTOS-x86-64 kernel: sd 6:0:0:0: [sdc] Add. Sense: Logical unit not supported
+Jun 13 11:27:17 CENTOS-x86-64 kernel: sd 6:0:0:0: [sdc] Test WP failed, assume Write Enabled
+Jun 13 11:27:17 CENTOS-x86-64 kernel: sd 6:0:0:0: [sdc] Asking for cache data failed
+Jun 13 11:27:17 CENTOS-x86-64 kernel: sd 6:0:0:0: [sdc] Assuming drive cache: write through
+Jun 13 11:27:17 CENTOS-x86-64 kernel: scsi 6:0:0:1: Direct-Access     DGC      VRAID            0532 PQ: 0 ANSI: 4
+Jun 13 11:27:17 CENTOS-x86-64 kernel: scsi 6:0:0:1: alua: supports implicit and explicit TPGS
+Jun 13 11:27:17 CENTOS-x86-64 kernel: scsi 6:0:0:1: alua: port group 01 rel port 07
+Jun 13 11:27:17 CENTOS-x86-64 kernel: scsi 6:0:0:1: alua: rtpg failed with 8000002
+Jun 13 11:27:17 CENTOS-x86-64 kernel: scsi 6:0:0:1: alua: port group 01 state N supports tolUsNA
+Jun 13 11:27:17 CENTOS-x86-64 kernel: scsi 6:0:0:1: alua: Attached
+Jun 13 11:27:17 CENTOS-x86-64 kernel: sd 6:0:0:1: Attached scsi generic sg3 type 0
+Jun 13 11:27:17 CENTOS-x86-64 kernel: sd 6:0:0:1: [sdd] 2097152 512-byte logical blocks: (1.07 GB/1.00 GiB)
+Jun 13 11:27:17 CENTOS-x86-64 kernel: sd 6:0:0:1: [sdd] Write Protect is off
+Jun 13 11:27:17 CENTOS-x86-64 kernel: sd 6:0:0:1: [sdd] Write cache: disabled, read cache: enabled, doesn't support DPO or FUA
+Jun 13 11:27:17 CENTOS-x86-64 kernel: sd 7:0:0:0: [sde] READ CAPACITY failed
+Jun 13 11:27:17 CENTOS-x86-64 kernel: sd 7:0:0:0: [sde] Result: hostbyte=DID_OK driverbyte=DRIVER_SENSE
+Jun 13 11:27:17 CENTOS-x86-64 kernel: sd 7:0:0:0: [sde] Sense Key : Illegal Request [current]
+Jun 13 11:27:17 CENTOS-x86-64 kernel: sd 7:0:0:0: [sde] Add. Sense: Logical unit not supported
+Jun 13 11:27:17 CENTOS-x86-64 kernel: sd 7:0:0:0: [sde] Test WP failed, assume Write Enabled
+Jun 13 11:27:17 CENTOS-x86-64 kernel: sdd:
+Jun 13 11:27:17 CENTOS-x86-64 kernel: sd 7:0:0:0: [sde] Asking for cache data failed
+Jun 13 11:27:17 CENTOS-x86-64 kernel: sd 7:0:0:0: [sde] Assuming drive cache: write through
+Jun 13 11:27:17 CENTOS-x86-64 kernel: scsi 7:0:0:1: Direct-Access     DGC      VRAID            0532 PQ: 0 ANSI: 4
+Jun 13 11:27:17 CENTOS-x86-64 kernel: scsi 7:0:0:1: alua: supports implicit and explicit TPGS
+Jun 13 11:27:17 CENTOS-x86-64 kernel: scsi 7:0:0:1: alua: port group 02 rel port 11
+Jun 13 11:27:17 CENTOS-x86-64 kernel: scsi 7:0:0:1: alua: rtpg failed with 8000002
+Jun 13 11:27:17 CENTOS-x86-64 kernel: scsi 7:0:0:1: alua: port group 02 state A supports tolUsNA
+Jun 13 11:27:17 CENTOS-x86-64 kernel: scsi 7:0:0:1: alua: Attached
+Jun 13 11:27:17 CENTOS-x86-64 kernel: sd 7:0:0:1: Attached scsi generic sg5 type 0
+Jun 13 11:27:17 CENTOS-x86-64 kernel: sd 7:0:0:1: [sdf] 2097152 512-byte logical blocks: (1.07 GB/1.00 GiB)
+Jun 13 11:27:17 CENTOS-x86-64 kernel: sd 7:0:0:1: [sdf] Write Protect is off
+Jun 13 11:27:17 CENTOS-x86-64 kernel: sd 7:0:0:1: [sdf] Write cache: disabled, read cache: enabled, doesn't support DPO or FUA
+Jun 13 11:27:17 CENTOS-x86-64 kernel: sdf:
+Jun 13 11:27:17 CENTOS-x86-64 kernel: sd 6:0:0:0: [sdc] READ CAPACITY failed
+Jun 13 11:27:17 CENTOS-x86-64 kernel: sd 6:0:0:0: [sdc] Result: hostbyte=DID_OK driverbyte=DRIVER_SENSE
+Jun 13 11:27:17 CENTOS-x86-64 kernel: sd 6:0:0:0: [sdc] Sense Key : Illegal Request [current]
+Jun 13 11:27:17 CENTOS-x86-64 kernel: sd 6:0:0:0: [sdc] Add. Sense: Logical unit not supported
+Jun 13 11:27:17 CENTOS-x86-64 kernel: sd 6:0:0:0: [sdc] Test WP failed, assume Write Enabled
+Jun 13 11:27:17 CENTOS-x86-64 kernel: sd 6:0:0:0: [sdc] Asking for cache data failed
+Jun 13 11:27:17 CENTOS-x86-64 kernel: sd 6:0:0:0: [sdc] Assuming drive cache: write through
+Jun 13 11:27:17 CENTOS-x86-64 kernel: unknown partition table
+Jun 13 11:27:17 CENTOS-x86-64 kernel: unknown partition table
+Jun 13 11:27:17 CENTOS-x86-64 kernel: sd 7:0:0:1: [sdf] Attached SCSI disk
+Jun 13 11:27:17 CENTOS-x86-64 kernel: sd 6:0:0:1: [sdd] Attached SCSI disk
+Jun 13 11:27:17 CENTOS-x86-64 kernel: sd 7:0:0:0: [sde] READ CAPACITY failed
+Jun 13 11:27:17 CENTOS-x86-64 kernel: sd 7:0:0:0: [sde] Result: hostbyte=DID_OK driverbyte=DRIVER_SENSE
+Jun 13 11:27:17 CENTOS-x86-64 kernel: sd 7:0:0:0: [sde] Sense Key : Illegal Request [current]
+Jun 13 11:27:17 CENTOS-x86-64 kernel: sd 7:0:0:0: [sde] Add. Sense: Logical unit not supported
+Jun 13 11:27:17 CENTOS-x86-64 kernel: sd 7:0:0:0: [sde] Test WP failed, assume Write Enabled
+Jun 13 11:27:17 CENTOS-x86-64 kernel: sd 7:0:0:0: [sde] Asking for cache data failed
+Jun 13 11:27:17 CENTOS-x86-64 kernel: sd 7:0:0:0: [sde] Assuming drive cache: write through
+Jun 13 11:27:17 CENTOS-x86-64 multipathd: sdf: add path (uevent)
+Jun 13 11:27:17 CENTOS-x86-64 multipathd: mpathaa: load table [0 2097152 multipath 1 queue_if_no_path 1 alua 1 1 round-robin 0 1 1 8:80 1]
+Jun 13 11:27:17 CENTOS-x86-64 multipathd: mpathaa: event checker started
+Jun 13 11:27:17 CENTOS-x86-64 multipathd: sdf path added to devmap mpathaa
+Jun 13 11:27:17 CENTOS-x86-64 multipathd: sdd: add path (uevent)
+Jun 13 11:27:17 CENTOS-x86-64 kernel: sd 7:0:0:1: alua: port group 02 state A supports tolUsNA
+Jun 13 11:27:17 CENTOS-x86-64 multipathd: mpathaa: load table [0 2097152 multipath 1 queue_if_no_path 1 alua 2 1 round-robin 0 1 1 8:80 1 round-robin 0 1 1 8:48 1]
+Jun 13 11:27:17 CENTOS-x86-64 multipathd: sdd path added to devmap mpathaa
+Jun 13 11:27:17 CENTOS-x86-64 kernel: sd 7:0:0:1: alua: port group 02 state A supports tolUsNA
+
+```
+
 
 #### Debug#1 - Failing to create volume: 
 * Follow CLI level errors if any. These may provide information as to incorrect syntax, exceeding property set limits for resources, etc..
