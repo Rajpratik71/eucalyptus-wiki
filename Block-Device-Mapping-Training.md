@@ -13,7 +13,7 @@ A block device mapping can determine the following:
 * size of the device (in GB) 
 * type of device (ephemeral or ebs).
 * source of the device (ie snapshot to create the device from, empty ebs volume, or ephemeral disk)
-* delete on terminate - whether or not to delete the EBS volume backing the device. 
+* delete on terminate - whether or not to delete the EBS volume backing the device when the instance terminates. 
 * no device, exclude a device from a block device mapping being overridden. 
 
 #### Component level responsibilities
