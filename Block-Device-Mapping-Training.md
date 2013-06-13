@@ -1,6 +1,6 @@
 ## Feature Overview
 In the 3.3.0 release additional block device mapping support was added for EBS backed instances. EBS backed instances are often referred to as 'boot from EBS' (bfebs) instances, or instances with an EBS root device.
-In the scope of this wiki, a 'Block Device Mapping' (BDM) is used to specify the block devices to be attached to EBS backed instances at instance launch time. Block device mapping and ebs backed instances are not new to Eucalyptus, 3.3.0 brings added support for multiple block devices as well as addresses multiple user requests for AWS compliance and attribute consistency. 
+In the scope of this wiki, a 'Block Device Mapping' (BDM) is used to specify the block devices to be attached to EBS backed instances at instance launch time. Block device mapping and ebs backed instances are not new to Eucalyptus, 3.3.0 brings added support for multiple block devices as well as addresses multiple user requests for additional AWS compliance and attribute consistency. 
 
 #### Using a block device mapping
 The block device mapping for a given instance can be specified in two ways. 
