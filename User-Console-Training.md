@@ -98,6 +98,13 @@ You can restart the console using the following command:
 
 >/var/log/messages
 
+### Console does not show any data?
+
+One possible reason for this is that data from CLC does not reach the User Console. 
+From the log you can determine if there are any problems connecting to CLC, connection timeouts. 
+During stress testing overloaded CLC would cause connection timeouts the console   
+
+
 * Restarting console:
 
 1. Restart the console process, or 
@@ -106,6 +113,12 @@ You can restart the console using the following command:
 2. clear cache in the browser
 
 3. refresh browser
+
+* Firebug is a good tool for debugging in Firefox.
+
+
+
+
 ## Useful links
 
 Demo for new features of User Console can be found here http://vimeo.com/68189848 .
