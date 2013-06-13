@@ -99,7 +99,7 @@ block_dev_type.delete_on_termination=True
 block_dev_type.size=5
 block_device_map['/dev/sdb'] = block_dev_type
 ```
-##### Example #5 Combining multiple block mapping types in request
+#### Example #5 Combining multiple block mapping types in request
 
 * Euca2ools
 ```
