@@ -16,7 +16,6 @@ A block device mapping can determine the following:
 * delete on terminate - whether or not to delete the EBS volume backing the device when the instance terminates. 
 * no device, exclude a device from a block device mapping being overridden. 
 
-#### Component level responsibilities
 
 #### User level operation and tooling
 * End users will interact with this feature when creating new EBS backed EMIs, and running instances from existing EBS backed EMIs. The user can customize Block Device Mappings in each operation. 
