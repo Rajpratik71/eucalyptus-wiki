@@ -13,8 +13,6 @@ considered and atomic operation, either the full action succeed, in which
 case the file will be added/removed, or, in case of failure, the old
 content will remain in the bucket.
 
-![Walrus haz many bukkits!](http://i45.photobucket.com/albums/f75/basilsblog/lolcatz/01-i-has-a-bucket.jpg)
-
 The **Storage Controller** is the Eucalyptus component implementing the
 Elastic Block Storage, which allows instances to use Volumes. Volumes can
 be create, deleted, attached to running instances, detached, and
