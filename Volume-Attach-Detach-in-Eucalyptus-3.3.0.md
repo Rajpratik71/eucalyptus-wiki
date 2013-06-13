@@ -71,29 +71,38 @@ For attachment you should see in cloud-output.log on the SC:
     Processing GetVolumeToken request for volume vol-X
     ...
     ...
-    Processing ExportVolume request for volume vol-X`
+    Processing ExportVolume request for volume vol-X
 
 On Detach:
+
+    ...
     Processing UnexportVolume request for volume vol-X
+    ...
 
 On Delete:
+
+    ...
     Processing DeleteStorageVolume request for volume vol-X
+    ...
 
 On EBS-instance run, for the root:
+
     Processing CreateVolume request for volume vol-X
     Processing GetVolumeToken request for volume vol-X
     Processing ExportVolume request for volume vol-X
 
 On EBS-instance stop:
+
     Processing UnexportVolume request for volume vol-X
 
 Termination may add to the 'stop' set:
+
     Processing DeleteStorageVolume request for volume vol-X
 
 If any of those are missing then you can see how far the process got and what are the likely sources of failure.
-* Missing GetVolumeToken? Check the CLC and CLC->SC communications.
-* Missing ExportVolume? Check that the NC got the doAttachVolume request and that the NC can communicate with the SC on port 8773.
-* Missing UnexportVolume? Check the NC. It should have a 'doDetachVolume' record in the logs as well as a logged entry of the URL used to contact the SC. If that URL is not http://<registered SC host or IP>:8773/services/Storage then the NC will not have been able to successfully send the message to the SC.
+* **Missing GetVolumeToken?** Check the CLC and CLC->SC communications.
+* **Missing ExportVolume?** Check that the NC got the doAttachVolume request and that the NC can communicate with the SC on port 8773.
+* **Missing UnexportVolume?** Check the NC. It should have a 'doDetachVolume' record in the logs as well as a logged entry of the URL used to contact the SC. If that URL is not http://<registered SC host or IP>:8773/services/Storage then the NC will not have been able to successfully send the message to the SC.
 
 ### Common Problems and Likely Causes and Solutions
 
