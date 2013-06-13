@@ -62,6 +62,38 @@ On the NC, assuming vol-X attached as /dev/vdf:
 5. Return success.
 
 ## Debugging and Common Issues
+### Expected Log Entries During Normal Operation
+
+The SC now logs 'Processing <operation> request for <volume|snap>' for all Volume and Snapshot operations at INFO level logging. This is the first thing the SC does once it receives the full request. So, you should be able to see all such log messages for each volume in cloud-output.log on the SC host.
+
+For attachment you should see in cloud-output.log on the SC:
+_Processing GetVolumeToken request for vol-X_
+_Processing ExportVolume request for vol-X_
+
+On Detach:
+_Processing UnexportVolume request for vol-X_
+
+On Delete:
+_Processing DeleteVolume request for vol-X_
+
+On EBS-instance run, for the root:
+_Processing CreateVolume request for vol-X_
+_Processing GetVolumeToken request for vol-X_
+_Processing ExportVolume request for vol-X_
+
+On EBS-instance stop:
+_Processing UnexportVolume request for vol-X_
+
+Termination may add to the 'stop' set:
+_Processing DeleteStorageVolume request for vol-X._
+
+If any of those are missing then you can see how far the process got and what are the likely sources of failure.
+* Missing GetVolumeToken? Check the CLC and CLC->SC communications.
+* Missing ExportVolume? Check that the NC got the doAttachVolume request and that the NC can communicate with the SC on port 8773.
+* Missing UnexportVolume? Check the NC. It should have a 'doDetachVolume' record in the logs as well as a logged entry of the URL used to contact the SC. If that URL is not http://<registered SC host or IP>:8773/services/Storage then the NC will not have been able to successfully send the message to the SC.
+
+### Common Problems and Likely Causes and Solutions
+
 **1.) Problem: Volume stuck in 'deleting' after delete issued.**
 
 * Possible cause: If a failure occurred on the NC or SC during the last UnexportVolume operation for the affected volume, then the volume may still be exported. In this case, the SC is very conservative and will not delete a volume that is believes is exported based on the DB state it has. You will see in the SC logs that the volume is marked for deletion but is found to be exported so deletion is skipped. This will be repeated in the logs on the SC because the SC is periodically trying to delete the volume but keeps finding it exported. Once the export status is removed the volume will delete normally. This should never happen in normal usage, but may result from network errors or other failures during the UnexportVolume operation on an NC.
