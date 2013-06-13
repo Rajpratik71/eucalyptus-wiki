@@ -128,17 +128,20 @@ For general multipath debugging there is lots of good info online for device map
 3. Diff /etc/iscsi/iscsid.conf to the example iscsi conf script provided by Eucalyptus. Is there missing or conflicting config in the diff that could be at fault?
 4. Did you restart or reload multipathd after changing /etc/multipath.conf? 
 5. multipath -ll will provide some amount of information for devices currently multipath'd. In the example below 'mpathaa' is the result of a single volume attached to an NC. The ncpaths property has 2 paths, both are in a good status. 
+
 ```
-[root@eucahost-51-75 ~]# multipath -ll
-mpathaa (36006016098b03000eaae95b256d4e211) dm-17 DGC,VRAID
-size=1.0G features='1 queue_if_no_path' hwhandler='1 alua' wp=rw
-|-+- policy='round-robin 0' prio=50 status=active
-| `- 7:0:0:1 sdf 8:80 active ready  running
-`-+- policy='round-robin 0' prio=10 status=enabled
-  `- 6:0:0:1 sdd 8:48 active ready  running
-``` 
+ [root@eucahost-51-75 ~]# multipath -ll
+ mpathaa (36006016098b03000eaae95b256d4e211) dm-17 DGC,VRAID
+ size=1.0G features='1 queue_if_no_path' hwhandler='1 alua' wp=rw
+ |-+- policy='round-robin 0' prio=50 status=active
+ | `- 7:0:0:1 sdf 8:80 active ready  running
+ `-+- policy='round-robin 0' prio=10 status=enabled
+   `- 6:0:0:1 sdd 8:48 active ready  running
+```
+
 
 6.Check iscsiadm -m session -P3 for additional info about the scsi devices in the mpath group you are debugging. From the above example, our volume is using sdf, and sdd for it's 2 paths:
+
 ```
 [root@eucahost-51-75 ~]# iscsiadm -m session -P3
 iSCSI Transport Class version 2.0-870
