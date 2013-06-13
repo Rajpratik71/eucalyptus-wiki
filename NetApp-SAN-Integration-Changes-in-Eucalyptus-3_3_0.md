@@ -10,4 +10,15 @@ CHAP user configuration is mandatory in 3.3 for both 7-mode and Clustered ONTAP 
 
 ## Multiple Aggregates
 
-Multiple NetApp aggregates can be configured for use by Eucalyptus in 3.3. Use euca-modify-property command to edit .storage.aggregate and supply a comma separated list of aggregates. SC picks an aggregate from the list based on <region>.storage.uselargestaggregate flag (true by default i.e. aggregate with the largest capacity) before creating a volume. SC can be made to choose smallest available aggregate by modifying <region>.storage.uselargestaggregate property to false. Prior to 3.3, only one aggregate could be configured using <region>.storage.aggregate and the default value was aggr1. In 3.3 there is no default value for <region>.storage.aggregate. So if one or more aggregates are not explicitly configured, the SC will query the SAN for all available aggregates and pick one based on <region>.storage.uselargestaggregate flag.
+Multiple NetApp aggregates can be configured for use by Eucalyptus in 3.3. Use euca-modify-property command to edit .storage.aggregate and supply a comma separated list of aggregates. SC picks an aggregate from the list based on <region>.storage.uselargestaggregate flag (true by default i.e. aggregate with the largest capacity) before creating a volume. SC can be made to choose smallest available aggregate by modifying <region>.storage.uselargestaggregate property to false. Prior to 3.3, only one aggregate could be configured using <region>.storage.aggregate and the default value was aggr1. In 3.3 there is **no default value** for <region>.storage.aggregate. So if one or more aggregates are not explicitly configured, the SC will query the SAN for all available aggregates and pick one based on <region>.storage.uselargestaggregate flag.
+
+## New Igroup Management
+
+In 3.3 we no longer keep track of the igroups in the SC database. Igroups are created on a per initiator (NS/SC) basis with the same name as the initiator IQN. Igroups are created and deleted when volumes are attached and detached respectively. If an Igroup already exists the create step is skipped. And if the Igroup is in use the delete step is skipped. All Igroup related operations are synchronized on the SC and the SAN is considered the source of truth for Igroups.
+
+## Clustered Data ONTAP SAN & Multipath I/O
+
+## Eucalyptus NetApp Properties
+
+***
+[[category.storage]]
