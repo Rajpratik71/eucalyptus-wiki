@@ -61,6 +61,46 @@ On the NC, assuming vol-X attached as /dev/vdf:
 4. Rescan iscsi session to ensure volume is no longer available
 5. Return success.
 
+## How Does the NC Know Where the SC is and Which to Use?
+
+The NC now receives topology maps from the CC on DescribeResources and DescribeInstances requests, which run periodically. This is how the NC keeps a record of SCs and the status of each in the Partition/Cluster. The NC only receives topology info about services in its Cluster and the global services (i.e. Walrus).
+
+At TRACE level logging on the NC you can see the values it is receiving:
+    2013-06-13 09:29:45 TRACE 000011882 updateServiceStateInfo   | Updating NC's topology/service state info: pMeta: userId=eucalyptus correlationId=(null)
+    2013-06-13 09:29:45 TRACE 000011882 updateServiceStateInfo   | Updating VBR localhost config sc url to: http://10.111.1.11:8773/services/Storage
+    2013-06-13 09:29:45 TRACE 000011882 vbr_update_hostconfig_sc | Updated sc url in VBR hostconfig to http://10.111.1.11:8773/services/Storage
+    2013-06-13 09:29:45 TRACE 000011882 printNCServiceStateInfo  | Printing 5 services
+    2013-06-13 09:29:45 TRACE 000011882 printNCServiceStateInfo  | Epoch 34
+    2013-06-13 09:29:45 TRACE 000011882 printNCServiceStateInfo  | Service - CC_11 PARTI00 cluster http://10.111.1.11:8774/axis2/services/EucalyptusCC
+    2013-06-13 09:29:45 TRACE 000011882 printNCServiceStateInfo  | Service - 10.111.1.11 eucalyptus dns http://10.111.1.11:8773/services/Dns
+    2013-06-13 09:29:45 TRACE 000011882 printNCServiceStateInfo  | Service - 10.111.1.11 eucalyptus eucalyptus http://10.111.1.11:8773/services/Eucalyptus
+    2013-06-13 09:29:45 TRACE 000011882 printNCServiceStateInfo  | Service - SC_11 PARTI00 storage http://10.111.1.11:8773/services/Storage
+    2013-06-13 09:29:45 TRACE 000011882 printNCServiceStateInfo  | Service - WS_11 walrus walrus http://10.111.1.11:8773/services/Walrus
+    2013-06-13 09:29:45 TRACE 000011882 printNCServiceStateInfo  | Notready Service -
+    2013-06-13 09:29:45 TRACE 000011882 printNCServiceStateInfo  | Notready Service -
+    2013-06-13 09:29:45 TRACE 000011882 printNCServiceStateInfo  | Notready Service -
+    2013-06-13 09:29:45 TRACE 000011882 printNCServiceStateInfo  | Notready Service -
+    2013-06-13 09:29:45 TRACE 000011882 printNCServiceStateInfo  | Notready Service -
+    2013-06-13 09:29:45 TRACE 000011882 printMsgServiceStateInfo | Printing 5 services
+    2013-06-13 09:29:45 TRACE 000011882 printMsgServiceStateInfo | Msg-Meta epoch 34
+    2013-06-13 09:29:45 TRACE 000011882 printMsgServiceStateInfo | Msg-Meta: Service - CC_11 PARTI00 cluster http://10.111.1.11:8
+774/axis2/services/EucalyptusCC
+    2013-06-13 09:29:45 TRACE 000011882 printMsgServiceStateInfo | Msg-Meta: Service - 10.111.1.11 eucalyptus dns http://10.111.1
+.11:8773/services/Dns
+    2013-06-13 09:29:45 TRACE 000011882 printMsgServiceStateInfo | Msg-Meta: Service - 10.111.1.11 eucalyptus eucalyptus http://1
+0.111.1.11:8773/services/Eucalyptus
+    2013-06-13 09:29:45 TRACE 000011882 printMsgServiceStateInfo | Msg-Meta: Service - SC_11 PARTI00 storage http://10.111.1.11:8773/services/Storage
+    2013-06-13 09:29:45 TRACE 000011882 printMsgServiceStateInfo | Msg-Meta: Service - WS_11 walrus walrus http://10.111.1.11:8773/services/Walrus
+    2013-06-13 09:29:45 TRACE 000011882 printMsgServiceStateInfo | Msg-Meta: Notready Service -
+    2013-06-13 09:29:45 TRACE 000011882 printMsgServiceStateInfo | Msg-Meta: Notready Service -
+    2013-06-13 09:29:45 TRACE 000011882 printMsgServiceStateInfo | Msg-Meta: Notready Service -
+    2013-06-13 09:29:45 TRACE 000011882 printMsgServiceStateInfo | Msg-Meta: Notready Service -
+    2013-06-13 09:29:45 TRACE 000011882 printMsgServiceStateInfo | Msg-Meta: Notready Service -
+
+All of the printNCServiceStateInfo messages are logging the state of the system as the NC's internal state sees it. The printMsgServiceStateInfo is the new topology map that has come in over the wire and the NC is updating to. You'll also see the Epoch number, this is the same epoch displayed in 'euca-describe-services'
+
+The VBR localhost config messages are output of the state update as applied in the Virtual Boot Record handling bits of the NC. Due to the design and implementation of the NC, the VBR bits are independent (they may be used in the VMWareBroker for template creation), so they have their own state cache that is updated along with that of the rest of the NC. If EBS-instances are failing to run, a good check is to ensure that the SC URL in the VBR localhost config is correct and being updated properly.
+
 ## Debugging and Common Issues
 ### Expected Log Entries During Normal Operation
 
