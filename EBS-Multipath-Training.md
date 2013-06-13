@@ -51,11 +51,34 @@ PROPERTY	PARTI00.storage.sanhost	10.109.1.26,10.109.1.27
 DESCRIPTION	PARTI00.storage.sanhost	Hostname for SAN device.
 ```
 
+#### Component Level Configuration and setup (Nodes and Storage Controllers)
 
+```
+                ### copy iscsid.conf
+		find /  -name iscsid.conf.example | grep euca | xargs -I '{}' cp '{}' /etc/iscsi/iscsid.conf
+		
+                ### logout of iscsi sessions to allow iscsi restart
+		iscsiadm -m session -u
+                
+		### start and/or restart iscsid
+                iscsid; service iscsid restart
+ 
+                ### YUM INSTALL "device-mapper-multipath" package
+                yum -y install device-mapper-multipath
+       
+                ### ENABLE MULTIPATH
+                mpathconf --enable
+            
+                ### COPY multipath.conf to /etc/multipath.conf                  
+                find / -name ".$multipath_conf." | grep eucalyptus | xargs -I '{}' cp '{}' /etc/multipath.conf
 
-#### User level operation and tooling
-* How do end users interact with the feature?
-* Show a few typical use cases for the feature end-to-end
+                ### START multipathd SERVICE
+                service multipathd start
+
+                ### COPY udev rules                                             
+                cp -f /root/euca_builder/eee/clc/modules/storage-common/udev/12-dm-permissions.rules /etc/udev/rules.d/
+
+```
 
 ## Administrative Tasks
 * How will the administrators configure the feature?
