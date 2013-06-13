@@ -123,4 +123,4 @@ If any of those are missing then you can see how far the process got and what ar
 
 ***
 
-[[category.components]]
+[[category.storage]]
