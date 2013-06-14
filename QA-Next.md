@@ -2,6 +2,8 @@
 
 #### Brain dump of ideas/wishes/hopes/desires (in priority order)
 1. Reduce time to get from 0-running setup 
+* When machines are freed rekickstart them with CentOS so that they are ready to roll
+* Do lv_extend/resize2fs during kickstart rather than BUILD
 2. Reduce rinse-repeat cycle (rebuilding on same machines)
 3. No more memo field
 1. run all of our tests (eutester, eutester4j, FOG ..)
