@@ -1,4 +1,3 @@
-
 # QA system renovation 2013
 
 #### Brain dump of ideas/wishishes/hopes/desires
