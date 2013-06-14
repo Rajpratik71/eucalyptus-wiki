@@ -4,5 +4,6 @@
 1. Reduce time to get from 0-running setup 
 2. Reduce rinse-repeat cycle (rebuilding on same machines)
 3. No more memo field
+1. run all of our tests (eutester, eutester4j, FOG ..)
 4. no more perl
 5. Stop calling it QA, it's so much more than that
