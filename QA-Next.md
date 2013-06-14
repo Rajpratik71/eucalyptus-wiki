@@ -5,6 +5,8 @@
  * When machines are freed rekickstart them with CentOS so that they are ready to roll (saves us ~12m)
  * Don't do  lv_extend/resize2fs during BUILD, set the kickstart default volume size to 200G (saves us ~3m)
  * Any package installations need to be pushed to kickstart
+2. Fix configuration test units to be faster
+ * pre_test_setup has a 2 minute sleep "for stabilization"
 2. Reduce rinse-repeat cycle (rebuilding on same machines)
  * Make Jenkins jobs on MicroQA that can reset a system to many different phases
  * Just after PXE
