@@ -13,12 +13,23 @@
  * Just after installation of packages or source
  * Just after configuration and load image
 3. No more memo field
+ * Consider using a YAML format consumable by Ansible to define parameters for system builds.
 4. Make build process automated through a deployment tool (a la Ansible)
- * Ensure that all deps are installed from packages
+ * Ensure that all (third party) deps are installed from packages.
+ * Cobbler integration for Ansible host inventory.
+ * Investigate use of a _pull_ mechanism for a scalable solution (ansible-pull).
 5. run all of our tests (eutester, eutester4j, FOG ..)
 6. no more perl
+ * Target python 2.7 or newer
+ * Code should be compatible with python 3.x as much as possible (remember 2.x series will EOL in 2015!!)
 7. Stop calling it QA, it's so much more than that
+ * What do we call it?
+   + Personally I like the name [Mechanistic](http://www.thefreedictionary.com/mechanistic) (mspaulding)
 8. Leverage all work towards 'The system formally known as QA' for a larger test/dev use case. Dog food. This is a common use case, so any work we do towards it should be easily used/extended outside of Eucalyptus. 
 9. Set constraints around the design to ensure work going into our test dev system to make sure work is flexible, shareable, ephemeral, modular, and re-usable. 
-10. 'HAVE A DESIGN' ...that allows for easy collaboration. Design and describe the project so people can easily come and go from working on different portions of the project with a clear picture or what needs to be done for each part of the project. 
+10. 'HAVE A DESIGN' ...that allows for easy collaboration. Design and describe the project so people can easily come and go from working on different portions of the project with a clear picture or what needs to be done for each part of the project.
+ * The key word here is **modular**! Let's think of this as a suite of tools.
+ * Follow the [Unix Philosophy](http://en.wikipedia.org/wiki/Unix_philosophy)
+
+    > Write programs that do one thing and do it well.
 11. Use DNS by default in all QA tests.
