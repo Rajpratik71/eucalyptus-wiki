@@ -44,8 +44,8 @@ console=ttyS0
 ```
 NOZEROCONF=yes
 ```
-   e) Edit /etc/udev/rules.d/70-persistent-net.rules and remove the entry for the existing NIC.
-   f) Copy the Eucalyptus rc.local file from [here](https://github.com/eucalyptus/Eucalyptus-Scripts/blob/master/rc.local)
+   e) Edit /etc/udev/rules.d/70-persistent-net.rules and remove the entry for the existing NIC.  
+   f) Copy the Eucalyptus rc.local file from [here](https://github.com/eucalyptus/Eucalyptus-Scripts/blob/master/rc.local).
 
 ### Create the EBS backed EMI
 
@@ -81,3 +81,9 @@ euca-create-snapshot <volume-id>
 ```
 euca-register --name <image-name> --snapshot <snapshot-id> --root-device-name <device>
 ```
+
+Read about changes to EBS backed EMI and instance support in Eucalyptus 3.3 [here](https://github.com/eucalyptus/eucalyptus/wiki/Boot-from-EBS-changes-in-Eucalyptus-3_3_0).
+
+***
+[[category.ebs]]  
+[[category.storage]]
