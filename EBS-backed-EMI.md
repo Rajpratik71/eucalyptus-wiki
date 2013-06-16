@@ -82,7 +82,7 @@ euca-create-snapshot <volume-id>
 euca-register --name <image-name> --snapshot <snapshot-id> --root-device-name <device>
 ```
 
-Read about changes to EBS backed EMI and instance support in Eucalyptus 3.3 [here](https://github.com/eucalyptus/eucalyptus/wiki/Boot-from-EBS-changes-in-Eucalyptus-3_3_0).
+Read about changes to this feature in Eucalyptus 3.3 [here](https://github.com/eucalyptus/eucalyptus/wiki/Boot-from-EBS-changes-in-Eucalyptus-3_3_0).
 
 ***
 [[category.ebs]]  
