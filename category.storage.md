@@ -1,4 +1,5 @@
 * [[Boot-from-EBS-changes-in-Eucalyptus-3_3_0]]
+* [[EBS-backed-EMI]]
 * [[NetApp-Integration-Changes-In-Eucalyptus-3_3_0]]
 * [[Storage-Controller]]
 * [[Storage]]

@@ -1,6 +1,7 @@
 * [[Boot-from-EBS-changes-in-Eucalyptus-3_3_0]]
 * [[EBS-Instances-Considerations-and-Large-Instance-Store-Images]]
 * [[EBS-Troubleshooting]]
+* [[EBS-backed-EMI]]
 * [[EBS:-Import-a-Disk-Image]]
 * [[EBS:-Resize-a-Volume]]
 * [[index-of-categories]]
