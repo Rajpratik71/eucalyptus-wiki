@@ -45,7 +45,7 @@ console=ttyS0
 NOZEROCONF=yes
 ```
    e. Edit /etc/udev/rules.d/70-persistent-net.rules and remove the entry for the existing NIC.  
-   f. Copy the Eucalyptus rc.local file from [here](https://github.com/eucalyptus/Eucalyptus-Scripts/blob/master/rc.local).
+   f. Copy the Eucalyptus rc.local file from [here](https://github.com/eucalyptus/Eucalyptus-Scripts/blob/master/rc.local).  
    g. Customize the image as necessary.
 
 ### Create the EBS backed EMI
