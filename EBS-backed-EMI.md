@@ -22,7 +22,7 @@ path=/tmp/bfebs.img,device=disk,bus=virtio --vnc
 ```
 4. Once you have completed the installation, start the virtual machine using virt-manager or other libvirt tool of your choice.
 5. Configure the virtual machine by connecting to it and making the following changes:  
-   a) Comment out the HWADDR entry from the /etc/sysconfig/network-scripts/ifcfg-eth0 file: 
+   a. Comment out the HWADDR entry from the /etc/sysconfig/network-scripts/ifcfg-eth0 file: 
 ```
 DEVICE="eth0"
 BOOTPROTO="dhcp"
@@ -35,17 +35,18 @@ TYPE="Ethernet"
 UUID="499c07cc-4a53-408c-87d2-ce0db991648e"
 PERSISTENT_DHCLIENT=1
 ```
-   b) Add the following option to the end of /boot/grub/menu.lst to get a serial console:
+   b. Add the following option to the end of /boot/grub/menu.lst to get a serial console:
 ```
 console=ttyS0
 ```
-   c) Remove the quiet option from the kernel parameters and grub menu splash image in the /boot/grub/menu.lst file.  
-   d) Add the following line to the /etc/sysconfig/network file to disable the zeroconf route, which can interfere with access to the metadata service:
+   c. Remove the quiet option from the kernel parameters and grub menu splash image in the /boot/grub/menu.lst file.  
+   d. Add the following line to the /etc/sysconfig/network file to disable the zeroconf route, which can interfere with access to the metadata service:
 ```
 NOZEROCONF=yes
 ```
-   e) Edit /etc/udev/rules.d/70-persistent-net.rules and remove the entry for the existing NIC.  
-   f) Copy the Eucalyptus rc.local file from [here](https://github.com/eucalyptus/Eucalyptus-Scripts/blob/master/rc.local).
+   e. Edit /etc/udev/rules.d/70-persistent-net.rules and remove the entry for the existing NIC.  
+   f. Copy the Eucalyptus rc.local file from [here](https://github.com/eucalyptus/Eucalyptus-Scripts/blob/master/rc.local).
+   g. Customize the image as necessary.
 
 ### Create the EBS backed EMI
 
