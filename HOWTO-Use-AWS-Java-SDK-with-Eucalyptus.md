@@ -8,7 +8,7 @@ Download and install the AWS Java SDK according to the instructions on the [AWS 
 
 ## Configuration and Usage
 
-When using the AWS Java SDK with Eucalyptus, the endpoints must be correctly defined in your code. A simple example of authentication to your Eucalyptus cloud:
+When using the AWS Java SDK with Eucalyptus, the endpoints must be correctly defined in your code. A simple example of EC2-based authentication to your Eucalyptus cloud:
 
 ```
  private AWSCredentials credentials() {
