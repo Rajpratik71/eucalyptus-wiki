@@ -12,7 +12,7 @@ Eucalyptus strives for 100% API compatibility with all currently supported AWS s
 
 **_[[jclouds]]_** allows provisioning and control of cloud resources, including blobstore and compute, from Java and Clojure. The jclouds API allows developers to use both portable abstractions and cloud-specific features.
 
-**[EucaLobo](http://testingclouds.wordpress.com/2013/06/18/getting-started-with-eucalobo/)** is a client-side application for managing AWS and Eucalyptus cloud resources with an easy-to-use graphical user interface.
+**_[EucaLobo](http://testingclouds.wordpress.com/2013/06/18/getting-started-with-eucalobo/)_** is a client-side application for managing AWS and Eucalyptus cloud resources with an easy-to-use graphical user interface.
 
 ## Other tools
 
