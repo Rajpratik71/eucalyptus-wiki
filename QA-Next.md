@@ -1,4 +1,4 @@
-# QA system renovation 2013
+# Codename - Exit Zero (EZ)
 
 #### Brain dump of ideas/wishes/hopes/desires (in priority order)
 1. Reduce time to get from 0-running setup 
