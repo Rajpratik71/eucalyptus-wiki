@@ -2,6 +2,8 @@ Eucalyptus strives for 100% API compatibility with all currently supported AWS s
 
 ## Recommended tools
 
+_**[AWS Java SDK](https://github.com/eucalyptus/eucalyptus/wiki/HOWTO-Use-AWS-Java-SDK-with-Eucalyptus)**_ is Amazon's official Java library for AWS services.  The Java SDK works with Eucalyptus as well with minor configuration changes. 
+
 **_[AWS Ruby SDK](https://github.com/eucalyptus/eucalyptus/wiki/HOWTO-Use-AWS-Ruby-SDK-with-Eucalyptus)_** is Amazon's official Ruby library for AWS services. The Ruby SDK works with Eucalyptus as well, with some minor patches, for those services that Eucalyptus supports. 
 
 **_[s3cmd](https://github.com/eucalyptus/eucalyptus/wiki/HowTo-use-s3cmd-with-Eucalyptus)_** is the preferred command-line tool for working with files in AWS S3 and Eucalyptus Walrus.
