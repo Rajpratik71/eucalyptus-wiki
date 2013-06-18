@@ -2,7 +2,7 @@ Eucalyptus strives for 100% API compatibility with all currently supported AWS s
 
 ## Recommended tools
 
-**[https://github.com/eucalyptus/eucalyptus/wiki/HowTo-use-s3cmd-with-Eucalyptus](s3cmd)**.  s3cmd is the preferred command-line tool for working with Eucalyptus Walrus and AWS S3.  
+**[s3cmd](https://github.com/eucalyptus/eucalyptus/wiki/HowTo-use-s3cmd-with-Eucalyptus)**.  s3cmd is the preferred command-line tool for working with Eucalyptus Walrus and AWS S3.  
 
 ## Other tools
 
