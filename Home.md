@@ -14,7 +14,7 @@ Eucalyptus is a set of web services, modeled after and compatible with Amazon We
 
 **Architecture.** You can see the design documents for Eucalyptus in our [architecture repository](http://github.com/eucalyptus/architecture/wiki).
 
-**AWS Comptibility.** Eucalyptus aims for 100% AWS compatibility with all services we offer. See our progress towards this goal on our [[AWS Compatibility]] page.
+**AWS Tools.** Eucalyptus is AWS Compatible.  See the AWS tools we recommend, and how to configure them for use with Eucalyptus, on our [[AWS Tools]] page.
 
 **Blogs.** Read our blogs at [Eucalyptus.com](http://www.eucalyptus.com/blog). Most blog postings are technical; some are business-oriented.
 
