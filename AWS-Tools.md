@@ -12,13 +12,13 @@ Eucalyptus strives for 100% API compatibility with all currently supported AWS s
 
 **_[[jclouds]]_** allows provisioning and control of cloud resources, including blobstore and compute, from Java and Clojure. The jclouds API allows developers to use both portable abstractions and cloud-specific features.
 
+**[EucaLobo](http://testingclouds.wordpress.com/2013/06/18/getting-started-with-eucalobo/)** is a client-side application for managing AWS and Eucalyptus cloud resources with an easy-to-use graphical user interface.
+
 ## Other tools
 
 **[s3curl](http://www.eucalyptus.com/eucalyptus-cloud/tools/s3curl)**. S3 Curl is a tool that allows users to interact with Eucalyptus Walrus and AWS S3.
 
 **[Vagrant AWS Plug-in](https://github.com/mitchellh/vagrant-aws)**.  Vagrant is a tool for managing virtual machines on a local system, and also provides a plug-in that allows users to manage their AWS instances with Vagrant configuration files.  The plug-in also works for Eucalyptus.
-
-**[EucaLobo](http://testingclouds.wordpress.com/2013/06/18/getting-started-with-eucalobo/)** is a client-side application for managing AWS and Eucalyptus cloud resources with an easy-to-use graphical user interface.
 
 **[Cyberduck](http://cyberduck.ch/)** is an FTP, SFTP, WebDAV & cloud storage browser for Mac & Windows.
 
