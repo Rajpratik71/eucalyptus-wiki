@@ -22,7 +22,7 @@ Eucalyptus strives for 100% API compatibility with all currently supported AWS s
 
 **[Cyberduck](http://cyberduck.ch/)** is an FTP, SFTP, WebDAV & cloud storage browser for Mac & Windows.
 
-**[]Netflix Edda]] is a service that polls your AWS resources via AWS APIs and records the results. It allows you to quickly search through your resources and shows you how they have changed over time.
+**[[Netflix Edda]] is a service that polls your AWS resources via AWS APIs and records the results. It allows you to quickly search through your resources and shows you how they have changed over time.
 
 * _**AWS SDK for PHP**_
  * Project URL: FIXME
