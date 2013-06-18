@@ -1,4 +1,4 @@
-Eucalyptus strives for 100% API compatibility with all currently supported AWS services. Our goal is to be a "drop-in replacement AWS region", or as close to that as humanly possible.  We support the following open source AWS tools.
+Eucalyptus strives for 100% API compatibility with all currently supported AWS services. Our goal is to be a "drop-in replacement AWS region".  We currently recommend the following open source tools for use with both AWS and Eucalyptus.
 
 ## Recommended tools
 
@@ -18,7 +18,7 @@ Eucalyptus strives for 100% API compatibility with all currently supported AWS s
 
 **[Vagrant AWS Plug-in](https://github.com/mitchellh/vagrant-aws)**.  Vagrant is a tool for managing virtual machines on a local system, and also provides a plug-in that allows users to manage their AWS instances with Vagrant configuration files.  The plug-in also works for Eucalyptus.
 
-**[EucaLobo](https://github.com/viglesiasce/EucaLobo)** is a client-side application for managing AWS and Eucalyptus cloud resources with an easy-to-use graphical user interface.
+**[EucaLobo](http://testingclouds.wordpress.com/2013/06/18/getting-started-with-eucalobo/)** is a client-side application for managing AWS and Eucalyptus cloud resources with an easy-to-use graphical user interface.
 
 **[Cyberduck](http://cyberduck.ch/)** is an FTP, SFTP, WebDAV & cloud storage browser for Mac & Windows.
 
@@ -31,14 +31,6 @@ Eucalyptus strives for 100% API compatibility with all currently supported AWS s
  * Known bugs: FIXME
  * Notes: [[AWS SDK for PHP]]
  * Last update: 11 Mar 2013
-
-* _**AWS SDK for Ruby**_ 
- * Project URL: https://github.com/aws/aws-sdk-ruby
- * Versions tested: FIXME
- * Driver: **jeevan_ullas**
- * Known bugs: FIXME
- * Notes: FIXME
- * Last update: none
 
 * _**AWS SDK for Java**_ 
  * Project URL: http://aws.amazon.com/sdkforjava/
