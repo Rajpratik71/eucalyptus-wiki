@@ -6,7 +6,7 @@ Eucalyptus strives for 100% API compatibility with all currently supported AWS s
 
 **[[AWS Toolkit for Eclipse]]** is a plug-in for the Eclipse Java IDE that makes it easier for developers to develop, debug, and deploy Java applications using Amazon Web Services and Eucalyptus.
 
-**[[Fog]] is a popular Ruby library for management of various cloud resources.**
+**[[Fog]]** is a popular Ruby library for management of various cloud resources.**
 
 ## Other tools
 
