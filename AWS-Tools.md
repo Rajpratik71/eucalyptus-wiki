@@ -6,31 +6,17 @@ Eucalyptus strives for 100% API compatibility with all currently supported AWS s
 
 **[[AWS Toolkit for Eclipse]]** is a plug-in for the Eclipse Java IDE that makes it easier for developers to develop, debug, and deploy Java applications using Amazon Web Services and Eucalyptus.
 
+**[[Fog]] is a popular Ruby library for management of various cloud resources.**
+
 ## Other tools
 
 **[s3curl](http://www.eucalyptus.com/eucalyptus-cloud/tools/s3curl)**. S3 Curl is a tool that allows users to interact with Eucalyptus Walrus and AWS S3.
 
 **[Vagrant AWS Plug-in](https://github.com/mitchellh/vagrant-aws)**.  Vagrant is a tool for managing virtual machines on a local system, and also provides a plug-in that allows users to manage their AWS instances with Vagrant configuration files.  The plug-in also works for Eucalyptus.
 
-*****
+**[EucaLobo](https://github.com/viglesiasce/EucaLobo)** is a client-side application for managing AWS and Eucalyptus cloud resources with an easy-to-use graphical user interface.
 
-* _**EucaLobo**_
- * Project URL: https://github.com/viglesiasce/EucaLobo
- * Versions tested: master
- * Driver: **[[Vic Iglesias]]**
- * Known bugs: https://github.com/viglesiasce/EucaLobo/issues
- * Notes: https://github.com/viglesiasce/EucaLobo
- * Last update: 9 April 2013
-
-* _**Cyberduck**_
- * Project URL: http://cyberduck.ch/
- * Versions tested: master
- * Driver: **[[Tony Beckham]]**
- * Known bugs: None
- * Notes: Show hidden files preference allows to see versioned files
- * Last update: 9 April 2013
-
-
+**[Cyberduck](http://cyberduck.ch/)** is an FTP, SFTP, WebDAV & cloud storage browser for Mac & Windows.
 
 * _**AWS SDK for PHP**_
  * Project URL: FIXME
@@ -57,13 +43,7 @@ Eucalyptus strives for 100% API compatibility with all currently supported AWS s
  * Notes: known issues with Walrus should be fixed as of 3.3m4, needs retesting
  * Last update: 09 April 2013
 
-* _**Fog**_
- * Project URL: http://fog.io
- * Versions tested: FIXME
- * Driver: **[[Harold Spencer Jr.]]**
- * Known bugs: FIXME
- * Notes: [[Fog]]. **Notable: Fog with Walrus requires Euca DNS to be set up?**
- * Last update: 16 Mar 2013
+
 
 * _**NetflixOSS Edda**_
  * Project URL: FIXME
