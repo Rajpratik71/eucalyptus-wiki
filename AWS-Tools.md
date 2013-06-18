@@ -2,13 +2,15 @@ Eucalyptus strives for 100% API compatibility with all currently supported AWS s
 
 ## Recommended tools
 
-**[The AWS Ruby SDK](https://github.com/eucalyptus/eucalyptus/wiki/HOWTO-Use-AWS-Ruby-SDK-with-Eucalyptus)** is Amazon's official Ruby library for AWS services. The Ruby SDK works with Eucalyptus as well, with some minor patches, for those services that Eucalyptus supports. 
+**The [AWS Ruby SDK](https://github.com/eucalyptus/eucalyptus/wiki/HOWTO-Use-AWS-Ruby-SDK-with-Eucalyptus)** is Amazon's official Ruby library for AWS services. The Ruby SDK works with Eucalyptus as well, with some minor patches, for those services that Eucalyptus supports. 
 
 **[s3cmd](https://github.com/eucalyptus/eucalyptus/wiki/HowTo-use-s3cmd-with-Eucalyptus)** is the preferred command-line tool for working with files in AWS S3 and Eucalyptus Walrus.
 
-**[[AWS Toolkit for Eclipse]]** is a plug-in for the Eclipse Java IDE that makes it easier for developers to develop, debug, and deploy Java applications using Amazon Web Services and Eucalyptus.
+**The [[AWS Toolkit for Eclipse]]** is a plug-in for the Eclipse Java IDE that makes it easier for developers to develop, debug, and deploy Java applications using Amazon Web Services and Eucalyptus.
 
 **[Fog](https://github.com/eucalyptus/eucalyptus/wiki/HOWTO-Use-Fog-with-Eucalyptus)** is a popular Ruby library for management of various cloud resources.
+
+**[[jclouds]]** allows provisioning and control of cloud resources, including blobstore and compute, from Java and Clojure. The jclouds API allows developers to use both portable abstractions and cloud-specific features.
 
 ## Other tools
 
