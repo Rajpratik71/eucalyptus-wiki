@@ -16,21 +16,15 @@ Eucalyptus strives for 100% API compatibility with all currently supported AWS s
 
 ## Other tools
 
-**[s3curl](http://www.eucalyptus.com/eucalyptus-cloud/tools/s3curl)**. S3 Curl is a tool that allows users to interact with Eucalyptus Walrus and AWS S3.
+**_[s3curl](http://www.eucalyptus.com/eucalyptus-cloud/tools/s3curl)**_ is a tool that allows users to interact with Eucalyptus Walrus and AWS S3.
 
-**[Vagrant AWS Plug-in](https://github.com/mitchellh/vagrant-aws)**.  Vagrant is a tool for managing virtual machines on a local system, and also provides a plug-in that allows users to manage their AWS instances with Vagrant configuration files.  The plug-in also works for Eucalyptus.
+**_[Vagrant AWS Plug-in](https://github.com/mitchellh/vagrant-aws)_**.  Vagrant is a tool for managing virtual machines on a local system, and also provides a plug-in that allows users to manage their AWS instances with Vagrant configuration files.  The plug-in also works for Eucalyptus.
 
-**[Cyberduck](http://cyberduck.ch/)** is an FTP, SFTP, WebDAV & cloud storage browser for Mac & Windows.
+**_[Cyberduck](http://cyberduck.ch/)_** is an FTP, SFTP, WebDAV & cloud storage browser for Mac & Windows.
 
 **[[Netflix Edda]]** is a service that polls your AWS resources via AWS APIs and records the results. It allows you to quickly search through your resources and shows you how they have changed over time.
 
-* _**AWS SDK for PHP**_
- * Project URL: FIXME
- * Versions tested: FIXME
- * Driver: **John Jiang**
- * Known bugs: FIXME
- * Notes: [[AWS SDK for PHP]]
- * Last update: 11 Mar 2013
+**_[[AWS SDK for PHP]]_** is Amazon's official PHP library for AWS services. Testing with Eucalyptus is not yet complete.
 
 * _**AWS SDK for Java**_ 
  * Project URL: http://aws.amazon.com/sdkforjava/
