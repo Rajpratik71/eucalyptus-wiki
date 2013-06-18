@@ -2,13 +2,15 @@ Eucalyptus strives for 100% API compatibility with all currently supported AWS s
 
 ## Recommended tools
 
-**[s3cmd](https://github.com/eucalyptus/eucalyptus/wiki/HowTo-use-s3cmd-with-Eucalyptus)**.  s3cmd is the preferred command-line tool for working with Eucalyptus Walrus and AWS S3.  
+**[s3cmd](https://github.com/eucalyptus/eucalyptus/wiki/HowTo-use-s3cmd-with-Eucalyptus)** is the preferred command-line tool for working with Eucalyptus Walrus and AWS S3.  
+
+**[[AWS Toolkit for Eclipse]]** also works well with Eucalyptus.
 
 ## Other tools
 
-**[http://www.eucalyptus.com/eucalyptus-cloud/tools/s3curl](s3curl)**. S3 Curl is a tool that allows users to interact with Eucalyptus Walrus and AWS S3.
+**[s3curl](http://www.eucalyptus.com/eucalyptus-cloud/tools/s3curl)**. S3 Curl is a tool that allows users to interact with Eucalyptus Walrus and AWS S3.
 
-**[https://github.com/mitchellh/vagrant-aws](Vagrant AWS Plug-In)**.  Vagrant is a tool for managing virtual machines on a local system, and also provides a plug-in that allows users to manage their AWS instances with Vagrant configuration files.  The plug-in also works for Eucalyptus.
+**[Vagrant AWS Plug-in](https://github.com/mitchellh/vagrant-aws)**.  Vagrant is a tool for managing virtual machines on a local system, and also provides a plug-in that allows users to manage their AWS instances with Vagrant configuration files.  The plug-in also works for Eucalyptus.
 
 *****
 
@@ -28,17 +30,6 @@ Eucalyptus strives for 100% API compatibility with all currently supported AWS s
  * Notes: Show hidden files preference allows to see versioned files
  * Last update: 9 April 2013
 
-## <font background="black" color="green">Green: Works with Tweaks</font>
-
-Green means a service works well enough to be useful, though code tweaks are necessary and fully equivalent functionality may not yet be available.  Problems with tools in the "green" state are considered bugs, and will be handled accordingly.
-
-* _**AWS Toolkit for Eclipse**_
- * Project URL: https://github.com/aws/aws-toolkit-eclipse
- * Versions tested:  Eclipse: Juno Service Release 1 --  AWS Java SDK: 1.4.0 -- Eucalyptus: 3.3 Milestone 3
- * Driver: **[[Colby Dyess]]**
- * Known bugs: ECUA-5275
- * Notes: EC2 functionality mostly "just works", some known issues around S3 functionality. More details here: [[AWS Toolkit for Eclipse]]
- * Last update: 12 Mar 2013
 
 
 * _**AWS SDK for PHP**_
