@@ -28,42 +28,7 @@ _**[AWS Java SDK](https://github.com/eucalyptus/eucalyptus/wiki/HOWTO-Use-AWS-Ja
 
 **_[[AWS SDK for PHP]]_** is Amazon's official PHP library for AWS services. Testing with Eucalyptus is not yet complete.
 
-* _**AWS SDK for Java**_ 
- * Project URL: http://aws.amazon.com/sdkforjava/
- * Versions tested: [AWS JAVA SDK 1.4.1, Euca 3.3 m5]
- * Testplan: https://github.com/eucalyptus/eucalyptus/wiki/Aws-SDK-for-Java-Testplan
- * Driver: **[[Tony Beckham]]**
- * Known bugs: [EUCA-5515](https://eucalyptus.atlassian.net/browse/EUCA-5515) but reported fixed in 3.3 testing branch
- * Notes: known issues with Walrus should be fixed as of 3.3m4, needs retesting
- * Last update: 09 April 2013
-
-* _**Netflix Asgard**_
- * Project URL: FIXME
- * Driver: [[grze]]
- * Known bugs: FIXME
- * Notes: demoed at Netflix, 13 Mar 2013.
- * Last update: 13 Mar 2013
-
-* _**Netflix Chaos Monkey**_
- * Project URL: FIXME
- * Driver: [[grze]]
- * Known bugs: FIXME
- * Notes: demoed at Netflix, 13 Mar 2013.
- * Last update: 13 Mar 2013
-
-* _**AWS CLI**_
- * Project URL: http://aws.amazon.com/cli/
- * Driver: Andy Grimm
- * Known bugs: FIXME
- * Notes: http://agrimmsreality.blogspot.com/2013/01/using-aws-cli-with-eucalyptus.html
- * Last update: 3 Jan 2013
-
-* _**Jenkins for EC2**_
- * Project URL: https://wiki.jenkins-ci.org/display/JENKINS/Amazon+EC2+Plugin
- * Driver: [[Lester Wade]]
- * Known bugs: FIXME
- * Notes: Version 1.17 of the EC2 plugin does not work. Jenkins tries to get endpoints via the register URL which fails unless endpoint is https://cloudIP:8443/register. Once past this point, connectivity test yields "login failure: all modules ignored". Version 1.14 works however.
- * Last update: FIXME
+**_[AWS CLI](http://agrimmsreality.blogspot.com/2013/01/using-aws-cli-with-eucalyptus.html_** is a new AWS tool for controlling multiple AWS and Eucalyptus services from the command line and automating them through scripts.
 
 *****
 
