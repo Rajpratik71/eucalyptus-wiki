@@ -1,6 +1,7 @@
   * Eucalyptus Source Tree
       * [VERSION](https://github.com/eucalyptus/eucalyptus/blob/master/VERSION)
           * Format is X.X.X (e.g., 3.3.0).
+      * Run autoconf to regenerate the [configure](https://github.com/eucalyptus/eucalyptus/blob/master/configure) script.
       * **console/eucaconsole/version.py** which is generated when _setup.py_ is run.
       * [eucalyptus-opts.h](https://github.com/eucalyptus/eucalyptus/blob/master/clc/modules/bootstrap/src/main/native/eucalyptus-opts.h) is generated using _gengetopt_.
       * [Upgrades.java] (https://github.com/eucalyptus/eucalyptus/blob/master/clc/modules/msgs/src/main/java/com/eucalyptus/upgrade/Upgrades.java) should contain an enum value for the current version.
