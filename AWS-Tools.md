@@ -2,9 +2,9 @@ Eucalyptus strives for 100% API compatibility with all currently supported AWS s
 
 ## Recommended tools
 
-**[s3cmd](https://github.com/eucalyptus/eucalyptus/wiki/HowTo-use-s3cmd-with-Eucalyptus)** is the preferred command-line tool for working with Eucalyptus Walrus and AWS S3.  
+**[s3cmd](https://github.com/eucalyptus/eucalyptus/wiki/HowTo-use-s3cmd-with-Eucalyptus)** is the preferred command-line tool for working with files in AWS S3 and Eucalyptus Walrus.
 
-**[[AWS Toolkit for Eclipse]]** also works well with Eucalyptus.
+**[[AWS Toolkit for Eclipse]]** is a plug-in for the Eclipse Java IDE that makes it easier for developers to develop, debug, and deploy Java applications using Amazon Web Services and Eucalyptus.
 
 ## Other tools
 
