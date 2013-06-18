@@ -33,3 +33,4 @@
 
     > Write programs that do one thing and do it well.
 11. Use DNS by default in all QA tests.
+12. Track and manage resources. Allow for easy to extend resource policies. ie:groups, accounts, users, etc.. Policies that may mimic machine 'leases' limits on length of time a system may be 'leased', count of resources a user/group can use, etc..
