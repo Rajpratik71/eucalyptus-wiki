@@ -16,7 +16,7 @@ Eucalyptus strives for 100% API compatibility with all currently supported AWS s
 
 ## Other tools
 
-**_[s3curl](http://www.eucalyptus.com/eucalyptus-cloud/tools/s3curl)**_ is a tool that allows users to interact with Eucalyptus Walrus and AWS S3.
+**_[s3curl](http://www.eucalyptus.com/eucalyptus-cloud/tools/s3curl)_** is a tool that allows users to interact with Eucalyptus Walrus and AWS S3.
 
 **_[Vagrant AWS Plug-in](https://github.com/mitchellh/vagrant-aws)_**.  Vagrant is a tool for managing virtual machines on a local system, and also provides a plug-in that allows users to manage their AWS instances with Vagrant configuration files.  The plug-in also works for Eucalyptus.
 
