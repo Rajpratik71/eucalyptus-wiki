@@ -6,7 +6,7 @@ Eucalyptus strives for 100% API compatibility with all currently supported AWS s
 
 **[[AWS Toolkit for Eclipse]]** is a plug-in for the Eclipse Java IDE that makes it easier for developers to develop, debug, and deploy Java applications using Amazon Web Services and Eucalyptus.
 
-**[[Fog]]** is a popular Ruby library for management of various cloud resources.**
+**[[Fog]]** is a popular Ruby library for management of various cloud resources.
 
 ## Other tools
 
@@ -17,6 +17,8 @@ Eucalyptus strives for 100% API compatibility with all currently supported AWS s
 **[EucaLobo](https://github.com/viglesiasce/EucaLobo)** is a client-side application for managing AWS and Eucalyptus cloud resources with an easy-to-use graphical user interface.
 
 **[Cyberduck](http://cyberduck.ch/)** is an FTP, SFTP, WebDAV & cloud storage browser for Mac & Windows.
+
+**[]Netflix Edda]] is a service that polls your AWS resources via AWS APIs and records the results. It allows you to quickly search through your resources and shows you how they have changed over time.
 
 * _**AWS SDK for PHP**_
  * Project URL: FIXME
@@ -42,8 +44,6 @@ Eucalyptus strives for 100% API compatibility with all currently supported AWS s
  * Known bugs: [EUCA-5515](https://eucalyptus.atlassian.net/browse/EUCA-5515) but reported fixed in 3.3 testing branch
  * Notes: known issues with Walrus should be fixed as of 3.3m4, needs retesting
  * Last update: 09 April 2013
-
-
 
 * _**NetflixOSS Edda**_
  * Project URL: FIXME
