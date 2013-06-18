@@ -16,9 +16,9 @@ FIXME
 
 ## Questions/Issues
 
-If you have any questions about using Fog with Eucalyptus, please first check the [knowledgebase](https://engage.eucalyptus.com/customer/portal/articles/search?q=Java).  
+If you have any questions about using the Java SDK with Eucalyptus, please first check the [knowledgebase](https://engage.eucalyptus.com/customer/portal/articles/search?q=Java%20SDK).  
 
-If you do not find an answer in the knowledgebase, please [ask a question](https://engage.eucalyptus.com/customer/portal/questions/new?q=Java).
+If you do not find an answer in the knowledgebase, please [ask a question](https://engage.eucalyptus.com/customer/portal/questions/new?q=Java%20SDK).
 
 ***
 [[category.HOWTO]]
