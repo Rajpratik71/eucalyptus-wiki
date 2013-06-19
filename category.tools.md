@@ -3,6 +3,7 @@
 * [[Boto]]
 * [[Eucalyptus-Virtual-Cloud]]
 * [[Fog]]
+* [[HOWTO-Use-AWS-Java-SDK-with-Eucalyptus]]
 * [[HowTo-use-s3cmd-with-Eucalyptus]]
 * [[Testing-with-soapUI]]
 * [[Typica]]

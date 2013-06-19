@@ -4,6 +4,7 @@
 * [[AWS-compatibility]]
 * [[Aws-SDK-for-Java-Testplan]]
 * [[Fog]]
+* [[HOWTO-Use-AWS-Java-SDK-with-Eucalyptus]]
 * [[index-of-categories]]
 * [[jclouds]]
 
