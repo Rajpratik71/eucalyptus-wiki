@@ -13,7 +13,8 @@
  * Just after installation of packages or source
  * Just after configuration and load image
 3. No more memo field 
- * (mc) Suggesting a different usage of a 'text based config'. Flexible config on the fly is good. Guessing the syntax, requirements to run, and the fail slow (really slow) nature of QA's memo field today is not acceptable going forward. 
+ * (mc) Suggesting a different usage of a 'text based config'. Flexible config on the fly is good. QA's current nature of forcing user's to guess the syntax(or look it up on a remote page), and/or guess the requirements to run a test, and then provide a fail slow (really slow) feedback mechanism is not acceptable going forward. 
+ * (mc) Provide a mechanism for all test units (or whatever we do going forward) to provide near instant '-h' like feedback on what arguments/configuration that unit can accept, and needs to run. Allow for a sequence to be 'dryrun' to test whatever config mechanisms the system provides going forward. 
  * (mc) Most tests currently use python's configParser libs. This is a really vanilla key=value syntax which allows for multiple contexts via brackets [your name here]. Suggesting that we allow for any config format anyone wants inside these brackets including yaml, xml, key/value, etc.. 
  * Consider using a YAML format consumable by Ansible to define parameters for system builds.
  
