@@ -33,5 +33,7 @@
 
     > Write programs that do one thing and do it well.
 11. Use DNS by default in all QA tests.
-12. Track and manage resources. Allow for easy to extend resource policies. ie:groups, accounts, users, etc.. Policies that may mimic resource (machines, san access, network addrs, etc) 'leases' limits on length of time a system may be 'leased', count of resources a user/group can use, etc..
+12. Track and manage resources (machines, san access, network addrs, etc). Allow for easy to extend resource policies. ie:groups, accounts, users, etc.. Policies that may mimic 'leases', limits on length of time a system may be 'leased', count of resources a user/group can use, etc.. Keep statistics on resource consumption. Be able to track resource consumption during different cycles of development. Resources may have 'read only' like perms for non-engineering usage. 
 13. Look and feel should mimic our Eucalyptus interfaces where ever possible. 
+14. More test metrics are a must. How much, how long, averages, historical data, what env. etc.. Data points for tests, test units, individual Eucalyptus operations, etc.. 
+15. Would be nice if we can programmatically interface with our docs for install and setup portions of QA. ...or the reverse produce easy to read sudo code per setup/install step that can be consumed by our docs team. ...or both
