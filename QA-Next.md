@@ -34,7 +34,7 @@
    + EZ (exitzero)
 8. Leverage all work towards 'The system formally known as QA' for a larger test/dev use case. Dog food. This is a common use case, so any work we do towards it should be easily used/extended outside of Eucalyptus. 
 9. Set constraints around the design to ensure work going into our test dev system to make sure work is flexible, shareable, ephemeral, modular, and re-usable. 
-10. 'HAVE A DESIGN' ...that allows for easy collaboration. Design and describe the project so people can easily come and go from working on different portions of the project with a clear picture or what needs to be done for each part of the project.
+10. 'HAVE A DESIGN' ...that allows for easy collaboration. Design and describe the project so people can easily come and go from working on different portions of the project with a clear picture of what needs to be done for each part of the project.
  * The key word here is **modular**! Let's think of this as a suite of tools.
  * Follow the [Unix Philosophy](http://en.wikipedia.org/wiki/Unix_philosophy)
 
