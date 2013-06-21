@@ -267,3 +267,5 @@ euca-zero: 0 2199023255552 zero
 *****
 
 [[category.debugging]]
+[[category.images]]
+[[category.troubleshooting]]
