@@ -38,4 +38,5 @@ Index of Categories
 * [[category.stats]]
 * [[category.storage]]
 * [[category.tools]]
+* [[category.troubleshooting]]
 * [[category.ui]]
