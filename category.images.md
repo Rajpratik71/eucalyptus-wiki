@@ -5,6 +5,7 @@
 * [[Fedora-18-Image]]
 * [[Growing-an-image-file]]
 * [[Image-Wizard]]
+* [[Image-deployment-and-construction]]
 * [[Kexec-Images]]
 * [[Kexec-loader]]
 * [[Manually-Convert-BFEBS-EMI-to-AMI]]

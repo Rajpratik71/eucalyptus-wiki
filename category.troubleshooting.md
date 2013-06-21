@@ -1,3 +1,4 @@
+* [[Image-deployment-and-construction]]
 * [[Network-Troubleshooting-FAQ]]
 * [[index-of-categories]]
 
