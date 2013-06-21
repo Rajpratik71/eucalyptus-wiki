@@ -54,3 +54,4 @@ In Managed mode, Eucalyptus tags instance traffic with its own chosen VLAN tags.
 [[category.docs]]
 [[category.networking]]
 [[category.training]]
+[[category.troubleshooting]]
