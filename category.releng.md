@@ -1,3 +1,4 @@
+* [[Eucalyptus-DC-Deployment-Notes]]
 * [[Eucalyptus-version-checklist]]
 * [[List-of-packages]]
 * [[Promoting-a-Release-Build]]
