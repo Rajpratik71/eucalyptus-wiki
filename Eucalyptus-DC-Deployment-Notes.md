@@ -61,10 +61,71 @@ This page is meant to be a collection of notes on what Eucalyptus does for inter
 * Run `service networking restart`
 
 ## Eucalyptus Installation
+
+### Installation Prep
 * Check git repository url
   + Is it the Eucalyptus OSS repository?
   + Is it the Eucalyptus internal repository?
-    * Add `.repo` file for the enterprise packages
+      - Add `.repo` file for the enterprise packages
+  + Add `.repo` file for the eucalyptus packages
+
+### Cluster Controller Installation
+* On all machines with the CC role:
+  + Install the CC: `yum install eucalyptus-cc`
+  + If we want VMWare Broker support, then run: `yum install eucalyptus-enterprise-vmware-broker`
+
+### Cloud Controller Installation
+* On all machines with the CLC role:
+  + If this is a 3.2 cloud run: `yum groupinstall eucalyptus-cloud-controller`
+  + Or if 3.3 then run: `yum install eucalyptus-cloud`
+  + If we want VMWare Broker support, then run: `yum install eucalyptus-enterprise-vmware-broker-libs`
+  + If we want SAN support, then install the proper SAN libs:
+      - EMC SAN: `yum install eucalyptus-enterprise-storage-san-emc-libs`
+      - NetApp SAN: `yum install eucalyptus-enterprise-storage-san-netapp-libs`
+      - Equallogic SAN: `yum install eucalyptus-enterprise-storage-san-equallogic-libs` (only for 3.3 or newer)
+
+### Storage Controller Installation
+* On all machines with the SC role:
+  + Install the SC package: `yum install eucalyptus-sc`
+  + If this is an EMC SAN (i.e., has a provider of **EmcVnxProvider** or **EmcVnxProviderFastSnap**):
+      - Download and install the RPM package `NaviCLI-Linux-64-latest.rpm` from the internal mirror
+      - Install the EMC package: `yum install eucalyptus-enterprise-san-emc`
+  + If this is a NetApp SAN:
+      - Install the NetApp package: `yum install eucalyptus-enterprise-san-netapp`
+  + If this is an Equallogic SAN:
+      - Install the Equallogic package: `yum install eucalyptus-enterprise-san-equallogic`
+
+### Walrus Installation
+* On all machines with the Walrus role:
+  + Install the Walrus package: `yum install eucalyptus-walrus`
+
+### Node Installation
+* Check if user wants euca2ools installed on the NC, and if so: `yum install euca2ools`
+* Install the NC package: `yum install eucalyptus-nc`
+* On RHEL only, we restart ISCSI: `service iscsid restart`
+
+### Console Installation
+* Install the Console package: `yum install eucalyptus-console`
+* Start the console: `service eucalyptus-console start`
+
+## Post-install Operations
+* Create storage mount point: `mkdir -p /disk1/storage`
+* Prepare and mount disk:
+  + `mkfs.ext3 -F /dev/sda3`
+  + `mount /dev/sda3 /disk1/storage`
+  + Add `/etc/fstab` entry: `/dev/sda3    /disk1/storage    ext3    defaults    0 2`
+  + `mkdir -p /disk1/storage/eucalyptus/instances`
+
+### Extra Configuration for Source Builds
+* Set `EUCALYPTUS` environment variable to `/opt/eucalyptus`
+* Create some directories: `mkdir -p /disk1/storage/eucalyptus/var/{lib,log}/eucalyptus`
+* Link directories:
+  + `ln -sf /disk1/storage/eucalyptus/var/lib/eucalyptus/ /opt/eucalyptus/var/lib/`
+  + `ln -sf /disk1/storage/eucalyptus/var/lib/eucalyptus/ /opt/eucalyptus/var/log/`
+* If the directory `/opt/eucalyptus/var/lib/eucalyptus/vmware` exists, then do the following:
+  + `rm -rf /opt/eucalyptus/var/lib/eucalyptus/vmware`
+  + `mkdir -p /disk1/storage/eucalyptus/instances/vmware`
+  + `ln -sf /disk1/storage/eucalyptus/instances/vmware /opt/eucalyptus/var/lib/eucalyptus/vmware/`
 
 *****
 [[category.releng]]
