@@ -54,18 +54,18 @@ Find below a list of various images for Linux distributions. We also have the [[
        <td>KVM image. SUSE Firewall off.  Root disk of 2.5G.  Root user enabled.  Working with kexec kernel and ramdisk. OpenSUSE minimal base package set.</td>
     </tr>
     <tr>
-       <td></td>
-       <td></td>
-       <td></td>
-       <td></td>
-       <td></td>
+        <td><a href="http://emis.eucalyptus.com/starter-emis/euca-centos5-2013.06.18-x86_64-ec2user.tgz">Download</a></td>
+       <td>CentOS 5.9 x86_64</td>
+       <td>Harold Spencer, Jr. - harold.spencer.jr@eucalyptus.com</td>
+       <td><a href="https://github.com/eucalyptus/image-verification-results/blob/updated-centos5-images-tests/centos5-ec2user-eustester-testresults.txt">Test Results</a><br>(Eucalyptus 3.3 - 3.4 devel)</td>
+       <td>CentOS 5.9 1.4GB root, Hypervisor-Specific Kernel; 2.6.18-348.6.1.el5 kernel version; ec2-user enabled, sudo rights.</td>
     </tr>
     <tr>
-       <td></td>
-       <td></td>
-       <td></td>
-       <td></td>
-       <td></td>
+         <td><a href="http://emis.eucalyptus.com/starter-emis/euca-centos5-2013.06.18-x86_64-root.tgz">Download</a></td>
+       <td>CentOS 5.9 x86_64</td>
+       <td>Harold Spencer, Jr. - harold.spencer.jr@eucalyptus.com</td>
+       <td><a href="https://github.com/eucalyptus/image-verification-results/blob/updated-centos5-images-tests/centos5-root-user-eustester-testresults.txt">Test Results</a><br>(Eucalyptus 3.3 - 3.4 devel)</td>
+       <td>CentOS 5.9 1.4GB root, Hypervisor-Specific Kernel; 2.6.18-348.6.1.el5 kernel version; root user enabled.</td>
     </tr>
 </table>
 
