@@ -6,6 +6,7 @@
 * [[Images-Project]]
 * [[Import-an-HVM-AMI]]
 * [[Inject-ephemeral-disk-into-root-disk]]
+* [[Instance-Best-Practices]]
 * [[NetApp-Properties-Configurable-In-Eucalyptus]]
 * [[Netapp-support-3]]
 * [[Netflix-Edda]]
