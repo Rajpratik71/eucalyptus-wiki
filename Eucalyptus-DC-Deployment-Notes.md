@@ -117,15 +117,23 @@ This page is meant to be a collection of notes on what Eucalyptus does for inter
   + `mkdir -p /disk1/storage/eucalyptus/instances`
 
 ### Extra Configuration for Source Builds
-* Set `EUCALYPTUS` environment variable to `/opt/eucalyptus`
+* Set `EUCALYPTUS` environment variable to `/opt/eucalyptus` (or to empty string if package build)
 * Create some directories: `mkdir -p /disk1/storage/eucalyptus/var/{lib,log}/eucalyptus`
 * Link directories:
   + `ln -sf /disk1/storage/eucalyptus/var/lib/eucalyptus/ /opt/eucalyptus/var/lib/`
-  + `ln -sf /disk1/storage/eucalyptus/var/lib/eucalyptus/ /opt/eucalyptus/var/log/`
+  + `ln -sf /disk1/storage/eucalyptus/var/log/eucalyptus/ /opt/eucalyptus/var/log/`
 * If the directory `/opt/eucalyptus/var/lib/eucalyptus/vmware` exists, then do the following:
   + `rm -rf /opt/eucalyptus/var/lib/eucalyptus/vmware`
   + `mkdir -p /disk1/storage/eucalyptus/instances/vmware`
   + `ln -sf /disk1/storage/eucalyptus/instances/vmware /opt/eucalyptus/var/lib/eucalyptus/vmware/`
+* If this has a Walrus:
+  + `rm -rf /opt/eucalyptus/var/lib/eucalyptus/bukkits`
+  + `mkdir -p /disk1/storage/eucalyptus/instances/bukkits`
+  + `ln -sf /disk1/storage/eucalyptus/instances/bukkits /opt/eucalyptus/var/lib/eucalyptus/bukkits`
+* If this has a Storage Controller:
+  + `rm -rf /opt/eucalyptus/var/lib/eucalyptus/volumes`
+  + `mkdir -p /disk1/storage/eucalyptus/instances/volumes`
+  + `ln -sf /disk1/storage/eucalyptus/instances/volumes /opt/eucalyptus/var/lib/eucalyptus/volumes`
 
 *****
 [[category.releng]]
