@@ -1,3 +1,11 @@
+## develop@eucalyptus.com
+
+This mailing list is for Eucalyptus developers.  If you're hacking on Eucalyptus code, including AWS tools that work with Eucalyptus, you should join this list.
+
+**To subscribe, send an email to develop+subscribe@eucalyptus.com and then reply to the subsequent email.**
+
+**To see archives and for more information, visit https://groups.google.com/a/eucalyptus.com/forum/#!forum/develop**
+
 ## euca-users@eucalyptus.com
 
 This mailing list is for all users of Eucalyptus.  If you have any questions or need assistance, joining this mailing list is a good place to start.
