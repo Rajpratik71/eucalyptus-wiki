@@ -34,3 +34,7 @@ After locking down the image by using the steps above, additional steps can be d
 * Consider using Eucalyptus IAM policies to control access to resources.  For example, providing a policy that restricts access coming from a source IP and/or specific Eucalyptus IAM account can be leveraged by using certain IAM EC2-specific keys.  For more information, please check out the [IAM Policy Elements Reference](http://docs.aws.amazon.com/IAM/latest/UserGuide/AccessPolicyLanguage_ElementDescriptions.html#AvailableKeys).
 
 As mentioned before, this is an effort to help provide a centralized document for instance security best practices.  Any feedback/suggestions/ideas are greatly appreciated. 
+
+*****
+
+[[category.images]]
