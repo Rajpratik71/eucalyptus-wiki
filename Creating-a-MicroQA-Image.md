@@ -32,5 +32,5 @@ pushd /var/lib/jenkins
 wget http://MYURL/micro-qa-v2.2-src.tgz
 tar zxfv micro-qa-v2.2-src.tgz
 popd
-service jenkins restart
+service jenkins start
 ```
