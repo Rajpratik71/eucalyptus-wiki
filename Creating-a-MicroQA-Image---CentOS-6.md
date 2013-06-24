@@ -28,9 +28,10 @@ iptables-save > /etc/sysconfig/iptables
 
 ### Unbundle /var/lib/jenkins tarball
 ```
-pushd /var/lib/jenkins
-wget http://MYURL/micro-qa-v2.2-src.tgz
-tar zxfv micro-qa-v2.2-src.tgz
+pushd /var/lib
+wget https://github.com/eucalyptus/micro-qa/archive/master.zip
+unzip master.zip
+mv micro-qa jenkins
 popd
 service jenkins start
 ```
