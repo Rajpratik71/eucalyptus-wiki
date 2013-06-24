@@ -6,6 +6,7 @@
 * [[Growing-an-image-file]]
 * [[Image-Wizard]]
 * [[Image-deployment-and-construction]]
+* [[Instance-Best-Practices]]
 * [[Kexec-Images]]
 * [[Kexec-loader]]
 * [[Manually-Convert-BFEBS-EMI-to-AMI]]
