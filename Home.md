@@ -34,6 +34,8 @@ Eucalyptus is a set of web services, modeled after and compatible with Amazon We
 
 **IRC.** You can find us on Freenode IRC on #eucalyptus.
 
+**Mailing List.** Join one of the [[Eucalyptus mailing lists]] to keep up with latest developments and join our users and developers in conversation.
+
 **Nightlies.** You can install nightly builds of the latest Eucalyptus development builds by following [these instructions](http://www.eucalyptus.com/docs/latest/ig/installing_euca_nightlies.html).
 
 **People.** We've got great people working at Eucalyptus. Meet [some of them](wiki/category.people).
