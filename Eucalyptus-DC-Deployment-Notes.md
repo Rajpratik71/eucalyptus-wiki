@@ -116,7 +116,9 @@ This page is meant to be a collection of notes on what Eucalyptus does for inter
   + Add `/etc/fstab` entry: `/dev/sda3    /disk1/storage    ext3    defaults    0 2`
   + `mkdir -p /disk1/storage/eucalyptus/instances`
 
-### Extra Configuration for Source Builds
+### Post-install Configuration
+
+#### Add Symlinks
 * Set `EUCALYPTUS` environment variable to `/opt/eucalyptus` (or to empty string if package build)
 * Create some directories: `mkdir -p /disk1/storage/eucalyptus/var/{lib,log}/eucalyptus`
 * Link directories:
@@ -134,6 +136,26 @@ This page is meant to be a collection of notes on what Eucalyptus does for inter
   + `rm -rf /opt/eucalyptus/var/lib/eucalyptus/volumes`
   + `mkdir -p /disk1/storage/eucalyptus/instances/volumes`
   + `ln -sf /disk1/storage/eucalyptus/instances/volumes /opt/eucalyptus/var/lib/eucalyptus/volumes`
+* Set permissions
+  + `chown -R eucalyptus:eucalyptus /disk1/storage/eucalyptus`
+
+#### Modify Libvirt Polkit Policy
+**NOTE**: I have no idea why we do this on QA systems. It doesn't appear to be necessary.
+* Update file content of `/usr/share/polkit-1/actions/org.libvirt.unix.policy`:
+  + For the action `org.libvirt.unix.monitor`:
+      - Set `allow_any` to `yes`
+      - Set `allow_inactive` to `yes`
+      - Set `allow_active` to `yes`
+
+#### Test for Libvirt Permissions
+We try to make sure that the `eucalyptus` user has permission to use `libvirt` by running:
+
+    su eucalyptus -c "virsh list"
+
+#### Configure SNMP
+* `wget http://qa-server/4qa/etc/snmpd.conf`
+* Copy configuration to /etc/snmp and then restart the snmp service.
+
 
 *****
 [[category.releng]]
