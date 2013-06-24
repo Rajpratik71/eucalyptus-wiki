@@ -17,6 +17,14 @@ service ntpd start
 ntpdate -u pool.ntp.org
 ```
 
+### Set Redirect for port 8080->80
+```
+iptables -F
+iptables -F -t nat
+iptables -A PREROUTING -t nat -i eth0 -p tcp --dport 80 -j REDIRECT --to-port 8080
+iptables-save > /etc/sysconfig/iptables
+```
+
 ### Unbundle /var/lib/jenkins tarball
 ```
 pushd /var/lib/jenkins
