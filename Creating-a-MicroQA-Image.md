@@ -1,6 +1,6 @@
 ### Install dependencies
 ```
-yum install python-devel python-setuptools gcc make python-virtualenv java-1.6.0-openjdk.x86_64 git
+yum install python-devel python-setuptools gcc make python-virtualenv java-1.6.0-openjdk.x86_64 git ntp
 ```
 
 ### Install Jenkins
@@ -8,6 +8,13 @@ yum install python-devel python-setuptools gcc make python-virtualenv java-1.6.0
 sudo wget -O /etc/yum.repos.d/jenkins.repo http://pkg.jenkins-ci.org/redhat/jenkins.repo
 sudo rpm --import http://pkg.jenkins-ci.org/redhat/jenkins-ci.org.key
 yum install jenkins
+```
+
+### Sync NTP
+```
+chkconfig ntpd on
+service ntpd start
+ntpdate -u pool.ntp.org
 ```
 
 ### Unbundle /var/lib/jenkins tarball
