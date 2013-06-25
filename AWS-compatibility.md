@@ -121,9 +121,10 @@ Green means a service works well enough to be useful, though code tweaks are nec
 
 * _**Jenkins for EC2**_
  * Project URL: https://wiki.jenkins-ci.org/display/JENKINS/Amazon+EC2+Plugin
+ * Versions Tested: EC2 plugin 1.14, Eucalytpus 3.0, 3.1 and 3.2
  * Driver: [[Lester Wade]]
  * Known bugs: FIXME
- * Notes: Version 1.17 of the EC2 plugin does not work. Jenkins tries to get endpoints via the register URL which fails unless endpoint is https://cloudIP:8443/register. Once past this point, connectivity test yields "login failure: all modules ignored". Version 1.14 works however.
+ * Notes: Version 1.17 of the EC2 plugin does not work. Jenkins tries to get endpoints via the register URL which fails unless endpoint is https://cloudIP:8443/register. Once past this point, connectivity test yields "login failure: all modules ignored". Version 1.14 works with earlier versions of Eucalyptus, but not 3.3
  * Last update: FIXME
 
 ## <font color="red">Red: Not working / Unknown</font>
