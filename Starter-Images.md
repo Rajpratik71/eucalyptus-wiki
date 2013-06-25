@@ -69,6 +69,8 @@ Find below a list of various images for Linux distributions. We also have the [[
     </tr>
 </table>
 
+_Note: The CentOS 5 images contain euca2ools 2.1.3 (Limbo) due to the fact that the openssl required for euca2ools 3.0 isn't available on any official CentOS 5 repository._
+
 ## Uploading Images
 
 Once you've retrieved the starter image you want, you must upload that image to your Eucalyptus cloud.  The basic steps that are required:
