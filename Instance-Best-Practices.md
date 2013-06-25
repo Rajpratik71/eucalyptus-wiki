@@ -4,7 +4,13 @@ The goal of this wiki entry is to document best practices for creating images, a
 
 Security starts at the foundation.  Since all instances are based off of images, implementing any type of security is helpful in securing instances.  Below are a list of things that can be done to add additional security during image creation:
 
-* Enabled [PAM](http://www.linux-pam.org/) (e.g. pam_ssh) to help control authentication.
+* Enabled [PAM](http://www.linux-pam.org/) to help control authentication.
+* Enable [Selinux](http://selinuxproject.org/page/Main_Page) or [Apparmor](http://wiki.apparmor.net/index.php/Main_Page).  Additional resources are below:
+  * [Redhat Enterprise Linux 6 Security-Enhanced Linux](https://access.redhat.com/site/documentation/en-US/Red_Hat_Enterprise_Linux/6/html/Security-Enhanced_Linux/)
+  * [CentOS 5 Deployment Guide - Security and Selinux](http://www.centos.org/docs/5/html/Deployment_Guide-en-US/selg-overview.html)
+  * [Documentation - Apparmor](http://wiki.apparmor.net/index.php/Documentation)
+  * [AppArmor - Ubuntu Wiki](https://wiki.ubuntu.com/AppArmor)
+  * [openSUSE 12.3 - Introducing AppArmor](http://doc.opensuse.org/documentation/html/openSUSE/opensuse-security/cha.apparmor.intro.html)
 * Turn off password-based authentication.  This can be done - along with enabling PAM authentication for ssh - by enabling the following options in /etc/ssh/sshd_config:
 ```
 PasswordAuthentication no
