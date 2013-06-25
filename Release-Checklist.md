@@ -5,6 +5,7 @@ Software releases of major and minor versions (non-maintenance versions) also in
 # Software Availability (SA)
 
 * Ensure version information in all source code is coherent using the [[Eucalyptus Version Checklist]]
+* Ensure that LICENSE files in the [Cloud Libs Repository](https://github.com/eucalyptus/eucalyptus-cloud-libs/tree/master/licenses) are consistent with the `.jar` files being included in the released packages.
 * Build final packages in Jenkins
   * Make sure to use _no_ tarball suffix, as final releases don't need git info.
   * If the release contains embargoed security fixes, make sure to build against the appropriate security fix branch.
