@@ -38,8 +38,8 @@ service xend restart
 ```
 
 ## Cloud resource differences from KVM
-BFEBS images were registered with /dev/vda as the root device which XEN didnt understand, reregistered with /dev/sda worked
-Needed to upload and register XEN kernels and ramdisks for my images and reregister new emi's.
+* BFEBS images were previously registered with /dev/vda as the root device which XEN didnt understand, reregistered with /dev/sda worked
+* Needed to upload and register XEN kernels and ramdisks for my images and reregister new emi's.
 
 ## Completed verifications
 * BFEBS instances
