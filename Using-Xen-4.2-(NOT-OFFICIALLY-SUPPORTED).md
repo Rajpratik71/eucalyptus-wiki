@@ -11,8 +11,31 @@ reboot
 ```
 If libvirtd is already installed (ie you are converting an existing NC) ensure that you upgrade that package as well to the one from the XEN repo.
 
-## Eucalyptus Config Changes
-On the NC change the HYPERVISOR option to xen
+## Config Changes
+* On the NC change the HYPERVISOR option to "xen" in /etc/eucalyptus/eucalyptus.on
+* Edit the /etc/xen/xend-config.sxp file to be:
+```
+(xend-http-server yes)
+(xend-unix-server yes)
+(xend-unix-path /var/lib/xend/xend-socket)
+(xend-address localhost)
+(network-script network-bridge)
+(vif-script vif-bridge)
+(dom0-min-mem 196)
+(dom0-cpus 0)
+(vncpasswd '')
+```
+* Restart xend
+```
+service xend restart
+```
+* Ensure Domain-0 shows up in virsh list
+```
+[root@node-2 /root]# virsh list
+ Id    Name                           State
+----------------------------------------------------
+ 0     Domain-0                       running
+```
 
 ## Cloud resource differences from KVM
 BFEBS images were registered with /dev/vda as the root device which XEN didnt understand, reregistered with /dev/sda worked
