@@ -16,7 +16,8 @@ yum upgrade libvirt
 
 ## Config Changes
 1) On the Eucalyptus NC change the HYPERVISOR option to "xen" in /etc/eucalyptus/eucalyptus.conf
-1) Edit the /etc/xen/xend-config.sxp file to be:
+
+2) Edit the /etc/xen/xend-config.sxp file to be:
 ```
 (xend-http-server yes)
 (xend-unix-server yes)
@@ -28,19 +29,22 @@ yum upgrade libvirt
 (dom0-cpus 0)
 (vncpasswd '')
 ```
-* Restart xend and libvirtd
+
+3) Restart xend and libvirtd
 ```
 service xend restart
 service libvirtd restart
 ```
-* Ensure Domain-0 shows up in virsh list
+
+4) Ensure Domain-0 shows up in virsh list
 ```
 [root@node-2 /root]# virsh list
  Id    Name                           State
 ----------------------------------------------------
  0     Domain-0                       running
 ```
-* Start the NC
+
+5) Start the NC
 ```
 service eucalyptus-nc start
 ```
