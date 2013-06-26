@@ -35,3 +35,7 @@ mv micro-qa jenkins
 popd
 service jenkins start
 ```
+
+*****
+[[category.tools]]
+[[category.testing]]
