@@ -37,6 +37,7 @@ Index of Categories
 * [[category.reporting]]
 * [[category.stats]]
 * [[category.storage]]
+* [[category.testing]]
 * [[category.tools]]
 * [[category.training]]
 * [[category.troubleshooting]]

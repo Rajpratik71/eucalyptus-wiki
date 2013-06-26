@@ -1,5 +1,4 @@
 * [[Cloud-Libs-Branch-Management]]
-* [[Creating-a-MicroQA-Image---CentOS-6]]
 * [[Developer-Resources]]
 * [[Emc-vnx-support-3]]
 * [[Hadoopalyptus]]
