@@ -31,6 +31,7 @@
 * [[Textile-Test]]
 * [[Troubleshooting-Tools]]
 * [[Ui-Guide]]
+* [[Using-Xen-4]]
 * [[Validator-Scripts]]
 * [[Walrus-Troubleshooting]]
 * [[_Footer]]
