@@ -2,18 +2,21 @@
 ## PLEASE USE AT YOUR OWN RISK
 
 ## Install Xen 4
-http://wiki.centos.org/HowTos/Xen/Xen4QuickStart
+1. http://wiki.centos.org/HowTos/Xen/Xen4QuickStart
 ```
 yum install centos-release-xen
 yum install xen
 /usr/bin/grub-bootxen.sh
 reboot
 ```
-If libvirtd is already installed (ie you are converting an existing NC) ensure that you upgrade that package as well to the one from the XEN repo.
+2. If libvirtd was already installed (ie you are converting an existing NC) ensure that you upgrade that package as well to the one from the XEN repo.
+```
+yum upgrade libvirt
+```
 
 ## Config Changes
-* On the NC change the HYPERVISOR option to "xen" in /etc/eucalyptus/eucalyptus.on
-* Edit the /etc/xen/xend-config.sxp file to be:
+1) On the Eucalyptus NC change the HYPERVISOR option to "xen" in /etc/eucalyptus/eucalyptus.conf
+1) Edit the /etc/xen/xend-config.sxp file to be:
 ```
 (xend-http-server yes)
 (xend-unix-server yes)
@@ -25,9 +28,10 @@ If libvirtd is already installed (ie you are converting an existing NC) ensure t
 (dom0-cpus 0)
 (vncpasswd '')
 ```
-* Restart xend
+* Restart xend and libvirtd
 ```
 service xend restart
+service libvirtd restart
 ```
 * Ensure Domain-0 shows up in virsh list
 ```
@@ -35,6 +39,10 @@ service xend restart
  Id    Name                           State
 ----------------------------------------------------
  0     Domain-0                       running
+```
+* Start the NC
+```
+service eucalyptus-nc start
 ```
 
 ## Cloud resource differences from KVM
