@@ -8,6 +8,7 @@ yum install python-devel python-setuptools gcc make python-virtualenv java-1.6.0
 sudo wget -O /etc/yum.repos.d/jenkins.repo http://pkg.jenkins-ci.org/redhat/jenkins.repo
 sudo rpm --import http://pkg.jenkins-ci.org/redhat/jenkins-ci.org.key
 yum install jenkins
+yum groupinstall Fonts
 chkconfig jenkins on
 ```
 
