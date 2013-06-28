@@ -49,6 +49,7 @@ Eucalyptus is a set of web services, modeled after and compatible with Amazon We
 ### Pages for Cloud Users
 
 * [Bundling Images](wiki/Bundling-Images) - How to use euca-bundle-vol to "rebundle" modified VM instances back into the Eucalyptus image catalog as a new EMI.
+* [Instance Best Practices](wiki/Instance-Best-Practices) - Recommendations regarding best practices associated with instance and image management.
 * [Convert AMI to EMI](wiki/Convert-AMI-to-EMI) - How to import an AMI (Amazon Machine Image) into Eucalyptus as an EMI (Eucalyptus Machine Image).
 * [Kexec Loader](wiki/Kexec-loader) - How to use a specialized EKI and ERI to boot the EMI's own in-filesystem kernel and ramdisk using GRUB.
 * [Using PHP with Eucalyptus](wiki/Using-PHP-with-Eucalyptus) - How to use the Amazon AWS PHP SDK with Eucalyptus.
