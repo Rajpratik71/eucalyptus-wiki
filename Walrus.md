@@ -1,6 +1,5 @@
 # Walrus/S3
 What it is, What it does
-![Walrus haz many bukkits!](http://www.funny-pics-space.com/wp-content/uploads/2012/04/walrus-ma-bucket-5.jpg)
 
 ## DesignDoc for the Cloud Admin
 ### Backing Store (where the buckets are)
@@ -41,3 +40,4 @@ code is the ultimate truth here
 *****
 
 [[category.components]]
+[[category.storage]]
