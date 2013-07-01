@@ -1,5 +1,6 @@
 ## Walrus supported S3 API operations:
-(as of 3.3.0)
+_(as of 3.3.0)_
+
 Service:
 * List Buckets (GET on service)
 
