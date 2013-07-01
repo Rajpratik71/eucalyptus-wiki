@@ -27,7 +27,7 @@ the API or commands, meaning that the application will have to account for
 staging the files somewhere else, while volumes will have the familiar
 block device interface.
 
-Read more about [[Walrus]]
+Read more about [[Walrus]] and [[Walrus/S3 API]]
 
 Read more about [[Storage Controller]]
 
