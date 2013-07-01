@@ -19,7 +19,7 @@ Object:
 * Bucket/object lifecycles
 * Multipart-uploads
 * Delete Multiple Objects (POST /?delete, not DELETE)
-* Storage durability classes
+* Storage durability classes/Reduced Redundancy Storage
 * Website hosting
 * CORS support
 * OPTIONS on object
@@ -28,3 +28,5 @@ Object:
 * Bucket notification (for ReducedRedundancy lost objects, not applicable to Walrus yet)
 
 Many of these features are in development now and this list will be updated as support is added.
+
+[[category.storage]]
