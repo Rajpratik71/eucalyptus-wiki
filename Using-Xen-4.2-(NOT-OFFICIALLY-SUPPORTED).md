@@ -9,6 +9,19 @@ yum install xen
 /usr/bin/grub-bootxen.sh
 reboot
 ```
+Note (@yarapavan) : In CentOS 6.4, I've had success with this following repo file contenet (xen.repo) in /etc/yum.repos.d
+```
+[xen4]
+name=CentOS-$releasever - Xen
+baseurl=http://mirror.centos.org/centos/$releasever/xen4/$basearch/
+gpgcheck=0
+enabled=1
+```
+then do 
+```
+yum install kernel-xen xen
+```
+
 2. If libvirtd was already installed (ie you are converting an existing NC) ensure that you upgrade that package as well to the one from the XEN repo.
 ```
 yum upgrade libvirt
