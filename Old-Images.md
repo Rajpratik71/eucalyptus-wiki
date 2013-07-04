@@ -27,8 +27,12 @@ We keep an image-id on each image at /etc/image-id to allow for easy identificat
 * image_arch: the architecture of the installed binaries, for example "x86_64"
 * image_file: the file name for the image, for example "euca-debian-2011.08.15-x86_64.img"
 * image_stamp: a unique ID for the specific image, for example "082d-d3a4". Currently it is generated using 
-<pre>date +%s|md5sum|sed '1,$ s/\(....\)\(....\).*/\1-\2/'</pre>
-* image_date: currently generated using <pre>date "+%Y%m%d%H%M%S"</pre> for example "20110815122021"
+```
+date +%s|md5sum|sed '1,$ s/\(....\)\(....\).*/\1-\2/'
+```
+* image_date: currently generated using 
+```date "+%Y%m%d%H%M%S"```
+ for example "20110815122021"
 * recipe_name: this will tell which distro the EMI is based off for example "debian-based"
 
 Here are some image-id files for images we're creating [[image-ids]]
