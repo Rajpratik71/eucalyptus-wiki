@@ -65,7 +65,17 @@ service eucalyptus-nc start
 ## Cloud resource differences from KVM
 * BFEBS images were previously registered with /dev/vda as the root device which XEN didnt understand, reregistered with /dev/sda worked
 * Needed to upload and register XEN kernels and ramdisks for my images and reregister new emi's.
+* br0 interface becomes xenbr0 (or eth0). Always check **brctl show**
+* /dev/vdx becomes /dev/xvdx (for volume attachments). Otherwise, volumes don't get attached
+* euca-get-console-output doesn't work out of the box. You have to change /etc/sysconfig/xenconsoled file and set XENCONSOLED_LOG_GUESTS=yes
+* Had to do **rpm --nodeps** installation for eucalytus-nc package to deploy without KVM
+* Make sure that these following lines are there in /etc/sysctl.conf
+```
+net.ipv4.ip_forward = 1
+net.ipv4.conf.eth0.proxy_arp = 1
+```
 
 ## Completed verifications
+
 * BFEBS instances
 * Volume attachment
