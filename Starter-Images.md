@@ -33,18 +33,18 @@ Find below a list of various images for Linux distributions. We also have the [[
     </tr>
     </tr>
     <tr>
-       <td><a href="http://emis.eucalyptus.com/starter-emis/euca-fedora16-2012.11.07-x86_64.tgz">Download</a></td>
-       <td>Fedora 16 x86_64</td>
-       <td>Andy Grimm - agrimm@eucalyptus.com</td>
-       <td><a href="https://github.com/eucalyptus/image-verification-results/blob/master/fedora16-eutester-testresults.txt">Test Results</a><br>(Eucalyptus 3.0.x - 3.1.x)</td>
-       <td>SELinux / iptables disabled. Root disk of 4.5G. Root user enabled. It works w/ kexec kernel ( default kernel is provided as part of tar )</td>
+       <td><a href="http://emis.eucalyptus.com/starter-emis/euca-fedora17-ec2user-2013.07.04-x86_64.tgz">Download</a></td>
+       <td>Fedora 17 x86_64</td>
+       <td>Harold Spencer, Jr. - harold.spencer.jr@eucalyptus.com</td>
+       <td><a href="https://github.com/eucalyptus/image-verification-results/blob/master/fedora17-ec2user-testresults.txt">Test Results</a><br>(Eucalyptus 3.3.0)</td>
+       <td>Hypervisor-Specific Kernel, 3.9.8-100.fc17 kernel version, 1.6GB root; cloud-init enabled, ec2-user enabled, sudo rights; Selinux Enabled; euca2ools 2.1.3 installed. It works w/ kexec kernel ( default kernel is provided as part of tar )</td>
     </tr>
     <tr>
-       <td><a href="http://emis.eucalyptus.com/starter-emis/euca-fedora17-2012.11.07-x86_64.tgz">Download</a></td>
-       <td>Fedora 17 x86_64</td>
-       <td>Andy Grimm - agrimm@eucalyptus.com</td>
-       <td><a href="https://github.com/eucalyptus/image-verification-results/blob/master/fedora17-eutester-testresults.txt">Test Results</a><br>(Eucalyptus 3.0.x - 3.1.x)</td>
-       <td>SELinux / iptables disabled. Root disk of 4.5G. Root user enabled. It works w/ kexec kernel ( default kernel is provided as part of tar )</td>
+       <td><a href="http://emis.eucalyptus.com/starter-emis/euca-fedora18-ec2user-2013.07.04-x86_64.tgz">Download</a></td>
+       <td>Fedora 18 x86_64</td>
+       <td>Harold Spencer, Jr. - harold.spencer.jr@eucalyptus.com</td>
+       <td><a href="https://github.com/eucalyptus/image-verification-results/blob/master/fedora18-ec2user-testresults.txt">Test Results</a><br>(Eucalyptus 3.3.0)</td>
+       <td>Hypervisor-Specific Kernel, 3.9.6-200.fc18 kernel version, 1.7GB root; cloud-init enabled, ec2-user enabled, sudo rights; Selinux Enabled; euca2ools 2.1.3 installed. It works w/ kexec kernel ( default kernel is provided as part of tar )</td>
     </tr>
     <tr>
        <td><a href="https://s3-eu-west-1.amazonaws.com/opensuse-images/opensuse-12.2-x86_64-emi.tar.gz">Download</a></td>
