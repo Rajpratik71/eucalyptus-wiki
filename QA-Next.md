@@ -73,9 +73,10 @@
     - Manage many many installs
     - Multi User
 
-https://eucalyptus.atlassian.net/wiki/display/EUCA/Repeatable+Deployment+Plan
+
 
 ### Phases of deployment
+https://eucalyptus.atlassian.net/wiki/display/EUCA/Repeatable+Deployment+Plan
 #### Phase 1 - Installation of MicroQA
 1. Go to Eucalyptus Website
 2. Download image in appropriate (KVM RAM, VirtualBox, VMDK), Ansible version
@@ -148,4 +149,3 @@ Programmatically create params of which tests should run
 Check on state of Validator plugins (agrimm)
 Offline Mode (i.e. all things packaged without need for external repos)
 Write script that cleans out Eucalyptus install
-
