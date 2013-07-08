@@ -20,5 +20,6 @@ Thursday hack sessions:
 
 Some as-yet unscheduled ideas:
 * EVC build with Netflix tools integrated
+* EVC build with AWS Eclipse toolkit integrated
 * Euca nightly build generator
 * AutoQA integration of AWS API tests
