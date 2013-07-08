@@ -17,3 +17,8 @@ Wednesday hack sessions:
 
 Thursday hack sessions:
 * TBA
+
+Some as-yet unscheduled ideas:
+* EVC build with Netflix tools integrated
+* Euca nightly build generator
+* AutoQA integration of AWS API tests
