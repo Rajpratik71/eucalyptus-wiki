@@ -47,3 +47,105 @@
 13. Look and feel should mimic our Eucalyptus interfaces where ever possible. 
 14. More test metrics are a must. How much, how long, averages, historical data, what env. etc.. Data points for tests, test units, individual Eucalyptus operations, etc.. 
 15. Would be nice if we can programmatically interface with our docs for install and setup portions of QA. ...or the reverse produce easy to read sudo code per setup/install step that can be consumed by our docs team. ...or both
+
+# Notes from first design session
+## Constraints/Assumptions
+1. An OS installed
+2. SSH access (via password or key)
+3. No IT intervention
+4. Public IPs / Network is working for them
+5. No conflicting DHCP server (or DHCP server blocks requests from MAC_PREFIX)
+6. Config management system will not conflict with installer/provisioner
+
+## Use Cases
+1. Basic Community User
+    - Little config as possible
+    - No enterprise bits
+    - Push button deploy
+    - Failure messages must be clear and allow remediation
+2. Advanced PoC type customer
+    - Enterprise bits
+    - More customization of parameters (repo locations, network configs, DNS config, etc)
+    - Possibility to redeploy on another VM or bare metal machine (maybe all or parts of the system)
+    - Deploy in all supported topologies/configurations
+    - Expand the deployment
+3. Internal QA System
+    - Manage many many installs
+    - Multi User
+
+https://eucalyptus.atlassian.net/wiki/display/EUCA/Repeatable+Deployment+Plan
+
+### Phases of deployment
+#### Phase 1 - Installation of MicroQA
+1. Go to Eucalyptus Website
+2. Download image in appropriate (KVM RAM, VirtualBox, VMDK), Ansible version
+3. Start VM or deploy via Ansible
+4. Prompt with passwords and URLs for VNC, SSH, and HTTP
+5. Ncurses display of URL to go to for landing
+6. Landing web page that outlines all the features and URLs
+
+#### Phase 2 - Deployment
+1. Create config step (small number of params), validate config, create artifact URI
+2. Start job based off config artifact URI
+4. Verify Infrastructure based on configuration
+3. Create Eucalyptus install based off config
+
+#### Phase 3 - Testing
+1. Pass config to test sequences
+2. Run test sequences
+
+#### Phase 4 - Maintanence
+1. Deploy Nagios/Ganglia
+2. Ensure sosreports installed 
+3. Verify config using Ansible
+
+#### Phase 5 - Rinse & Repeat 
+1. Restart from bare metal
+2. Restart a particular config
+3. Clean the system of Euca resources using LVM snapshots and reinstall 
+4. Upgrade packages/source
+5. Rerun validator/testing scripts
+
+
+### Resource Manager (controls allocation and reservation of limited resources)
+Resources
+- IPs
+    - Public IPs
+       - Owner
+       - Lease Time
+    - Private IPs
+       - Owner
+       - Lease Time
+    - Available Machines
+       - State of the Box
+       - Get information (IP, distro)
+       - Whether its bare metal or VM
+       - Owner
+       - Lease Time
+    - Accessibility to SAN (internal use case) 
+       - Owner
+       - Lease Time
+- Also can manage configuration options with service API
+- Externalizable database 
+- Lightweight UI/API
+- Quotas for resources allocation
+- Ability to requests certain resources (allows customer user case to choose which machines will act as a particular role)
+
+### TODO
+Rebranding
+SOS Report to Design
+Adding Resource Management to design
+Video showing deployment
+Deployment Mechanisms:
+- KVM
+- VirtualBox
+- VMDK
+- Vagrant
+- Ansible
+Downstream Build view display in run order
+Link cases to JIRA
+Programmatically create params of which tests should run
+Check on state of Validator plugins (agrimm)
+Offline Mode (i.e. all things packaged without need for external repos)
+Write script that cleans out Eucalyptus install
+
