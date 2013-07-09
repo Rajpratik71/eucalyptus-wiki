@@ -1,6 +1,3 @@
-# Walrus/S3
-What it is, What it does
-
 ## DesignDoc for the Cloud Admin
 ### Backing Store (where the buckets are)
 Currently, Walrus requires a POSIX filesystem to store buckets and objects. It uses, by default, the filesystem at $EUCALYPTUS/var/lib/eucalyptus/bukkits and creates a directory per bucket and each object is stored as a single file within that bucket directory.
