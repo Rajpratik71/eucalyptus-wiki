@@ -124,8 +124,9 @@ Green means a service works well enough to be useful, though code tweaks are nec
  * Versions Tested: EC2 plugin 1.14, Eucalytpus 3.0, 3.1 and 3.2
  * Driver: [[Lester Wade]]
  * Known bugs: FIXME
- * Notes: Version 1.17 of the EC2 plugin does not work. Jenkins tries to get endpoints via the register URL which fails unless endpoint is https://cloudIP:8443/register. Once past this point, connectivity test yields "login failure: all modules ignored". Version 1.14 works with earlier versions of Eucalyptus, but not 3.3
- * Last update: FIXME
+ * Notes: Version 1.17 of the EC2 plugin does not work. Jenkins tries to get endpoints via the register URL which fails unless endpoint is https://cloudIP:8443/register. Once past this point, connectivity test yields "login failure: all modules ignored". Version 1.14 works with earlier versions of Eucalyptus, but not 3.3.
+ * Workaround: The source for a version of the EC2 plugin known to work with Eucalyptus 3.3 can be found here - https://github.com/eucacolby/ec2-plugin
+ * Last update: July 9, 2013
 
 ## <font color="red">Red: Not working / Unknown</font>
 
