@@ -8,61 +8,64 @@
 
 ***
 
-<p>boto is an integrated interface to current and future infrastructural services compatible with AWS.</p>
+Python library 'boto' is an integrated interface to current and future services offered by AWS and by AWS-compatible services, such as Eucalyptus.
 
-<h2>Example Usage</h2>
+# Installation
 
-<h3>Setup boto</h3>
+You can follow any installation method recommended in boto's documentation, such as
 
-<p>Install boto, setup the environment, and so on.</p>
+* Install via [pip installer](http://www.pip-installer.org/):
+```
+	pip install boto
+```
+* Install from source:
+```
+	git clone git://github.com/boto/boto.git
+	cd boto
+	python setup.py install
+```
 
-<pre><code>As root,
+# Using boto with Eucalyptus
 
-python setup.py install
-</code></pre>
+As with AWS, one must pass the access key id and the secret access key to the library. In addition to that, one must override the defaults for cloud endpoints (S3 and EC2), their ports, and their service paths. The code snippets below assume that we define the values specific to your Eucalyptus installation ahead of time:
 
-<h3>Using boto</h3>
+```
+euca_ec2_host="10.111.5.3"
+euca_s3_host="10.111.5.3"
+euca_id="CYYBSGXPRSDFFOEUZXOBN"
+euca_key="fFwIUBcFjEXvkevE5f4cVmMshsZLUHM75mhe8Eyr"
+```
 
-<h4>Eucalyptus EC2 interface</h4>
+Where `euca_ec2_host` is the host running the CLC and `euca_s3_host` is the host running the Walrus. For instance, if EC2_URL is set to http://10.111.5.3:8773/services/Eucalyptus then `euca_ec2_host` should be set to `10.111.5.3`. When CLC and Walrus are co-located, the hostname will be the same for both.
 
-<pre><code>region = RegionInfo(name="eucalyptus", endpoint="hostname")
+## Eucalyptus EC2 interface
 
-connection = boto.connect_ec2(aws_access_key_id="access key",
-                      aws_secret_access_key="secret",
-                      is_secure=False,
-                      region=region,
-                      port=8773,
-                      path="/services/Eucalyptus")
+```
+import boto
+from boto.ec2.regioninfo import RegionInfo
+euca_region = RegionInfo(name="eucalyptus", endpoint=euca_ec2_host)
+ec2conn = boto.connect_ec2(
+	aws_access_key_id=euca_id,
+	aws_secret_access_key=euca_key, 
+	is_secure=False,
+	port=8773, 
+	path="/services/Eucalyptus", 
+	region=euca_region)
+ec2conn.get_all_zones()
+```
+## Eucalyptus S3 interface
 
-#Run commands
-
-zones = connection.get_all_zones()</code></pre>
-
-<p>where, "hostname" is the name of the Eucalyptus front end.</p>
-
-<p>For instance, if EC2_URL is set to <a href="http://192.168.9.1:8773/services/Eucalyptus" title="http://192.168.9.1:8773/services/Eucalyptus">http://192.168.9.1:8773/services/Eucalyptus</a>,</p>
-
-<p>hostname should be "192.168.9.1"</p>
-
-<h4>Eucalyptus S3 interface</h4>
-
-<pre><code>
-calling_format=boto.s3.connection.OrdinaryCallingFormat()
-connection = boto.s3.Connection(aws_access_key_id="access key",
-                      aws_secret_access_key="secret",
-                      is_secure=False,
-                      host="hostname",
-                      port=8773,
-                      calling_format=calling_format,
-                      path="/services/Walrus")
-
-#Run commands
-
-bucket_instance = connection.get_bucket(bucket)
-keys = bucket.get_all_keys()
-for k in keys:
-    #do something
-</code></pre>
+```
+import boto
+s3conn = boto.connect_s3(
+	aws_access_key_id=euca_id,
+	aws_secret_access_key=euca_key,
+	is_secure=False,
+	port=8773,
+	path="/services/Walrus",
+	host=euca_s3_host)
+s3conn.get_all_buckets()
+```
 
 *****
 
