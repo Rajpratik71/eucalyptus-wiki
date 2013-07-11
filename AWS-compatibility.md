@@ -10,7 +10,7 @@ Golden means a service "just works". Pointing region and credential variables of
  * Project URL: https://github.com/mitchellh/vagrant-aws
  * Versions tested: Vagrant 1.1+ (against Euca 3.2.2)
  * Known bugs: None
- * Notes: On 16 Mar 2013, Github user "carlsverre" submitted a [https://github.com/mitchellh/vagrant-aws/pull/6](patch) to the new Vagrant AWS plug-in to allow it to work against EMIs as well as AMIs.  On 21 Mar 2013, Github user "svanzoest" +1'd it.  The patch was merged by Github user "mitchellh" (upstream) on 22 Mar 2013.
+ * Notes: On 16 Mar 2013, Github user "carlsverre" submitted a [patch](https://github.com/mitchellh/vagrant-aws/pull/6) to the new Vagrant AWS plug-in to allow it to work against EMIs as well as AMIs.  On 21 Mar 2013, Github user "svanzoest" +1'd it.  The patch was merged by Github user "mitchellh" (upstream) on 22 Mar 2013.
  * Last update: 27 Mar 2013
 
 * _**s3curl**_
