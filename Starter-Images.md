@@ -2,7 +2,7 @@ Find below a list of various images for Linux distributions. We also have the [[
 
 ## Listing of Starter images
 
-<table>
+<table width="70%">
     <tr>
        <th>URL to Image</th>
        <th>Title</th>
