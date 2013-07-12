@@ -47,6 +47,13 @@ Find below a list of various images for Linux distributions. We also have the [[
        <td>Hypervisor-Specific Kernel, 3.9.6-200.fc18 kernel version, 1.7GB root; cloud-init enabled, ec2-user enabled, sudo rights; Selinux Enabled; euca2ools 2.1.3 installed. It works w/ kexec kernel ( default kernel is provided as part of tar )</td>
     </tr>
     <tr>
+        <td><a href="http://emis.eucalyptus.com/starter-emis/euca-debian-ec2user-2013.07.08-x86_64.tgz">Download</a></td>
+       <td>Debian 7 x86_64</td>
+       <td>Harold Spencer, Jr. - harold.spencer.jr@eucalyptus.com</td>
+       <td><a href="https://github.com/eucalyptus/image-verification-results/blob/master/debian7-ec2user-testresults.txt">Test Results</a><br>(Eucalyptus 3.3.0)</td>
+       <td>Debian 7 1.7GB root - Hypervisor-Specific Kernel, 3.9-1-amd64 kernel version; cloud-init enabled, ec2-user enabled, sudo rights; Apparmor enabled; euca2ools 2.1.3 installed</td>
+    </tr>
+    <tr>
        <td><a href="https://s3-eu-west-1.amazonaws.com/opensuse-images/opensuse-12.2-x86_64-emi.tar.gz">Download</a></td>
        <td>OpenSUSE 12.2 x86_64</td>
        <td>Lester Wade - lester@eucalyptus.com</td>
@@ -58,14 +65,14 @@ Find below a list of various images for Linux distributions. We also have the [[
        <td>CentOS 5.9 x86_64</td>
        <td>Harold Spencer, Jr. - harold.spencer.jr@eucalyptus.com</td>
        <td><a href="https://github.com/eucalyptus/image-verification-results/blob/updated-centos5-images-tests/centos5-ec2user-eustester-testresults.txt">Test Results</a><br>(Eucalyptus 3.3 - 3.4 devel)</td>
-       <td>CentOS 5.9 1.4GB root, Hypervisor-Specific Kernel; 2.6.18-348.6.1.el5 kernel version; ec2-user enabled, sudo rights.</td>
+       <td>CentOS 5.9 1.4GB root, Hypervisor-Specific Kernel; 2.6.18-348.6.1.el5 kernel version; ec2-user enabled, sudo rights; Selinux enabled.</td>
     </tr>
     <tr>
          <td><a href="http://emis.eucalyptus.com/starter-emis/euca-centos5-2013.06.18-x86_64-root.tgz">Download</a></td>
        <td>CentOS 5.9 x86_64</td>
        <td>Harold Spencer, Jr. - harold.spencer.jr@eucalyptus.com</td>
        <td><a href="https://github.com/eucalyptus/image-verification-results/blob/updated-centos5-images-tests/centos5-root-user-eustester-testresults.txt">Test Results</a><br>(Eucalyptus 3.3 - 3.4 devel)</td>
-       <td>CentOS 5.9 1.4GB root, Hypervisor-Specific Kernel; 2.6.18-348.6.1.el5 kernel version; root user enabled.</td>
+       <td>CentOS 5.9 1.4GB root, Hypervisor-Specific Kernel; 2.6.18-348.6.1.el5 kernel version; root user enabled; Selinux enabled.</td>
     </tr>
 </table>
 
