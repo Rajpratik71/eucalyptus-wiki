@@ -11,11 +11,11 @@ Find below a list of various images for Linux distributions. We also have the [[
        <th>Notes</th>
     </tr>
     <tr>
-       <td><a href="http://emis.eucalyptus.com/starter-emis/euca-centos6.3-2012.11.07-x86_64.tgz">Download</a></td>
-       <td>CentOS 6.3 x86_64</td>
-       <td>Andy Grimm - agrimm@eucalyptus.com</td>
-       <td><a href="https://github.com/eucalyptus/image-verification-results/blob/master/centos6.3-eutester-testresults.txt">Test Results</a><br>(Eucalyptus 3.0.x - 3.1.x)</td>
-       <td>SELinux / iptables disabled. Root disk of 4.5G. Root user enable. It works w/ kexec kernel ( default kernel is provided as part of tar ).</td>
+       <td><a href="http://emis.eucalyptus.com/starter-emis/euca-centos6.4-ec2user-2013.07.12-x86_64.tgz">Download</a></td>
+       <td>CentOS 6.4 x86_64</td>
+       <td>Harold Spencer, Jr. - harold.spencer.jr@eucalyptus.com</td>
+       <td><a href="https://github.com/eucalyptus/image-verification-results/blob/master/centos6.4-ec2user-testresults.txt">Test Results</a><br>(Eucalyptus 3.3.0)</td>
+       <td>Hypervisor-Specific Kernel; 2.6.32-358.11.1.el6.x86_64 kernel version; ec2-user enabled, sudo rights; Selinux enabled; euca2ools 3.0.0 installed.</td>
     </tr>
     <tr>
        <td><a href="http://cloud-images.ubuntu.com/releases/precise/release/ubuntu-12.04-server-cloudimg-amd64.tar.gz">Download from Ubuntu</a></td>
