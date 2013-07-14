@@ -8,10 +8,15 @@ Golden means a service "just works". Pointing region and credential variables of
 
 * _**Vagrant AWS Plug-in**_
  * Project URL: https://github.com/mitchellh/vagrant-aws
- * Versions tested: Vagrant 1.1+ (against Euca 3.2.2)
+ * Versions tested: Vagrant 1.2+, vagrant-aws 0.2.2, Eucalyptus 3.3.x
  * Known bugs: None
- * Notes: On 16 Mar 2013, Github user "carlsverre" submitted a [patch](https://github.com/mitchellh/vagrant-aws/pull/6) to the new Vagrant AWS plug-in to allow it to work against EMIs as well as AMIs.  On 21 Mar 2013, Github user "svanzoest" +1'd it.  The patch was merged by Github user "mitchellh" (upstream) on 22 Mar 2013.
- * Last update: 27 Mar 2013
+ * Sample Vagrant file: https://gist.github.com/yarapavan/5995281
+ * Notes: Project URL has a quick start guide, offering aws-specific configuration options you can use in the Vagrantfile. Note that you can "override" the top-level configurations by customizing this Vagrantfile. For example, now you can use
+         ```
+          override.ssh.username = "ec2-user"
+          override.ssh.private_key_path = "PATH TO YOUR PRIVATE KEY"
+         ```
+ * Last update: 15 July 2013
 
 * _**s3curl**_
  * Project URL: http://aws.amazon.com/code/128
