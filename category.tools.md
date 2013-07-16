@@ -6,6 +6,7 @@
 * [[Fog]]
 * [[HOWTO-Use-AWS-Java-SDK-with-Eucalyptus]]
 * [[HowTo-use-s3cmd-with-Eucalyptus]]
+* [[Netflix-OSS-Tools]]
 * [[Testing-with-soapUI]]
 * [[Typica]]
 * [[ami2emi]]
