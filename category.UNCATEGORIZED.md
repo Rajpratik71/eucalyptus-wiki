@@ -1,3 +1,4 @@
+* [[Autoscaling-your-Jenkins-fleet-with-CW-AS-Swarm]]
 * [[Cloud-Libs-Branch-Management]]
 * [[Developer-Resources]]
 * [[Emc-vnx-support-3]]
