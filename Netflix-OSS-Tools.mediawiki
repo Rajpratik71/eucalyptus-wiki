@@ -1,4 +1,3 @@
-
 {|
 |+ Project || Fork  || Notes
 |-
@@ -14,7 +13,7 @@
 |-
 ! Servo || '[[https://github.com/grze/servo/tree/eucalyptus|grze/servo]] || [[netflix-oss-tools#servo-notes|Notes]]
 |}
-
+[[__NOTOC__]]
 == Asgard Notes ==
 == SimianArmy Notes ==
 == Edda Notes ==
