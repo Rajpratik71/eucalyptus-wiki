@@ -1,22 +1,22 @@
 = Netflix OSS =
 
 == Asgard ==
-* [[/grze/asgard/tree/eucalyptus]]
+* Fork: [[https://github.com/grze/asgard/tree/eucalyptus|grze/asgard]]
 
 == SimianArmy ==
-* [[/grze/SimianArmy/tree/eucalyptus]]
+* Fork: [[https://github.com/grze/SimianArmy/tree/eucalyptus|grze/SimianArmy]]
 
 == Edda ==
-* [[/grze/edda/tree/eucalyptus]]
+* Fork: [[https://github.com/grze/SimianArmy/tree/eucalyptus|grze/SimianArmy]]
 
 == Eureka ==
-* [[/grze/eureka/tree/eucalyptus]]
+* Fork: [[https://github.com/grze/SimianArmy/tree/eucalyptus|grze/SimianArmy]]
 
 == Priam ==
-* [[/grze/Priam/tree/eucalyptus]]
+* Fork: [[https://github.com/grze/SimianArmy/tree/eucalyptus|grze/SimianArmy]]
 
 == Servo ==
-* [[/grze/servo/tree/eucalyptus]]
+* Fork: [[https://github.com/grze/SimianArmy/tree/eucalyptus|grze/SimianArmy]]
 
 ----
 [[category.tools]]
