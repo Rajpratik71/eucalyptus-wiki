@@ -18,19 +18,25 @@ Find below a list of various images for Linux distributions. We also have the [[
        <td>Hypervisor-Specific Kernel; 2.6.32-358.11.1.el6.x86_64 kernel version; ec2-user enabled, sudo rights; Selinux enabled; euca2ools 3.0.0 installed.</td>
     </tr>
     <tr>
-       <td><a href="http://cloud-images.ubuntu.com/releases/precise/release/ubuntu-12.04-server-cloudimg-amd64.tar.gz">Download from Ubuntu</a></td>
-       <td>Ubuntu 12.04 LTS x86_64 - Official Ubuntu Image</td>
-       <td><a href="mailto:tom.ellis@eucalyptus.com">Tom Ellis</a></td>
-       <td><a href="https://github.com/eucalyptus/image-verification-results/blob/master/ubuntu12.04-eutester-testresults.txt">Test Results</a><br>(Eucalyptus 3.2)</td>
+       <td><a href="http://cloud-images.ubuntu.com/raring/current/raring-server-cloudimg-amd64.tar.gz">Download from Ubuntu</a></td>
+       <td>Ubuntu 13.04 LTS x86_64 - Official Ubuntu Cloud Image</td>
+       <td><a href="mailto:harold.spencer.jr@eucalyptus.com">Harold Spencer, Jr.</a></td>
+       <td><a href="https://github.com/eucalyptus/image-verification-results/blob/master/ubuntu13.04-eutester-testresults.txt">Test Results</a><br>(Eucalyptus 3.3.0)</td>
        <td>Latest official Ubuntu image from cloud-images.ubuntu.com (if we use this link, it'll always pull the latest version of the image as they get updated frequently)</td>
     </tr>
     <tr>
-       <td><a href="http://cloud-images.ubuntu.com/releases/10.04/release/ubuntu-10.04-server-cloudimg-amd64.tar.gz">Download from Ubuntu</a></td>
-       <td>Ubuntu 10.04 LTS x86_64 - Official Ubuntu Image</td>
-       <td><a href="mailto:tom.ellis@eucalyptus.com">Tom Ellis</a></td>
-       <td><a href="https://github.com/eucalyptus/image-verification-results/blob/master/ubuntu10.04-eutester-testresults.txt">Test Results</a><br>(Eucalyptus 3.2)</td>
+       <td><a href="http://cloud-images.ubuntu.com/precise/current/precise-server-cloudimg-amd64.tar.gz">Download from Ubuntu</a></td>
+       <td>Ubuntu 12.04 LTS x86_64 - Official Ubuntu Cloud Image</td>
+       <td><a href="mailto:harold.spencer.jr@eucalyptus.com">Harold Spencer, Jr.</a></td>
+       <td><a href="https://github.com/eucalyptus/image-verification-results/blob/master/ubuntu12.04-eutester-testresults.txt">Test Results</a><br>(Eucalyptus 3.3.0)</td>
        <td>Latest official Ubuntu image from cloud-images.ubuntu.com (if we use this link, it'll always pull the latest version of the image as they get updated frequently)</td>
     </tr>
+    <tr>
+       <td><a href="http://cloud-images.ubuntu.com/lucid/current/lucid-server-cloudimg-amd64.tar.gz">Download from Ubuntu</a></td>
+       <td>Ubuntu 10.04 LTS x86_64 - Official Ubuntu Cloud Image</td>
+       <td><a href="mailto:harold.spencer.jr@eucalyptus.com">Harold Spencer, Jr.</a></td>
+       <td><a href="https://github.com/eucalyptus/image-verification-results/blob/master/ubuntu10.04-eutester-testresults.txt">Test Results</a><br>(Eucalyptus 3.3.0)</td>
+       <td>Latest official Ubuntu image from cloud-images.ubuntu.com (if we use this link, it'll always pull the latest version of the image as they get updated frequently)</td>
     </tr>
     <tr>
        <td><a href="http://emis.eucalyptus.com/starter-emis/euca-fedora17-ec2user-2013.07.04-x86_64.tgz">Download</a></td>
