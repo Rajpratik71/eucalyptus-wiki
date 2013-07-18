@@ -3,6 +3,7 @@
 * [[Developer-Resources]]
 * [[Emc-vnx-support-3]]
 * [[Eucalyptus-Virtual-Cloud-Instructions]]
+* [[Eustore-Improvements]]
 * [[Hadoopalyptus]]
 * [[Home]]
 * [[Images-Project]]
