@@ -1,0 +1,1 @@
+This page is to track the ideas for improving [eustore](http://www.eucalyptus.com/docs/euca2ools/3.0/euca2ools-guide/eustore.html#eustore).
