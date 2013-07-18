@@ -14,6 +14,14 @@ This mailing list is for all users of Eucalyptus.  If you have any questions or 
 
 **To see archives and for more information, visit https://groups.google.com/a/eucalyptus.com/forum/#!forum/euca-users**
 
+## euca-docs@eucalyptus.com
+
+This mailing list is for the Eucalyptus documentation team.  If you're interested in contributing to Eucalyptus documentation, or if you have questions about our docs, this is the right list for you.
+
+**To subscribe, send an email to euca-docs+subscribe@eucalyptus.com and then reply to the subsequent email.**
+
+**To see archives and for more information, visit https://groups.google.com/a/eucalyptus.com/forum/#!forum/euca-docs**
+
 ## team-ui@eucalyptus.com
 
 This mailing list is where the Eucalyptus User Interface team works.  Join this list if you have specific questions about Eucalyptus UI development.
