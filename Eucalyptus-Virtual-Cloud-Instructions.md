@@ -1,5 +1,8 @@
 # EVC Alpha 1 Release
 
+### Virtual Machine Download
+[evc-3.3.0-alpha-1.tar.gz](http://downloads.eucalyptus.com/software/evc/testing/evc-3.3.0-alpha-1.tar.gz)
+
 ## System Requirements
 
 Fedora 18 or newer (or a modern Linux installation that supports nested KVM).
