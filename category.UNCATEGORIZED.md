@@ -2,6 +2,7 @@
 * [[Cloud-Libs-Branch-Management]]
 * [[Developer-Resources]]
 * [[Emc-vnx-support-3]]
+* [[Eucalyptus-Virtual-Cloud-Instructions]]
 * [[Hadoopalyptus]]
 * [[Home]]
 * [[Images-Project]]
