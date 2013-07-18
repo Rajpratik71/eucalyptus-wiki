@@ -21,7 +21,7 @@ _Note: there can be multiple <hypervisor>-kernel directories_
 
 These tar-gzipped files can be bundled, uploaded and registered to Walrus in the following ways:
 
-* eustore server catalog
+* [eustore server catalog](https://github.com/eucalyptus/eustore-catalog-server)
 * the -t option with [eustore-install-image](http://www.eucalyptus.com/docs/euca2ools/3.0/euca2ools-guide/eustore-install-image.html#eustore-install-image)
 
 ## Brainstorm List for Improvements
