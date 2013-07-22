@@ -1,5 +1,5 @@
 ### Prerequisites
-1. Jenkins installed on master node
+1. Jenkins installed
 2. [https://wiki.jenkins-ci.org/display/JENKINS/Swarm+Plugin](Swarm Plugin) installed in Jenkins 
 3. Eucalyptus cloud running 3.3.0
 
