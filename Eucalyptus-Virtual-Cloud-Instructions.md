@@ -17,6 +17,16 @@ directory, you would need to run:
 
 More information is available [here](http://libvirt.org/drvqemu.html#securitydac).
 
+## Installing KVM
+
+Install KVM using your package manager:
+
+    yum install kvm
+
+or
+
+    apt-get install kvm
+
 ## Enabling nested KVM in Fedora
 
 First, make sure KVM kernel modules are loaded:
