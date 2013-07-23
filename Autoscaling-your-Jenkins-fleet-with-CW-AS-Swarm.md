@@ -51,11 +51,13 @@ packages:
 ```
 
 ### Creating Eucalyptus Autoscaling and CloudWatch resources
+
 #### Autoscaling Config
 1. Create a launch configuration that uses your desired base image, type, keypair etc and uses the user data file you created above
 2. Create an autoscaling group that uses the launch config from step 1 and set the desired capacity to the initial number of executors you would like to use.
 3. After step 2 you should begin to see instances launching in your cloud and subsequently registering themselves with your Jenkins Master
 4. Create a scaling policy for the newly created ASG that has a ChangeInCapacity of 1
+
 #### Monitoring Jenkins
 1. In order to monitor your Jenkins free executors (the scaling parameter used in this case) you will need to run the following Eutester script on your Jenkins Master: https://gist.github.com/viglesiasce/6012546
 2. The run parameters for the script are as follows:
