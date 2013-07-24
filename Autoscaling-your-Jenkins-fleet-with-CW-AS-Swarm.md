@@ -58,6 +58,7 @@ packages:
 3. After step 2 you should begin to see instances launching in your cloud and subsequently registering themselves with your Jenkins Master
 4. Create a scaling policy for the newly created ASG that has a ChangeInCapacity of 1
 
+
 #### Monitoring Jenkins
 1. In order to monitor your Jenkins free executors (the scaling parameter used in this case) you will need to run the following Eutester script on your Jenkins Master: https://gist.github.com/viglesiasce/6012546
 2. The run parameters for the script are as follows:
@@ -66,6 +67,8 @@ monitor-jenkins.py --credpath /path/to/your/creds
 ```
 3. Once the script is running you should see output every 10 or so seconds saying that it has entered CloudWatch data and which value it has entered.
 4. Check your CloudWatch metrics to ensure that they are being entered correctly into the "Jenkins" namespace and with the metric name "Free Executors"
+
+
 #### Setting up CloudWatch Alarms
 1. Create an Alarm that has the following parameters:
 ```
