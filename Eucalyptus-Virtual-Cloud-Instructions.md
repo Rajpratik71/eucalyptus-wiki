@@ -96,4 +96,4 @@ Once you've booted your EVC you can access services with the following credentia
   + Password: admin
 
 *****
-[[category:install]]
+[[category.install]]
