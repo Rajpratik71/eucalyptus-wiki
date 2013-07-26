@@ -19,7 +19,7 @@ Find below a list of various images for Linux distributions. We also have the [[
     </tr>
     <tr>
        <td><a href="http://cloud-images.ubuntu.com/raring/current/raring-server-cloudimg-amd64.tar.gz">Download from Ubuntu</a></td>
-       <td>Ubuntu 13.04 LTS x86_64 - Official Ubuntu Cloud Image</td>
+       <td>Ubuntu 13.04 x86_64 - Official Ubuntu Cloud Image</td>
        <td><a href="mailto:harold.spencer.jr@eucalyptus.com">Harold Spencer, Jr.</a></td>
        <td><a href="https://github.com/eucalyptus/image-verification-results/blob/master/ubuntu13.04-eutester-testresults.txt">Test Results</a><br>(Eucalyptus 3.3.0)</td>
        <td>Latest official Ubuntu image from cloud-images.ubuntu.com (if we use this link, it'll always pull the latest version of the image as they get updated frequently)</td>
