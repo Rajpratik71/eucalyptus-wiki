@@ -3,7 +3,7 @@
           * Format is X.X.X (e.g., 3.3.0).
       * Run autoconf to regenerate the [configure](https://github.com/eucalyptus/eucalyptus/blob/master/configure) script.
       * **console/eucaconsole/version.py** which is generated when _setup.py_ is run.
-      * [eucalyptus-opts.h](https://github.com/eucalyptus/eucalyptus/blob/master/clc/modules/bootstrap/src/main/native/eucalyptus-opts.h) is generated using _gengetopt_.
+      * [eucalyptus-opts.h](https://github.com/eucalyptus/eucalyptus/blob/master/clc/modules/bootstrap/src/main/native/eucalyptus-opts.h) is generated using _gengetopt_ and options are injected from _arguments.ggo_ which is created at _configure_ time.
       * [Upgrades.java] (https://github.com/eucalyptus/eucalyptus/blob/master/clc/modules/msgs/src/main/java/com/eucalyptus/upgrade/Upgrades.java) should contain an enum value for the current version.
           * Format is vX_X_X (e.g., v3_3_0).
   * Eucalyptus Datawarehouse Source Tree
