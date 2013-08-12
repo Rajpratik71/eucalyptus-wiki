@@ -9,7 +9,7 @@ The purpose of this document is to provide the necessary information to set up a
 + [KVM](http://www.linux-kvm.org/page/Main_Page) supports nested virtualization on Fedora, but not CentOS/RHEL
   - <http://kashyapc.wordpress.com/2013/02/12/nested-virtualization-with-kvm-and-intel-on-fedora-18/>
   - <http://www.rdoxenham.com/?p=275>
-+ VMWare Player supports nested virtualization, but there might be legal issues here
++ VMWare Workstation/Player/Fusion supports nested virtualization, but there might be legal issues here
   - <http://communities.vmware.com/docs/DOC-8970>
   - <https://github.com/mitchellh/vagrant/issues/1774>
 + Xen supports nested virtualization
@@ -25,7 +25,7 @@ The purpose of this document is to provide the necessary information to set up a
 ## Virtualization Platforms We Want to Use
 
 1. KVM (since we know this works)
-2. VMWare Player (since this could run on a Mac, though there may be legal issues with this)
+2. VMWare Workstation/Player/Fusion (since this could run on a Mac, though there may be legal issues with this)
 
 These are our top two, but getting this working on other platforms would be an awesome bonus.
 
