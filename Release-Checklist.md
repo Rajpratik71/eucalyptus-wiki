@@ -2,6 +2,9 @@ The release process generally occurs in two steps:  the _final compose_ (softwar
 
 Software releases of major and minor versions (non-maintenance versions) also incorporate a third step known as _post general availability_ in which steps are taken to prepare for the maintenance of the release.
 
+# QA Hardening Phase
+* Spot check licenses across the board
+
 # Software Availability (SA)
 
 * Ensure version information in all source code is coherent using the [[Eucalyptus Version Checklist]]
