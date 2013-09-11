@@ -54,6 +54,40 @@ Here's an example check:
 
 In this example (run on Fedora 18) we can see that the `nested` parameter is available and so our platform supports nested virtualization with KVM.
 
+# Tool Evaluation
+
+List various tools for evaluation that could be used to build EVC images.
+
+## Veewee
+
+[Homepage](https://github.com/jedi4ever/veewee)
+
+### Overview
+
+Veewee is a framework for building virtual machines for Vagrant, KVM and other providers. It has a simple configuration which consists of a virtual machine **definition**. The definition is a ruby script which may also call out to post installation scripts written in bash. This is actually a great tool since we can write a single configuration for building an image for multiple hypervisors.
+
+### Problems
+
+I was unable to get Veewee to build a CentOS image. Instead of injecting the kickstart configuration into the ramdisk image sends keystrokes to anaconda typing in the location of the kickstart file on a webserver (which is started by Veewee). The webserver was started successfully and I verified that I could view the kickstart file from my web browser, but the virtual machine was unable to reach it.
+
+## Vagrant with VirtualBox
+
+While this is a great approach, VirtualBox does not support nested virtualization.
+
+## Oz
+
+[Homepage](https://github.com/clalancette/oz/wiki)
+
+## Virt-install/KVM
+
+Probably the most simple and straightforward way to build a virtual machine.
+
+## AMI-Creator
+
+[Homepage](https://github.com/katzj/ami-creator)
+
+Probably the _next_ most simple and straightforward way to build a virtual machine.
+
 # Goals
 
 1. Absolutely _NO_ configuration necessary to have a working demo cloud for the user to explore.
