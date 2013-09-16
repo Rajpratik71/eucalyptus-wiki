@@ -3,6 +3,7 @@
 * [[List-of-packages]]
 * [[Promoting-a-Release-Build]]
 * [[Release-Checklist]]
+* [[Release-Promotion-Tools]]
 * [[index-of-categories]]
 
 *****
