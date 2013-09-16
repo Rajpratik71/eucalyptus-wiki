@@ -90,7 +90,7 @@ Options:
 * ``--commit`` - The git commit reference to promote.
 * ``--release`` - The major and minor release number (e.g., 3.3). This is used to determine the location to promote to on the release repository. For instance, if the project is **eucalyptus** and the release is **3.3**, then since the eucalyptus project is mapped to the eucalyptus repository, the build will be promoted to **eucalyptus/3.3/** (or in the case of a nightly, **eucalyptus/nightly/3.3**).
 * ``--type`` - The type of the build to be promoted can dictate the location that it is promoted to. The possible values to pass are: release, prerelease and nightly.
-* ``--key`` - The signing key to use for the promoted packages. The value can again be: release, prerelease or nightly.
+* ``--key`` - The signing key to use for the promoted packages. The value can again be: release, prerelease or nightly (or this can be a short key id. **This is the preferred way to do it**).
 * ``--gpgdir`` - You can specify the location where your GPG keys are kept to do signing, otherwise the GNUPGHOME environment variable will be used.
 * ``--merge`` - Merge is very helpful if you are promoting multiple projects that are mapped to the same repository. For instance if you wanted to promote 2 different projects that are mapped to the same repository, you can do something like this:
 
