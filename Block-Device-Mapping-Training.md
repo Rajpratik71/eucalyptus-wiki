@@ -151,5 +151,9 @@ BLOCKDEVICE	/dev/sdb	vol-XYZ12345	2013-04-18T00:09:44.291Z	true
 * As of Eucalyptus 3.3.0 multiple block device mappings are only supported on EBS backed instances. 
 * As of Eucalyptus 3.3.0 multiple block device mappings are not supported for vmware
 
+*****
+
+
 [[category.Training]]
 [[category.training]]
+[[ category.Troubleshooting ]]
