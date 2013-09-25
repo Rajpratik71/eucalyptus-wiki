@@ -1,4 +1,3 @@
-* [[Creating-a-MicroQA-Image---CentOS-6]]
 * [[index-of-categories]]
 
 *****

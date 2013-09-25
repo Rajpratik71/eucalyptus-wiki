@@ -1,7 +1,6 @@
 * [[AWS-SDK-for-PHP]]
 * [[Ansible]]
 * [[Boto]]
-* [[Creating-a-MicroQA-Image---CentOS-6]]
 * [[Eucalyptus-Virtual-Cloud]]
 * [[Fog]]
 * [[HOWTO-Use-AWS-Java-SDK-with-Eucalyptus]]
