@@ -1,5 +1,3 @@
-# Debugging Eucalyptus C-language components (CC and NC)
-
 The following information may be of interest to developers working on Eucalyptus components written in C.
 
 ## Using client binaries
@@ -98,6 +96,8 @@ Program terminated with signal 11, Segmentation fault.
 Missing separate debuginfos, use: debuginfo-install httpd-2.2.15-15.el6.centos.1.x86_64
 (gdb)
 ```
+
+If there is no coredump (after all, the message only said it was "possible"), you may want to try the method described in section 'Run Eucalyptus component under gdb' below.
 
 ### Attach gdb to a Eucalyptus component
 
