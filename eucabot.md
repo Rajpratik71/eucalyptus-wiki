@@ -43,7 +43,7 @@ In addition, these commands are usable by people with `jirawrite` privileges:
 
 ## Meeting management<a id="meeting_management"/>
 
-Eucabot can take notes during IRC meetings.  After a meeting finishes, it will publish lots and meeting minutes to [its web server](https://meetbot.eucalyptus.com/private/meeting-logs/).  To employ this functionality, use the commands below.  The general syntax of a command is the command name, which begins with a #, followed by command-specific text.  If a line does not begin with a # then eucabot will not interpret it as a meeting command, so _do not_ address it directly when using such a command.
+Eucabot can take notes during IRC meetings.  After a meeting finishes, it will publish logs and meeting minutes to [its web server](https://meetbot.eucalyptus.com/meeting-logs/).  To employ this functionality, use the commands below.  The general syntax of a command is the command name, which begins with a #, followed by command-specific text.  If a line does not begin with a # then eucabot will not interpret it as a meeting command, so _do not_ address it directly when using such a command.
 
 Eucabot refers to people who run meetings as _chairs_ and allows them to run extra commands for the duration of the meeting.  The person who starts a meeting automatically becomes a chair for that meeting.
 
@@ -127,6 +127,7 @@ We occasionally discover new commands that are not documented.  Some of them exi
 * **seen** - Show the last message that eucabot remembers a person saying in the channel.
 * **any** - Show the last thing that eucabot remembers a person doing in the channel.
 * **twitter** - Show the latest recent post by [@eucalyptus](http://twitter.com/eucalyptus) on Twitter.
+* **weather** - Show weather conditions for somewhere in the world.  If you are logged into a eucabot account then eucabot will remember the last location whose weather you checked so you do not have to type it next time.
 * **botsnack** - `:D`
 
 # Administration
