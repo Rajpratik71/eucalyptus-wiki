@@ -124,10 +124,10 @@ We occasionally discover new commands that are not documented.  Some of them exi
 
 * **docs** - Show a link to eucabot's documentation.
 * **more** - If a message is too long to tell you in one line, eucabot will end it with something like "(1 more message)".  The "more" command asks eucabot to say the next line of the message.
-* **seen** - Show the last message that eucabot remembers a person saying in the channel.
-* **any** - Show the last thing that eucabot remembers a person doing in the channel.
+* **seen _nick_** - Show the last message that eucabot remembers a person saying in the channel.
+* **any _nick_** - Show the last thing that eucabot remembers a person doing in the channel.
 * **twitter** - Show the latest recent post by [@eucalyptus](http://twitter.com/eucalyptus) on Twitter.
-* **weather** - Show weather conditions for somewhere in the world.  If you are logged into a eucabot account then eucabot will remember the last location whose weather you checked so you do not have to type it next time.
+* **weather _location_** - Show weather conditions for somewhere in the world.  If you are logged into a eucabot account then eucabot will remember the last location whose weather you checked so you do not have to type it next time.
 * **botsnack** - `:D`
 
 # Administration
@@ -142,6 +142,9 @@ Users with `admin` capabilities can manage other accounts' privileges and also d
 * **admin nick [ _newnick_ ]** - If a new nick is supplied, change eucabot's nickname.  Otherwise, say what eucabot's current nick is.
 
 # Quotes
-`<eucabot> :D`
+```
+<viglesias> eucabot: pong
+<eucabot> viglesias: You're doing it wrong.
+```
 
 [[category.infrastructure]]
