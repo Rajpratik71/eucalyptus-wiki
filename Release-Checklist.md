@@ -5,6 +5,34 @@ Software releases of major and minor versions (non-maintenance versions) also in
 # QA Hardening Phase
 * Spot check licenses across the board
 
+# Non-Eucalyptus Core
+## Requirements
+* Must have distinct versioning (ie not be tied Eucalyptus release)
+* Pointer to source files must be available
+* Docs for the specified version (or main docs being up to date)
+* QA process
+* Work for off cycle releases must be added to sprints when appropriate
+
+## Projects
+* Eucalyptus Console
+* Windows Integration
+   - We need to know how this is built, put it into continuous integration
+   - Need explicit pointer current sources 
+   - No explicit versioning
+* LoadBalancer Image
+* Servo 
+* Euca2ools
+   - QA process is not explicit
+* SOS reports
+* Network Tomography
+   - No explicit versioning
+* Build Deps Repo
+* Runtime Deps Repo
+* FastStart
+   - QA process is not explicit
+
+
+
 # Software Availability (SA)
 
 * Ensure version information in all source code is coherent using the [[Eucalyptus Version Checklist]]
