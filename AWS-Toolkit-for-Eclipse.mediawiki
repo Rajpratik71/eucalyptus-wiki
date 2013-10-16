@@ -19,7 +19,7 @@ This section describes how to configure the AWS Toolkit for Eclipse to communica
 Open the regions.xml file and add the following entry:
 ```xml
   <region>
-    &amp;ltdisplayname>My Euca Cloud</displayname>
+    <displayname>My Euca Cloud</displayname>
     <systemname>eucacloud</systemname>
         <flag-icon>flags/usa.png</flag-icon>
         <min-toolkit-version>1.1.0.0</min-toolkit-version>
