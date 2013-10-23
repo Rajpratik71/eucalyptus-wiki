@@ -20,6 +20,10 @@ _**[AWS Java SDK](https://github.com/eucalyptus/eucalyptus/wiki/HOWTO-Use-AWS-Ja
 
 **_[s3curl](http://www.eucalyptus.com/eucalyptus-cloud/tools/s3curl)_** is a tool that allows users to interact with Eucalyptus Walrus and AWS S3.
 
+**_[Cloudberry S3 Explorer](http://www.cloudberrylab.com/)_** is a Windows tool that makes managing files in Amazon S3 and Eucalyptus Walrus easy.
+
+**_[s3fs](http://code.google.com/p/s3fs/)_** is a FUSE filesystem that allows you to mount a bucket from Amazon S3 or Eucalyptus Walrus as a local filesystem.
+
 **_[Vagrant AWS Plug-in](https://github.com/mitchellh/vagrant-aws)_**.  Vagrant is a tool for managing virtual machines on a local system, and also provides a plug-in that allows users to manage their AWS instances with Vagrant configuration files.  The plug-in also works for Eucalyptus.
 
 **_[Cyberduck](http://cyberduck.ch/)_** is an FTP, SFTP, WebDAV & cloud storage browser for Mac & Windows.
