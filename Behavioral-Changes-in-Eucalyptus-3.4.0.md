@@ -21,6 +21,9 @@ The intent of this page is to highlight as many of the changes present in Eucaly
 ## CloudWatch Changes
 * Property added to disable cloudwatch completely: ```cloudwatch.disable_cloudwatch_service```
 
+## Walrus Changes
+*
+
 ## SANs
 ### Equallogic
 * Allow pool name to be set explicitly. It is not required, but the cloud admin has the ability to change the default. Default pool is still "default"
