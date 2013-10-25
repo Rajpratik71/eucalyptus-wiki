@@ -26,3 +26,14 @@ The intent of this page is to highlight as many of the changes present in Eucaly
 ## SANs
 ### Equallogic
 * Allow pool name to be set explicitly. It is not required, but the cloud admin has the ability to change the default. Default pool is still "default"
+
+## AWS Compatibility
+### Deregister Image
+* When the image is deregister, it will no longer be visible to any non-eucalyptus account. From Eucalyptus admin account the image will be shown as ``deregistered`` when ``verbose`` flag is applied. e.g ``euca-describe-images verbose``. To remove the image completely, either the image owner or the Eucalyptus admin will have to deregister the image again, e.g ``euca-deregister emi-80263E5C``
+* When the image is deregistered completely, any account that will try to deregister the image again should get an AWS semantic error,
+``euca-deregister: error (InvalidAMIID.NotFound): The image ID 'emi-80263E5C' does not exist``
+* If the image is in either deregistered state or removed completely, RunInstance will fail with the following error when the image is deregistered completely,
+``euca-run-instances: error (RunInstancesType): Failed to lookup image named: emi-80263E5C``
+* If the image is deregistered when there is an instance associated with the image, the instance will still be running, but but the image (EMI) won't be usable any more. Deregister again on the same image will fail with the following error,
+``euca-deregister: error (InvalidAMIID.Unavailable): The image ID 'emi-C50A428B' is no longer available``
+The image will not be visible to non-eucalyptus account/user, but Eucalyptus admin will be able to see it in ``deregistered`` state with ``verbose`` flag. When all the instances associated with that image will be ``terminated``, the image will be cleaned up automatically in the background.
