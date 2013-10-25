@@ -9,8 +9,15 @@ The intent of this page is to highlight as many of the changes present in Eucaly
 ## HA-specific Changes
 
 ### DB Sync
+* Ability to change sync strategy to dump restore (not fully tested thus not the default yet)
 
 ## DNS Changes
 * DNS properties have been moved from the ```experimental.dns``` namespace to just ```dns```
 
+## ELB Changes
+* Allow NTP server to be set by euca property
+* Restricted ports config property
 
+## SANs
+### Equallogic
+* Allow pool name to be set explicitly. 
