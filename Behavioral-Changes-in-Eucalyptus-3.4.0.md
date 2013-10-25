@@ -22,7 +22,6 @@ The intent of this page is to highlight as many of the changes present in Eucaly
 * Property added to disable cloudwatch completely: ```cloudwatch.disable_cloudwatch_service```
 
 ## Walrus Changes
-*
 
 ## SANs
 ### Equallogic
