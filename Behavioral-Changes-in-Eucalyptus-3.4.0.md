@@ -10,3 +10,7 @@ The intent of this page is to highlight as many of the changes present in Eucaly
 
 ### DB Sync
 
+## DNS Changes
+* DNS properties have been moved from the experimental.dns namespace to just dns
+
+
