@@ -1,4 +1,5 @@
 * [[Autoscaling-your-Jenkins-fleet-with-CW-AS-Swarm]]
+* [[Behavioral-Changes-in-Eucalyptus-3]]
 * [[Cloud-Libs-Branch-Management]]
 * [[Developer-Resources]]
 * [[Emc-vnx-support-3]]
