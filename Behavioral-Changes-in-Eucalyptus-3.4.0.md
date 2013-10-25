@@ -18,6 +18,9 @@ The intent of this page is to highlight as many of the changes present in Eucaly
 * Allow NTP server to be set by euca property
 * Restricted ports config property
 
+## CloudWatch Changes
+* Property added to disable cloudwatch completely: ```cloudwatch.disable_cloudwatch_service```
+
 ## SANs
 ### Equallogic
 * Allow pool name to be set explicitly. 
