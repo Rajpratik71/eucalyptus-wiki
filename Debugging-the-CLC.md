@@ -1,5 +1,5 @@
 ## Taking a heap dump on a live system
-Use the following script to have the JVM take a heap dump (.hprof) and place it in /var/log/eucalyptus/:
+Use the following script to have the JVM take a heap dump (.hprof) and place it in /tmp/:
 ```
 import java.lang.management.ManagementFactory
 import javax.management.JMX
