@@ -19,11 +19,13 @@ dumpfile
 
 ## Using Jprofiler 6
 ### Monitoring a live system
+- Run through the Jprofiler Integration Wizard for a Remote Generic Application (this will allow you to download a tarball with the required libraries needed on your Eucalyptus component machine).
+- Transfer that tarball to your machine and extract it in the /opt/jprofiler folder
 - Add the following options to your CLOUD_OPTS:
 ```
---profile --profiler-home=/opt/jprofiler6
+--profile --profiler-home=/opt/jprofiler
 ```
-- Place the jprofiler6 tarball/agent into /opt/jprofiler6 and extract it
+- Place the jprofiler6 tarball/agent into /opt/jprofiler and extract it
 - Restart the cloud process ```service eucalyptus-cloud restart```
 - Connect to the JVM using the default port and passing your components IP
 
