@@ -37,6 +37,6 @@ try {
 - Connect to the JVM using the default port and passing your components IP
 
 ### Importing an HPROF file
-- Go to the "Session" ment
+- Go to the "Session" menu
 - Click "Open Snapshot"
 - Find your hprof file on your local machine 
