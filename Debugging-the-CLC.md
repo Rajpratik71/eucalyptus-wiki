@@ -26,3 +26,17 @@ try {
 }
 ```
 
+## Using Jprofiler 6
+### Monitoring a live system
+- Add the following options to your CLOUD_OPTS:
+```
+--profile --profiler-home=/opt/jprofiler6
+```
+- Place the jprofiler6 tarball/agent into /opt/jprofiler6 and extract it
+- Restart the cloud process ```service eucalyptus-cloud restart```
+- Connect to the JVM using the default port and passing your components IP
+
+### Importing an HPROF file
+- Go to the "Session" ment
+- Click "Open Snapshot"
+- Find your hprof file on your local machine 
