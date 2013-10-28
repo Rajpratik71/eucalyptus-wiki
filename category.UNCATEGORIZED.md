@@ -1,6 +1,7 @@
 * [[Autoscaling-your-Jenkins-fleet-with-CW-AS-Swarm]]
 * [[Behavioral-Changes-in-Eucalyptus-3]]
 * [[Cloud-Libs-Branch-Management]]
+* [[Debugging-the-CLC]]
 * [[Developer-Resources]]
 * [[Emc-vnx-support-3]]
 * [[Eustore-Improvements]]
