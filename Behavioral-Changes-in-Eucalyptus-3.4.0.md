@@ -2,7 +2,7 @@
 
 The intent of this page is to highlight as many of the changes present in Eucalyptus 3.4.0 as possible with particular emphasis on behavioral changes that do not involve API or CLI changes.
 
-**NOTE: This is not a list of all changes, the release notes are still the most complete source for that information.**
+**NOTE: This is not a list of all changes in 3.4.0. The release notes are still the most complete source for that information.**
 
 ### Service Life-cycle
 * 'eucalyptus-cloud' start-up is notably slower than in 3.3.x due to much more robust start-up checks, extensive logging of the start-up process, and serialization of service start-up to remove race-conditions and add stability.
