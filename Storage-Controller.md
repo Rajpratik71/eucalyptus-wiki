@@ -48,6 +48,7 @@ For SAN-backed SCs the SAN exports the volumes directly to NCs using iSCSI. This
 SCs using a filesystem as the backend export volumes using standard linux iSCSI servers and tools. Specifically, the SC uses [the linux ISCSI Framework (TGT)](http://stgt.sourceforge.net/) to export the volumes as iSCSI stores to the NCs. The SC creates an LVM volume from the file using a loopback device (more details below) and exports that device as a store using tgtadm.
 
 ### Snapshots
+**As of Eucalyptus 3.4.0**
 One important property of EBS-compatible snapshots is that the source volume and snapshot are completely independent--a user can delete the source volume without affecting the snapshot. This is a slightly different semantic than most SANs provide, where deleting the source volume would delete all snapshots as well.
 
 **Filesystem-backed SC (overlay)**
@@ -91,7 +92,7 @@ Example flow for a volume, vol-ABC to snap-XYZ:
 
 **SAN-backed SCs (netapp, emc, equallogic)**
 
-1. Instead of LVM usage, the SC issues SAN-specific commands to perform a snapshot. Resulting in a mountable LUN, e.g. lun123
+1. Instead of LVM usage, the SC issues SAN-specific commands to perform a snapshot. Resulting in a mountable LUN, e.g. lun123. This is often a clone operation or something similar that will allow the volume to be deleted without removing the snapshot in the future.
 
 2. Attach lun123 to the SC as a data disk with iscsi.(```iscsiadm```) resulting in a device: e.g. /dev/sdf
 
