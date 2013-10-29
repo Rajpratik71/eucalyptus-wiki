@@ -47,9 +47,57 @@ For SAN-backed SCs the SAN exports the volumes directly to NCs using iSCSI. This
 **Filesystem-backed SCs**
 SCs using a filesystem as the backend export volumes using standard linux iSCSI servers and tools. Specifically, the SC uses [the linux ISCSI Framework (TGT)](http://stgt.sourceforge.net/) to export the volumes as iSCSI stores to the NCs. The SC creates an LVM volume from the file using a loopback device (more details below) and exports that device as a store using tgtadm.
 
-### Snapshotting
-**Filesystem-backed SCs**
-A snapshot operation is a simple file-copy in this case. However, there are some complexities due to the headers added to the file when it becomes an lvm volume. For that reason, we snapshot by copying (using dd) the source file into the destination file after the destination has been created and configured as an lvm volume independently of the source. The SC only copies the final lvm volume devices so that all lvm header and metadata information stays unique to each file.
+### Snapshots
+One important property of EBS-compatible snapshots is that the source volume and snapshot are completely independent--a user can delete the source volume without affecting the snapshot. This is a slightly different semantic than most SANs provide, where deleting the source volume would delete all snapshots as well.
+
+**Filesystem-backed SC (overlay)**
+
+Example flow for a volume, vol-ABC to snap-XYZ:
+
+1. If the volume is not already attached to an instance, mount the volume file to a loopback (via ```losetup /var/lib/eucalyptus/volumes/vol-ABC```) and enable the LV (```lvchange -ay /dev/<vg>/euca-vol-ABC```)
+
+2. Create a new temp file for expanding the VG for snapshotting $EUCALYPTUS/var/lib/eucalyptus/volumes/vol-ABC<randomchars>, and loopback e.g. /dev/loop10
+
+3. Create PV of temp file's loopback (```pvcreate /dev/loop10```)
+
+4. Extend source volume's VG to include /dev/loop10. (```vgextend <vg> /dev/loop10```)
+
+5. Execute a LVM snapshot of the LV (```lvcreate --snapshot -n lv-snap-XYZ```)
+
+6. Copy the snapshot LV to a file in $EUCALYPTUS/var/lib/eucalyptus/volumes/snap-XYZ (```dd if=/dev/vgX/lv-snap-XYZ of=/var/lib/eucalyptus/volumes/snap-XYZ```)
+
+7. Remove snapshot LV (```lvremove -f /dev/<vg>/lv-snap-XYZ```)
+
+8. Reduce VG (```vgreduce <vg> /dev/loop10```)
+
+9. Remove PV (```pvremove /dev/loop10```)
+
+10. Remove loopback (```losetup -d /dev/loop10```)
+
+11. If volume is not attached to instance, deactivate the LV (```lvchange -an /dev/<vg>/euca-vol-ABC```), and remove the volume's loopback (```losetup -d <X>```)
+
+12. Transfer to Walrus using a system-internal equivalent of PutObject with the content supplied by the file $EUCALYPTUS/var/lib/eucalyptus/volumes/snap-XYZ and in-stream compression enabled--the SC compresses the content as it transfers it up to Walrus. This is a transfer of the entire snapshot. Most SANs do not supply a way to access only the changed content from the source volume, so we must copy the entire content.
+
+**Direct Disk-backed SC (das)**
+
+1. Execute a LVM snapshot of the LV (```lvcreate --snapshot /dev/<vg>/euca-vol-ABC -n snap-XYZ```)
+
+2. Copy the snapshot LV to a file in $EUCALYPTUS/var/lib/eucalyptus/volumes/snap-XYZ (```dd if=/dev/vgX/snap-XYZ of=/var/lib/eucalyptus/volumes/snap-XYZ```)
+
+3. Remove snapshot LV (```lvremove -f /dev/<vg>/snap-XYZ```)
+
+4. Transfer to Walrus using a system-internal equivalent of PutObject with the content supplied by the file $EUCALYPTUS/var/lib/eucalyptus/volumes/snap-XYZ and in-stream compression enabled--the SC compresses the content as it transfers it up to Walrus. This is a transfer of the entire snapshot. Most SANs do not supply a way to access only the changed content from the source volume, so we must copy the entire content.
+
+
+**SAN-backed SCs (netapp, emc, equallogic)**
+
+1. Instead of LVM usage, the SC issues SAN-specific commands to perform a snapshot. Resulting in a mountable LUN, e.g. lun123
+
+2. Attach lun123 to the SC as a data disk with iscsi.(```iscsiadm```) resulting in a device: e.g. /dev/sdf
+
+3. Transfer to Walrus using a system-internal equivalent of PutObject with the content supplied by the lun and in-stream compression enabled--the SC compresses the content as it transfers it up to Walrus. This is a transfer of the entire snapshot. Most SANs do not supply a way to access only the changed content from the source volume, so we must copy the entire content.
+
+4. Disconnect ISCSI session to lun123
 
 ### Startup and Shutdown 
 The startup of the SC involves checking the DB and local/SAN resources.
