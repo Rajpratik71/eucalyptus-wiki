@@ -12,11 +12,15 @@ We do NOT recommend accessing the RiakCS installation directly. Doing so might l
 
 The cloud administration can register multiple Object Storage Gateway (OSG) components with the Eucalyptus Cloud Controller (CLC). 
 
-To do so, you may use the euca_conf utility or the euca-regiser-object-storage-gateway command. For example,
+To do so, you may use the euca_conf utility or the euca-regiser-object-storage-gateway command. For instance,
 
     euca_conf --register-osg <OSG IP>
 
 You should do this for every OSG you wish to register (substituting the IP with the correct one, of course).
+
+OSGs may be deregistered similarly.
+
+    euca_conf --deregister-osg <OSG IP>
 
 ### Configuring Storage Provider
 ### Checking Service State
