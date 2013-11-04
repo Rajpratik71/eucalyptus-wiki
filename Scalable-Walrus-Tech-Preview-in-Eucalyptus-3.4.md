@@ -1,4 +1,4 @@
-# Eucalyptus 3.4.0 Tech Preview includes an implementation of the object storage system that is designed to scale out horizontally with multiple active front end nodes implementing the S3 API.
+Eucalyptus 3.4.0 Tech Preview includes an implementation of the object storage system that is designed to scale out horizontally with multiple active front end nodes implementing the S3 API.
 
 In 3.4.0, Eucalyptus uses [RiakCS](http://basho.com/riak-cloud-storage/) as the distributed object storage backend for Walrus.
 
