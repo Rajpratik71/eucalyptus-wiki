@@ -7,3 +7,8 @@ The legacy, single node Walrus implementation is superceded by multiple active O
 On the backend, each OSG connects to a distributed object store (currently RiakCS). A typical RiakCS installation consists of a number of storage nodes (at least 5 for production use) that run Riak/RiakCS components. We expect that Riak/RiakCS is installed and functioning before attempting OSG configuration.
 
 We do NOT recommend accessing the RiakCS installation directly. Doing so might lead to an inconsistent state and you may not be able to access your data through Eucalyptus.
+
+* Registering Object Storage Gateways (OSGs)
+* Configuring Storage Provider
+* Checking Service State
+* Testing Basic Operations
