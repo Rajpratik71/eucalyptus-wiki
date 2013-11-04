@@ -8,7 +8,7 @@ On the backend, each OSG connects to a distributed object store (currently RiakC
 
 We do NOT recommend accessing the RiakCS installation directly. Doing so might lead to an inconsistent state and you may not be able to access your data through Eucalyptus.
 
-* Registering Object Storage Gateways (OSGs)
-* Configuring Storage Provider
-* Checking Service State
-* Testing Basic Operations
+### * Registering Object Storage Gateways (OSGs)
+### * Configuring Storage Provider
+### * Checking Service State
+### * Testing Basic Operations
