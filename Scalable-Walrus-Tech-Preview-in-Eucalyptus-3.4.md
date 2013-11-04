@@ -8,7 +8,17 @@ On the backend, each OSG connects to a distributed object store (currently RiakC
 
 We do NOT recommend accessing the RiakCS installation directly. Doing so might lead to an inconsistent state and you may not be able to access your data through Eucalyptus.
 
-### * Registering Object Storage Gateways (OSGs)
-### * Configuring Storage Provider
-### * Checking Service State
-### * Testing Basic Operations
+### Registering Object Storage Gateways (OSGs)
+
+The cloud administration can register multiple Object Storage Gateway (OSG) components with the Eucalyptus Cloud Controller (CLC). 
+
+To do so, you may use the euca_conf utility or the euca-regiser-object-storage-gateway command. For example,
+
+    euca_conf --register-osg <OSG IP>
+
+You should do this for every OSG you wish to register (substituting the IP with the correct one, of course).
+
+### Configuring Storage Provider
+### Checking Service State
+### Accessing Object Storage
+### Testing Basic Operations
