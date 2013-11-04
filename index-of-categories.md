@@ -42,3 +42,4 @@ Index of Categories
 * [[category.training]]
 * [[category.troubleshooting]]
 * [[category.ui]]
+* [[category.scalablewalrus]]
