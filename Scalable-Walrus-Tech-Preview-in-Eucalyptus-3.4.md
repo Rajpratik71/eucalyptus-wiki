@@ -30,7 +30,7 @@ To deregister this OSG, you would run the following command,
 
     euca_conf --deregister-osg osg-192.168.1.16
 
-### Configuring Storage Provider
+### Configuring the Storage Provider
 
 After you register an OSG, you cannot use it until it is correctly configured. After registration, OSG state will be initially listed as BROKEN. For example,
 
