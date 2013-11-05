@@ -32,9 +32,40 @@ To deregister this OSG, you would run the following command,
 
 ### Configuring Storage Provider
 
-After you register an OSG, you cannot use it until it is correctly configured. After registration, OSG state will initially indicate  
+After you register an OSG, you cannot use it until it is correctly configured. After registration, OSG state will be initially listed as BROKEN. For example,
 
+    SERVICE	objectstorage  	objectstorage  	osg-192.168.1.16	BROKEN    	23  	http://192.168.1.16:8773/services/objectstorage	arn:euca:bootstrap:objectstorage:objectstorage:osg-192.168.1.16/
+
+To configure the OSG, please specify a storage provider using the euca-modify-property command. To use RiakCS as the backend, you will need to pick "s3" as the storage provider,
+
+    euca-modify-property objectstorage.providerclient=s3
+
+You will not have to specify the RiakCS/S3 endpoint that you wish to use with Eucalyptus (you may configure a round robin DNS and specify a host name instead of an individual node IP). For example,
+
+    euca-modify-property objectstorage.s3provider.s3endpoint=riakcs-01.riakcs-cluster.myorg.com
+
+In addition, you will have to provide Eucalyptus with credentials to access your RiakCS installation.
+
+    euca-modify-property objectstorage.s3provider.s3accesskey=<access key>
+
+    euca-modify-property objectstorage.s3provider.s3secretkey=<secret key>
+
+Make sure that the user with these credentials has Administrator access to RiakCS.
 
 ### Checking Service State
+
+You may use euca-describe-services to check service status. After successful configuration, the state of the OSG will be reported as ENABLED.
+
+    SERVICE	objectstorage  	objectstorage  	osg-192.168.1.16	ENABLED    	23  	http://192.168.1.16:8773/services/objectstorage	arn:euca:bootstrap:objectstorage:objectstorage:osg-192.168.1.16/
+
+If the state appears as DISABLED or BROKEN, please check cloud-*.log files in /var/log/eucalyptus. "DISABLED" generally indicates that there is a problem with your network or credentials.
+
 ### Accessing Object Storage
-### Testing Basic Operations
+
+You can now use your favorite S3 client (e.g. s3curl) to interact with Eucalyptus. Simply replace your S3_URL with the address of the OSG you wish to interact with and the service path "services/objectstorage" instead of "storage/Walrus". For example,
+
+    S3_URL = http://<OSG IP>:8773/services/objectstorage
+
+Or you may set your s3 endpoint manually.
+
+If you have DNS enabled, you may use the "objectstorage" prefix to access object storage. Eucalyptus will return a list of IPs that correspond to ENABLED OSGs.
