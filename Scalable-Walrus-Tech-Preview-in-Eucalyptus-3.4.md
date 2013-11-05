@@ -50,6 +50,8 @@ In addition, you will have to provide Eucalyptus with credentials to access your
 
     euca-modify-property objectstorage.s3provider.s3secretkey=<secret key>
 
+Please note that these are access and secret keys for the RiakCS cluster and NOT Eucalyptus. You may use the RiakCS front end web interface to create users.
+
 Make sure that the user with these credentials has administrative access to RiakCS.
 
 ### Checking Service State
