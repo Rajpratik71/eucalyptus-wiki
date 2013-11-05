@@ -37,7 +37,11 @@
 
 ### SDKs
 [AWS Java SDK](https://github.com/eucalyptus/eucalyptus/wiki/HOWTO-Use-AWS-Java-SDK-with-Eucalyptus)
+
 [AWS Ruby SDK](https://github.com/eucalyptus/eucalyptus/wiki/HOWTO-Use-AWS-Ruby-SDK-with-Eucalyptus)
+
 [Fog](https://github.com/eucalyptus/eucalyptus/wiki/HOWTO-Use-Fog-with-Eucalyptus)
+
 [AWS Python SDK - Boto](https://github.com/eucalyptus/eucalyptus/wiki/Boto)
+
 [AWS PHP SDK](https://github.com/eucalyptus/eucalyptus/wiki/AWS-SDK-for-PHP)
