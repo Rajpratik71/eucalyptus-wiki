@@ -10,7 +10,7 @@ We do NOT recommend accessing the RiakCS installation directly. Doing so might l
 
 ### Registering Object Storage Gateways (OSGs)
 
-The cloud administration can register multiple Object Storage Gateway (OSG) components with the Eucalyptus Cloud Controller (CLC). 
+The cloud administrator can register multiple Object Storage Gateway (OSG) components with the Eucalyptus Cloud Controller (CLC). 
 
 To do so, you may use the euca_conf utility or the euca-regiser-object-storage-gateway command. For instance,
 
