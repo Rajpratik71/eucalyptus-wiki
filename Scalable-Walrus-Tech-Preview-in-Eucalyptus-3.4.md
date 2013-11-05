@@ -18,12 +18,17 @@ To do so, you may use the euca_conf utility or the euca-regiser-object-storage-g
 
 You should do this for every OSG you wish to register (substituting the IP with the correct one, of course).
 
-OSGs may be deregistered similarly, but remember to use the OSG's component name and NOT its IP address. You can list the component name for your OSG by running euca-describe-services. For example,
+OSGs may be deregistered similarly, but remember to use the OSG's component name and NOT its IP address. 
+
+    euca_conf --deregister-osg <OSG component name>
+
+You can list the component name for your OSG by running euca-describe-services. For example,
 
     SERVICE	objectstorage  	objectstorage  	osg-192.168.1.16	NOTREADY  	23  	http://192.168.1.16:8773/services/objectstorage	arn:euca:bootstrap:objectstorage:objectstorage:osg-192.168.1.16/
 
+To deregister this OSG, you would run the following command,
 
-    euca_conf --deregister-osg <OSG IP>
+    euca_conf --deregister-osg osg-192.168.1.16
 
 ### Configuring Storage Provider
 
