@@ -40,7 +40,7 @@ To configure the OSG, please specify a storage provider using the euca-modify-pr
 
     euca-modify-property objectstorage.providerclient=s3
 
-You will not have to specify the RiakCS/S3 endpoint that you wish to use with Eucalyptus (you may configure a round robin DNS and specify a host name instead of an individual node IP). For example,
+You will now have to specify the RiakCS/S3 endpoint that you wish to use with Eucalyptus (you may configure a round robin DNS and specify a host name instead of an individual node IP). For example,
 
     euca-modify-property objectstorage.s3provider.s3endpoint=riakcs-01.riakcs-cluster.myorg.com
 
@@ -50,7 +50,7 @@ In addition, you will have to provide Eucalyptus with credentials to access your
 
     euca-modify-property objectstorage.s3provider.s3secretkey=<secret key>
 
-Make sure that the user with these credentials has Administrator access to RiakCS.
+Make sure that the user with these credentials has administrative access to RiakCS.
 
 ### Checking Service State
 
@@ -62,7 +62,7 @@ If the state appears as DISABLED or BROKEN, please check cloud-*.log files in /v
 
 ### Accessing Object Storage
 
-You can now use your favorite S3 client (e.g. s3curl) to interact with Eucalyptus. Simply replace your S3_URL with the address of the OSG you wish to interact with and the service path "services/objectstorage" instead of "storage/Walrus". For example,
+You can now use your favorite S3 client (e.g. s3curl) to interact with Eucalyptus. Simply replace your S3_URL with the address of the OSG you wish to interact with and the service path with "/services/objectstorage" instead of "/services/Walrus". For example,
 
     S3_URL = http://<OSG IP>:8773/services/objectstorage
 
