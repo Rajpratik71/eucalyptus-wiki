@@ -62,10 +62,11 @@ Eucalyptus is a set of web services, modeled after and compatible with Amazon We
 
 * [Network Troubleshooting FAQ](wiki/Network-Troubleshooting-FAQ) - How to solve common VM networking problems.
 * [Fedora 18 Single System Install](wiki/Fedora-18-Single-System-Install) - How to install a full Eucalyptus test environment on a single system.
-* [Eutester and Nagios](wiki/Integrating-Eutester-and-Nagios) - How to setup and configure Eutester and Nagios to carry out a simple test of cloud availablity,
-* [Keepalived VIP on Cluster Controllers](https://github.com/eucalyptus/eucalyptus/wiki/Keepalived-VIP-for-Node-Controller-Gateways) - How to install and configure keepalived to be used as a shared IP for Node Controller gateways when using MANAGED mode and a private network
-* [Eucalyptus Storage](https://github.com/eucalyptus/eucalyptus/wiki/Storage) - High-level overview of storage in Eucalyptus including Walrus and the Storage Controller and how they work. Also includes some best practices and recommendations
+* [Eutester and Nagios](wiki/Integrating-Eutester-and-Nagios) - How to setup and configure Eutester and Nagios to carry out a simple test of cloud availablity.
+* [Keepalived VIP on Cluster Controllers](https://github.com/eucalyptus/eucalyptus/wiki/Keepalived-VIP-for-Node-Controller-Gateways) - How to install and configure keepalived to be used as a shared IP for Node Controller gateways when using MANAGED mode and a private network.
+* [Eucalyptus Storage](https://github.com/eucalyptus/eucalyptus/wiki/Storage) - High-level overview of storage in Eucalyptus including Walrus and the Storage Controller and how they work. Also includes some best practices and recommendations.
 * [Scalable Walrus](https://github.com/eucalyptus/eucalyptus/wiki/Scalable-Walrus-Tech-Preview-in-Eucalyptus-3.4) - Configuration information for the Scalable Walrus/RiakCS integration tech preview introduced in 3.4.0.
+
 ### Developer Resources
 
 * [Design Docs](wiki/DesignDocs) - Internal Eucalyptus design documentation.
