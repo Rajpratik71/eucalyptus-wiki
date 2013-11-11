@@ -86,15 +86,15 @@ On many Linux installations, Nginx uses /etc/nginx/conf.d for server configurati
       server riakcs-02.yourdomain.com:8080;
     }
 
-     server {
+    server {
       listen   80;
       server_name  _;
       access_log  /var/log/nginx/riak_cs.access.log;
 
-      location / {
-          proxy_set_header Host $http_host;
-          proxy_set_header X-Real-IP $remote_addr;
-          proxy_redirect off;
+    location / {
+      proxy_set_header Host $http_host;
+      proxy_set_header X-Real-IP $remote_addr;
+      proxy_redirect off;
 
       proxy_connect_timeout      90;
       proxy_send_timeout         90;
