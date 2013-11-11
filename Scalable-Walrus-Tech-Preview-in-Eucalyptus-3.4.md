@@ -71,3 +71,40 @@ You can now use your favorite S3 client (e.g. s3curl) to interact with Eucalyptu
 Or you may set your s3 endpoint manually.
 
 If you have DNS enabled, you may use the "objectstorage" prefix to access object storage. Eucalyptus will return a list of IPs that correspond to ENABLED OSGs.
+
+### Configuring Load Balancers
+
+We recommend that you use a load balancer to balance traffic across OSG nodes, as well as RiakCS nodes. Below is an example of how to use [Nginx](http://wiki.nginx.org/Main) to get you started. You may use [HAProxy](http://haproxy.1wt.eu/) if you wish.
+
+You will have to install Nginx on one of your servers and tell direct HTTP traffic to your RiakCS nodes. By default, RiakCS listens to web traffic on port 8080. In this example, riakcs-00.yourdomain.com, riakcs-01.yourdomain.com and riakcs-02.yourdomain.com are three RiakCS nodes that you have previously configured.
+
+On many Linux installations, Nginx uses /etc/nginx/conf.d for server configuration. You can either edit the default configuration or create a new config file. Here is a sample configuration,
+
+ upstream riak_cs_host {
+  server riakcs-00.yourdomain.com:8080;
+  server riakcs-01.yourdomain.com:8080;
+  server riakcs-02.yourdomain.com:8080;
+ }
+
+ server {
+  listen   80;
+  server_name  _;
+  access_log  /var/log/nginx/riak_cs.access.log;
+
+  location / {
+      proxy_set_header Host $http_host;
+      proxy_set_header X-Real-IP $remote_addr;
+      proxy_redirect off;
+
+      proxy_connect_timeout      90;
+      proxy_send_timeout         90;
+      proxy_read_timeout         90;
+      proxy_buffer_size    128k;
+      proxy_buffers     4 256k;
+      proxy_busy_buffers_size 256k;
+      proxy_temp_file_write_size 256k;
+
+      proxy_pass http://riak_cs_host;
+    }
+}
+
