@@ -84,7 +84,7 @@ On many Linux installations, Nginx uses /etc/nginx/conf.d for server configurati
       server riakcs-00.yourdomain.com:8080;
       server riakcs-01.yourdomain.com:8080;
       server riakcs-02.yourdomain.com:8080;
-    }
+      }
 
     server {
       listen   80;
@@ -105,6 +105,8 @@ On many Linux installations, Nginx uses /etc/nginx/conf.d for server configurati
       proxy_temp_file_write_size 256k;
 
       proxy_pass http://riak_cs_host;
+      }
     }
-  }
+
+You can then restart nginx or merely reload rules (/etc/init.d/nginx reload). You can then access port 80 on your Nginx host, which will forward requests to your RiakCS cluster.
 
