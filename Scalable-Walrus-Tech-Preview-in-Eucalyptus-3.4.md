@@ -80,21 +80,21 @@ You will have to install Nginx on one of your servers and tell direct HTTP traff
 
 On many Linux installations, Nginx uses /etc/nginx/conf.d for server configuration. You can either edit the default configuration or create a new config file. Here is a sample configuration,
 
- upstream riak_cs_host {
-  server riakcs-00.yourdomain.com:8080;
-  server riakcs-01.yourdomain.com:8080;
-  server riakcs-02.yourdomain.com:8080;
- }
+    upstream riak_cs_host {
+      server riakcs-00.yourdomain.com:8080;
+      server riakcs-01.yourdomain.com:8080;
+      server riakcs-02.yourdomain.com:8080;
+    }
 
- server {
-  listen   80;
-  server_name  _;
-  access_log  /var/log/nginx/riak_cs.access.log;
+     server {
+      listen   80;
+      server_name  _;
+      access_log  /var/log/nginx/riak_cs.access.log;
 
-  location / {
-      proxy_set_header Host $http_host;
-      proxy_set_header X-Real-IP $remote_addr;
-      proxy_redirect off;
+      location / {
+          proxy_set_header Host $http_host;
+          proxy_set_header X-Real-IP $remote_addr;
+          proxy_redirect off;
 
       proxy_connect_timeout      90;
       proxy_send_timeout         90;
