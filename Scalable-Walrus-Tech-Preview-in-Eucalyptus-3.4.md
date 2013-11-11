@@ -106,5 +106,5 @@ On many Linux installations, Nginx uses /etc/nginx/conf.d for server configurati
 
       proxy_pass http://riak_cs_host;
     }
-}
+  }
 
