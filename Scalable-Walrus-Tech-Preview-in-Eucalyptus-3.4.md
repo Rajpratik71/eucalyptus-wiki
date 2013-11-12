@@ -8,6 +8,8 @@ On the backend, each OSG connects to a distributed object store (currently RiakC
 
 We do NOT recommend accessing the RiakCS installation directly. Doing so might lead to an inconsistent state and you may not be able to access your data through Eucalyptus.
 
+As this is a tech-preview, there are known issues. For information on those see: [Scalable Walrus Tech-Preview Known Issues](RiakCS Tech Preview Known Issues)
+
 ### Registering Object Storage Gateways (OSGs)
 
 The cloud administrator can register multiple Object Storage Gateway (OSG) components with the Eucalyptus Cloud Controller (CLC). 
