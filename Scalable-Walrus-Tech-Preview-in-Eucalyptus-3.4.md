@@ -92,6 +92,7 @@ On many Linux installations, Nginx uses /etc/nginx/conf.d for server configurati
       listen   80;
       server_name  _;
       access_log  /var/log/nginx/riak_cs.access.log;
+      client_max_body_size 50M; #ensure that large objects make it through
 
     location / {
       proxy_set_header Host $http_host;
