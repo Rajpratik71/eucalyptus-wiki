@@ -61,7 +61,17 @@ On the NC, assuming vol-X attached as /dev/vdf:
 4. Rescan iscsi session to ensure volume is no longer available
 5. Return success.
 
-## How Does the NC Know Where the SC is and Which to Use?
+## Is it secret, is it safe? Security and encryption of the Volume Token
+
+The attachment reference token is always encrypted, but by different keys at different times in its lifecycle.
+
+* In SC Database: token is encrypted with SC public key, only SC can decrypt with its private key
+
+* During transfer from SC -> CLC -> CC -> NC ,on AttachVolume(), the token is encrypted with the NC's public key. The SC knows the public key because it necessarily must be in the same cluster.
+
+* During transfer from NC -> SC during ExportVolume(), the token is encrypted with the cloud public key (the SC can decrypt with cloud private key). The NC does not have the SC's public key, so must use the Cloud key instead.
+
+## How does the NC know where the SC is, and which one to use?
 
 The NC now receives topology maps from the CC on DescribeResources and DescribeInstances requests, which run periodically. This is how the NC keeps a record of SCs and the status of each in the Partition/Cluster. The NC only receives topology info about services in its Cluster and the global services (i.e. Walrus).
 
