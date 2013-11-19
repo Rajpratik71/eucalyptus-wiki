@@ -1,3 +1,7 @@
+### Object Storage only ###
+
+Note: The tech preview is designed to demonstrate object storage along with Eucalyptus IAM support. Please only register the CLC and OSG components. The tech preview is not capable of running instances.
+
 ### Configuration
 1. When registering multiple OSG components, OSGs not co-located with the CLC will require a service restart to pick up the backend configuration if the service was running prior to registration. This will be resolved in the 4.0 release.
 
