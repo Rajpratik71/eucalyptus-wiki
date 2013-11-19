@@ -56,6 +56,18 @@ Please note that these are access and secret keys for the RiakCS cluster and NOT
 
 Make sure that the user with these credentials has administrative access to RiakCS.
 
+### Additional Configuration (optional)
+
+The following properties are for tuning the behavior of the Object Storage service and Gateways, the defaults are reasonable and changing is not necessary, but they are available for unexpected situations.
+
+* objectstorage.cleanuptaskintervalseconds : The interval, in seconds, at which background cleanup tasks are run. Default is 60 seconds. The background cleanup tasks purge the backend of overwritten objects and clean up object history.
+
+* objectstorage.failedputtimeouthours : The time, in hours, after which to consider an un-committed object upload to be failed. The default is 24 hours. This allows cleansing of metadata for objects that were pending upload when an OSG fails or is stopped in the middle of a user operation. This should be kept at least as long as the longest reasonable time to upload a single large object, in order to prevent unintentional cleanup of actually progressing uploads. The S3 maximum single upload size is 5GB.
+
+* objectstorage.queue_size : The size in, chunks, of the internal buffers that queue data for transfer to the backend on a per-request basis. A larger value will allow more buffering in the OSG when the client is uploading quickly but the backend bandwidth is lower and cannot consume data fast enough. Too large a value may result in OOM if the JVM does not have sufficient heap space to handle the concurrent requests * queue_size. The default is 100.
+
+* objectstorage.s3provider.s3usehttps : Whether or not to use https for the connections to the backend provider. If you configure this, be sure you can use the backend properly with HTTPS (certs, etc.) or the OSG will fail to connect. For RiakCS, you must configure certificates and identities to support HTTPS, it is not enabled in a default RiakCS installation. Default value is false.
+
 ### Checking Service State
 
 You may use euca-describe-services to check service status. After successful configuration, the state of the OSG will be reported as ENABLED.
@@ -73,6 +85,8 @@ You can now use your favorite S3 client (e.g. s3curl) to interact with Eucalyptu
 Or you may set your s3 endpoint manually.
 
 If you have DNS enabled, you may use the "objectstorage" prefix to access object storage. Eucalyptus will return a list of IPs that correspond to ENABLED OSGs.
+
+**NOTE: A current known issue is that the objectstorage URL is not included in the eucarc downloaded with euca_conf --get-credentials. Simply construct it as above and you may place it in the eucarc if you wish. This will be resolved in the official release.** 
 
 ### Configuring Load Balancers
 
