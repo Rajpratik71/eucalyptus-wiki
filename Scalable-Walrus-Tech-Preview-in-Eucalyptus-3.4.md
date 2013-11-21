@@ -12,7 +12,10 @@ As this is a tech-preview, there are known issues. For information on those see:
 
 ### Installing Object Storage Gateways (OSGs) ###
 
-Please install the "eucalyptus-osg" package on each host designated as the OSG.
+Please install the Eucalyptus 3.4 nightly release package for the tech preview,
+
+    yum install http://downloads.eucalyptus.com/software/eucalyptus/nightly/3.4-osg-techpreview/centos/6/x86_64/eucalyptus-release-3.4.noarch.rpm
+Next, please install the "eucalyptus-osg" package on each host designated as the OSG.
 
     yum install eucalyptus-osg
 
