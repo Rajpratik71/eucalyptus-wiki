@@ -10,6 +10,14 @@ We do NOT recommend accessing the RiakCS installation directly. Doing so might l
 
 As this is a tech-preview, there are known issues. For information on those see: [Scalable Walrus Tech-Preview Known Issues](RiakCS Tech Preview Known Issues)
 
+### Installing Object Storage Gateways (OSGs) ###
+
+Please install the "eucalyptus-osg" package on each host designated as the OSG.
+
+    yum install eucalyptus-osg
+
+In this setup, you will only have to install the "eucalyptus-cloud" package on the CLC and the "eucalyptus-osg" package on each OSG host.
+
 ### Registering Object Storage Gateways (OSGs)
 
 The cloud administrator can register multiple Object Storage Gateway (OSG) components with the Eucalyptus Cloud Controller (CLC). 
