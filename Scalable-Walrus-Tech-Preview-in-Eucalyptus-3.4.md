@@ -98,7 +98,7 @@ If you have DNS enabled, you may use the "objectstorage" prefix to access object
 
 ### Configuring Load Balancers
 
-We recommend that you use a load balancer to balance traffic across OSG nodes, as well as RiakCS nodes. Below is an example of how to use [Nginx](http://wiki.nginx.org/Main) to get you started. You may use [HAProxy](http://haproxy.1wt.eu/) if you wish.
+We recommend that you use a load balancer to balance traffic across all RiakCS nodes. Below is an example of how to use [Nginx](http://wiki.nginx.org/Main) to get you started. You may use [HAProxy](http://haproxy.1wt.eu/) if you wish.
 
 You will have to install Nginx on one of your servers and tell direct HTTP traffic to your RiakCS nodes. By default, RiakCS listens to web traffic on port 8080. In this example, riakcs-00.yourdomain.com, riakcs-01.yourdomain.com and riakcs-02.yourdomain.com are three RiakCS nodes that you have previously configured.
 
