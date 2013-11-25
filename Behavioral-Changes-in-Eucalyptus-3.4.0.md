@@ -25,6 +25,22 @@ The intent of this page is to highlight as many of the changes present in Eucaly
 
 ## Walrus Changes
 * CanonicalIds are now used for owner identification in bucket and object ACLs. Previously, Account numbers were used as CanonicalIds but now a different id, unique for each account is created on upgrade and will be used for Walrus ACLs. The way to determine your account's CanonicalId is to get the ACL for a bucket your account owns. This is consistent with S3 practices.
+* BucketACL can be set with grantee/user's email address as well. The email address can be found with the following command,
+```bash
+# update user with email address
+euare-userupdateinfo -k email -i admin@example.com -u admin
+
+# get email address associated with user
+euare-usergetinfo -u admin
+email	admin@example.com
+```
+* Set BucketACL with email address (example with AWS Java SDK),
+```java
+    Grant grant = new Grant( new EmailAddressGrantee( "admin@example.com" ), Permission.Read );
+    AccessControlList acl = s3Client.getBucketAcl( "bucketName" );
+    acl.getGrants().add( grant );
+    s3Client.setBucketAcl( "bucketName", acl );
+```
 
 ## Image Management/Upload Changes
 * New configurable maximum allowed image size. A configurable property: ```cloud.images.max_image_size_gb``` lets the Eucalyptus admin set the maximum image size(GB) allowed for instance-storage images at registration time. The default value is 30GB (the same as the default Walrus image cache size). Attempting to register an instance-store image that exceeds this size results in a registration error indicating that the image is too large. To disable the check altogether simply set the value to a non-positive integer.
