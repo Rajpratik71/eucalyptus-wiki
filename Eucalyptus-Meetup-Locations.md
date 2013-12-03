@@ -20,7 +20,7 @@
 * Group size: 86 _(as of 12/1/2013)_
 * Euca contact: Colby Dyess
 * Next planned meetup: none
-* TODO: identify venues, plan an event for January/February
+* TODO: identify venues, plan an event for Feb 2014
 
 **Los Angeles, California**
 
