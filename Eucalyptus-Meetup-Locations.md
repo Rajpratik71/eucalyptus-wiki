@@ -4,7 +4,7 @@
 * Group size: 249 _(as of 12/1/2013)_
 * Euca contact: Neil Soman
 * Next planned meetup: none
-* TODO: identify venues, plan an event for January
+* TODO: identify venues, plan an event for Feb 2014
 
 **Bangalore, India**
 
@@ -26,7 +26,7 @@
 
 * URL: http://www.meetup.com/Los-Angeles-Eucalyptus-Cloud-User-Group/
 * Group size: 49 _(as of 12/1/2013)_
-* Euca contact: ???
+* Euca contact: TBD
 * Next planned meetup: none
 * TODO: identify local owner
 
@@ -34,7 +34,9 @@
 
 * URL: http://www.meetup.com/Washington-DC-Eucalyptus-Cloud-User-Group/
 * Group size: 47 _(as of 12/1/2013)_
-* TODO: pick venues, plan meetup for Jan or Feb 2014
+* Euca contact: Greg DeKoenigsberg
+* Next planned meetup: none
+* TODO: pick venues, plan meetup for Feb 2014
 
 **Austin, Texas**
 
@@ -42,7 +44,7 @@
 * Group size: 45 _(as of 12/1/2013)_
 * Euca contact: Jenny Loza
 * Next planned meetup: none
-* TODO: pick venues, plan meetup for Jan or Feb 2014 
+* TODO: pick venues, plan meetup for Feb 2014 
 
 **RTP, North Carolina**
 
@@ -50,7 +52,7 @@
 * Group size: 31 _(as of 12/1/2013)_
 * Euca contact: Greg DeKoenigsberg
 * Next planned meetup: none
-* TODO: plan a meetup for Jan or Feb 2014
+* TODO: plan a meetup for Feb 2014
 
 **Seattle, Washington**
 
@@ -58,7 +60,7 @@
 * Group size: 28 _(as of 12/1/2013)_
 * Euca contact: Scott Butler
 * Next planned meetup: none
-* TODO: plan a meetup for Jan or Feb 2014
+* TODO: plan a meetup for Feb 2014
 
 **San Diego, California**
 
