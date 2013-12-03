@@ -68,3 +68,10 @@
 * Euca contact: ???
 * Next planned meetup: none
 * TODO: identify local owner (or drop this one)
+
+**Helsinki, Finland**
+
+* URL: none yet
+* Euca contact: Lester Wade
+* Next planned meetup: none
+* TODO: create a Meetup page and advertise it
