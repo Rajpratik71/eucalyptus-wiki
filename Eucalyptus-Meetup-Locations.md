@@ -16,7 +16,7 @@
 
 **Boston, Massachusetts**
 
-* URL: http://www.meetup.comA/Boston-Eucalyptus-Cloud-User-Group/
+* URL: http://www.meetup.com/Boston-Eucalyptus-Cloud-User-Group/
 * Group size: 86 _(as of 12/1/2013)_
 * Euca contact: Colby Dyess
 * Next planned meetup: none
