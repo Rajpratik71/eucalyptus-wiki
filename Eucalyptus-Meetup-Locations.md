@@ -10,7 +10,7 @@
 
 * URL: http://www.meetup.com/Bangalore-Eucalyptus-Cloud-User-Group/
 * Group size: 117 _(as of 12/1/2013)_
-* Euca contact: ???
+* Euca contact: TBD
 * Next planned meetup: none
 * TODO: identify local owner
 
@@ -56,7 +56,7 @@
 
 * URL: http://www.meetup.com/Seattle-Eucalyptus-Cloud-User-Group/
 * Group size: 28 _(as of 12/1/2013)_
-* Euca contact: none yet
+* Euca contact: Scott Butler
 * Next planned meetup: none
 * TODO: plan a meetup for Jan or Feb 2014
 
