@@ -4,15 +4,13 @@
 * Group size: 249 _(as of 12/1/2013)_
 * Euca contact: Neil Soman
 * Next planned meetup: none
-* TODOs: 
- * make neil official organizer of group
- * identify venues, plan an event for Feb 2014
+* TODO: identify venues, plan an event for Feb 2014
 
 **Bangalore, India**
 
 * URL: http://www.meetup.com/Bangalore-Eucalyptus-Cloud-User-Group/
 * Group size: 117 _(as of 12/1/2013)_
-* Euca contact: TBD
+* Euca contact: Leslie Biasi
 * Next planned meetup: none
 * TODO: identify local owner
 
@@ -28,9 +26,9 @@
 
 * URL: http://www.meetup.com/Los-Angeles-Eucalyptus-Cloud-User-Group/
 * Group size: 49 _(as of 12/1/2013)_
-* Euca contact: TBD
+* Euca contact: Leslie Biasi
 * Next planned meetup: none
-* TODO: identify local owner
+* TODO: scout venues, plan event for Feb 2014
 
 **Washington, DC**
 
@@ -67,13 +65,15 @@
 **San Diego, California**
 
 * URL: http://www.meetup.com/San-Diego-Eucalyptus-Cloud-User-Group/
-* Euca contact: ???
+* Group size: new
+* Euca contact: Leslie Biasi
 * Next planned meetup: none
 * TODO: identify local owner (or drop this one)
 
 **Helsinki, Finland**
 
-* URL: none yet
+* URL: http://www.meetup.com/Helsinki-Eucalyptus-Cloud-User-Group/
+* Group size: new
 * Euca contact: Lester Wade
 * Next planned meetup: none
 * TODO: create a Meetup page and advertise it
@@ -81,6 +81,7 @@
 **Koln, Germany**
 
 * URL: http://www.meetup.com/Hybrid-Cloud-Builder/
+* Group size: new
 * Organizer: Arash Kaffamanesh
 * Euca contact: Greg DeKoenigsbrg
 * Next planned meetup: 2/12/2014
