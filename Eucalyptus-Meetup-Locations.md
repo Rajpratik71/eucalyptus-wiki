@@ -75,3 +75,11 @@
 * Euca contact: Lester Wade
 * Next planned meetup: none
 * TODO: create a Meetup page and advertise it
+
+**Koln, Germany**
+
+* URL: http://www.meetup.com/Hybrid-Cloud-Builder/
+* Organizer: Arash Kaffamanesh
+* Euca contact: Greg DeKoenigsbrg
+* Next planned meetup: 2/12/2014
+* TODO: talk to Arash and offer logistics/promotional support
