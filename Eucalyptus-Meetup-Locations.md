@@ -4,7 +4,9 @@
 * Group size: 249 _(as of 12/1/2013)_
 * Euca contact: Neil Soman
 * Next planned meetup: none
-* TODO: identify venues, plan an event for Feb 2014
+* TODOs: 
+ * make neil official organizer of group
+ * identify venues, plan an event for Feb 2014
 
 **Bangalore, India**
 
