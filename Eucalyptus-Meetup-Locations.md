@@ -75,8 +75,8 @@
 * URL: http://www.meetup.com/Helsinki-Eucalyptus-Cloud-User-Group/
 * Group size: new
 * Euca contact: Lester Wade
-* Next planned meetup: none
-* TODO: create a Meetup page and advertise it
+* Next planned meetup: March 2014
+* TODO: confirm venue
 
 **Koln, Germany**
 
