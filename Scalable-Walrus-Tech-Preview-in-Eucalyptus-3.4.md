@@ -55,13 +55,13 @@ To configure the OSG, please specify a storage provider using the euca-modify-pr
 
 You will now have to specify the RiakCS/S3 endpoint that you wish to use with Eucalyptus (you may configure a round robin DNS and specify a host name instead of an individual node IP). For example,
 
-    euca-modify-property objectstorage.s3provider.s3endpoint=riakcs-01.riakcs-cluster.myorg.com
+    euca-modify-property -p objectstorage.s3provider.s3endpoint=riakcs-01.riakcs-cluster.myorg.com
 
 In addition, you will have to provide Eucalyptus with credentials to access your RiakCS installation.
 
-    euca-modify-property objectstorage.s3provider.s3accesskey=<access key>
+    euca-modify-property -p objectstorage.s3provider.s3accesskey=<access key>
 
-    euca-modify-property objectstorage.s3provider.s3secretkey=<secret key>
+    euca-modify-property -p objectstorage.s3provider.s3secretkey=<secret key>
 
 Please note that these are access and secret keys for the RiakCS cluster and NOT Eucalyptus. You may use the RiakCS front end web interface to create users.
 
