@@ -56,7 +56,7 @@ Find below a list of various images for Linux distributions. We also have the [[
        <td><a href="http://emis.eucalyptus.com/starter-emis/euca-fedora20-fedora-2013.12.18-x86_64.tgz">Download</a></td>
        <td>Fedora 20 x86_64</td>
        <td><a href="mailto:kushal.das@eucalyptus.com">Kushal Das</a></td>
-       <td><a href="https://github.com/eucalyptus/image-verification-results/blob/master/fedora20-root-testresults.txt">Test Results</a><br>(Eucalyptus 3.4.0)</td>
+       <td><a href="https://github.com/eucalyptus/image-verification-results/blob/master/fedora20-root-testresults.txt">Test Results</a><br>(Eucalyptus 3.4.1)</td>
        <td>Fedora 20 2GB root, Hypervisor-Specific Kernel; cloud-init enabled, fedora user enabled, sudo rights; SeLinux Enabled</td>
     </tr>
     <tr>
