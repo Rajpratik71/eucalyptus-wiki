@@ -51,7 +51,7 @@ After you register an OSG, you cannot use it until it is correctly configured. A
 
 To configure the OSG, please specify a storage provider using the euca-modify-property command. To use RiakCS as the backend, you will need to pick "s3" as the storage provider,
 
-    euca-modify-property objectstorage.providerclient=s3
+    euca-modify-property -p objectstorage.providerclient=s3
 
 You will now have to specify the RiakCS/S3 endpoint that you wish to use with Eucalyptus (you may configure a round robin DNS and specify a host name instead of an individual node IP). For example,
 
