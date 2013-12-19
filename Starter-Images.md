@@ -53,6 +53,13 @@ Find below a list of various images for Linux distributions. We also have the [[
        <td>Hypervisor-Specific Kernel, 3.9.6-200.fc18 kernel version, 1.7GB root; cloud-init enabled, ec2-user enabled, sudo rights; Selinux Enabled; euca2ools 2.1.3 installed. It works w/ kexec kernel ( default kernel is provided as part of tar )</td>
     </tr>
     <tr>
+       <td><a href="http://emis.eucalyptus.com/starter-emis/euca-fedora20-fedora-2013.12.18-x86_64.tgz">Download</a></td>
+       <td>Fedora 20 x86_64</td>
+       <td><a href="mailto:kushal.das@eucalyptus.com">Kushal Das</a></td>
+       <td><a href="https://github.com/eucalyptus/image-verification-results/blob/master/fedora20-root-testresults.txt">Test Results</a><br>(Eucalyptus 3.4.0)</td>
+       <td>Fedora 20 2GB root, Hypervisor-Specific Kernel; cloud-init enabled, fedora user enabled, sudo rights; SeLinux Enabled</td>
+    </tr>
+    <tr>
         <td><a href="http://emis.eucalyptus.com/starter-emis/euca-debian-ec2user-2013.07.08-x86_64.tgz">Download</a></td>
        <td>Debian 7 x86_64</td>
        <td><a href="mailto:harold.spencer.jr@eucalyptus.com">Harold Spencer, Jr.</a></td>
