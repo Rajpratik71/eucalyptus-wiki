@@ -5,7 +5,8 @@
 3. then take the sha1 in hex as the whole thing
 4. hash is in the table, table chosen is first char of the hash
 
-```import com.eucalyptus.cloudwatch.domain.DimensionEntity;
+```
+import com.eucalyptus.cloudwatch.domain.DimensionEntity;
 import com.eucalyptus.cloudwatch.domain.metricdata.MetricManager;
 import java.util.ArrayList;
 import java.util.TreeMap;
@@ -28,10 +29,14 @@ for (String name: dimMap.keySet()) {
   d.add(e);
 }
 ```
+
 ## How do I purge cloudwatch data from the database manually?
 1. Save the following sql statements as a file on your system (in this example empty.sql)
 2. Run the following command on the CLC: psql -h /opt/eucalyptus/var/lib/eucalyptus/db/data/ -p 8777 eucalyptus_cloudwatch < empty.sql
-```delete from absolute_metric_history;
+
+
+```
+delete from absolute_metric_history;
 delete from alarms;
 delete from alarm_history;
 delete from list_metrics;
@@ -70,6 +75,8 @@ delete from system_metric_data_f;
 ```
 
 In order to purge data before a given data run the following script with a postgres formatted timestamp as an argument:
+
+
 ```
 #!/bin/bash
 psql -h ${EUCALYPTUS}/var/lib/eucalyptus/db/data -p 8777 eucalyptus_cloudwatch -c "delete from custom_metric_data_0 where timestamp < '$1'"
