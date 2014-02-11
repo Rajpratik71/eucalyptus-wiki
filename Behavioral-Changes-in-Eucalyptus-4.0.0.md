@@ -11,6 +11,7 @@ The intent of this page is to highlight as many of the changes present in Eucaly
 ### Persona induced Changes
 ### Cloud Admin GUI-related Changes
 ### Service Life-cycle
+### Installation and Configuration Changes
 ### HA-specific Changes
 ### DNS Changes
 ### ELB Changes
