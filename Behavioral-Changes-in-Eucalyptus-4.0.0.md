@@ -13,6 +13,7 @@ The intent of this page is to highlight as many of the changes present in Eucaly
 ### Service Life-cycle
 ### Installation and Configuration Changes
 ### HA-specific Changes
+1. Dump-restore is now the default sync strategy. More info about HA-JDBC and its config can be found here: http://ha-jdbc.github.io/doc.html
 ### DNS Changes
 ### ELB Changes
 ### CloudWatch Changes
