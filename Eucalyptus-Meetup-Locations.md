@@ -84,5 +84,5 @@
 * Group size: new
 * Organizer: Arash Kaffamanesh
 * Euca contact: Greg DeKoenigsbrg
-* Next planned meetup: 2/12/2014
-* TODO: talk to Arash and offer logistics/promotional support
+* Next planned meetup: TBA
+* TODO: talk to Arash and offer logistics/promotional support for any possible meetups
