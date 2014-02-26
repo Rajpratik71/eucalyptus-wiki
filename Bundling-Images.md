@@ -1,3 +1,5 @@
+# NOTE: please consult our current image management guide for authoritative content on image bundling: https://www.eucalyptus.com/docs/eucalyptus/3.4/index.html#image-guide/img_task_intro.html
+
 Eucalyptus Systems provides a handful of prebuilt images of various Linux distributions, but it's often useful to create your own. You can use the Euca2ools euca-bundle-vol command to bundle an existing system, either physical or virtual. Since each Linux distribution is different, there is no 100% generalized way to do this, but here are some common problems and solutions.
 
 The euca-bundle-vol command is distributed as part of euca2ools. Make sure euca2ools are installed and working properly on the system you are trying to bundle. You will also need your Eucalyptus cloud credentials sourced into the environment. Please follow the euca2ools directions if you need help.
