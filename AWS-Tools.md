@@ -32,7 +32,7 @@ _**[AWS Java SDK](https://github.com/eucalyptus/eucalyptus/wiki/HOWTO-Use-AWS-Ja
 
 **_[[AWS SDK for PHP]]_** is Amazon's official PHP library for AWS services. Testing with Eucalyptus is not yet complete.
 
-**_[AWS CLI](http://agrimmsreality.blogspot.com/2013/01/using-aws-cli-with-eucalyptus.html)_** is a new AWS tool for controlling multiple AWS and Eucalyptus services from the command line and automating them through scripts.
+**_[AWS CLI](https://github.com/eucalyptus/eucalyptus/wiki/AWS-CLI)_** is a new AWS tool for controlling multiple AWS and Eucalyptus services from the command line and automating them through scripts.
 
 *****
 
