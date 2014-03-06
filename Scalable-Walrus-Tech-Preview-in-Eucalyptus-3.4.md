@@ -117,7 +117,7 @@ On many Linux installations, Nginx uses /etc/nginx/conf.d for server configurati
       listen   80;
       server_name  _;
       access_log  /var/log/nginx/riak_cs.access.log;
-      client_max_body_size 50M; #ensure that large objects make it through
+      client_max_body_size 5G; #5GB is max S3 single upload size, so use that value, or 0 to disable checks.
 
     location / {
       proxy_set_header Host $http_host;
