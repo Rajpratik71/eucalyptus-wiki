@@ -138,5 +138,7 @@ On many Linux installations, Nginx uses /etc/nginx/conf.d for server configurati
 
 You can then restart nginx or merely reload rules (/etc/init.d/nginx reload). You can then access port 80 on your Nginx host, which will forward requests to your RiakCS cluster.
 
+### Configuring OSG to use the Walrus backend
+
 *****
 [[category.storage]]
