@@ -140,5 +140,9 @@ You can then restart nginx or merely reload rules (/etc/init.d/nginx reload). Yo
 
 ### Configuring OSG to use the Walrus backend
 
+    euca_conf --register-walrus <Walrus host or IP>
+
+    euca-modify-property -p objectstorage.providerclient=walrus
+
 *****
 [[category.storage]]
