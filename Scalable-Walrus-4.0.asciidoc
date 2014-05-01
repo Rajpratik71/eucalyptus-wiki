@@ -42,9 +42,9 @@ To deregister this OSG, you would run the following command,
 
 ### Configuring the Storage Provider
 
-We currently support the following backend storage provider:
+We currently support RiakCS and Walrus as the backend storage providers.
 
-#### RiakCS ####
+#### Configuring OSG to use RiakCS ####
 
 In this configuration, on the backend, each OSG connects to a RiakCS cluster. A typical RiakCS installation consists of a number of storage nodes (at least 5 for production use) that run Riak/RiakCS components. We expect that Riak/RiakCS is installed and functioning before attempting OSG configuration.
 
@@ -72,7 +72,7 @@ Please note that these are access and secret keys for the RiakCS cluster and NOT
 
 Make sure that the user with these credentials has administrative access to RiakCS.
 
-#### Walrus ####
+#### Configuring OSG to use Walrus ####
 
 For single server installations and for use cases where users wish to deploy an object service on top of a filesystem, we support running the OSG with a Walrus backend.
 
