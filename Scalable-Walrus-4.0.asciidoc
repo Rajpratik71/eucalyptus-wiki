@@ -131,7 +131,7 @@ Or you may set your s3 endpoint manually.
 
 If you have DNS enabled, you may use the "objectstorage" prefix to access object storage. Eucalyptus will return a list of IPs that correspond to ENABLED OSGs.
 
-**NOTE: A current known issue is that the objectstorage URL is not included in the eucarc downloaded with euca_conf --get-credentials. Simply construct it as above and you may place it in the eucarc if you wish. This will be resolved in the official release.** 
+Note: You will need Eucalyptus credentials to configure the OSG backend provider. However, the S3 URL is not automatically set in eucarc before the backend for the OSG is correctly configured. As a consequence, if you wish the S3_URL to be set automatically when "eucarc" is sourced, you will have to download eucarc again (by downloading credentials), after a OSG has been ENABLED.
 
 ### Configuring Load Balancers
 
