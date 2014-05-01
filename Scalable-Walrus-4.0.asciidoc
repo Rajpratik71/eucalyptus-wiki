@@ -6,7 +6,7 @@ Eucalyptus 4.0 adds an object storage system that provides a S3 API interface an
 * The underlying system does not have any knowledge of object consistency or versioning.
 * OSGs translate user requests to requests to the underlying storage subsystem. The backend system is not intended to be used directly by the end user.
 
-The backend for the object storage system is designed to be pluggable.
+The backend for the object storage system is designed to be pluggable. In 4.0, we provide a single server Walrus legacy backend that uses a filesystem to store objects, as well as a scalable backend that uses RiakCS as the object store.
 
 The legacy, single node Walrus implementation is superceded by multiple active Object Storage Gateways (OSGs), which act as pass through proxies for user requests. The cloud administrator can register multiple, active OSGs, which are designed to act as redundant active/active nodes. The client may direct requests to any active OSG. OSGs handle authentication and enforce IAM (Identity and Access Management) settings.
 
