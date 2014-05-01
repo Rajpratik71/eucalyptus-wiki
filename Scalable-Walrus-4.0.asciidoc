@@ -1,4 +1,10 @@
-Eucalyptus 4.0 adds an object storage system that is designed to scale out horizontally, with multiple active front end nodes implementing the S3 API.
+Eucalyptus 4.0 adds an object storage system that provides a S3 API interface and is designed to scale out horizontally. Eucalyptus admins can configure multiple Object Storage Gateway (OSG) components that act as front end service components that implement the S3 API. The OSG has the following properties:
+
+* Multiple active OSGs can be configured to enable active/active data paths for load balancing and availability
+* OSGs provide an append only S3 API compatible storage system.
+* OSGs perform request authentication and enforce ACLs and IAM rules on buckets and objects.
+* The underlying system does not have any knowledge of object consistency or versioning.
+* OSGs translate user requests to requests to the underlying storage subsystem. The backend system is not intended to be used directly by the end user.
 
 The backend for the object storage system is designed to be pluggable.
 
