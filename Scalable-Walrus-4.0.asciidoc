@@ -3,16 +3,12 @@ Eucalyptus 4.0 adds an object storage system that provides a S3 API interface an
 * Multiple active OSGs can be configured to enable active/active data paths for load balancing and availability
 * OSGs provide an append only S3 API compatible storage system.
 * OSGs perform request authentication and enforce ACLs and IAM rules on buckets and objects.
-* The underlying system does not have any knowledge of object consistency or versioning.
 * OSGs translate user requests to requests to the underlying storage subsystem. The backend system is not intended to be used directly by the end user.
+* The underlying system does not have any knowledge of object consistency or versioning.
 
-The backend for the object storage system is designed to be pluggable. In 4.0, we provide a single server Walrus legacy backend that uses a filesystem to store objects, as well as a scalable backend that uses RiakCS as the object store.
+The backend for the object storage system is designed to be pluggable. In 4.0, we provide a single server Walrus backend that uses a filesystem to store objects, as well as a scalable backend that uses RiakCS as the object store.
 
-The legacy, single node Walrus implementation is superceded by multiple active Object Storage Gateways (OSGs), which act as pass through proxies for user requests. The cloud administrator can register multiple, active OSGs, which are designed to act as redundant active/active nodes. The client may direct requests to any active OSG. OSGs handle authentication and enforce IAM (Identity and Access Management) settings.
-
-On the backend, each OSG connects to a distributed object store (currently RiakCS). A typical RiakCS installation consists of a number of storage nodes (at least 5 for production use) that run Riak/RiakCS components. We expect that Riak/RiakCS is installed and functioning before attempting OSG configuration.
-
-We do NOT recommend accessing the RiakCS installation directly. Doing so might lead to an inconsistent state and you may not be able to access your data through Eucalyptus.
+The cloud administrator can register multiple, active OSGs, which are designed to act as redundant active/active nodes. The client may direct requests to any active OSG. OSGs handle authentication and enforce IAM (Identity and Access Management) settings.
 
 ### Installing Object Storage Gateways (OSGs) ###
 
@@ -50,6 +46,10 @@ We currently support the following backend storage provider:
 
 #### RiakCS ####
 
+In this configuration, on the backend, each OSG connects to a RiakCS cluster. A typical RiakCS installation consists of a number of storage nodes (at least 5 for production use) that run Riak/RiakCS components. We expect that Riak/RiakCS is installed and functioning before attempting OSG configuration.
+
+We do NOT recommend accessing the RiakCS nodes directly. Doing so might lead to an inconsistent state and you may not be able to access your data through Eucalyptus.
+
 After you register an OSG, you cannot use it until it is correctly configured. After registration, OSG state will be initially listed as BROKEN. For example,
 
     SERVICE	objectstorage  	objectstorage  	osg-192.168.1.16	BROKEN    	23  	http://192.168.1.16:8773/services/objectstorage	arn:euca:bootstrap:objectstorage:objectstorage:osg-192.168.1.16/
@@ -74,9 +74,32 @@ Make sure that the user with these credentials has administrative access to Riak
 
 #### Walrus ####
 
+For single server installations and for use cases where users wish to deploy an object service on top of a filesystem, we support running the OSG with a Walrus backend.
+
+The administrator needs to register Walrus and make sure that it is functioning.
+
     euca_conf --register-walrus <Walrus host or IP>
 
+Please check the status of Eucalyptus services, by running
+
+    euca-describe-services
+
+The "walrus" component must appear ENABLED.
+
+After this is done, the administrator will need to register a OSG, which can be a separate node, or in most scenarios, co-located with Walrus. 
+
+    euca_conf --register-osg <OSG IP>
+
+Please make sure that the OSG is successfully registered. At this point, the OSG needs to be configured to use Walrus as the backend, as follows.
+
     euca-modify-property -p objectstorage.providerclient=walrus
+
+Please monitor the status of services by running
+
+    euca-describe-services
+
+Walrus as well as the OSG should appear ENABLED.
+
 
 ### Additional Configuration (optional)
 
