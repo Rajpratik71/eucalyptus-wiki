@@ -1,6 +1,6 @@
-Eucalyptus 3.4.0 Tech Preview includes an implementation of an object storage system that is designed to scale out horizontally, with multiple active front end nodes implementing the S3 API.
+Eucalyptus 4.0 adds an object storage system that is designed to scale out horizontally, with multiple active front end nodes implementing the S3 API.
 
-In 3.4.0 Tech Preview mode, Eucalyptus uses [RiakCS](http://basho.com/riak-cloud-storage/) as the distributed object storage backend for Walrus.
+The backend for the object storage system is designed to be pluggable.
 
 The legacy, single node Walrus implementation is superceded by multiple active Object Storage Gateways (OSGs), which act as pass through proxies for user requests. The cloud administrator can register multiple, active OSGs, which are designed to act as redundant active/active nodes. The client may direct requests to any active OSG. OSGs handle authentication and enforce IAM (Identity and Access Management) settings.
 
@@ -8,14 +8,9 @@ On the backend, each OSG connects to a distributed object store (currently RiakC
 
 We do NOT recommend accessing the RiakCS installation directly. Doing so might lead to an inconsistent state and you may not be able to access your data through Eucalyptus.
 
-As this is a tech-preview, there are known issues. For information on those see: [Scalable Walrus Tech-Preview Known Issues](RiakCS Tech Preview Known Issues)
-
 ### Installing Object Storage Gateways (OSGs) ###
 
-Please install the Eucalyptus 3.4 nightly release package for the tech preview,
-
-    yum install http://downloads.eucalyptus.com/software/eucalyptus/nightly/3.4-osg-techpreview/centos/6/x86_64/eucalyptus-release-3.4.noarch.rpm
-Next, please install the "eucalyptus-osg" package on each host designated as the OSG.
+Please install the "eucalyptus-osg" package on each host designated as the OSG.
 
     yum install eucalyptus-osg
 
@@ -45,6 +40,10 @@ To deregister this OSG, you would run the following command,
 
 ### Configuring the Storage Provider
 
+Backed Storage Providers that are supported...
+
+RiakCS:
+
 After you register an OSG, you cannot use it until it is correctly configured. After registration, OSG state will be initially listed as BROKEN. For example,
 
     SERVICE	objectstorage  	objectstorage  	osg-192.168.1.16	BROKEN    	23  	http://192.168.1.16:8773/services/objectstorage	arn:euca:bootstrap:objectstorage:objectstorage:osg-192.168.1.16/
@@ -66,6 +65,12 @@ In addition, you will have to provide Eucalyptus with credentials to access your
 Please note that these are access and secret keys for the RiakCS cluster and NOT Eucalyptus. You may use the RiakCS front end web interface to create users.
 
 Make sure that the user with these credentials has administrative access to RiakCS.
+
+### Configuring OSG to use the Walrus backend
+
+    euca_conf --register-walrus <Walrus host or IP>
+
+    euca-modify-property -p objectstorage.providerclient=walrus
 
 ### Additional Configuration (optional)
 
@@ -137,12 +142,6 @@ On many Linux installations, Nginx uses /etc/nginx/conf.d for server configurati
     }
 
 You can then restart nginx or merely reload rules (/etc/init.d/nginx reload). You can then access port 80 on your Nginx host, which will forward requests to your RiakCS cluster.
-
-### Configuring OSG to use the Walrus backend
-
-    euca_conf --register-walrus <Walrus host or IP>
-
-    euca-modify-property -p objectstorage.providerclient=walrus
 
 *****
 [[category.storage]]
