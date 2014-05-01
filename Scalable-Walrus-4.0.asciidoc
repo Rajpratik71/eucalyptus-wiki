@@ -46,9 +46,9 @@ To deregister this OSG, you would run the following command,
 
 ### Configuring the Storage Provider
 
-Backed Storage Providers that are supported...
+We currently support the following backend storage provider:
 
-RiakCS:
+#### RiakCS ####
 
 After you register an OSG, you cannot use it until it is correctly configured. After registration, OSG state will be initially listed as BROKEN. For example,
 
@@ -72,7 +72,7 @@ Please note that these are access and secret keys for the RiakCS cluster and NOT
 
 Make sure that the user with these credentials has administrative access to RiakCS.
 
-### Configuring OSG to use the Walrus backend
+#### Walrus ####
 
     euca_conf --register-walrus <Walrus host or IP>
 
