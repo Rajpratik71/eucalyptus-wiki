@@ -8,7 +8,7 @@ The intent of this page is to highlight as many of the changes present in Eucaly
 ## AWS Compatibility
 ***
 ## Services
-### Persona induced Changes
+### Persona-induced Changes
 * Default roles are now setup:
 ```
 [root@g-15-08 eutester]# euare-rolelistbypath
@@ -17,6 +17,9 @@ arn:aws:iam::362121614306:role/eucalyptus/InfrastructureAdministrator
 arn:aws:iam::362121614306:role/eucalyptus/ResourceAdministrator
 [root@g-15-08 eutester]#
 ```
+### Service separation-induced Changes
+* Admin tools that previously used EC2_URL to locate other services (e.g. empyrean) now default to localhost instead.  Use the --url option if you need to run admin tools from somewhere other than the CLC.
+
 ## Cloud admin GUI has been removed and IAM functionality moved to the User Console
 ### Things that are missing
 1. Account Signup
