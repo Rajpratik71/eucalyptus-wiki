@@ -63,6 +63,7 @@ arn:aws:iam::362121614306:role/eucalyptus/ResourceAdministrator
 1. Fully redesigned 
 2. Added user/group/policy administration for account admins
 3. SSL configuration is different, not on by default
+4. users won't see data change on-screen except for items in transitional state. Previous version would automatically refresh data shown on-screen.
 
 ***
 
