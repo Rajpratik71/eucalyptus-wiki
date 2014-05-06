@@ -45,6 +45,7 @@ arn:aws:iam::362121614306:role/eucalyptus/ResourceAdministrator
 ## Networking
 ### Edge-networking Changes
 * daemon/services/executable renamed to eucanetd
+* most site-specific configuration is now done through uploading a JSON format config file to Eucalyptus via euca-modify-property -f cloud.network.network_configuration=</path/to/JSON/config/file>.  There are still a limited number of basic networking configuration settings still required in eucalyptus.conf on CC/NCs.
 
 ### SYSTEM Mode Changes
 * Deprecated
