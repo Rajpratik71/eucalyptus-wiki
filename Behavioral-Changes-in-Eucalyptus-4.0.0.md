@@ -27,16 +27,22 @@ arn:aws:iam::362121614306:role/eucalyptus/ResourceAdministrator
 3. Change VM types (done via CLI)
 4. Create/delete accounts (done via CLI)
 5. Downloading X.509 Certs (done via CLI)
+6. Report Generation
 
 ### Service Life-cycle
 ### Installation and Configuration Changes
 ### HA-specific Changes
 1. Dump-restore is now the default sync strategy. More info about HA-JDBC and its config can be found here: http://ha-jdbc.github.io/doc.html
+2. IPs returned in credentials can now be configured through a configurable property
 
 ### DNS Changes
+1. DNS listener address can now be configured through a system property (defaults to bind-addr)
+2. IPs returned on service DNS names can now be configured through a system property
+
 ### ELB Changes
 1. ELB Session Stickiness
 2. SSL certs
+3. ELB image is now HVM rather than paravirt
 
 ***
 ## Images and Disk Geometry
