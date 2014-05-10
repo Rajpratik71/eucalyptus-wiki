@@ -47,7 +47,22 @@ arn:aws:iam::362121614306:role/eucalyptus/ResourceAdministrator
 ***
 ## Images and Disk Geometry
 ### Image Management/Upload Changes
+* Paravirtualized(PV) images require kernel and ramdisk ID supplied when either bundling or registering.
+* Running a PV image will trigger image conversion at the first time the image is run. The instance will stay in pending until conversion completes. The conversion delay is proportional to the size of EMI and typically will take couple minutes. If multiple PV images are run the same time, the delay will be multiplied by number of such EMIs. 
+* After a PV image is converted, subsequence run-instance will not incur image conversion (no delay).
+* The PV images and instances in conversion are tagged with 'euca:image-conversion-state' and 'euca:image-conversion-status'. The tag will disappear when the image is fully converted.
+
 ### Image Service Changes
+* For import-volume, import-instance, and running PV images, there will be a worker VM that takes care of image copying and conversion.
+* By default, there is one imaging worker VM per availability zone.
+* Worker VM and it's associated resources (such as autoscaling group) are tagged with 'euca-internal-imaging-worker'.
+* A worker VM is automatically run when the system is given import tasks or PV instance run for the first time (across the cloud).
+* It is OK to terminate a worker VM.
+* It is NOT ok to delete autoscaling group, launch configs, security groups tagged as imaging worker.
+* If resources other than worker VM is deleted (by accident), setting property 'imaging.imaging_worker_enabled' false will clean up resources held by imaging workers. Then import tasks or pv image run will setup resources again properly.
+* One can change desired_capacity of worker VM's autoscaling group, if the system expects high load of image conversion or import tasks.
+* The size of EMI that can be converted is limited by VM type of the worker VM. In a nutshell, VM type should be larger than the size of PV EMI's root disk. One can change the VM type by setting 'imaging.imaging_worker_instance_type'
+ 
 ### Block Device Mapping Changes
 ### VmwareBroker Changes
 ***
