@@ -22,6 +22,7 @@ We need to modify the following 4 variables in this file, according to the priva
 * secret_key 
 * host_base 
 * host_bucket
+* service_path
 
 To list buckets:
 
