@@ -16,7 +16,7 @@ python setup.py install
 
 A sample configuration is provided for [reference](https://gist.github.com/jeevanullas/5114186/raw/dcda873adb8c76f9d8ffcad370e3f1761b67daec/gistfile1.txt); just save it as s3cfg on the system.
 
-We need to modify the following 4 variables in this file, according to the private cloud configuration:
+We need to modify the following 5 variables in this file, according to the private cloud configuration:
 
 * access_key 
 * secret_key 
