@@ -39,10 +39,17 @@ arn:aws:iam::362121614306:role/eucalyptus/ResourceAdministrator
 1. DNS listener address can now be configured through a system property (defaults to bind-addr)
 2. IPs returned on service DNS names can now be configured through a system property
 
+### EC2 Changes
+1. Resource identifiers now all lower case ([EUCA-8501](https://eucalyptus.atlassian.net/browse/EUCA-8501))
+2. Multiple security groups for instances now supported (EDGE mode only)
+3. Terminated instance cache removed (terminated instances remain in DB until they expire)
+4. Endpoint for EC2 is now http://compute.example.com:8773/services/compute the old (eucalyptus) host and path are still supported.
+
 ### ELB Changes
 1. ELB Session Stickiness
 2. SSL certs
 3. ELB image is now HVM rather than paravirt
+4. ELB now uses DNS to locate cloud services
 
 ***
 ## Images and Disk Geometry
