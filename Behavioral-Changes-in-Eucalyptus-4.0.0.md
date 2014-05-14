@@ -19,6 +19,8 @@ arn:aws:iam::362121614306:role/eucalyptus/ResourceAdministrator
 ```
 ### Service separation-induced Changes
 * Admin tools that previously used EC2_URL to locate other services (e.g. empyrean) now default to localhost instead.  Use the --url option if you need to run admin tools from somewhere other than the CLC.
+* Services are now registered (Auto Scaling, CloudWatch, EC2, ELB, IAM, STS) with euca-(de)register-service
+* User-api service group can be used to register all user facing services (the above plus S3/object storage)
 
 ## Cloud admin GUI has been removed and IAM functionality moved to the User Console
 ### Things that are missing
@@ -27,7 +29,7 @@ arn:aws:iam::362121614306:role/eucalyptus/ResourceAdministrator
 3. Change VM types (done via CLI)
 4. Create/delete accounts (done via CLI)
 5. Downloading X.509 Certs (done via CLI)
-6. Report Generation
+6. Report Generation (done via CLI)
 
 ### Service Life-cycle
 ### Installation and Configuration Changes
