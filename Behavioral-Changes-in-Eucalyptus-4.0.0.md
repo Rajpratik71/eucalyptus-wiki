@@ -113,6 +113,7 @@ arn:aws:iam::362121614306:role/eucalyptus/ResourceAdministrator
 ## Logging and Troubleshootability Changes
 
 * [Logging Enhancements](https://eucalyptus.atlassian.net/secure/Dashboard.jspa?selectPageId=15705)
+* cloud-requests.log now logs requests (Java components)
 
 ***
 ## Deprecations 
