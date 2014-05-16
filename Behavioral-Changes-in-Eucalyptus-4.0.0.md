@@ -56,10 +56,11 @@ arn:aws:iam::362121614306:role/eucalyptus/ResourceAdministrator
 ***
 ## Images and Disk Geometry
 ### Image Management/Upload Changes
-* Paravirtualized(PV) images require kernel and ramdisk ID supplied when either bundling or registering.
-* Running a PV image will trigger image conversion at the first time the image is run. The instance will stay in pending until conversion completes. The conversion delay is proportional to the size of EMI and typically will take couple minutes. If multiple PV images are run the same time, the delay will be multiplied by number of such EMIs. 
-* After a PV image is converted, subsequence run-instance will not incur image conversion (no delay).
-* The PV images and instances in conversion are tagged with 'euca:image-conversion-state' and 'euca:image-conversion-status'. The tag will disappear when the image is fully converted.
+* Partition-based images (often and inaccurately called paravirtualized or PV images, in part because that's how they are characterized by 'describe-images') require kernel and ramdisk ID supplied when either bundling or registering.
+* Running a partition image will trigger image conversion (from partition into a bootable disk) the first time the image is run. The instance will stay in pending until conversion completes. The conversion delay is proportional to the size of EMI and typically will take couple minutes. If multiple partition images are run for the first time simultaneously, their conversions will be serialized and the delay will increase.
+* After a partition image is converted, subsequence run-instance will not incur image conversion (no delay).
+* During conversion, partition-based images and instances are tagged with 'euca:image-conversion-state' and 'euca:image-conversion-status'. The tags disappear when the image is converted successfully.
+* CC Image Proxy is no longer usable and CC_IMAGE_PROXY_* options have been removed from eucalyptus.conf.
 
 ### Image Service Changes
 * For import-volume, import-instance, and running PV images, there will be a worker VM that takes care of image copying and conversion.
