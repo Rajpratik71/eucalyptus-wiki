@@ -89,8 +89,20 @@ arn:aws:iam::362121614306:role/eucalyptus/ResourceAdministrator
 ***
 ## Storage
 ### Object Storage Changes
+* The OSG is a new component and is the sole provider of the S3 API in Eucalyptus
+* Service path is now: /services/objectstorage, but /services/Walrus is honored and handled by the OSG itself.
+* walrus.max_bucket_size_mb is no longer supported. Size limitations must be enforced via IAM policies.
+
 ### Walrus Changes
-### SAN-related Changes
+* Walrus component in 3.4.x is now called 'WalrusBackend' and has a new service path: /services/WalrusBackend
+* Walrus is no longer user-accessible. It only responds to requests from the eucalyptus/admin user (and even that will be disabled in 4.1).
+* Walrus no longer needs to be directly reachable from NCs. Only OSGs need reachability. And only the OSG needs to be able to reach Walrus, though Walrus must be able to reach the DB etc and have multicast.
+* Total snapshot size limit is no longer an object-storage/Walrus property, but a 'storage' property. See below for more details.
+* Max buckets and bucket size properties are no longer enforced by Walrus. All usage limitations are handled by the OSG.
+
+### EBS/SAN-related Changes
+Total snapshot size allowed for the whole cloud is now a global storage property, not a walrus property: storage.global_total_snapshot_size_limit_gb=50 (default is 50GB). This is because the object storage service doesn't treat snapshots specially, only the Storage Controllers know that the objects in object storage are actually snapshots.
+
 ***
 ## Graphical Console Changes
 
