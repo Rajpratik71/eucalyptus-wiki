@@ -137,6 +137,7 @@ This is because the object storage service doesn't treat snapshots specially, on
 
 * [Logging Enhancements](https://eucalyptus.atlassian.net/secure/Dashboard.jspa?selectPageId=15705)
 * cloud-requests.log now logs requests (Java components)
+* Log message format for Java components has been changed to remove location information in some log files [EUCA-9361](https://eucalyptus.atlassian.net/browse/EUCA-9361)
 
 ***
 ## Deprecations 
