@@ -25,7 +25,7 @@ arn:aws:iam::362121614306:role/eucalyptus/ResourceAdministrator
 ## Cloud admin GUI has been removed and IAM functionality moved to the User Console
 ### Things that are missing
 1. Account Signup
-2. See Service Components and state
+2. See Service Components and state (done via CLI)
 3. Change VM types (done via CLI)
 4. Create/delete accounts (done via CLI)
 5. Downloading X.509 Certs (done via CLI)
@@ -61,6 +61,7 @@ arn:aws:iam::362121614306:role/eucalyptus/ResourceAdministrator
 * After a partition image is converted, subsequence run-instance will not incur image conversion (no delay).
 * During conversion, partition-based images and instances are tagged with 'euca:image-conversion-state' and 'euca:image-conversion-status'. The tags disappear when the image is converted successfully.
 * CC Image Proxy is no longer usable and CC_IMAGE_PROXY_* options have been removed from eucalyptus.conf.
+* There is no longer a default kernel and ramdisk [EUCA-8812](https://eucalyptus.atlassian.net/browse/EUCA-8812)
 
 ### Image Service Changes
 * For import-volume, import-instance, and running PV images, there will be a worker VM that takes care of image copying and conversion.
