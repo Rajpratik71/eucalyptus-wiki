@@ -22,17 +22,17 @@ Bucket:
 * GET/PUT/DELETE bucket versioning status (enable, suspend, etc)
 * GET/PUT/DELETE bucket logging
 * GET bucket location (Walrus can handle the messages, but Walrus is single-region)
+* Bucket & object lifecycle (added in Eucalyptus 4.0)
 
 Object:
 * GET/PUT/DELETE object (including object-copy)
 * Object versioning
 * Object ACLs
 * POST (also known as browser-based) uploads of objects
+* Multi-part uploads (added in Eucalyptus 4.0)
 
 ## Unsupported (so far) operations
 * Bucket policies
-* Bucket & object lifecycle
-* Multi-part uploads
 * Delete Multiple Objects (POST /?delete, not DELETE)
 * Storage durability classes/Reduced Redundancy Storage (not yet applicable)
 * Website hosting
