@@ -73,9 +73,13 @@ arn:aws:iam::362121614306:role/eucalyptus/ResourceAdministrator
 * If resources other than worker VM is deleted (by accident), setting property 'imaging.imaging_worker_enabled' false will clean up resources held by imaging workers. Then import tasks or pv image run will setup resources again properly.
 * One can change desired_capacity of worker VM's autoscaling group, if the system expects high load of image conversion or import tasks.
 * The size of EMI that can be converted is limited by VM type of the worker VM. In a nutshell, VM type should be larger than the size of PV EMI's root disk. One can change the VM type by setting 'imaging.imaging_worker_instance_type'
+* Imaging worker can logs to remote syslog server if imaging.imaging_worker_log_server_port and imaging.imaging_worker_log_server properties were set before VM launch.
+* Changing imaging.imaging_worker_XXX properties does not affect imaging VMs that are already running.
  
 ### Block Device Mapping Changes
 ### VmwareBroker Changes
+* There is no intermediate storage for artifacts so storage attributes from config would not affect the system.
+
 ***
 ## Networking
 ### Edge-networking Changes
