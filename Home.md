@@ -30,7 +30,7 @@ Eucalyptus is a set of web services, modeled after and compatible with Amazon We
 
 **Friends.** Be our [friends on Facebook](http://www.facebook.com/pages/Eucalyptus-Systems-Inc/164828240204708) or [contacts on LinkedIn](http://www.linkedin.com/company/eucalyptus-systems-inc.?trk=hb_tab_compy_id_420170).
 
-**Install.** To install Eucalyptus, try our [Faststart](http://www.eucalyptus.com/download/faststart) ISO, which should have you up and running your own cloud within an hour, on as little as a single system.
+**Install.** To install Eucalyptus, try [Faststart](http://www.eucalyptus.com/faststart), which should have you up and running your own cloud within an hour, on as little as a single system.
 
 **IRC.** You can find us on Freenode IRC on #eucalyptus.
 
