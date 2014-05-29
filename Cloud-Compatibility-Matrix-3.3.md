@@ -89,23 +89,33 @@ The Eucalyptus 3.3 Compatibility Matrix details supported platforms in Eucalyptu
 </tr>
 </tbody>
 </table>
-Network Compatibility by Eucalyptus Networking Modes
-----------------------------------------------------
 
--   **Managed**  
-    Layer 2 and 3 VM isolation; uses built-in DHCP service
-
-    Requires a cloud switch to forward a configurable range of VLAN-tagged packets, and requires that any external DHCP service be isolated from Eucalyptus VMs
-
--   **Managed (no VLAN)**  
-    Layer 3 VM isolation; uses built-in DHCP service and requires that any external DHCP service be isolated from Eucalyptus VMs.
-
--   **Static**  
-    No VM isolation, uses built-in DHCP service for static IP assignment
-
-    Requires that any external DHCP service on the network be isolated from Eucalyptus VMs
-
--   **System**  
-    No VM isolation, no automatic address handling
-
-    Uses existing external DHCP
+## Network Compatibility by Eucalyptus Networking Modes
+<table>
+<colgroup>
+<col width="25%" />
+<col width="75%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Networking Mode</th>
+<th align="left">Compatibility Description</th>
+</tr>
+<tr class="even">
+<td align="left">Managed</td>
+<td align="left"> Layer 2 and 3 VM isolation; uses built-in DHCP service<br> Requires a cloud switch to forward a configurable range of VLAN-tagged packets, and requires that any external DHCP service be isolated from Eucalyptus VMs</td>
+</tr>
+<tr class="odd">
+<td align="left"> </td>
+<td align="left"> </td>
+</tr>
+<tr class="even">
+<td align="left"> </td>
+<td align="left"> </td>
+</tr>
+<tr class="odd">
+<td align="left"> </td>
+<td align="left"> </td>
+</tr>
+</thead>
+<tbody>
