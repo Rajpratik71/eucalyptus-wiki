@@ -71,7 +71,7 @@ This Compatibility Matrix details supported platforms in Eucalyptus 4.0 software
 <tr class="odd">
 <td align="left">Windows Server 2012</td>
 <td align="center">Datacenter</td>
-<td align="center">i386/x86_64</td>
+<td align="center">x86_64</td>
 </tr>
 <tr class="even">
 <td align="left">All Modern Linux Distributions</td>
