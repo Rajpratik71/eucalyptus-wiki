@@ -1,7 +1,52 @@
 The Eucalyptus 3.3 Compatibility Matrix details supported platforms in Eucalyptus 3.3 software. For a list of other versions [click here](Eucalyptus-Cloud-Compatibility-Matrix---Overview).
 
+## Compute Compatibility
+<table>
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Operating System and Hypervisors</th>
+<th align="left">Version</th>
+<th align="left">Architecture</th>
+</tr>
+<tr class="even">
+<td align="left">CentOS+KVM</td>
+<td align="center"> </td>
+<td align="center"> </td>
+</tr>
+<tr class="odd">
+<td align="left">RHEL+KVM</td>
+<td align="center"> </td>
+<td align="center"> </td>
+</tr>
+<tr class="even">
+<td align="left">CentOS+KVM</td>
+<td align="center">6.4</td>
+<td align="center">x86_64</td>
+</tr>
+<tr class="odd">
+<td align="left">RHEL+KVM</td>
+<td align="center">6.4</td>
+<td align="center">x86_64</td>
+</tr>
+<tr class="even">
+<td align="left">VMware ESXi</td>
+<td align="center">5.0,5.1</td>
+<td align="center">x86_64</td>
+</tr>
+<tr class="odd">
+<td align="left">VMware vCenter</td>
+<td align="center">5.0,5.1</td>
+<td align="center">x86_64</td>
+</tr>
+</thead>
+</tbody>
+</table>
 ## Guest Operating Systems
------------------------
 
 <table>
 <colgroup>
@@ -44,3 +89,23 @@ The Eucalyptus 3.3 Compatibility Matrix details supported platforms in Eucalyptu
 </tr>
 </tbody>
 </table>
+Network Compatibility by Eucalyptus Networking Modes
+----------------------------------------------------
+
+-   **Managed**  
+    Layer 2 and 3 VM isolation; uses built-in DHCP service
+
+    Requires a cloud switch to forward a configurable range of VLAN-tagged packets, and requires that any external DHCP service be isolated from Eucalyptus VMs
+
+-   **Managed (no VLAN)**  
+    Layer 3 VM isolation; uses built-in DHCP service and requires that any external DHCP service be isolated from Eucalyptus VMs.
+
+-   **Static**  
+    No VM isolation, uses built-in DHCP service for static IP assignment
+
+    Requires that any external DHCP service on the network be isolated from Eucalyptus VMs
+
+-   **System**  
+    No VM isolation, no automatic address handling
+
+    Uses existing external DHCP
