@@ -22,12 +22,25 @@ Guest Operating Systems
 <td align="left">R2</td>
 <td align="left">i386/x86_64</td>
 </tr>
-<td align="left">Windows Server 2008
-Datacenter
-i386/x86_64</td>
-<td align="left">Windows Server 2008
-R2
-x86_64</td>
+<tr class="even">
+<td align="left">Windows Server 2008</td>
+<td align="left">Datacenter</td>
+<td align="left">i386/x86_64</td>
+</tr>
+<tr class="odd">
+<td align="left">Windows Server 2008</td>
+<td align="left">R2</td>
+<td align="left">i386/x86_64</td>
+</tr>
+<tr class="odd">
+<td align="left">Windows 7</td>
+<td align="left">Professional</td>
+<td align="left">i386/x86_64</td>
+</tr>
+<tr class="even">
+<td align="left">All Modern Linux Distributions</td>
+<td align="left"> RedHat, CentOS, Ubuntu, Fedora, Debian, SLES, OpenSUSE, etc. </td>
+<td align="left">i386/x86_64</td>
 </tr>
 </tbody>
 </table>
