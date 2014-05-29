@@ -213,8 +213,3 @@ This Compatibility Matrix details supported platforms in Eucalyptus 4.0 software
 ## Minimum Hardware Requirements
 * **Front End Components** <br> Cloud Controller, Walrus, Storage Controller, Cluster Controller, VMware Broker<br><br>8 Cores, 2.4GHz, 8GB RAM, 500GB Disk space. (multiple disks in a RAID 5/10 recommended)<br><br> High Availability (HA) configurations must be equal in capacity.<br><br>
 * **Node Controllers** <br>4 Cores, 2.4GHz, 8GB RAM, 160GB Disks (multiple disks recommended).<br><br> Note: Hardware virtualization must be enabled in the BIOS.
-
-## Redundant Isolated Front End Components
-* Redundant Network Switches
-* Eucalyptus-supported SAN Adapter<br>_(Requirement for Storage Controller High Availability (HA))_
-* Redundant Disk Configuration<br>_(Requirement for Walrus High Availability (HA))_
