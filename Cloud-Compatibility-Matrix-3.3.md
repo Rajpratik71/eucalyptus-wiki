@@ -10,18 +10,8 @@ The Eucalyptus 3.3 Compatibility Matrix details supported platforms in Eucalyptu
 <thead>
 <tr class="header">
 <th align="left">Operating System and Hypervisors</th>
-<th align="left">Version</th>
-<th align="left">Architecture</th>
-</tr>
-<tr class="even">
-<td align="left">CentOS+KVM</td>
-<td align="center"> </td>
-<td align="center"> </td>
-</tr>
-<tr class="odd">
-<td align="left">RHEL+KVM</td>
-<td align="center"> </td>
-<td align="center"> </td>
+<th align="center">Version</th>
+<th align="center">Architecture</th>
 </tr>
 <tr class="even">
 <td align="left">CentOS+KVM</td>
@@ -57,35 +47,35 @@ The Eucalyptus 3.3 Compatibility Matrix details supported platforms in Eucalyptu
 <thead>
 <tr class="header">
 <th align="left">Operating System Type</th>
-<th align="left">Version/Edition</th>
-<th align="left">Architecture</th>
+<th align="center">Version/Edition</th>
+<th align="center">Architecture</th>
 </tr>
 </thead>
 <tbody>
 <tr class="even">
 <td align="left">Windows Server 2003</td>
-<td align="left">R2</td>
-<td align="left">i386/x86_64</td>
+<td align="center">R2</td>
+<td align="center">i386/x86_64</td>
 </tr>
 <tr class="odd">
 <td align="left">Windows Server 2008</td>
-<td align="left">Datacenter</td>
-<td align="left">i386/x86_64</td>
+<td align="center">Datacenter</td>
+<td align="center">i386/x86_64</td>
 </tr>
 <tr class="even">
 <td align="left">Windows Server 2008</td>
-<td align="left">R2</td>
-<td align="left">i386/x86_64</td>
+<td align="center">R2</td>
+<td align="center">i386/x86_64</td>
 </tr>
 <tr class="odd">
 <td align="left">Windows 7</td>
-<td align="left">Professional</td>
-<td align="left">i386/x86_64</td>
+<td align="center">Professional</td>
+<td align="center">i386/x86_64</td>
 </tr>
 <tr class="even">
 <td align="left">All Modern Linux Distributions</td>
-<td align="left"> RedHat, CentOS, Ubuntu, Fedora, Debian, SLES, OpenSUSE, etc. </td>
-<td align="left">i386/x86_64</td>
+<td align="center"> RedHat, CentOS, Ubuntu, Fedora, Debian, SLES, OpenSUSE, etc. </td>
+<td align="center">i386/x86_64</td>
 </tr>
 </tbody>
 </table>
@@ -120,7 +110,7 @@ The Eucalyptus 3.3 Compatibility Matrix details supported platforms in Eucalyptu
 </thead>
 <tbody>
 
-##Elastic Block Storage Compatibility
+## Elastic Block Storage Compatibility
 <table>
 <colgroup>
 <col width="20%" />
@@ -183,8 +173,8 @@ The Eucalyptus 3.3 Compatibility Matrix details supported platforms in Eucalyptu
 <tbody>
 
 ## Minimum Hardware Requirements
-* Front End Components <br> Cloud Controller, Walrus, Storage Controller, Cluster Controller, VMware Broker<br><br>8 Cores, 2.4GHz, 8GB RAM, 500GB Disk space. (multiple disks in a RAID 5/10 recommended)<br><br> High Availability (HA) configurations must be equal in capacity.
-* Node Controllers <br>4 Cores, 2.4GHz, 8GB RAM, 160GB Disks (multiple disks recommended).<br><br> Note: Hardware virtualization must be enabled in the BIOS.
+* **Front End Components** <br> Cloud Controller, Walrus, Storage Controller, Cluster Controller, VMware Broker<br><br>8 Cores, 2.4GHz, 8GB RAM, 500GB Disk space. (multiple disks in a RAID 5/10 recommended)<br><br> High Availability (HA) configurations must be equal in capacity.
+* **Node Controllers** <br>4 Cores, 2.4GHz, 8GB RAM, 160GB Disks (multiple disks recommended).<br><br> Note: Hardware virtualization must be enabled in the BIOS.
 
 ## Redundant Isolated Front End Components
 * Redundant Network Switches
