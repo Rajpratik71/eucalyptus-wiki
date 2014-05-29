@@ -109,7 +109,37 @@ This Compatibility Matrix details supported platforms in Eucalyptus 4.0 software
 </tbody>
 </table>
 
+## Object Storage Compatibility
+
+<table>
+<colgroup>
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Storage Array</th>
+<th align="left">Type and Series</th>
+<th align="left">Version</th>
+<th align="left">High Availability Support</th>
+<th align="left">Notes</th>
+</thead>
+<tbody>
+</tr>
+<tr class="even">
+<td align="left"> RiakCS</td>
+<td align="center"> Open Source<br>Enterprise</td>
+<td align="center"> 1.4.5 </td>
+<td align="center"> Yes </td>
+<td align="center"> </td>
+</tr>
+</table>
+
 ## Elastic Block Storage Compatibility
+
 <table>
 <colgroup>
 <col width="20%" />
