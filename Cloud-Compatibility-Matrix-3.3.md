@@ -13,6 +13,8 @@ The Eucalyptus 3.3 Compatibility Matrix details supported platforms in Eucalyptu
 <th align="center">Version</th>
 <th align="center">Architecture</th>
 </tr>
+</thead>
+<tbody>
 <tr class="even">
 <td align="left">CentOS+KVM</td>
 <td align="center">6.4</td>
@@ -33,7 +35,6 @@ The Eucalyptus 3.3 Compatibility Matrix details supported platforms in Eucalyptu
 <td align="center">5.0,5.1</td>
 <td align="center">x86_64</td>
 </tr>
-</thead>
 </tbody>
 </table>
 ## Guest Operating Systems
@@ -91,6 +92,8 @@ The Eucalyptus 3.3 Compatibility Matrix details supported platforms in Eucalyptu
 <th align="left">Networking Mode</th>
 <th align="left">Compatibility Description</th>
 </tr>
+</thead>
+<tbody>
 <tr class="even">
 <td align="left">Managed</td>
 <td align="left"> Layer 2 and 3 VM isolation; uses built-in DHCP service<br><br>Requires a cloud switch to forward a configurable range of VLAN-tagged packets, and requires that any external DHCP service be isolated from Eucalyptus VMs</td>
@@ -107,8 +110,7 @@ The Eucalyptus 3.3 Compatibility Matrix details supported platforms in Eucalyptu
 <td align="left">System</td>
 <td align="left"> No VM isolation, no automatic address handling<br><br>Uses existing external DHCP</td>
 </tr>
-</thead>
-<tbody>
+</tbody>
 
 ## Elastic Block Storage Compatibility
 <table>
@@ -126,6 +128,8 @@ The Eucalyptus 3.3 Compatibility Matrix details supported platforms in Eucalyptu
 <th align="left">Version</th>
 <th align="left">High Availability Support</th>
 <th align="left">Notes</th>
+</thead>
+<tbody>
 </tr>
 <tr class="even">
 <td align="left"> NetApp</td>
