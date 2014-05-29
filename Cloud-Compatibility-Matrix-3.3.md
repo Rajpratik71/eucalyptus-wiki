@@ -1,4 +1,4 @@
-The Eucalyptus 3.3 Compatibility Matrix details supported platforms in Eucalyptus 3.3 software. For a list of other versions [click here](Eucalyptus-Cloud-Compatibility-Matrix---Overview).
+This Compatibility Matrix details supported platforms in Eucalyptus 3.3 software.<br><br>For a list of other versions [click here](Eucalyptus-Cloud-Compatibility-Matrix---Overview).
 
 ## Compute Compatibility
 <table>
