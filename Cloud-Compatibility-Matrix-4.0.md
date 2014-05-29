@@ -102,14 +102,6 @@ This Compatibility Matrix details supported platforms in Eucalyptus 4.0 software
 <td align="left">Managed (No VLAN)</td>
 <td align="left"> Layer 3 VM isolation; uses built-in DHCP service and requires that any external DHCP service be isolated from Eucalyptus VMs. </td>
 </tr>
-<tr class="even">
-<td align="left">Static</td>
-<td align="left"> No VM isolation, uses built-in DHCP service for static IP assignment<br><br> Requires that any external DHCP service on the network be isolated from Eucalyptus VMs </td>
-</tr>
-<tr class="odd">
-<td align="left">System</td>
-<td align="left"> No VM isolation, no automatic address handling<br><br>Uses existing external DHCP</td>
-</tr>
 </tbody>
 </table>
 
