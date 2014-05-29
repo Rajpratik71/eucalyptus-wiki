@@ -1,6 +1,6 @@
 The Eucalyptus 3.3 Compatibility Matrix details supported platforms in Eucalyptus 3.3 software. For a list of other versions [click here](Eucalyptus-Cloud-Compatibility-Matrix---Overview).
 
-Guest Operating Systems
+## Guest Operating Systems
 -----------------------
 
 <table>
@@ -17,17 +17,17 @@ Guest Operating Systems
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr class="even">
 <td align="left">Windows Server 2003</td>
 <td align="left">R2</td>
 <td align="left">i386/x86_64</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left">Windows Server 2008</td>
 <td align="left">Datacenter</td>
 <td align="left">i386/x86_64</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left">Windows Server 2008</td>
 <td align="left">R2</td>
 <td align="left">i386/x86_64</td>
