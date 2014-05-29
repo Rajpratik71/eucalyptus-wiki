@@ -11,16 +11,17 @@ Guest Operating Systems
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Operating System Type
-Version/Edition
-Architecture</th>
+<th align="left">Operating System Type</th>
+<th align="left">Version/Edition</th>
+<th align="left">Architecture</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">Windows Server 2003
-R2
-i386/x86_64</td>
+<td align="left">Windows Server 2003</td>
+<td align="left">R2</td>
+<td align="left">i386/x86_64</td>
+</tr>
 <td align="left">Windows Server 2008
 Datacenter
 i386/x86_64</td>
