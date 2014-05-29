@@ -111,6 +111,7 @@ The Eucalyptus 3.3 Compatibility Matrix details supported platforms in Eucalyptu
 <td align="left"> No VM isolation, no automatic address handling<br><br>Uses existing external DHCP</td>
 </tr>
 </tbody>
+</table>
 
 ## Elastic Block Storage Compatibility
 <table>
@@ -174,7 +175,7 @@ The Eucalyptus 3.3 Compatibility Matrix details supported platforms in Eucalyptu
 <td align="center"> Linux SCSI Target Framework is required </td>
 </tr>
 </thead>
-<tbody>
+</tbody>
 
 ## Minimum Hardware Requirements
 * **Front End Components** <br> Cloud Controller, Walrus, Storage Controller, Cluster Controller, VMware Broker<br><br>8 Cores, 2.4GHz, 8GB RAM, 500GB Disk space. (multiple disks in a RAID 5/10 recommended)<br><br> High Availability (HA) configurations must be equal in capacity.<br><br>
