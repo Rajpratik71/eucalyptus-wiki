@@ -94,6 +94,10 @@ This Compatibility Matrix details supported platforms in Eucalyptus 4.0 software
 </tr>
 </thead>
 <tbody>
+<tr class="odd">
+<td align="left">Edge</td>
+<td align="left"> Layer 2 and 3 VM isolation; uses built-in DHCP service<br><br>Requires that any external DHCP service be isolated from Eucalyptus VMs</td>
+</tr>
 <tr class="even">
 <td align="left">Managed</td>
 <td align="left"> Layer 2 and 3 VM isolation; uses built-in DHCP service<br><br>Requires a cloud switch to forward a configurable range of VLAN-tagged packets, and requires that any external DHCP service be isolated from Eucalyptus VMs</td>
