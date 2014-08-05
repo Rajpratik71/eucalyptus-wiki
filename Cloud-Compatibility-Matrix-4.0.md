@@ -74,6 +74,11 @@ This Compatibility Matrix details supported platforms in Eucalyptus 4.0 software
 <td align="center">x86_64</td>
 </tr>
 <tr class="even">
+<td align="left">Windows 7</td>
+<td align="center">SP1</td>
+<td align="center">x86_64</td>
+</tr>
+<tr class="odd">
 <td align="left">All Modern Linux Distributions</td>
 <td align="center"> RedHat, CentOS, Ubuntu, Fedora, Debian, SLES, OpenSUSE, etc. </td>
 <td align="center">i386/x86_64</td>
