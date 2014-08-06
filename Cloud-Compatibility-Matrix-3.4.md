@@ -74,9 +74,9 @@ This Compatibility Matrix details supported platforms in Eucalyptus 3.4 software
 <td align="center">i386/x86_64</td>
 </tr>
 <tr class="even">
-<td align="left">Windows 7 Professional</td>
-<td align="center">SP1</td>
-<td align="center">i386/x86_64</td>
+<td align="left">Windows 7</td>
+<td align="center">Professional</td>
+<td align="center">x86_64</td>
 </tr>
 <tr class="odd">
 <td align="left">All Modern Linux Distributions</td>
