@@ -1,2 +1,2 @@
 # Eucalyptus Cloud Compatibility Matrix
-The [Compatibility Matrix](https://www.eucalyptus.com/eucalyptus-cloud/iaas) details supported platforms in recent versions of Eucalyptus software and can be viewed at https://www.eucalyptus.com/eucalyptus-cloud/iaas
+The [Compatibility Matrix](https://www.eucalyptus.com/eucalyptus-cloud/iaas/compatibility) details supported platforms in recent versions of Eucalyptus software and can be viewed at https://www.eucalyptus.com/eucalyptus-cloud/iaas/compatibility
