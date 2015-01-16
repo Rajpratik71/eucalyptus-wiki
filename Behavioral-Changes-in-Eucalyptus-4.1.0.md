@@ -63,6 +63,8 @@ User quotas for EC2 addresses were incorrectly counting addresses in use by the 
 ## Images and Disk Geometry
 ### Image Management/Upload Changes
 ### Image Service Changes
+The imaging service is now user facing, and part of the user-api service group.
+
 ### Image Validation Service Changes
 ### Block Device Mapping Changes
 ### VmwareBroker Changes
