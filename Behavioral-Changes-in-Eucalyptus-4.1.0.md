@@ -24,8 +24,16 @@ When an instance is not being reported by an NC the instance will now show a fai
 ### CloudFormation
 The CloudFormation service is no longer a tech preview.
 
+### CloudWatch
+CloudWatch data is split into two schemas, the eucalyptus_cloudwatch schema which contains user created metadata and the eucalyptus_cloudwatch_backend schema that is for "bulk" append-only data (metrics). Due to this split all existing metric data is purged on upgrade.
+
+### Elastic Load Balancing
+Load balancers now use persistent connections to instances (the instance can still close the connection)
+
 ### Simple Workflow
 A tech preview implementation of Simple Workflow is added, and will be installed by default for use by CloudFormation. The Simple Workflow service is not available for use by regular accounts/users by default, but can be enabled via a cloud property.
+
+The simple workflow service uses a new internal pollednotifications service which is used to implement task polling.
 
 ### Credential Changes
 There are now default limits for IAM access key and signing certificate credentials, these limits can be modified via the "authentication.*" cloud properties.
@@ -51,8 +59,12 @@ SSLv3 is now disabled by default and the available SSL protocols can be configur
 ### Installation and Configuration Changes
 ### HA-specific Changes
 ### DNS Changes
-***
+Recursive DNS server/search settings can now be specified using cloud properties (e.g. dns.server_system_property=10.1.1.254, dns.search_system_property=qa1.eucalyptus-systems.com)
+
 ## Reporting and Quota Changes
+### Reporting
+The reporting schema is split into two, the eucalyptus_reporting schema for user and account data that may be updated and the eucalyptus_reporting_backend schema for "bulk" write-only data. Due to this split all existing reporting events are purged on upgrade.
+
 ### Quotas and Policies
 User quotas for EC2 addresses were incorrectly counting addresses in use by the account, not the user. The address usage by the user is now used when checking the quota.
 
