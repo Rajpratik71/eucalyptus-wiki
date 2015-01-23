@@ -68,6 +68,8 @@ The reporting schema is split into two, the eucalyptus_reporting schema for user
 ### Quotas and Policies
 User quotas for EC2 addresses were incorrectly counting addresses in use by the account, not the user. The address usage by the user is now used when checking the quota.
 
+There is an new IAM quota for accounts associated to the Cloudformation service - `cloudformation:quota-stacknumber`. Refer to [EUCA-9946](https://eucalyptus.atlassian.net/browse/EUCA-9946) for more information.
+
 ### Account provisioning
 ***
 ## SLAs and Placement Control
