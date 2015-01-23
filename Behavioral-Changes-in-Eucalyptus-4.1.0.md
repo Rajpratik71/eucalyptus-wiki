@@ -104,6 +104,7 @@ The imaging service is now user facing, and part of the user-api service group.
 ## Eustore Changes
 ***
 ## Logging and Troubleshootability Changes
+[Logging Fixes](https://eucalyptus.atlassian.net/issues/?filter=21601)
 ***
 ## Cloud Operational Changes
 ### Eucalyptus Monitoring Changes
