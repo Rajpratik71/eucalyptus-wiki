@@ -45,6 +45,8 @@ EC2 resource ARNs now allow a region wild-card. ELB resource ARNs are now permit
 
 Policy documents returned from the service are now urlencoded.
 
+Paths used with IAM users, groups (etc) are now terminated with "/".
+
 ### Database
 Schemas are now used rather than databases for partitioning. The new "eucalyptus_shared" database now contains all the schemas.
 
