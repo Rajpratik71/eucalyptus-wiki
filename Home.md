@@ -1,6 +1,6 @@
 Eucalyptus is **open source** software for building **AWS-compatible private clouds.**
 
-This Eucalyptus wiki is a collection of **technical documents** for [cloud users](#clouduser), [cloud administrators](#cloudadmin), [code contributors](#developer) and partners.
+This Eucalyptus wiki is a collection of **technical documents** for cloud users, cloud administrators, code contributors and partners.
 
 For the official Eucalyptus web site, visit [eucalyptus.com](https://www.eucalyptus.com).
 
@@ -50,7 +50,7 @@ Check out the user and administration [documentation](https://www.eucalyptus.com
 
 
 
-### For Cloud Users   {#clouduser}
+### For Cloud Users
 
 * [Bundling Images](wiki/Bundling-Images) - How to use euca-bundle-vol to "rebundle" modified VM instances back into the Eucalyptus image catalog as a new EMI.
 * [Instance Best Practices](wiki/Instance-Best-Practices) - Recommendations regarding best practices associated with instance and image management.
@@ -62,7 +62,7 @@ Check out the user and administration [documentation](https://www.eucalyptus.com
 * [Fog](https://github.com/eucalyptus/eucalyptus/wiki/Fog) - Information regarding status of [Fog](http://fog.io/) working with Eucalyptus
 * [Ansible](https://github.com/eucalyptus/eucalyptus/wiki/Ansible) - Using [Ansible](http://ansible.cc) to orchestrate EC2 and Eucalyptus instances; deployment and configuration management.
 
-### For Cloud Administrators   {#cloudadmin}
+### For Cloud Administrators
 
 * [Network Troubleshooting FAQ](wiki/Network-Troubleshooting-FAQ) - How to solve common VM networking problems.
 * [Fedora 18 Single System Install](wiki/Fedora-18-Single-System-Install) - How to install a full Eucalyptus test environment on a single system.
@@ -71,7 +71,7 @@ Check out the user and administration [documentation](https://www.eucalyptus.com
 * [Eucalyptus Storage](https://github.com/eucalyptus/eucalyptus/wiki/Storage) - High-level overview of storage in Eucalyptus including Walrus and the Storage Controller and how they work. Also includes some best practices and recommendations.
 * [Scalable Walrus](https://github.com/eucalyptus/eucalyptus/wiki/Scalable-Walrus-Tech-Preview-in-Eucalyptus-3.4) - Configuration information for the Scalable Walrus/RiakCS integration tech preview introduced in 3.4.0.
 
-### For Developers   {#developer}
+### For Developers
 
 * [Design Docs](wiki/DesignDocs) - Internal Eucalyptus design documentation.
 * [Debugging Eucalyptus Java-language components](wiki/Debugging-Eucalyptus-Java-language-components) - Advice on working with Eucalyptus from an IDE.
