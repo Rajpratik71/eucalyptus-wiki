@@ -34,7 +34,7 @@ Check out the user and administration [documentation](https://www.eucalyptus.com
 
 **Friends** &mdash; Be our [friends on Facebook](http://www.facebook.com/pages/Eucalyptus-Systems-Inc/164828240204708) or [contacts on LinkedIn](http://www.linkedin.com/company/eucalyptus-systems-inc.?trk=hb_tab_compy_id_420170).
 
-**Install** &mdash; To install Eucalyptus, try the One-Line Installe with [Faststart](https://www.eucalyptus.com/get-started). After install completes (usually in less than 30 minutes) you can immediately begin using your private cloud platform with the default account, user and password.
+**Install** &mdash; To install Eucalyptus, try the one-line installer with [Faststart](https://www.eucalyptus.com/get-started). After install completes (usually in less than 30 minutes) you can immediately begin using your private cloud platform with the default account, user and password.
 
 **IRC** &mdash; You can find us on Freenode [IRC on #eucalyptus](http://webchat.freenode.net/?channels=eucalyptus)
 
