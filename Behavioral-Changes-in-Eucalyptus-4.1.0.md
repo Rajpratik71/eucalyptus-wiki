@@ -1,5 +1,4 @@
 # What's changed in Eucalyptus 4.1.0? 
-(Early draft. Look for more updates to this mid-2014)
 
 The intent of this page is to highlight as many of the changes present in Eucalyptus 4.1.0 as possible with particular emphasis on behavioral changes that do not involve API or CLI changes.
 
@@ -10,16 +9,20 @@ The intent of this page is to highlight as many of the changes present in Eucaly
 
 ***
 ## Services
-### VPC
+### EC2
+#### VPC
 A tech preview implementation of EC2-VPC is added.
 
-### EBS
+#### EBS
 Snapshots can now be shared between accounts.
 
-### Instance Timeout and Status
+#### Instance Timeout and Status
 The default timeout for instances is increased from 12 hours to 180 days. On upgraded systems the administrator should adjust the value accordingly.
 
 When an instance is not being reported by an NC the instance will now show a failing status check. The instance status is also now available as a CloudWatch metric.
+
+#### Policy
+Resource-level permissions are updated to support additional actions (such as RunInstances)
 
 ### CloudFormation
 The CloudFormation service is no longer a tech preview.
@@ -48,6 +51,8 @@ Policy documents returned from the service are now urlencoded.
 Paths used with IAM users, groups (etc) are now terminated with "/".
 
 ### Database
+PostgreSQL version is updated from 9.1 to 9.2.
+
 Schemas are now used rather than databases for partitioning. The new "eucalyptus_shared" database now contains all the schemas.
 
 Database connections to the local host now use the localhost interface rather than the registration interface.
