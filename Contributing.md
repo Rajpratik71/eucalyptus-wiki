@@ -7,8 +7,7 @@ following instructions and guidelines.
 
 Significant contributions (usually those more than about 15 lines of code)
 require that you sign our contributor agreement before they can be accepted.
-This agreement is located at 
-http://www.eucalyptus.com/participate/code/contribute/agreement
+Contact HP for more information
 
 ## Jira Issue(s)
 
