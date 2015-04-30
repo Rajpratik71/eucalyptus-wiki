@@ -61,11 +61,10 @@ Check out the user and administration [documentation](https://www.eucalyptus.com
 ### For Cloud Administrators
 
 * [Network Troubleshooting FAQ](wiki/Network-Troubleshooting-FAQ) - How to solve common VM networking problems.
-* [Fedora 18 Single System Install](wiki/Fedora-18-Single-System-Install) - How to install a full Eucalyptus test environment on a single system.
 * [Eutester and Nagios](wiki/Integrating-Eutester-and-Nagios) - How to setup and configure Eutester and Nagios to carry out a simple test of cloud availablity.
 * [Keepalived VIP on Cluster Controllers](https://github.com/eucalyptus/eucalyptus/wiki/Keepalived-VIP-for-Node-Controller-Gateways) - How to install and configure keepalived to be used as a shared IP for Node Controller gateways when using MANAGED mode and a private network.
 * [Eucalyptus Storage](https://github.com/eucalyptus/eucalyptus/wiki/Storage) - High-level overview of storage in Eucalyptus including Walrus and the Storage Controller and how they work. Also includes some best practices and recommendations.
-* [Scalable Walrus](https://github.com/eucalyptus/eucalyptus/wiki/Scalable-Walrus-Tech-Preview-in-Eucalyptus-3.4) - Configuration information for the Scalable Walrus/RiakCS integration tech preview introduced in 3.4.0.
+
 
 ### For Developers
 
@@ -73,5 +72,4 @@ Check out the user and administration [documentation](https://www.eucalyptus.com
 * [Debugging Eucalyptus Java-language components](wiki/Debugging-Eucalyptus-Java-language-components) - Advice on working with Eucalyptus from an IDE.
 * [Debugging Eucalyptus C-language components](wiki/Debugging-Eucalyptus-C-language-components) - Tools and advice to debug the components of Eucalyptus written in C** &mdash; Node Controller and Cluster Controller.
 * [Image deployment and construction](wiki/Image-deployment-and-construction) - Details of how disk images are deployed in the system
-* [UI Guide](wiki/UI-Guide) - Information on the layout of the web UI and how to modify it.
 * [Developer Guide (incomplete)](wiki/Eucalyptus-Developer-Guide) - A work-in-progress guide to getting started on the Eucalyptus code and architecture.
