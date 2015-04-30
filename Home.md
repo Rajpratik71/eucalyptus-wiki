@@ -20,8 +20,6 @@ Check out the user and administration [documentation](https://www.eucalyptus.com
 
 **AWS Tools** &mdash; Eucalyptus is AWS Compatible.  See the AWS tools we recommend, and how to configure them for use with Eucalyptus, on our [[AWS Tools]] page.
 
-**Blogs** &mdash; Read our blogs at [Eucalyptus.com](https://www.eucalyptus.com/blog). Most blog postings are technical; some are business-oriented.
-
 **Bugs** &mdash; You can file [bugs on our Jira instance](https://eucalyptus.atlassian.net).
 
 **Code** &mdash; See the code for the latest release, [Eucalyptus 4.1.0](https://github.com/eucalyptus/eucalyptus/tree/master).  You can also see [all of our projects on Github](http://github.com/eucalyptus).
