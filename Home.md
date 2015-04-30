@@ -32,8 +32,6 @@ Check out the user and administration [documentation](https://www.eucalyptus.com
 
 **Feedback** &mdash; You can always ask questions on any of our [[Eucalyptus mailing lists]]. 
 
-**Friends** &mdash; Be our [friends on Facebook](http://www.facebook.com/pages/Eucalyptus-Systems-Inc/164828240204708) or [contacts on LinkedIn](http://www.linkedin.com/company/eucalyptus-systems-inc.?trk=hb_tab_compy_id_420170).
-
 **Install** &mdash; To install Eucalyptus, try the one-line installer with [Faststart](https://www.eucalyptus.com/get-started). After install completes (usually in less than 30 minutes) you can immediately begin using your private cloud platform with the default account, user and password.
 
 **IRC** &mdash; You can find us on Freenode [IRC on #eucalyptus](http://webchat.freenode.net/?channels=eucalyptus)
@@ -46,7 +44,7 @@ Check out the user and administration [documentation](https://www.eucalyptus.com
 
 **Questions** &mdash; You can ask [questions on StackOverflow](http://stackoverflow.com/search?tab=active&q=eucalyptus) or [Quora](http://www.quora.com/Eucalyptus-Systems). 
 
-**Videos** &mdash; You can see how Eucalyptus works on videos at [Vimeo](https://vimeo.com/eucalyptus/videos) and [YouTube](https://www.youtube.com/channel/UCo5N2se4x0HwRz_o-t4yS5Q).
+**Videos** &mdash; You can see how Eucalyptus works on videos at [YouTube](https://www.youtube.com/playlist?list=PL8SRnLljMoSOatd8q796qMptF1fA1e6Q3&spfreload=10).
 
 
 
