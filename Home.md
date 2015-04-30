@@ -38,7 +38,7 @@ Check out the user and administration [documentation](https://www.eucalyptus.com
 
 **Nightlies** &mdash; You can install nightly builds of the latest Eucalyptus development builds by following [these instructions](http://www.eucalyptus.com/docs/latest/ig/installing_euca_nightlies.html).
 
-**People** &mdash; We've got great people working at Eucalyptus. Meet [some of them](wiki/category.people).
+**People** &mdash; Lots of great people contribute to Eucalyptus. Meet [some of them](wiki/category.people).
 
 **Questions** &mdash; You can ask [questions on StackOverflow](http://stackoverflow.com/search?tab=active&q=eucalyptus) or [Quora](http://www.quora.com/Eucalyptus-Systems). 
 
