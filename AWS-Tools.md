@@ -18,7 +18,7 @@ _**[AWS Java SDK](https://github.com/eucalyptus/eucalyptus/wiki/HOWTO-Use-AWS-Ja
 
 ## Other tools
 
-**_[s3curl](http://www.eucalyptus.com/eucalyptus-cloud/tools/s3curl)_** is a tool that allows users to interact with Eucalyptus Walrus and AWS S3.
+**_[s3curl](http://aws.amazon.com/code/128)_** is a tool that allows users to interact with Eucalyptus Walrus and AWS S3.
 
 **_[Cloudberry S3 Explorer](http://www.cloudberrylab.com/)_** is a Windows tool that makes managing files in Amazon S3 and Eucalyptus Walrus easy.
 
