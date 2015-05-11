@@ -22,7 +22,7 @@ Check out the user and administration [documentation](https://www.eucalyptus.com
 
 **Bugs** &mdash; You can file [bugs on our Jira instance](https://eucalyptus.atlassian.net).
 
-**Code** &mdash; See the code for the latest release, [Eucalyptus 4.1.0](https://github.com/eucalyptus/eucalyptus/tree/master).  You can also see [all of our projects on Github](http://github.com/eucalyptus).
+**Code** &mdash; See the code for the latest release, [Eucalyptus 4.1.1](https://github.com/eucalyptus/eucalyptus/tree/master).  You can also see [all of our projects on Github](http://github.com/eucalyptus).
 
 **Contribute** &mdash; If you'd like to contribute, please check out the [Contributor Guidelines](wiki/Contributing) first. We also have some more information on [our Git setup](wiki/Documentation-Contributions) especially focused on sending documentation patches.
 
