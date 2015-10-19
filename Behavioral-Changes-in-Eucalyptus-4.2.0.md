@@ -30,8 +30,7 @@ The intent of this page is to highlight the behavioral changes present in Eucaly
 * Imaging service now runs in a separate "(eucalyptus)imaging" system account [EUCA-10102](https://eucalyptus.atlassian.net/browse/EUCA-10102)
 * Paravirtual images no longer require imaging service [EUCA-11140](https://eucalyptus.atlassian.net/browse/EUCA-11140)
 * Some imaging tasks are now performed by the cloud controller rather than on user facing service hosts [EUCA-11443](https://eucalyptus.atlassian.net/browse/EUCA-11443)
-* Imaging service implementation uses cloud-formation and the new "esi-*" tools to prepare resources [EUCA-10192].
-(https://eucalyptus.atlassian.net/browse/EUCA-10192)
+* Imaging service implementation uses cloud-formation and the new "esi-*" tools to prepare resources [EUCA-10192] (https://eucalyptus.atlassian.net/browse/EUCA-10192)
 
 ## EC2 VPC
 * Default VPC resources are now created on first use of EC2 rather than on account creation [EUCA-10809](https://eucalyptus.atlassian.net/browse/EUCA-10809)
