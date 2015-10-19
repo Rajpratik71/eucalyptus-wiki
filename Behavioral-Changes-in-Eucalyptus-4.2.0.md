@@ -16,7 +16,7 @@ The intent of this page is to highlight the behavioral changes present in Eucaly
 
 ## DNS
 * Legacy DNS implementation removed [EUCA-10438](https://eucalyptus.atlassian.net/browse/EUCA-10438)
-* DNS services now run on user facing hosts [EUCA-10439](https://eucalyptus.atlassian.net/browse/EUCA-10439)
+* DNS services now run on user facing hosts and are registrable[EUCA-10439](https://eucalyptus.atlassian.net/browse/EUCA-10439)
 
 ## EC2
 * Many Describe* actions are now handled by user facing service hosts rather than the cloud controller [EUCA-10660](https://eucalyptus.atlassian.net/browse/EUCA-10660)
@@ -29,7 +29,9 @@ The intent of this page is to highlight the behavioral changes present in Eucaly
 ## EC2 Imaging
 * Imaging service now runs in a separate "(eucalyptus)imaging" system account [EUCA-10102](https://eucalyptus.atlassian.net/browse/EUCA-10102)
 * Paravirtual images no longer require imaging service [EUCA-11140](https://eucalyptus.atlassian.net/browse/EUCA-11140)
-* Some imaging tasks are now performed by the cloud controller rather than on user facing service hosts [EUCA-11443](https://eucalyptus.atlassian.net/browse/EUCA-11443) 	
+* Some imaging tasks are now performed by the cloud controller rather than on user facing service hosts [EUCA-11443](https://eucalyptus.atlassian.net/browse/EUCA-11443)
+* Imaging service implementation uses cloud-formation and the new "esi-*" tools to prepare resources [EUCA-10192].
+(https://eucalyptus.atlassian.net/browse/EUCA-10192)
 
 ## EC2 VPC
 * Default VPC resources are now created on first use of EC2 rather than on account creation [EUCA-10809](https://eucalyptus.atlassian.net/browse/EUCA-10809)
@@ -37,6 +39,10 @@ The intent of this page is to highlight the behavioral changes present in Eucaly
 ## ELB
 * ELB resources are now owned by a separate "(eucalyptus)loadbalancing" system account [EUCA-10102](https://eucalyptus.atlassian.net/browse/EUCA-10102)
 * ELB now creates a system owned auto scaling group for each zone [EUCA-11245](https://eucalyptus.atlassian.net/browse/EUCA-11245)
+* New properties for tuning scalability are added [EUCA-11127]
+(https://eucalyptus.atlassian.net/browse/EUCA-11127)
+* HTTPS/SSL listeners are configured with the latest security policy by default [EUCA-10985]
+(https://eucalyptus.atlassian.net/browse/EUCA-10985)
 
 ## IAM
 * HMAC signature replay check removed [EUCA-10878](https://eucalyptus.atlassian.net/browse/EUCA-10878)
@@ -57,5 +63,4 @@ The intent of this page is to highlight the behavioral changes present in Eucaly
 * Heap size for eucalyptus-cloud service is now set according to system resources by default [EUCA-10794](https://eucalyptus.atlassian.net/browse/EUCA-10794)
 * Permissions for log files in /var/log/eucalyptus have changed [EUCA-11171](https://eucalyptus.atlassian.net/browse/EUCA-11171)
 * The "eucarc" file for cloud administrators now contains endpoints for bootstrap (euserv) and properties administrative services [EUCA-11351](https://eucalyptus.atlassian.net/browse/EUCA-11351)
-
 
