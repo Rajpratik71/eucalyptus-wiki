@@ -73,3 +73,4 @@ Check out the user and administration [documentation](https://www.eucalyptus.com
 * [Debugging Eucalyptus C-language components](wiki/Debugging-Eucalyptus-C-language-components) - Tools and advice to debug the components of Eucalyptus written in C** &mdash; Node Controller and Cluster Controller.
 * [Image deployment and construction](wiki/Image-deployment-and-construction) - Details of how disk images are deployed in the system
 * [Developer Guide (incomplete)](wiki/Eucalyptus-Developer-Guide) - A work-in-progress guide to getting started on the Eucalyptus code and architecture.
+* [Generating API WSDLS](wiki/Generating-Eucalyptus-API-WSDLs) - How to generate the WSDLS for Eucalyptus services.
