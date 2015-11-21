@@ -35,6 +35,7 @@ Index of Categories
 * [[category.people]]
 * [[category.releng]]
 * [[category.reporting]]
+* [[category.scalablewalrus]]
 * [[category.stats]]
 * [[category.storage]]
 * [[category.testing]]
@@ -42,4 +43,3 @@ Index of Categories
 * [[category.training]]
 * [[category.troubleshooting]]
 * [[category.ui]]
-* [[category.scalablewalrus]]

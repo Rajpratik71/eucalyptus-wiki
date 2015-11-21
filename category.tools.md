@@ -1,6 +1,7 @@
 * [[AWS-SDK-for-PHP]]
 * [[Ansible]]
 * [[Boto]]
+* [[Deltacloud]]
 * [[Eucalyptus-Virtual-Cloud]]
 * [[Fog]]
 * [[HOWTO-Use-AWS-Java-SDK-with-Eucalyptus]]

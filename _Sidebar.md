@@ -35,6 +35,7 @@ Index of Categories
 * [[category.people]]
 * [[category.releng]]
 * [[category.reporting]]
+* [[category.scalablewalrus]]
 * [[category.stats]]
 * [[category.storage]]
 * [[category.testing]]

@@ -1,6 +1,3 @@
-* [[Eucalyptus-Developer-Guide]]
-* [[Generating-Eucalyptus-API-WSDLs]]
-* [[Testing-with-soapUI]]
 * [[index-of-categories]]
 
 *****
