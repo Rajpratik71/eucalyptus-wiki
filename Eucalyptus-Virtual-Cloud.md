@@ -14,34 +14,22 @@ The purpose of this document is to provide the necessary information to set up a
   - <https://github.com/mitchellh/vagrant/issues/1774>
 + Xen supports nested virtualization
   - <http://www.slideshare.net/xen_com_mgr/nested-virtualization-update-from-intel>
++ Parallels Desktop
+  - <https://forum.parallels.com/threads/modyfying-vm-options-in-vagrant.315327/>
+
 
 ## Does _Not_ Support Nested Virtualization
 
 + Virtualbox
   - <https://www.virtualbox.org/ticket/4032>
-+ Parallels (maybe?)
-  - <http://forum.parallels.com/showthread.php?264780-Missing-quot-Nested-VT-x-EPT-quot-VM-Optimization-Setting-Parallels-8-amp-Windows-8>
 
 ## Virtualization Platforms We Want to Use
 
 1. KVM (since we know this works)
-2. VMware Workstation/Player/Fusion (since this could run on a Mac, though there may be legal issues with this)
+2. Parallels Desktop (works and Vagrant provider is free)
+3. VMware Workstation/Player/Fusion (since this could run on a Mac, though there may be legal issues with this)
 
-These are our top two, but getting this working on other platforms would be an awesome bonus.
-
-## Enabling Nested Virtualization in Parallels
-
-It is possible to enable nested virtualization in Parallels, but it does not seem to work. In order to enable nested virtualization change into the directory of your virtual machine.
-
-    $ cd ~/Documents/Parallels/CentOS\ Linux.pvm
-
-Once inside, edit the file called `config.pvs` and edit the tag called _VirtualizedHV_ so that the value is `1` instead of `0`.
-
-While this does enable nested virtualization and allows CIAB to install into the virtual machine, I cannot run any instances. The computer will completely seize up and must be rebooted. My last glimmer of hope, that the logs might contain something of use, was completely dashed; the logs ended with the following:
-
-    NVMX:   The guest start using virtualization!
-
-And that was all. So, it appears that nested virtualization does not work in Parallels.
+These are our top three, but getting this working on other platforms would be an awesome bonus.
 
 ## Check for Nested Virtualization in KVM
 
@@ -69,6 +57,21 @@ Veewee is a framework for building virtual machines for Vagrant, KVM and other p
 ### Problems
 
 I was unable to get Veewee to build a CentOS image. Instead of injecting the kickstart configuration into the ramdisk image sends keystrokes to anaconda typing in the location of the kickstart file on a webserver (which is started by Veewee). The webserver was started successfully and I verified that I could view the kickstart file from my web browser, but the virtual machine was unable to reach it.
+
+## Vagrant with Parallels
+
+Add at least this to Vagrentfile:
+>     config.vm.provider "parallels" do |v|
+
+>        v.memory = 4096
+
+>        v.cpus = 2
+
+>        v.customize ["set", :id, "--nested-virt", "on"]
+
+>        v.update_guest_tools = true
+
+>      end
 
 ## Vagrant with VirtualBox
 
