@@ -14,6 +14,7 @@ The changes in this section are only relevant when 4.3.0 is installed on RHEL / 
 * Credential download functionality is removed [EUCA-10503](https://eucalyptus.atlassian.net/browse/EUCA-10503)
 * The administration HTTP(S) ports (8080/8443) are no longer used 
 * Multicast is switched from a global to local address [EUCA-8371](https://eucalyptus.atlassian.net/browse/EUCA-8371)
+
 ## Eucalyptus Console
 * Memcached installed by default and uses unix domain socket [GUI-2341](https://eucalyptus.atlassian.net/browse/GUI-2341)
 * Concurrency library has been switched from gevent to eventlet to help with CentOS 7 installation [GUI-2473](https://eucalyptus.atlassian.net/browse/GUI-2473)
