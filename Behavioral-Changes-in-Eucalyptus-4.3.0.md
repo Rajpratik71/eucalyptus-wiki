@@ -40,3 +40,7 @@ The changes in this section are only relevant when 4.3.0 is installed on RHEL / 
 
 # S3
 * IAM resource matching is now case insensitive changing the behaviour of existing policies  [EUCA-11534](https://eucalyptus.atlassian.net/browse/EUCA-11534)
+
+# ELB
+ * In VPC mode, in order to support internal ELB (https://eucalyptus.atlassian.net/browse/EUCA-11915) ELB system accounts ((eucalyptus)loadbalancing) will have 2 additional VPCs (called system VPCs), each with a public and private subnet, internet gateways, and nat gateways.
+ * In VPC mode, all ELB VMs (that is running under ELB system accounts) will have 2 ENIs. The primary ENI is connected to the system VPC and the secondary ENI is connected to the user's VPC. The primary ENI is used as a control channel and the secondary ENI is for the user's data traffic. 
