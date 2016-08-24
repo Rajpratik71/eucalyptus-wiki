@@ -7,7 +7,7 @@ For the official Eucalyptus web site, visit [eucalyptus.com](https://www.eucalyp
 
 ### Need Help?
 
-Check out the user and administration [documentation](https://www.eucalyptus.com/docs), or connect with Eucalyptus on [IRC](http://webchat.freenode.net/?channels=eucalyptus), and the [euca-users mailing list](https://github.com/eucalyptus/eucalyptus/wiki/Eucalyptus-Mailing-Lists). 
+Check out the user and administration [documentation](http://docs.hpcloud.com/eucalyptus/), or connect with Eucalyptus on [IRC](http://webchat.freenode.net/?channels=eucalyptus), and the [euca-users mailing list](https://github.com/eucalyptus/eucalyptus/wiki/Eucalyptus-Mailing-Lists). 
 
 
 ### Resources
@@ -26,7 +26,7 @@ Check out the user and administration [documentation](https://www.eucalyptus.com
 
 **Contribute** &mdash; If you'd like to contribute, please check out the [Contributor Guidelines](wiki/Contributing) first. We also have some more information on [our Git setup](wiki/Documentation-Contributions) especially focused on sending documentation patches.
 
-**Documentation** &mdash; Reference all of our product [documentation](http://www.eucalyptus.com/docs). 
+**Documentation** &mdash; Reference all of our product [documentation](http://docs.hpcloud.com/eucalyptus/). 
 
 **Feedback** &mdash; You can always ask questions on any of our [[Eucalyptus mailing lists]]. 
 
