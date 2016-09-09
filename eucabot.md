@@ -126,7 +126,6 @@ We occasionally discover new commands that are not documented.  Some of them exi
 * **more** - If a message is too long to tell you in one line, eucabot will end it with something like "(1 more message)".  The "more" command asks eucabot to say the next line of the message.
 * **seen _nick_** - Show the last message that eucabot remembers a person saying in the channel.
 * **any _nick_** - Show the last thing that eucabot remembers a person doing in the channel.
-* **twitter** - Show the latest recent post by [@eucalyptus](http://twitter.com/eucalyptus) on Twitter.
 * **weather _location_** - Show weather conditions for somewhere in the world.  If you are logged into a eucabot account then eucabot will remember the last location whose weather you checked so you do not have to type it next time.
 * **botsnack** - `:D`
 
