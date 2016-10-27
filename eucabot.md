@@ -126,7 +126,8 @@ We occasionally discover new commands that are not documented.  Some of them exi
 * **more** - If a message is too long to tell you in one line, eucabot will end it with something like "(1 more message)".  The "more" command asks eucabot to say the next line of the message.
 * **seen _nick_** - Show the last message that eucabot remembers a person saying in the channel.
 * **any _nick_** - Show the last thing that eucabot remembers a person doing in the channel.
-* **weather _location_** - Show weather conditions for somewhere in the world.  If you are logged into a eucabot account then eucabot will remember the last location whose weather you checked so you do not have to type it next time.
+* **weather _location_** - Show weather conditions for somewhere in the world.  If you are logged into a eucabot account then eucabot will remember the last location whose weather you checked so you do not have to type it next time.  Weather data are provided by [Weather Underground](https://www.wunderground.com/).  
+![Weather Underground logo](https://www.wunderground.com/logos/images/wundergroundLogo_4c_horz.jpg)
 * **botsnack** - `:D`
 
 # Administration
