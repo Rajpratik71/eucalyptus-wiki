@@ -20,8 +20,6 @@ The intent of this page is to highlight the behavioral changes present in Eucaly
 * NAT gateway ENI metadata changes [EUCA-12850](https://eucalyptus.atlassian.net/browse/EUCA-12850)
 * No error returned when deleting a Nat Gateway which does not exist [EUCA-12845](https://eucalyptus.atlassian.net/browse/EUCA-12845)
 
-## S3
-
 ## ELB
 * Access log metrics are updated to match aws [EUCA-12865](https://eucalyptus.atlassian.net/browse/EUCA-12865)
 * Instance type 'm1.medium' is now the new default for ELBs [EUCA-12834](https://eucalyptus.atlassian.net/browse/EUCA-12834)
@@ -30,6 +28,9 @@ The intent of this page is to highlight the behavioral changes present in Eucaly
 
 ## Auto Scaling
 * ASG fails to distribute instances across AZ in some cases [EUCA-12846](https://eucalyptus.atlassian.net/browse/EUCA-12846)
+
+## CloudFormation
+* Template resource properties are now validated by default [EUCA-10359](https://eucalyptus.atlassian.net/browse/EUCA-10359)
 
 ## CloudWatch
 * cloudwatch.disable_cloudwatch_service property is now cloudwatch.enable_cloudwatch_service [EUCA-9482](https://eucalyptus.atlassian.net/browse/EUCA-9482) 	
