@@ -8,6 +8,9 @@ The intent of this page is to highlight the behavioral changes present in Eucaly
 ## Eucalyptus
 * Properties (euctl) and empyrean/bootstrap (euserv-*) requests are now handled by the cloud controller [EUCA-12926](https://eucalyptus.atlassian.net/browse/EUCA-12926)
 
+## Management Console
+* Non-configurable and developer-only settings have been removed from the default console.ini file. [GUI-2844](https://eucalyptus.atlassian.net/browse/GUI-2844)
+
 # Service changes
 ## General
 * Mule is no longer used for messaging.
