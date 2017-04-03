@@ -10,7 +10,7 @@ Download and install the AWS Java SDK according to the instructions on the [AWS 
 
 When using the AWS Java SDK with Eucalyptus, the endpoints must be correctly defined in your code. A simple example of using the EC2 API of your Eucalyptus cloud:
 
-```
+```java
   AmazonEC2 ec2 = new AmazonEC2Client( new BasicAWSCredentials(
     // provide access key and secret key
     "AKIEXAMPLEEXAMPLE",
@@ -23,7 +23,7 @@ When using the AWS Java SDK with Eucalyptus, the endpoints must be correctly def
 
 An example for S3:
 
-```
+```java
   AmazonS3 s3 = new AmazonS3Client( new BasicAWSCredentials(
     // provide access key and secret key
     "AKIEXAMPLEEXAMPLE",
