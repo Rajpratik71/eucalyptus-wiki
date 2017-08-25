@@ -1,7 +1,7 @@
 * [[Boot-from-EBS-changes-in-Eucalyptus-3_3_0]]
 * [[EBS-backed-EMI]]
 * [[NetApp-Integration-Changes-In-Eucalyptus-3_3_0]]
-* [[Scalable-Walrus-Tech-Preview-in-Eucalyptus-3]]
+* [[Scalable-Walrus-Tech-Preview-in-Eucalyptus-3.4]]
 * [[Storage-Controller]]
 * [[Storage]]
 * [[Volume-Attach-Detach-in-Eucalyptus-3_3_0]]

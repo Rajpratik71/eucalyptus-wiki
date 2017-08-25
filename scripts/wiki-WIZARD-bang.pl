@@ -41,7 +41,7 @@ foreach my $wikidoc (@wikidocs) {
         my $category_found = '';  # we haven't seen a category on this page yet.
         print "$wikidoc\n";
         my $wikilink = $wikidoc;
-        $wikilink =~ s/\..*//;
+        $wikilink =~ s/\.[a-z]*$//;
         open(FH,"$git_repo_path/$wikidoc") or die "$!";
         while (<FH>){ 
             if (/\[\[category\.(\s*)(.*)\]\]/) {
