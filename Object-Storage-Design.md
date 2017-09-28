@@ -93,9 +93,14 @@ The bucket reaper runs every 60 seconds and performs basically the same function
 
 
 ## Basic Object GET/PUT Design
-[[Object Versioning Design|Object-Versioning-Design]][[Bucket Lifecycle Design|Bucket-Lifecycle-Design]][[RiakCS Provider Design|RiakCS-Provider-Design]]
+* [[Object Versioning Design|Object-Versioning-Design]]
+* [[Bucket Lifecycle Design|Bucket-Lifecycle-Design]]
+* [[RiakCS Provider Design|RiakCS-Provider-Design]]
+
 ## WalrusProvider Design
-[[OSG User and Internal Metadata|Object-Storage-Metadata]][](https://github.com/zhill/architecture/blob/dev/zhill/objectstorage-arch/features/object-storage/docs/scalable_walrus.md#osg-dependencies)[[OSG Security Considerations|Object-Storage-Security]][](https://github.com/zhill/architecture/blob/dev/zhill/objectstorage-arch/features/object-storage/docs/scalable_walrus.md#osg-internal-metadata)[[Configuration of Object Storage|Object-Storage-Configuration]]
+* [[OSG User and Internal Metadata|Object-Storage-Metadata]]
+* [[OSG Security Considerations|Object-Storage-Security]]
+* [[Configuration of Object Storage|Object-Storage-Configuration]]
 
 *****
 

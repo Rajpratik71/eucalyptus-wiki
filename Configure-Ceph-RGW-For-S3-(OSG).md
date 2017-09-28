@@ -31,19 +31,6 @@ Follow all the steps (from the official documentation) to register UFS. After re
 # euctl objectstorage.s3provider.s3secretkey=<radosgw-user-secretkey>
 ```
 
-
-
-## Related articles
-false5STORfalsemodifiedtruepagelabel = "ceph-rgw" and type = "page" and space = "STOR"ceph-rgw
-
-true
-
-|  | 
-|  --- | 
-|  | 
-
-
-
 *****
 
 [[category.storage]] 

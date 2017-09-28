@@ -46,10 +46,6 @@ LDAP/AD Integration Configuration (LIC)
 
 LDAP/AD Synchronization
 
-Appendix
-
-Accepted AWS APIs as policy action
-
 
 
  Eucalyptus 3 has a big change in the design of user identity and access management. The essential goal of the new design is to provide more layers in the hierarchical organization of user identities, and more refined control over resource access. The core of the new design is highly compatible with Identity and Access Management (IAM) service in Amazon AWS. There are a few Eucalyptus specific extensions to meet the needs of enterprise customers.
@@ -637,19 +633,6 @@ The synchronization always starts when the following happens:
 * If an entity from LDAP/AD is not in Eucalyptus, a new one is created in the database.
 * If an entity from LDAP/AD is already in Eucalyptus, the Eucalyptus version is being updated. For example, if a user's info attributes are changed, those will be downloaded and updated.
 * If an entity in Eucalyptus is missing from LDAP/AD (maybe deleted), depending on the clean-deletion option in LIC, it will be removed from database if the option is true. Otherwise, it will be left. Note that, if clean-deletion is true, the removed entities in Eucalyptus will be lost forever, along with all its permissions and credentials. The resources that is associated with the entity will be left untouched. It is system administrator's job to recycle these resources.
-
-
-## Appendix
-
-### Accepted AWS APIs as policy action
- _Note: These are the APIs accepted by Eucalyptus 3 policy parser, and not necessarily implemented._ 
-
-
-
-|  **IAM**   **_(based on API version 2010-05-08)_**  |  **EC2**   \* _(based on API version 2010-08-31)_ \*Sorry to be a pain, do we know if this is accurate yet (i.e. which of these have been implemented) ? Thanks :)I'm forwarding you the api analysis from the engineering team. |  **S3**   **_(based on IAM user guide version 2010-05-08)_**  | 
-|  _addusertogroup_   _createaccesskey_   _createaccountalias_   _creategroup_   _createloginprofile_   _createuser_   _deactivatemfadevice_   _deleteaccesskey_   _deleteaccountalias_   _deletegroup_   _deletegrouppolicy_   _deleteloginprofile_   _deleteservercertificate_   _deletesigningcertificate_   _deleteuser_   _deleteuserpolicy_   _enablemfadevice_   _getaccountsummary_   _getgroup_   _getgrouppolicy_   _getloginprofile_   _getservercertificate_   _getuser_   _getuserpolicy_   _listaccesskeys_   _listaccountaliases_   _listgrouppolicies_   _listgroups_   _listgroupsforuser_   _listmfadevices_   _listservercertificates_   _listsigningcertificates_   _listuserpolicies_   _listusers_   _putgrouppolicy_   _putuserpolicy_   _removeuserfromgroup_   _resyncmfadevice_   _updateaccesskey_   _updategroup_   _updateloginprofile_   _updateservercertificate_   _updatesigningcertificate_   _updateuser_   _uploadservercertificate_   _uploadsigningcertificate_  |  _allocateaddress_   _associateaddress_   _attachvolume_   _authorizesecuritygroupingress_   _bundleinstance_   _cancelbundletask_   _cancelspotinstancerequests_   _confirmproductinstance_   _createimage_   _createkeypair_   _createplacementgroup_   _createsecuritygroup_   _createsnapshot_   _createspotdatafeedsubscription_   _createtags_   _createvolume_   _deletekeypair_   _deleteplacementgroup_   _deletesecuritygroup_   _deletesnapshot_   _deletespotdatafeedsubscription_   _deletetags_   _deletevolume_   _deregisterimage_   _describeaddresses_   _describeavailabilityzones_   _describebundletasks_   _describeimageattribute_   _describeimages_   _describeinstanceattribute_   _describeinstances_   _describekeypairs_   _describeplacementgroups_   _describeregions_   _describereservedinstances_   _describereservedinstancesofferings_   _describesecuritygroups_   _describesnapshotattribute_   _describesnapshots_   _describespotdatafeedsubscription_   _describespotinstancerequests_   _describespotpricehistory_   _describetags_   _describevolumes_   _detachvolume_   _disassociateaddress_   _getconsoleoutput_   _getpassworddata_   _importkeypair_   _modifyimageattribute_   _modifyinstanceattribute_   _modifysnapshotattribute_   _monitorinstances_   _purchasereservedinstancesoffering_   _rebootinstances_   _registerimage_   _releaseaddress_   _requestspotinstances_   _resetimageattribute_   _resetinstanceattribute_   _resetsnapshotattribute_   _revokesecuritygroupingress_   _runinstances_   _startinstances_   _stopinstances_   _terminateinstances_   _unmonitorinstances_  |  _getobject_   _getobjectversion_   _putobject_   _getobjectacl_   _getobjectversionacl_   _putobjectacl_   _putobjectaclversion_   _deleteobject_   _deleteobjectversion_   _createbucket_   _deletebucket_   _listbucket_   _listbucketversions_   _listallmybuckets_   _getbucketacl_   _putbucketacl_   _getbucketversioning_   _putbucketversioning_   _getbucketrequestpayment_   _putbucketrequestpayment_   _getbucketlocation_  | 
-
-
 
 *****
 

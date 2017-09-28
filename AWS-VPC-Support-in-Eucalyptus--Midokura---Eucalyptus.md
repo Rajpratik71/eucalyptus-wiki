@@ -7,15 +7,11 @@
     * [Midokura Cookbook:](#midokura-cookbook:)
     * [Midokura frontend machine:](#midokura-frontend-machine:)
     * [Midolman only:](#midolman-only:)
-* [Deployment model for QA network](#deployment-model-for-qa-network)
 * [Automation](#automation)
 * [Debugging](#debugging)
     * [Hopping into a VPC network from the Midonet GW](#hopping-into-a-vpc-network-from-the-midonet-gw)
 * [QA Notes](#qa-notes)
-* [Questions for Developers](#questions-for-developers)
 * [Unimplemented features](#unimplemented-features)
-* [Open issues](#open-issues)
-* [Meetings:](#meetings:)
 
 
 
@@ -109,19 +105,12 @@ echo '{"run_list": ["recipe[midokura::midolman]"]}' > midokura.json
 chef-solo -j midokura.json -r https://github.com/eucalyptus/midokura-cookbook/releases/download/v0.2.0-alpha-3/midokura-cookbooks.tgz
 ```
 
-# Deployment model for QA network
-Midokura QA setup
-
-
 # Automation
 
-1. Current automated template[http://jenkins.qa1.eucalyptus-systems.com/job/mainline-vpc-das/](http://jenkins.qa1.eucalyptus-systems.com/job/mainline-vpc-das/)
-1. Script to map IPs to AS numbers:[http://git.qa1.eucalyptus-systems.com/qa-repos/eucalele/blob/master/bgp-helpers/create_bgpd_conf.py](http://git.qa1.eucalyptus-systems.com/qa-repos/eucalele/blob/master/bgp-helpers/create_bgpd_conf.py)
+1. Current automated template [http://jenkins.qa1.eucalyptus-systems.com/job/mainline-vpc-das/](http://jenkins.qa1.eucalyptus-systems.com/job/mainline-vpc-das/)
+1. Script to map IPs to AS numbers: [http://git.qa1.eucalyptus-systems.com/qa-repos/eucalele/blob/master/bgp-helpers/create_bgpd_conf.py](http://git.qa1.eucalyptus-systems.com/qa-repos/eucalele/blob/master/bgp-helpers/create_bgpd_conf.py)
 1. Midokura Config
-    1. 
-    1. 
-    1. 
-```
+  ```
 "midokura": { 
        "repo-username": "eucalyptus",
        "repo-password": "<your repo pw>",
@@ -140,14 +129,7 @@ Midokura QA setup
                                 "route": "10.116.130.0/24" }]
     }
 ```
-
-
-    
-
-    
-    1. Eucalyptus Side config
-    1. 
-    1. 
+1. Eucalyptus Side config
 ```
 "midonet": {
             "gw-host": "b-05.qa1.eucalyptus-systems.com",
@@ -159,14 +141,6 @@ Midokura QA setup
         }
       },
 ```
-
-
-    
-
-    
-
-    
-
 
 # Debugging
 
@@ -184,23 +158,15 @@ Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
 [root@b-05 ~]#
 ```
 
+# Notes
 
-
-# QA Notes
-
-1. After Elastic IP association, saw around 45 second delay before being able to ping instance
 1. CLC/Eucanetd machine needs to be able reverse lookup the IP of the NCs
 1. VPC subnets map 1:1 with bridges in Midonet
 1. VPCs map 1:1 with routers in Midonet
 1. DHCP Debugging
     1. The bridge in midokura takes care of DHCP
-
-    
-
-    
-
-
-    1. midonet> list bridge
+```
+    midonet> list bridge
 
     bridge bridge0 name vb_vpc-d50c66e9_subnet-3294f8d3 state up
 
@@ -219,70 +185,21 @@ Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
     gw 172.31.0.1 server 172.31.0.1 dns-servers 8.8.8.8 subnet 172.31.0.0/20 opt121-routes \[]
 
     midonet>
-
-
-
-    
+```   
 1. In order to flush and rebuild all Euca state from Midokura run
-
-
     1. service eucanetd stop; eucanetd -F; service eucanetd
-
-
-
-    
 1. BGP debugging:
-    1. vtysh is a good tool to debug bgp on the euca side:[http://lartc.org/howto/lartc.dynamic-routing.bgp.html](http://lartc.org/howto/lartc.dynamic-routing.bgp.html)
+    1. vtysh is a good tool to debug bgp on the euca side: [http://lartc.org/howto/lartc.dynamic-routing.bgp.html](http://lartc.org/howto/lartc.dynamic-routing.bgp.html)
     1. check that the config is correct, local and PEER IP and AS, state, sent/recv'd counts, etc..
-    1. ping, tracert, etc..
-
-    
+    1. ping, tracert, etc..    
 1. Debugging with midonet-cli
-
-
     1. To hop into the cli shell use the following where <midonet-api host> is probably your CLC:
-
+```
 midonet-cli --midonet-url=[http://<midonet-api host>:8080/midonet-api](http://10.111.5.100:8080/midonet-api) -A
-
-
+```
     1. use the command 'describe' to get a list of command prefixes
-
-
-    1. then use list to see them: tunnel-zone list, routers list, host list, etc.. or use show and the name, for example: 'show tunnel-zone tzone0'
-
-    
-1. BGP routes are only pushed after an instance has been run
-
-
-# Questions for Developers
-
-* 
-    * Can you explain the following parameters and how to derive their proper values:
-    * MIDOGWHOST="clcfrontend"
-
-
-    * MIDOGWIP="10.10.1.91"
-
-
-    * MIDOGWIFACE="eth1.10"
-
-
-    * MIDOPUBNW="10.10.0.0/16"
-
-
-    * MIDOPUBGWIP="10.10.0.1"
-
-
-    * MIDOEUCANETDHOST="clcfrontend"
-
-
-
-    
-
-    
-
-
-
+    1. then use list to see them: tunnel-zone list, routers list, host list, etc.. or use show and the name, for example: 'show tunnel-zone tzone0'    
+1. BGP routes are only pushed after an instance has been run   
 
 # Unimplemented features
 
@@ -295,100 +212,6 @@ midonet-cli --midonet-url=[http://<midonet-api host>:8080/midonet-api](http://10
 1. Customer Gateways
 1. [NAT instances ](https://eucalyptus.atlassian.net/browse/EUCA-10420)
 1. [Custom route tables](https://eucalyptus.atlassian.net/browse/EUCA-10421)
-
-
-# Open issues
-[ JIRA (eucalyptus.atlassian.net)](https://eucalyptus.atlassian.net/browse/)
-
-
-# Meetings:
-
-```
-Meetings:
-Kick off Midokura
-Purpose: Overview and Euca/Midokura VPC related and specifically deploying Midokura in QA for dev and testing.
-Date: Aug 22, 2014
-
-
-Tony Casey Dan Vic Chris Shaon Garrett Tim Harold Steve J.
-Agenda
-Primer Walkthrough see above. (Dan) Midonet
-Walkthrough
-Infrastructure as a Service for networking. API get new router or attach things etc using tunnels from generic components and traffic on virtual network goes through tunnels. Full featured network defined by software.
-Everything you do to midonet goes directly to database and represented in some place within the database (global view)
-What we will use for VPC
-Routers = Routers
-Bridges = are switches (layer 2 ethernet)
-Chains = ip or eb tables if in places packets passing through pre and post chain. firewall, packet manipulation etc. not as expressive as iptables.
-Ports = no ports by default you need to create assign ports to devices then you link ports. They connect devices to other things.
-
-
-Eucalyptus interaction
-Red boxes Midonet items in can be on one server. 
-Blue boxes Euca eucanetd is taking global view in Euca and communicating to midonet. Euca isn't doing anything with networking anymore. Eucanetd on CLC (Dbhost) architecturally doesn't matter. 
-Dan separated the midonet from physical public network. The midonet just needs tcpip connection between them. Midolman just needs the ips.
-Multicluster doesn't change anything.
-Midonet takes entire device. Individual interface is the key. Vnet public right vnet private left.
-Horizontal scale to avoid bottleneck. Talking to midokura about this.
-Zeller is defining partner and joint deployment. Hand hold deployments so far.
-Is there going to be a new mode VPC? something you set in Euca conf. You have to tell backend components what todo and not todo
-Can we have "classic" mode and VPC like amazon? Not sure now. Possible but not sure all about semantics and testing
-Registration or management components type network access? It is a choice right now. Nothing would prevent. Use case dependent 
-Zookeeper is backing store Cassandra is caching system. Work hand in hand
-Implementation
-Data paths:
-In midonet
-Left virtual network when packets come in they come in through router. If connected to switch it goes through (logical path)
-Right side you can trace the data through midolman creates a tunnel and sends message all up to Cassandra/Zookepper match flow.
-Sniffing through gre tunnel. You can look at TCP dump but you see GRE tunnel stuff. Wireshark plug-in to look into.
-Per flow? per pair of hosts that have a flow.
-Also, a way to separate the management and data networks. if Midolman and zookeeper 
-Known degenerate case- Very many short lived connections time out based. Flows stay around for approx 35 seconds. timeouts are state based not just time.
-Can you use any protocols? most likely
-Broadcast and multicasts work.
-note: Routers, bridges and ports (handy like edge) all have pre and post processing hook.
-Pay attention to documented interior and exterior ports. If connect is crossing boundary (non midokura/midokura) it is an exterior port.
-DHCP server in midonet can be associated with a switch.
-Keep it simple but expressive enough
-What happens to DNS of a subnet? port forwarding can be done at router level if it needs to leave 
-Each vpc has virtual router. The vpc network is assigned to router
-Bridge has routers associated so router has all elastic ips. Just a routing rule for them. Core router knows about public ip addresses and its internal network but that's it.
-What do we need to do to get into QA
-Cookbook for each component and up on one box.
-tarbal and json file Vic will provide need to use the password parameter.
-grep for java stuff 4 processes should be running zk cass and httpd and tomcat (proper for api) cli you can pass info and use cli. Tenant list
-Victor Iglesias will post info in wiki manual steps so folks can create a simple set up. 25 Aug 2014 
-
-
-Way to install, what it does and now how do we transition this to QA so steve can do his work.
-State that midonet needs to be in before Euca can use it Dan Nurmi once in server pool sight specific register hosts. "tunnel zone" set up gre and define lists of hosts running midolman registered. Gateway must be set up and you need the port.
-Point Euca at API
-Name of gw host interface you want to use to connect virtual to physical network. The rest is through the network json.
-
-
-Complexity- their virtual router is like a real router. It expects something else to throw traffic at it. have ability to use bgp so traffic can be directed to it. Takes some set up time. dynamically is not feasible. Without using bgp need routing rule in routing table. For all public ips/elastic that Euca is hosting it must be routed. 
-Unknown number of clients wanting to interact. Jenkin slaves and other test things etc.. per host routes seems like you need to narrow down to CLC.
-What are Steves requirements to get set up for testing.
-QA sequences to run check code to verify it works.
-OSBF? Dan doesn't think so
-We are not implementing VPN gateways for current feature.
-If we had one host with a bunch of interfaces and static set up all midonet installations to run through one host. Multiple midolmans? probably not. Virtualize etc... 1-1 vm and set up. Up to 20. Each Euca deployment would need a specific ip. Bound in advanced with 
-Hard coded routes would need to show up on tester machine in old and on Jenkins slaves on new.
-Can you have a midonet with midonets (thanks steve)
-juniper > force10
-Follow up with final plan
-Victor Iglesias set up meeting for early next week to review and finalize plan 25 Aug 2014 
-Something for steve and a plan for finalizing by 29 Aug 2014 
-Dan additional thought: software bgpd on a linux box connect statically peer with it. Individual midonets will peer with it or statically route QA addresses.
-
-
-
-
-
-
-
-```
-
 
 *****
 

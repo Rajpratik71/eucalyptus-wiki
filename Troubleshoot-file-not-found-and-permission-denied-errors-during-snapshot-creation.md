@@ -10,7 +10,7 @@ Follow the [[instructions|Manual-installation-of-udev-rules-for-SC-in-source-ins
 
 
 ## Debug/troubleshooting steps
-#fffThe following debug steps are to be executed manually  **without the use of Eucalyptus** . This helps isolate the issue and pinpoint it to a specific component. These steps can be also be used to troubleshoot the issue and fix the issues as you go. 
+The following debug steps are to be executed manually  **without the use of Eucalyptus** . This helps isolate the issue and pinpoint it to a specific component. These steps can be also be used to troubleshoot the issue and fix the issues as you go. 
 
 
 1. Log out of all iSCSI sessions on the SC host logging the error
@@ -94,15 +94,6 @@ udevadm trigger --verbose --dry-run --type=devices --subsystem-match=block
 [[Manual installation of udev rules for SC in source install|Manual-installation-of-udev-rules-for-SC-in-source-install]]
 
 [[Connect to iSCSI targets using static target discovery|iscsiadm-basics]]
-
-
-
-true
-
-|  | 
-|  --- | 
-|  | 
-
 
 
 *****

@@ -11,7 +11,6 @@ The landing page for all things CORS (Cross-Origin Resource Sharing).
   * [Data flow summary](#data-flow-summary)
     * [PUT CORS Configuration](#put-cors-configuration)
     * [GET CORS Configuration](#get-cors-configuration)
-* [Development To-Do's](#development-to-do's)
 * [Testing](#testing)
 
 
@@ -223,64 +222,6 @@ Furthermore, AWS's way makes more sense! AWS just gets the Origin as a string. I
 3. Parse into Java object structure
 
 4. Convert objects into XML body of response (JiBX)
-
-
-# Development To-Do's
-In priority order, highest first.
-
-64incompleteAdd to body of Preflight responses, only when error status codes are returned:<Method>PUT</Method><ResourceType>OBJECT</ResourceType>
-
-Insert whatever the Access-Control-Request-Method in the request is, "PUT" in this example. Insert either BUCKET or OBJECT (this example) depending on the resource accessed. This is to be compatible with AWS, not shown in any CORS spec.
-
-65incompleteAfter anonymous (represented by the "nobody" fake account) creates an object in a bucket with a bucket ACL that allows AllUsers WRITE permission, checking the object's ACL with e.g. /services/objectstorage/bucket1/byanon1.txt?aclshows theDisplayName "nobody" in the Owner stanza, butDisplayName is blank in theGrantee section, for the same ID. No effect on behavior other than response consumers may not be able to show the proper grantee of an ACL to users in human-readable outputs. The ID is correct, and programmatic uses of it will be fine. (Not CORS-specific, but we added the ability in [EUCA-12174](https://eucalyptus.atlassian.net/browse/EUCA-12174) for anonymous to create objects for CORS usage.)66incompleteInvestigate: According to the "[CORS In Action](https://www.safaribooksonline.com/library/view/cors-in-action/9781617291821/)" book, Chapter 6 "Best Practices": Redirects cause the browser to re-send the request to the redirected place with the Origin set to "null", (and Referer set to the original URL e.g. [http://localhost:1111/client.html](http://localhost:1111/client.html)) which should cause the server to respond with good CORS headers! We don't. AWS doesn't either, unless I just couldn't give it a Referer that they accept. I don't know their criteria, tried some random site URLs and even [https://s3.amazonaws.com](https://s3.amazonaws.com) but never got CORS headers in the responses.79incompleteCan a Euca bucket host a Web HTML file (w/ JavaScript) to serve up to a Web browser? Can a browser point to the OSG's endpoint / bucket / object directly to get the HTML file? (Not cross-origin) If so, it could then also make cross-origin from that HTML page to an object in another bucket (owned by another user/account)? Set up default Web site in bucket w/ wide-open perms80incompleteUse [https://github.com/eucalyptus/eucalyptopotamus](https://github.com/eucalyptus/eucalyptopotamus) as a sample Web server?81incompleteOn exceptions/errors, CORS headers are still returned in AWS responses. Eucalyptus doesn't include the CORS headers.Non-trivial, would change a lot of code. Is it really needed?
-
-Test from browsers: does their behavior differ between AWS and Eucalyptus if CORS headers exist or not, in those error cases? Doubtful. But if so, we might need to add those CORS headers.
-
-82incompleteDelay seen between when setting a CORS config returns to the caller, and when it's available for a Get. Currently a 10 sec sleep in n4j S3CorsTests.java, investigate that more. Is it only when testing against AWS or Euca or both?
-
-83incompleteUse more @Nonnull annotations where appropriate, e.g. in DbBucketCorsManagerImpl.java 
-
-
-
-68incompleteInvestigate: Does AWS support the HTTP PATCH method for CORS? Not documented. If so, should we? (discussed in the "[CORS In Action](https://www.safaribooksonline.com/library/view/cors-in-action/9781617291821/)" book).
-
-
-
-69incompleteAdd javadocs
-
-
-
-70incompleteRefactoring CORS DB-related code:
-
-
-
-71incompleteBucketCorsManager.java –deleteCorsRules(String bucketUuid, TransactionResource tran) refers toTransactionResource which is a database construct. It should probably be local to the implementation DbBucketCorsManagerImpl and could even be a private method since it’s not invoked by users of the BucketCorsManager API. BucketLifecycleManager.java has a similar issue.
-
-
-
-72incompleteDbBucketCorsManagerImpl.java – Try using google collections and transform (Lists.transform() or Iterables.trasform() methods) to create a list of things from another list of things
-
-
-
-73incompleteDbBucketCorsManagerImpl.java line 111, 168 – avoid deprecated methods unless there is no way around them, such as Entities.query(). Transactions.java offers a rich API for database operations. For instance, to look up and return a unique value, use Transactions.one(example).You don’t have to open or close the transaction since it’s all handled in Transactions.java. For deleting based on a check, use Transactions.deleteAll(@Nonnull final EntityRestriction<T> restriction,@Nonnull Predicate<? super T> precondition). Define the check using Google predicate. Bucket Lifecycle code has the same issues.
-
-74incompleteAdd unit tests, to e.g. ObjectStorageGatewayTest.java. But current set of nephoria, n4j, and test scripts are fairly comprehensive functional tests.
-
-
-
-75incompleteAdd CorsConfig boolean to Bucket table in DB, true= CORS config exists. That way, if no config exists, and an Origin header does exist, we avoid a DB lookup on the CORS table. But a request to a bucket that expects a CORS config when a config doesn't exist should be a rare case.
-
-
-
-76incompleteRefactoring: S3BucketOperations.groovy–S3 facing entities such as CorsRule and CorsCofniguration could be defined in S3BaseModel.groovy. Not sure why S3BucketOperations.groovy even exists. File has a comment saying not used by anything yet except for lifecycle stuff, should move the lifecycleconstructs to S3BaseModel.groovy as well.
-
-This seems to be a placeholder for the unsupported (yet) operations. But there are other things that are “real” too, like DeleteMultipleObjects. Could move all the “real” stuff to S3BaseModel.groovy and rename this file to e.g. S3UnsupportedOperations.groovy. Could comment out everything too, no need to compile it.
-
-77incompleteRefactoring: Instead of changing every outbound handler, could create a new handler for CORS processing and add it to the outbound stages.
-
-Turns out to be not much CORS code in the handlers, works correctly now.
-
-78incompleteRefactoring: Format code using google style guide and remove unused imports. Both these actions can be combined with save event in Eclipse -[http://goo.gl/YD9X7E](http://goo.gl/YD9X7E). Google style guide -[https://goo.gl/i2A5EL](https://goo.gl/i2A5EL), copy the xml content to a file and import it in eclipse. Set the line limit to 150. Use it for both Java and Groovy files.
 
 
 # Testing

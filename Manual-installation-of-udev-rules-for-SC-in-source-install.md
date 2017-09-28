@@ -41,19 +41,6 @@ index f5905b7..2edd3db 100755
     exit 1
 ```
 
-## Related articles
-Related articles appear here based on the labels you select. Click to edit the macro and add or change labels.
-
-falsetruemodified5udev sc blockstoragefalsepage
-
-true
-
-|  | 
-|  --- | 
-|  | 
-
-
-
 *****
 
 [[category.storage]]

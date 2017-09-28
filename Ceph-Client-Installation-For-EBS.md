@@ -41,20 +41,6 @@ rbd --id username --keyring /etc/ceph/ceph.client.username.keyring <command> <op
 ```
 
 
-
-## Related articles
-[[Shared Ceph Cluster|Shared-Ceph-Cluster]]
-
-
-
-true
-
-|  | 
-|  --- | 
-|  | 
-
-
-
 *****
 
 [[category.storage]] 

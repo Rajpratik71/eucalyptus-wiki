@@ -10,35 +10,15 @@ There are two basic components of a ceph cluster: Object Storage Device daemons 
 
  **OSD**  - Object Storage Device daemons read and write data to a local disk (not SAN, that is an anti-pattern) and send heartbeats to each other to detect failures. Each OSD is typically responsible for a single local disk, and RAID is discouraged by Ceph due to its specific IO patterns that cause lots of RAID overhead due to small writes. Each OSD stores objects which are composed of a key, data, and metadata k/v pairs. Typically this is implemented as files in XFS using xattrs for the metadata pairs. When data is written it is first written to a write-ahead log and then later during log scrubbing moved to the main data store. It is recommended to make the journal and main data store separate disks to avoid a 2x write penalty, and often this is done with a RAID 1 pair of SSDs on each OSD host fronting many OSD SATA/SAS disks to give high throughput and low latency on the journal path.
 
-![](images/storage/)
-
+![](images/storage/euca_ceph_components.png)
 
 ### The Cluster Map
 The cluster map is comprised of: OSD map, PG map, MON Map, Crush Map, and MDS Map. In our deployments of Ceph for use with Eucalyptus we don't use the Ceph FS feature so we don't use MDS nodes and thus the MDS map is empty.
 
-Here are examples from the QA Ceph cluster we run:
-
-MON Map: State and config of Monitors in the System.
-
-250
-
-PG Map: Map of all the PGs in a pool and their status. PGs are the units that hold objects adn are replicated/handed-off atomically.
-
-250
-
-OSD Map: What OSDs are in the system and their status and location.
-
-250
-
-CRUSH Map: The rules used to determine object placement within a pool. placement_pg(pool_x, obj_y) = evaluate_rules(get_rules(get_pool(pool_x)), obj_y)
-
-250
-
-
 ### Data Striping
 Because Ceph clients write data directly to OSDs, most special clients, like librbd and RadosGW (S3/Swift) leverage data striping to ensure that each object stays relatively small but overall large writes can be handled efficiently. Without a striping mechanism, each OSD would have to store large atomic objects, say for example 1GB, and that would lead to lots of fragmentation and unbalance in the PGs. Ceph's striping is described in the Data Striping section of:[http://docs.ceph.com/docs/master/architecture/](http://docs.ceph.com/docs/master/architecture/). So, we'll skip how it works and focus on implications instead. Since ceph is using striping for large objects, including RBD images, a given RBD image is distributed across many objects which may map to many PGs and thus many physical hosts. In the extreme case each object is on a different physical host and each object may only be a few MB in size--you can config this on a per image basis, see:[http://docs.ceph.com/docs/master/man/8/rbd/](http://docs.ceph.com/docs/master/man/8/rbd/). Let's use 10MB objects as an example for a 100GB volume. In that case IO for a single EBS volume in Euca is hitting 10000 different hosts if each object mapped to a distinct host and assuming the cluster is that big. In reality, objects will likely collide on PG mapping (typical numbers of PGs per pool are in the 1-4K range), so far fewer hosts are used, but you see the point: a single client may be hitting many hosts with TCP traffic. This means kernel configs must be able to handle these connection counts.
 
-![](images/storage/)
+![](images/storage/ceph_df.png)
 
 
 ### Ceph RBD Performance Trends and Observations

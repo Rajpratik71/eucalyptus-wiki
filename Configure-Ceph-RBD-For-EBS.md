@@ -123,15 +123,6 @@ NC picks up these changes dynamically (restart of the eucalyptus-nc service is n
 [[SC Package Install Guide|SC-Package-Install-Guide-For-Ceph-EBS-Backend]]
 
 
-
-true
-
-|  | 
-|  --- | 
-|  | 
-
-
-
 *****
 
 [[category.storage]] 

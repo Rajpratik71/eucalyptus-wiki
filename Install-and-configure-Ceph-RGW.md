@@ -375,21 +375,6 @@ A radosgw user has an access key and secret key, much like an IAM account. Since
 
 
 
-## Related articles
-Related articles appear here based on the labels you select. Click to edit the macro and add or change labels.
-
-false5STORfalsemodifiedtruepagelabel = "ceph-rgw" and type = "page" and space = "STOR"kb-how-to-article
-
-true
-
-|  | 
-|  --- | 
-|  | 
-
-
-
-
-
 *****
 
 [[category.storage]] 

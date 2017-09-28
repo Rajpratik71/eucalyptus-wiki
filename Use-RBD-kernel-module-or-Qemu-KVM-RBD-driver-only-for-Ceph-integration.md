@@ -1,20 +1,11 @@
 
+## Overview
+Qemu/KVM driver for NC and direct librbd access on SC. 
 
-| Complete | 
-|  | 
-| Qemu/KVM driver for NC and direct librbd access on SC.Requires: RHEV packages from RH or Eucalyptus (we will build them and provide them) on the NCs and librbd package on SCs.For Tech-Preview: use this solutionFor Ceph-Integration GA: use this solutionFor RHEL7 support: use this solution | 
-|  | 
-|  | 
-|  --- | 
-|  --- | 
-|  --- | 
-|  --- | 
-|  --- | 
-| Complete | 
-|  | 
-| Qemu/KVM driver for NC and direct librbd access on SC.Requires: RHEV packages from RH or Eucalyptus (we will build them and provide them) on the NCs and librbd package on SCs.For Tech-Preview: use this solutionFor Ceph-Integration GA: use this solutionFor RHEL7 support: use this solution | 
-|  | 
-|  | 
+* Requires: RHEV packages from RH or Eucalyptus (we will build them and provide them) on the NCs and librbd package on SCs.
+* For Tech-Preview: use this solution
+* For Ceph-Integration GA: use this solution
+* For RHEL7 support: use this solution 
 
 
 ## Details on Decision

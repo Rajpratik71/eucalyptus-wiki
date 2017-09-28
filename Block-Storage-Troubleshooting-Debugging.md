@@ -8,14 +8,11 @@ The storage controllers use S3 Multipart upload to upload compressed snapshots t
 
 If there are issues using MPU or snapshots are typically very small and may be more efficient to upload directly, you can disable the MPU upload and use a regular S3 object PUT instead. To use regular uploads instead of multipart-uploads, configure the cluster as follows:
 
- _euca-modify-property -p <partition>.storage.snapshotpartsizeinmb=500000_ 
+```
+ euca-modify-property -p <partition>.storage.snapshotpartsizeinmb=500000
+```
 
 This will set the SC to only use MPU when the snapshot parts are larger than 5TB, which is the maximum S3 object size. Thus, the SC will never use multipart upload for snapshot uploads.
-
-
-## Related articles
-true
-
 
 
 *****

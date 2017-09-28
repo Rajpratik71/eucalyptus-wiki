@@ -14,7 +14,7 @@ See also the parent page [[CORS|CORS]]
     * [Preflight OPTIONS requests demo/test](#preflight-options-requests-demo/test)
     * [Cross-Origin accesses demo/test](#cross-origin-accesses-demo/test)
     * [Web browser based demo/test](#web-browser-based-demo/test)
-* [Testing To-Do's](#testing-to-do's)
+* [Testing Notes](#testing-notes)
 
 
 
@@ -126,14 +126,11 @@ You'll need to untar these files onto the client machine where you'll issue s3cu
 CORS CLI client files for demo (tar)
 
 
-# Testing To-Do's
-In priority order, highest first.
+# Testing Notes
 
-1incompleteTest using a Web browser to access an S3 bucket, using a more in-depth Web site than the "Web browser based demo/test" above. Enlist the UI team to help create it?
+POSTing an HTML form, from a Web browser to an S3 bucket using CORS. The bucket ACL must be set to allow AllUsers WRITE ability, since browser access is "anonymous" (no S3 Authorization header with an account)
 
-13incompleteTest POSTing an HTML form, from a Web browser to an S3 bucket using CORS. The bucket ACL must be set to allow AllUsers WRITE ability, since browser access is "anonymous" (no S3 Authorization header with an account).14incompleteTest PUT-ing an object, singly and as a multi-part upload (if the browser supports it).15incompleteTest JavaScript accessing the bucket URL. Will the Web browser display the returned XML list of the objects it contains?16incompleteTest JavaScript accessing other S3 resources that return an XML body, like "?acl". Is it returned and displayed?17incompleteTest actions that cause a preflight request before the cross-origin request, and those that just do a cross-origin request. If the client request has only these headers, no preflight will be sent: (if other headers, preflight will be sent)
-* 
-    * 
+Test actions that cause a preflight request before the cross-origin request, and those that just do a cross-origin request. If the client request has only these headers, no preflight will be sent: (if other headers, preflight will be sent)
     * Accept 
     * Accept-Language 
     * Content-Language 
@@ -142,44 +139,15 @@ In priority order, highest first.
     * multipart/form-data 
     * text/plain 
 
-    
+To send an anonymous request to S3, issue a regular authorized request using e.g. s3curl --debug ..., then issue the equivalent curl command it shows, without the Authorization header.
 
-    
+For eucaconsole to upload images/snapshots (EBS) to S3 URL, but to get around Web browser's single-origin policy, it buffers object onto console UFS host, then tells UFS to upload to OSG, bypassing the browser. CORS removes buffering need and allows browser to upload to S3 bucket directly.
 
-    
+CORS headers can be returned in the HTTP response for any S3 operation, even those that would not be expected for CORS usage. 
 
-18incompleteTest CORS requests against other AWS regions besidess3.amazonaws.com (us-east-1). Are there any differences? (Compare to the "AWS CORS responses" docs above, which were against us-east-1.)19incompleteDon't use just the eucalyptus account and its admin user when sending HTTP requests. That account overrides some IAM policies. Use other accounts/users too, and the anonymous/nobody account. (Already done in some manual testing.) To send an anonymous request to S3, issue a regular authorized request using e.g. s3curl --debug ..., then issue the equivalent curl command it shows, without theAuthorization header.2incompleteTo define further testing needed for CORS: Get with the GUI team to define their internal desired use cases of CORS, besides their external user-facing feature of managing a CORS configuration. For example, they want eucaconsole to upload images/snapshots (EBS) to S3 URL, but to get around Web browser's single-origin policy, it buffers object onto console UFS host, then tells UFS to upload to OSG, bypassing the browser. CORS removes buffering need and allows browser to upload to S3 bucket directly.
+Test CORS config validation error checking more: missing origin or method in a rule, >100 rules, rule IDs that are non-unique or >255 chars, negative MaxAgeSeconds.
 
-
-
-20incompleteCORS headers can be returned in the HTTP response for any S3 operation, even those that would not be expected for CORS usage. Add tests for all of the CORS-uncommon S3 operations not already covered by existing manual, scripted, and automated tests.
-
-
-
-23incompleteTest with multiple buckets having different CORS configs, processed correctly per bucket.
-
-
-
-21incompleteTest CORS config validation error checking more: missing origin or method in a rule, >100 rules, rule IDs that are non-unique or >255 chars, negative MaxAgeSeconds.
-
-
-
-22incompleteFor the python nephoria CORS tests: Convert existing code in cors_tests.py to new way of accessing AWS and Euca endpoints so that you don't have to change the code to switch testing against AWS or Euca.
-
-
-
-24incompleteTest using [s3cmd](http://s3tools.org/s3cmd). Can use --add-header="Origin:http://www.example.com". How can we see the CORS headers in the response?
-
-
-
-25incompleteTest using the AWS CLI. Unclear how to add Origin header or see response headers.
-
-
-
-26incompleteModularize printException(AmazonServiceException ase) duplicated everywhere, in n4j
-
-
-
+Test using [s3cmd](http://s3tools.org/s3cmd). Can use --add-header="Origin:http://www.example.com". 
 
 
 *****

@@ -6,6 +6,7 @@ The current architecture and domain model for managing EBS and ephemeral devices
 ## Current Entity Model
 Eucalyptus 4.0.0 Block Device Domain Model
 
+![](images/storage/block_device_rel_1.png)
 
 # Proposed Change
 The metadata model for instances' devices should be that of a flat block device table (or mapping), that is mutable during run-time but imposes certain restrictions based on the VM lifecycle and some properties of the devices.
@@ -13,6 +14,8 @@ The metadata model for instances' devices should be that of a flat block device 
 
 ## Proposed Entity Model
 Proposed Euca 4.1.0 Block Device Mapping
+
+![](images/storage/block_device_rel_2.png)
 
 The "BlockDevice" is a logical parent type of EphemeralBlockDevice and EBSBlockDevice. Each child includes extra fields for that type.
 
