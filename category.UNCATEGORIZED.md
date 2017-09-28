@@ -42,7 +42,6 @@
 * [[Overlay-storage-3.2]]
 * [[Project-Images]]
 * [[QA-Next]]
-* [[Riakcs-tech-preview-known-issues]]
 * [[SC-Troubleshooting]]
 * [[Source-build-on-Ubuntu]]
 * [[Stackato-Image-Work]]
@@ -59,7 +58,6 @@
 * [[Walrus-Troubleshooting]]
 * [[_Footer]]
 * [[footer.md]]
-* [[index-of-categories]]
 * [[libvirt-network-configuration]]
 
 *****

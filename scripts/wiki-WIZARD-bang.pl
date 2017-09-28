@@ -31,6 +31,9 @@ foreach my $wikidoc (@wikidocs) {
     if ($wikidoc =~ /^category\./) {
         print "Excluding category file $wikidoc\n";
     }
+    elsif ($wikidoc =~ /^index-of-categories\./) {
+        print "Excluding category index file $wikidoc\n";
+    }
     elsif ($wikidoc =~ /^_Sidebar\./) {
         print "Excluding sidebar file $wikidoc\n";
     }

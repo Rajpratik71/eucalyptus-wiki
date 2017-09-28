@@ -18,7 +18,6 @@
 * [[Vic-Iglesias]]
 * [[Zach-Hill]]
 * [[grze]]
-* [[index-of-categories]]
 * [[yarapavan]]
 
 *****

@@ -6,7 +6,6 @@
 * [[Fog]]
 * [[HOWTO-Use-AWS-Java-SDK-with-Eucalyptus]]
 * [[Netflix-OSS-Tools]]
-* [[index-of-categories]]
 * [[jclouds]]
 
 *****
