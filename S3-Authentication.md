@@ -59,4 +59,5 @@ From here, we call the appropriate authentication method for the signature versi
 *****
 
 [[category.storage]] 
-[[category.confluence]] 
+[[category.confluence]]
+[[category.objectstorage]]

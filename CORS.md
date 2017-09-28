@@ -292,5 +292,7 @@ See the [[CORS Testing page|CORS-Testing]].
 
 *****
 
-[[category.storage]] 
-[[category.confluence]] 
+[[category.storage]]
+[[category.confluence]]
+[[category.cors]]
+[[category.objectstorage]]

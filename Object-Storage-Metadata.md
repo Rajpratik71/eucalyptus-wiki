@@ -80,3 +80,4 @@ The OSP receives: PUT 1231231233-1231231231-1231321321/456456-4545646-xxxxx
 
 [[category.storage]] 
 [[category.confluence]] 
+[[category.objectstorage]]

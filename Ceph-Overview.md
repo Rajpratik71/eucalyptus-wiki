@@ -56,3 +56,5 @@ There are lots of performance studies of Ceph available online, read them and se
 
 [[category.storage]] 
 [[category.confluence]] 
+[[category.ceph]] 
+[[category.ebs]]

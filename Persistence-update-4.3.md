@@ -253,3 +253,4 @@ Hibernate documentation covers [annotation processor configuration (jboss.org)](
 *****
 
 [[category.confluence]] 
+[[category.developer]]

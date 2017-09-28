@@ -139,3 +139,4 @@ QBE (query by example) is not part of JPA and we do not currently have a direct 
 *****
 
 [[category.confluence]] 
+[[category.developer]] 

@@ -28,3 +28,4 @@ It is necessary to explicitly configure the signature_version in order to use AW
 
 [[category.storage]] 
 [[category.confluence]] 
+[[category.objectstorage]]

@@ -109,3 +109,5 @@ service eucalyptus-nc start
 
 [[category.storage]] 
 [[category.confluence]] 
+[[category.ceph]] 
+[[category.ebs]]

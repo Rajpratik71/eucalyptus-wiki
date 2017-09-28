@@ -100,4 +100,5 @@ The bucket reaper runs every 60 seconds and performs basically the same function
 *****
 
 [[category.storage]] 
-[[category.confluence]] 
+[[category.confluence]]
+[[category.objectstorage]]

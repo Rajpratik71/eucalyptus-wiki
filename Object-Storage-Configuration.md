@@ -54,3 +54,4 @@ The OSP selection must be made before any OSGs can become functional. The specif
 
 [[category.storage]] 
 [[category.confluence]] 
+[[category.objectstorage]]

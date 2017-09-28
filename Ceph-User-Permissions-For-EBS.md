@@ -99,3 +99,5 @@ ceph auth get-or-create client.eucalyptus -o ceph.client.eucalyptus.keyring
 
 [[category.storage]] 
 [[category.confluence]] 
+[[category.ceph]] 
+[[category.ebs]]

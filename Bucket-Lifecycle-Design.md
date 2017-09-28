@@ -110,3 +110,4 @@ Lifecycles cannot be modified. A lifecycle configuration is created for a bucket
 
 [[category.storage]] 
 [[category.confluence]] 
+[[category.objectstorage]]

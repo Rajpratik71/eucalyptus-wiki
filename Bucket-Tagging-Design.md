@@ -149,3 +149,4 @@ Below is a list of questions to be addressed as a result of this requirements do
 
 [[category.storage]] 
 [[category.confluence]] 
+[[category.objectstorage]]

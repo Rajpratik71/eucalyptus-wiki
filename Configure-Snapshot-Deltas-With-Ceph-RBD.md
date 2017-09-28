@@ -37,3 +37,5 @@ euctl <az>.storage.maxsnapshotdeltas=<non-zero-integer>
 
 [[category.storage]] 
 [[category.confluence]] 
+[[category.ceph]] 
+[[category.ebs]]

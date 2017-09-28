@@ -136,3 +136,5 @@ true
 
 [[category.storage]] 
 [[category.confluence]] 
+[[category.ceph]] 
+[[category.ebs]]

@@ -186,3 +186,5 @@ In priority order, highest first.
 
 [[category.storage]] 
 [[category.confluence]] 
+[[category.cors]]
+[[category.objectstorage]]

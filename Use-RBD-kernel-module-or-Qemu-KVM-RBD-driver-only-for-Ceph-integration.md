@@ -222,3 +222,5 @@ service libvirtd start
 
 [[category.storage]] 
 [[category.confluence]] 
+[[category.ceph]] 
+[[category.ebs]]

@@ -64,3 +64,4 @@ If using Walrus in HA-mode utilizing two Walrus hosts connected via DRBD, it is 
 
 [[category.storage]] 
 [[category.confluence]] 
+[[category.objectstorage]]

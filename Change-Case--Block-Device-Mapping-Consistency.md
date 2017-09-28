@@ -122,4 +122,5 @@ There are upgrade implications as well.
 *****
 
 [[category.storage]] 
-[[category.confluence]] 
+[[category.confluence]]
+[[category.ebs]]

@@ -56,5 +56,6 @@ true
 
 *****
 
-[[category.storage]] 
-[[category.confluence]] 
+[[category.storage]]
+[[category.confluence]]
+[[category.ebs]]

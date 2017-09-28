@@ -17,3 +17,5 @@ The following features are not enabled for the Tech-Preview but will be fully fu
 
 3. Bucket naming conventions are not current with S3 API. Specifically, '_' is not allowed. This is an issue with the version of a backend library we are using. It will be updated for the 4.0 release and this restriction will be removed. If you attempt to create a bucket with '_' in the name, you will receive a HTTP 500 Internal Error response, this will be resolved for 4.0 release.
 
+[[category.storage]] 
+[[category.riakcs]] 

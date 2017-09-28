@@ -67,3 +67,4 @@ Many of these features are in development now and this list will be updated as s
 
 [[category.storage]] 
 [[category.confluence]] 
+[[category.objectstorage]]

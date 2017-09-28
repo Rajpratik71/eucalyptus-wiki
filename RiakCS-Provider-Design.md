@@ -28,5 +28,7 @@ RiakCS Secrete Key Id.This must be provided to the provider client/OSG by the cl
 
 *****
 
-[[category.storage]] 
-[[category.confluence]] 
+[[category.storage]]
+[[category.confluence]]
+[[category.riakcs]]
+[[category.objectstorage]]

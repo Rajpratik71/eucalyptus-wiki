@@ -19,3 +19,4 @@ This wiki is 's notes of Ceph RGW architecture from the following tech talk. Thi
 
 [[category.storage]] 
 [[category.confluence]] 
+[[category.objectstorage]]

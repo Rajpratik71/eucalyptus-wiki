@@ -512,5 +512,6 @@ Example contents of mpu-file:
 
 *****
 
-[[category.storage]] 
-[[category.confluence]] 
+[[category.storage]]
+[[category.confluence]]
+[[category.objectstorage]]

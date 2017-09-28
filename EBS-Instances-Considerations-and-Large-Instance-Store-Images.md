@@ -16,3 +16,5 @@ The reason for the chunking of the image during upload to Walrus is 1.) AWS comp
 The reason that both the individual chunks as well as the assembled image are stored is that the image is stored in the image-cache and may be flushed if it is unused and space is needed for other images in the cache. The cached image happens to reside in the same bucket as the uploaded image chunks but it is managed independently as part of the image cache.
 
 [[category.ebs]]
+[[category.storage]]
+

@@ -47,3 +47,4 @@ The current OSG implementation uses the eucalyptus_shared database with the euca
 
 [[category.storage]] 
 [[category.confluence]] 
+[[category.objectstorage]]
