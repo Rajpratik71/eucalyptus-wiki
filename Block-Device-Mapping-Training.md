@@ -156,4 +156,6 @@ BLOCKDEVICE	/dev/sdb	vol-XYZ12345	2013-04-18T00:09:44.291Z	true
 
 [[category.Training]]
 [[category.training]]
-[[ category.Troubleshooting ]]
+[[category.Troubleshooting]]
+[[category.ebs]]
+[[category.storage]]
