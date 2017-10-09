@@ -424,3 +424,5 @@ BLOCKDEVICE	/dev/sdb	vol-XYZ12345	2013-04-18T00:09:44.291Z	true
 *As of 3.3.0- This is not supported on Overlay and DAS storage backends.
 
 [[category.Training]]
+[[category.ebs]]
+[[category.storage]]
