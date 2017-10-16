@@ -1,4 +1,5 @@
 * [[AWS-CLI-for-S3]]
+* [[Block-Device-Mapping-Training]]
 * [[Block-Storage-Troubleshooting-Debugging]]
 * [[Boot-from-EBS-changes-in-Eucalyptus-3_3_0]]
 * [[Bucket-Lifecycle-Design]]
@@ -13,6 +14,7 @@
 * [[Configure-Ceph-RGW-For-S3-(OSG)]]
 * [[Configure-Snapshot-Deltas-With-Ceph-RBD]]
 * [[EBS-Instances-Considerations-and-Large-Instance-Store-Images]]
+* [[EBS-Multipath-Training]]
 * [[EBS-backed-EMI]]
 * [[Install-and-configure-Ceph-RGW]]
 * [[Manual-installation-of-udev-rules-for-SC-in-source-install]]

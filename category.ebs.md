@@ -1,3 +1,4 @@
+* [[Block-Device-Mapping-Training]]
 * [[Block-Storage-Troubleshooting-Debugging]]
 * [[Boot-from-EBS-changes-in-Eucalyptus-3_3_0]]
 * [[Ceph-Client-Installation-For-EBS]]
@@ -7,6 +8,7 @@
 * [[Configure-Ceph-RBD-For-EBS]]
 * [[Configure-Snapshot-Deltas-With-Ceph-RBD]]
 * [[EBS-Instances-Considerations-and-Large-Instance-Store-Images]]
+* [[EBS-Multipath-Training]]
 * [[EBS-Troubleshooting]]
 * [[EBS-backed-EMI]]
 * [[EBS:-Import-a-Disk-Image]]

@@ -2,6 +2,7 @@ Index of Categories
 
 * [[category.HOWTO]]
 * [[category.Training]]
+* [[category.Troubleshooting]]
 * [[category.UNCATEGORIZED]]
 * [[category.aws-compatibility]]
 * [[category.blueprints]]
