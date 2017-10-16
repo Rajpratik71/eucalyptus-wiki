@@ -55,7 +55,7 @@ Currently, for the "MANAGED" and "MANAGED_VLAN" networking modes, both the Clust
 
 With the addition of the EDGE networking mode, a new simple network configuration paradigm was implemented. Under this new mode, the core network configuration is provided to the CLC whom in turns broadcast the Global Network Information (GNI), or network view, to all of its subordinate elements (CC/NC) and the later are responsible for implementing any network requirements based on the provided GNI. The remaining network configuration parameters that are component specific (i.e. Bridge device, Public/Private Interface, DHCP user and service, etc.) are still left into the 'eucalyptus.conf' file as these are component unique configuration. The following diagram show how this GNI broadcast messages mechanism flows between the various cloud components:
 
-![](images/networking/GNI+Msg.jpg)
+![](images/networking/GNI Msg.jpg)
 
 EDGE is a networking mode that works at the NC level. Once the NC receives a GNI message from its associated CC, it saves the content into a file named 'global_network_info.xml'under the '$EUCALYPTUS/var/lib/eucalyptus' path. At a regular interval, the EUCANETD service determines if the file content, referring to the current distributed system network view, has been modified. If it is the case, EUCANETD will read the content and implements the changes with the system IP Tables (IPT), EB Tables (EBT) and network device as necessary. The following diagram shows this communication between NC and EUCANETD.
 
