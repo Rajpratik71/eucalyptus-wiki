@@ -117,3 +117,4 @@ ConfigurationNode Controller reads configuration from $EUCALYPTUS/etc/eucalyptus
 *****
 
 [[category.confluence]] 
+[[category.developer]]

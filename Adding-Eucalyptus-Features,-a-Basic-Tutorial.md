@@ -188,3 +188,4 @@ curl -X HEAD http://localhost:8773/services/objectstorage/ -debug -verbose
 *****
 
 [[category.confluence]] 
+[[category.developer]]
