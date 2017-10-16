@@ -1,5 +1,4 @@
-
-# MANAGED-NOVLAN* [MANAGED-NOVLAN](#managed-novlan)
+* [MANAGED-NOVLAN](#managed-novlan)
 * [Background & Strategic Fit](#background-&-strategic-fit)
   * [EUCANETD and EDGE](#eucanetd-and-edge)
   * [The Global Network Configuration](#the-global-network-configuration)
@@ -38,6 +37,7 @@
 * [Future Consideration](#future-consideration)
 
 
+# MANAGED-NOVLAN
 
 Goal for Organization of Document
 * Present an overview of current strategy
