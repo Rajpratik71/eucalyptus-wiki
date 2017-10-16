@@ -1441,3 +1441,6 @@ Because porting MANAGED and MANAGED-NOVLAN to this new framework introduce some 
 *****
 
 [[category.confluence]] 
+[[category.design]] 
+[[category.developer]] 
+
