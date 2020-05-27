@@ -19,7 +19,7 @@ Steps:
 1. Download SDK and ensure you are using version 1.5.3 - this is the last SDK before introduction of the HMAC4 signing code, which Eucalyptus does not yet support:
 
     ```
-    git clone https://github.com/amazonwebservices/aws-sdk-for-php.git /var/www/aws-sdk-for-php
+    git clone --depth 1 https://github.com/amazonwebservices/aws-sdk-for-php.git /var/www/aws-sdk-for-php
     cd /var/www/aws-sdk-for-php
     git checkout 1.5.3
     ```
@@ -81,7 +81,7 @@ PHP-AWS (https://github.com/tylerhall/php-aws/) is a collection of small PHP scr
 1. Download the scripts:
 
     ```
-    git clone https://github.com/tylerhall/php-aws.git /var/www/php-aws
+    git clone --depth 1 https://github.com/tylerhall/php-aws.git /var/www/php-aws
     cd /var/www/php-aws
     ```
 

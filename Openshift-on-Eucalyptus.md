@@ -37,7 +37,7 @@ Note that 10.104.3.10 is public IP address of the instance, replace with correct
 ### Get the ansible playbook
 
 ```
-git clone https://github.com/maxamillion/ansible-openshift_origin.git
+git clone --depth 1 https://github.com/maxamillion/ansible-openshift_origin.git
 ```
 
 ### Run the ansible playbook

@@ -7,7 +7,7 @@ The s3cmd tool is a simple command line tool for accessing buckets in S3 (AWS) a
 Eucalyptus keeps a [local fork](https://github.com/eucalyptus/s3cmd) of the [upstream (https://github.com/s3tools/s3cmd) s3cmd repository.  To install:
 
 ```
-git clone https://github.com/eucalyptus/s3cmd
+git clone --depth 1 https://github.com/eucalyptus/s3cmd
 cd s3cmd
 python setup.py install
 ```

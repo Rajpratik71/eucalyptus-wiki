@@ -24,7 +24,7 @@ Assumes you have QA system credentials, ssh key on the internal git server so yo
 1. On your development system (can be one of the QA systems deployed in step 1 or a laptop/desktop), checkout the [eutester](https://github.com/eucalyptus/eutester.git) code.
     1. 
 ```
-git clone https://github.com/eucalyptus/eutester.git
+git clone --depth 1 https://github.com/eucalyptus/eutester.git
 ```
 
     1. Follow build instructions in README in eutester/

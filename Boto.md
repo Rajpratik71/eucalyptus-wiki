@@ -20,7 +20,7 @@ You can follow any installation method recommended in boto's documentation, such
 ```
 * Install from source:
 ```
-	git clone git://github.com/boto/boto.git
+	git clone --depth 1 git://github.com/boto/boto.git
 	cd boto
 	python setup.py install
 ```

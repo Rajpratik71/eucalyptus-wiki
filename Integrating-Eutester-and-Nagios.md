@@ -78,7 +78,7 @@ _This command should list the available images in your cloud_
 ## Install Eutester
 
 ### Clone the latest eutester code from Github
-    cd /root && git clone git://github.com/eucalyptus/eutester.git && cd eutester
+    cd /root && git clone --depth 1 git://github.com/eucalyptus/eutester.git && cd eutester
     python setup.py install
 
 ### Install some python dependancies
@@ -95,7 +95,7 @@ For the meantime, let's just remove the upstream version and replace it with the
 ## Install Nagios plugin and helper scripts
 
 ### Download Nagios eutester check scripts
-    cd /root && git clone git://github.com/monolive/nagios-eucalyptus.git
+    cd /root && git clone --depth 1 git://github.com/monolive/nagios-eucalyptus.git
 
 ### Copy Nagios plugin to plugins dir
     cp nagios-eucalyptus/nagios/check_eutester_test.sh /usr/lib64/nagios/plugins/
