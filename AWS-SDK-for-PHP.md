@@ -6,7 +6,7 @@ Today I looked into the latest version of AWS SDK for PHP, and managed to make i
 
 (1) Check out the latest version  of AWS SDK for PHP
 
-git clone https://github.com/amazonwebservices/aws-sdk-for-php.git
+git clone --depth 1 https://github.com/amazonwebservices/aws-sdk-for-php.git
 
 (2) Make some minor modifications to aws-sdk-for-php/sdk.class.php. There is only one line you need to add to method set_resource_prefix($prefix). The original version of this method was
 

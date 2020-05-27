@@ -3,7 +3,7 @@ It’s easy to patch the Eucalyptus documentation, and we’d love your help! Th
 Our repository is available here on Github, and the best way to send us your patches is through a Github pull request. If you’ve never done this before, you’ll need to do a couple of things to get set up:
 * Create a [Github account](https://github.com/plans)
 * Go to [https://github.com/eucalyptus/documentation/](https://github.com/eucalyptus/documentation/) and click Fork
-* Clone the resulting repository by using ``git clone git@github.com:[username]/documentation.git`` on your local machine
+* Clone the resulting repository by using ``git clone --depth 1 git@github.com:[username]/documentation.git`` on your local machine
 * Enter the new directory ``cd documentation``
 * We’re going to be using more than one remote git repository, so rename this remote to make it clear what’s what using ``git remote rename origin [forkname]``
 * Add the Eucalyptus Github repository as a remote using ``git remote add [remotename] https://github.com/eucalyptus/documentation.git``
